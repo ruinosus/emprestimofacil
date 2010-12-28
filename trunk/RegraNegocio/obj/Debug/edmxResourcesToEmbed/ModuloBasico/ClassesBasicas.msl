@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="EmprestimoModelStoreContainer" CdmEntityContainer="EmprestimoEntities">
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Area)">
+        <MappingFragment StoreEntitySet="area">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bloqueados">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Bloqueado)">
+        <MappingFragment StoreEntitySet="bloqueado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="motivo" ColumnName="motivo" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Cliente)">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="bairro_comerc" ColumnName="bairro_comerc" />
+          <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="cep_comerc" ColumnName="cep_comerc" />
+          <ScalarProperty Name="cep_resid" ColumnName="cep_resid" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="ctps" ColumnName="ctps" />
+          <ScalarProperty Name="data_expedicao" ColumnName="data_expedicao" />
+          <ScalarProperty Name="endereco_comerc" ColumnName="endereco_comerc" />
+          <ScalarProperty Name="endereco_resid" ColumnName="endereco_resid" />
+          <ScalarProperty Name="fone_comerc" ColumnName="fone_comerc" />
+          <ScalarProperty Name="fone_ref1" ColumnName="fone_ref1" />
+          <ScalarProperty Name="fone_ref2" ColumnName="fone_ref2" />
+          <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="limite" ColumnName="limite" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
+          <ScalarProperty Name="nome_pai" ColumnName="nome_pai" />
+          <ScalarProperty Name="nome_ref1" ColumnName="nome_ref1" />
+          <ScalarProperty Name="nome_ref2" ColumnName="nome_ref2" />
+          <ScalarProperty Name="numcartao" ColumnName="numcartao" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="secao" ColumnName="secao" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="situacao" ColumnName="situacao" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="titulo_eleitor" ColumnName="titulo_eleitor" />
+          <ScalarProperty Name="uf_comerc" ColumnName="uf_comerc" />
+          <ScalarProperty Name="uf_resid" ColumnName="uf_resid" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Despesas">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Despesa)">
+        <MappingFragment StoreEntitySet="despesa">
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="justificativa" ColumnName="justificativa" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DespesaTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.DespesaTipo)">
+        <MappingFragment StoreEntitySet="despesatipo">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emprestimos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Emprestimo)">
+        <MappingFragment StoreEntitySet="emprestimo">
+          <ScalarProperty Name="data_emprestimo" ColumnName="data_emprestimo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="juros" ColumnName="juros" />
+          <ScalarProperty Name="qtde_parcelas" ColumnName="qtde_parcelas" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Escolaridades">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Escolaridade)">
+        <MappingFragment StoreEntitySet="escolaridade">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoCivilTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.EstadoCivilTipo)">
+        <MappingFragment StoreEntitySet="estadociviltipo">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lancamento">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.lancamento)">
+        <MappingFragment StoreEntitySet="lancamento">
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="fonte" ColumnName="fonte" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="observacoes" ColumnName="observacoes" />
+          <ScalarProperty Name="outrasinfos" ColumnName="outrasinfos" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LancamentoTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.LancamentoTipo)">
+        <MappingFragment StoreEntitySet="lancamentotipo">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sinal" ColumnName="sinal" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipios">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Municipio)">
+        <MappingFragment StoreEntitySet="municipio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="uf" ColumnName="uf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrgaoExpedidorNomes">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.OrgaoExpedidorNome)">
+        <MappingFragment StoreEntitySet="orgaoexpedidornome">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parcelas">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Parcela)">
+        <MappingFragment StoreEntitySet="parcela">
+          <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
+          <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="juros_atraso" ColumnName="juros_atraso" />
+          <ScalarProperty Name="multa_atraso" ColumnName="multa_atraso" />
+          <ScalarProperty Name="observacoes" ColumnName="observacoes" />
+          <ScalarProperty Name="sequencial" ColumnName="sequencial" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="valor_pago" ColumnName="valor_pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrazoPagamentos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.PrazoPagamento)">
+        <MappingFragment StoreEntitySet="prazopagamento">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
+          <ScalarProperty Name="qtde_dias" ColumnName="qtde_dias" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrestacaoContas">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.PrestacaoConta)">
+        <MappingFragment StoreEntitySet="prestacaoconta">
+          <ScalarProperty Name="dataprestacao" ColumnName="dataprestacao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parcelareabertas" ColumnName="parcelareabertas" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="totaldespesas" ColumnName="totaldespesas" />
+          <ScalarProperty Name="valorcancelado" ColumnName="valorcancelado" />
+          <ScalarProperty Name="valordevolvido" ColumnName="valordevolvido" />
+          <ScalarProperty Name="valoremprestado" ColumnName="valoremprestado" />
+          <ScalarProperty Name="valorrecebido" ColumnName="valorrecebido" />
+          <ScalarProperty Name="valorsaida" ColumnName="valorsaida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusParcelas">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.StatusParcela)">
+        <MappingFragment StoreEntitySet="statusparcela">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoEmprestimos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.TipoEmprestimo)">
+        <MappingFragment StoreEntitySet="tipoemprestimo">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.Usuario)">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="cep_resid" ColumnName="cep_resid" />
+          <ScalarProperty Name="cidade_resid" ColumnName="cidade_resid" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="ctps" ColumnName="ctps" />
+          <ScalarProperty Name="data_expedicao" ColumnName="data_expedicao" />
+          <ScalarProperty Name="endereco_resid" ColumnName="endereco_resid" />
+          <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
+          <ScalarProperty Name="nome_pai" ColumnName="nome_pai" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="secao" ColumnName="secao" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="situacao" ColumnName="situacao" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          <ScalarProperty Name="titulo_eleitor" ColumnName="titulo_eleitor" />
+          <ScalarProperty Name="uf_resid" ColumnName="uf_resid" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(EmprestimoModel.UsuarioTipo)">
+        <MappingFragment StoreEntitySet="usuariotipo">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+          <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="cliente_ibfk_3" TypeName="EmprestimoModel.cliente_ibfk_3" StoreEntitySet="cliente">
+      <EndProperty Name="area">
+        <ScalarProperty Name="id" ColumnName="area_id" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="municipio_ibfk_1" TypeName="EmprestimoModel.municipio_ibfk_1" StoreEntitySet="area">
+      <EndProperty Name="municipio">
+        <ScalarProperty Name="id" ColumnName="municipio_id" />
+      </EndProperty>
+      <EndProperty Name="area">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usuario_ibfk_3" TypeName="EmprestimoModel.usuario_ibfk_3" StoreEntitySet="usuario">
+      <EndProperty Name="area">
+        <ScalarProperty Name="id" ColumnName="area_id" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="bloqueado_ibfk_1" TypeName="EmprestimoModel.bloqueado_ibfk_1" StoreEntitySet="bloqueado">
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="cliente_id" />
+      </EndProperty>
+      <EndProperty Name="bloqueado">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="bloqueado_ibfk_2" TypeName="EmprestimoModel.bloqueado_ibfk_2" StoreEntitySet="bloqueado">
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="usuario_id" />
+      </EndProperty>
+      <EndProperty Name="bloqueado">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cliente_ibfk_1" TypeName="EmprestimoModel.cliente_ibfk_1" StoreEntitySet="cliente">
+      <EndProperty Name="orgaoexpedidornome">
+        <ScalarProperty Name="id" ColumnName="orgaosexpedidoresnome_id" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="orgaosexpedidoresnome_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cliente_ibfk_2" TypeName="EmprestimoModel.cliente_ibfk_2" StoreEntitySet="cliente">
+      <EndProperty Name="estadociviltipo">
+        <ScalarProperty Name="id" ColumnName="estadoscivistipo_id" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="estadoscivistipo_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cliente_ibfk_4" TypeName="EmprestimoModel.cliente_ibfk_4" StoreEntitySet="cliente">
+      <EndProperty Name="escolaridade">
+        <ScalarProperty Name="id" ColumnName="escolaridade_id" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="escolaridade_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cliente_ibfk_5" TypeName="EmprestimoModel.cliente_ibfk_5" StoreEntitySet="cliente">
+      <EndProperty Name="municipio">
+        <ScalarProperty Name="id" ColumnName="cidade_resid" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="cidade_resid" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cliente_ibfk_6" TypeName="EmprestimoModel.cliente_ibfk_6" StoreEntitySet="cliente">
+      <EndProperty Name="municipio">
+        <ScalarProperty Name="id" ColumnName="cidade_comerc" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="cidade_comerc" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="emprestimo_ibfk_1" TypeName="EmprestimoModel.emprestimo_ibfk_1" StoreEntitySet="emprestimo">
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="id" ColumnName="cliente_id" />
+      </EndProperty>
+      <EndProperty Name="emprestimo">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="despesa_ibfk_1" TypeName="EmprestimoModel.despesa_ibfk_1" StoreEntitySet="despesa">
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="usuario_id" />
+      </EndProperty>
+      <EndProperty Name="despesa">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="despesa_ibfk_2" TypeName="EmprestimoModel.despesa_ibfk_2" StoreEntitySet="despesa">
+      <EndProperty Name="despesatipo">
+        <ScalarProperty Name="id" ColumnName="despesatipo_id" />
+      </EndProperty>
+      <EndProperty Name="despesa">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="emprestimo_ibfk_2" TypeName="EmprestimoModel.emprestimo_ibfk_2" StoreEntitySet="emprestimo">
+      <EndProperty Name="prazopagamento">
+        <ScalarProperty Name="id" ColumnName="prazospagamento_id" />
+      </EndProperty>
+      <EndProperty Name="emprestimo">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="emprestimo_ibfk_3" TypeName="EmprestimoModel.emprestimo_ibfk_3" StoreEntitySet="emprestimo">
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="usuario_id" />
+      </EndProperty>
+      <EndProperty Name="emprestimo">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="emprestimo_ibfk_4" TypeName="EmprestimoModel.emprestimo_ibfk_4" StoreEntitySet="emprestimo">
+      <EndProperty Name="tipoemprestimo">
+        <ScalarProperty Name="id" ColumnName="tipoemprestimo_id" />
+      </EndProperty>
+      <EndProperty Name="emprestimo">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="tipoemprestimo_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="parcela_ibfk_1" TypeName="EmprestimoModel.parcela_ibfk_1" StoreEntitySet="parcela">
+      <EndProperty Name="emprestimo">
+        <ScalarProperty Name="id" ColumnName="emprestimo_id" />
+      </EndProperty>
+      <EndProperty Name="parcela">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usuario_ibfk_5" TypeName="EmprestimoModel.usuario_ibfk_5" StoreEntitySet="usuario">
+      <EndProperty Name="escolaridade">
+        <ScalarProperty Name="id" ColumnName="escolaridade_id" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="escolaridade_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usuario_ibfk_2" TypeName="EmprestimoModel.usuario_ibfk_2" StoreEntitySet="usuario">
+      <EndProperty Name="estadociviltipo">
+        <ScalarProperty Name="id" ColumnName="estadoscivistipo_id" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="estadoscivistipo_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="lancamento_ibfk_1" TypeName="EmprestimoModel.lancamento_ibfk_1" StoreEntitySet="lancamento">
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="usuario_id" />
+      </EndProperty>
+      <EndProperty Name="lancamento">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="lancamento_ibfk_2" TypeName="EmprestimoModel.lancamento_ibfk_2" StoreEntitySet="lancamento">
+      <EndProperty Name="lancamentotipo">
+        <ScalarProperty Name="id" ColumnName="lancamentotipo_id" />
+      </EndProperty>
+      <EndProperty Name="lancamento">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usuario_ibfk_1" TypeName="EmprestimoModel.usuario_ibfk_1" StoreEntitySet="usuario">
+      <EndProperty Name="orgaoexpedidornome">
+        <ScalarProperty Name="id" ColumnName="orgaosexpedidoresnome_id" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="orgaosexpedidoresnome_id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="parcela_ibfk_2" TypeName="EmprestimoModel.parcela_ibfk_2" StoreEntitySet="parcela">
+      <EndProperty Name="statusparcela">
+        <ScalarProperty Name="id" ColumnName="statusparcela_id" />
+      </EndProperty>
+      <EndProperty Name="parcela">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="prestacaoconta_ibfk_1" TypeName="EmprestimoModel.prestacaoconta_ibfk_1" StoreEntitySet="prestacaoconta">
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="usuario_id" />
+      </EndProperty>
+      <EndProperty Name="prestacaoconta">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usuario_ibfk_4" TypeName="EmprestimoModel.usuario_ibfk_4" StoreEntitySet="usuario">
+      <EndProperty Name="usuariotipo">
+        <ScalarProperty Name="id" ColumnName="usuariotipo_id" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

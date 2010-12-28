@@ -1,0 +1,11 @@
+C:\Documents and Settings\Ruinosus\Meus documentos\Visual Studio 2008\Projects\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.dll
+C:\Documents and Settings\Ruinosus\Meus documentos\Visual Studio 2008\Projects\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.pdb
+C:\Documents and Settings\Ruinosus\Meus documentos\Visual Studio 2008\Projects\EmprestimoFacil\RegraNegocio\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Ruinosus\Meus documentos\Visual Studio 2008\Projects\EmprestimoFacil\RegraNegocio\obj\Debug\RegraNegocio.dll
+C:\Documents and Settings\Ruinosus\Meus documentos\Visual Studio 2008\Projects\EmprestimoFacil\RegraNegocio\obj\Debug\RegraNegocio.pdb
+E:\Projetos\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.dll
+E:\Projetos\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.pdb
+E:\Projetos\EmprestimoFacil\RegraNegocio\obj\Debug\ResolveAssemblyReference.cache
+E:\Projetos\EmprestimoFacil\RegraNegocio\obj\Debug\RegraNegocio.dll
+E:\Projetos\EmprestimoFacil\RegraNegocio\obj\Debug\RegraNegocio.pdb
+E:\Projetos\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.dll.config
