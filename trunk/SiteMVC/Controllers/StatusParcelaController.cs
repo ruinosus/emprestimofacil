@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloBasico;
 
 
 namespace SiteMVC.Controllers
@@ -15,11 +15,11 @@ namespace SiteMVC.Controllers
 
         public ActionResult Index()
         {
-          //  EmprestimoEntities db = new EmprestimoEntities();
-          //  StatusParcela sss = new StatusParcela();
-          //var teste =   db.DespesaTipos.ToList();
-          //  //emprestimoEntities db = new emprestimoEntities();
-          //ViewData.Model = teste;
+            EmprestimoEntities db = new EmprestimoEntities();
+            StatusParcela sss = new StatusParcela();
+            var teste = db.StatusParcelaSet.ToList();
+            //emprestimoEntities db = new emprestimoEntities();
+            ViewData.Model = teste;
             
             return View();
         }

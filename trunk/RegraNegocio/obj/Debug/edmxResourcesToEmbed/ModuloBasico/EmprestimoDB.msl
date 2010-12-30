@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="emprestimoModelStoreContainer" CdmEntityContainer="EmprestimoEntities">
-    <EntitySetMapping Name="area">
-      <EntityTypeMapping TypeName="EmprestimoModel.area">
+    <EntitySetMapping Name="AreaSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Area">
         <MappingFragment StoreEntitySet="area">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -12,8 +12,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="bloqueado">
-      <EntityTypeMapping TypeName="EmprestimoModel.bloqueado">
+    <EntitySetMapping Name="BloqueadoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Bloqueado">
         <MappingFragment StoreEntitySet="bloqueado">
           <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -24,8 +24,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="cliente">
-      <EntityTypeMapping TypeName="EmprestimoModel.cliente">
+    <EntitySetMapping Name="ClienteSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Cliente">
         <MappingFragment StoreEntitySet="cliente">
           <ScalarProperty Name="area_id" ColumnName="area_id" />
           <ScalarProperty Name="bairro_comerc" ColumnName="bairro_comerc" />
@@ -68,8 +68,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="despesa">
-      <EntityTypeMapping TypeName="EmprestimoModel.despesa">
+    <EntitySetMapping Name="DespesaSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Despesa">
         <MappingFragment StoreEntitySet="despesa">
           <ScalarProperty Name="data" ColumnName="data" />
           <ScalarProperty Name="despesatipo_id" ColumnName="despesatipo_id" />
@@ -93,8 +93,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="emprestimo">
-      <EntityTypeMapping TypeName="EmprestimoModel.emprestimo">
+    <EntitySetMapping Name="EmprestimoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Emprestimo">
         <MappingFragment StoreEntitySet="emprestimo">
           <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
           <ScalarProperty Name="data_emprestimo" ColumnName="data_emprestimo" />
@@ -110,8 +110,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="escolaridade">
-      <EntityTypeMapping TypeName="EmprestimoModel.escolaridade">
+    <EntitySetMapping Name="EscolaridadeSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Escolaridade">
         <MappingFragment StoreEntitySet="escolaridade">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -120,8 +120,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="estadociviltipo">
-      <EntityTypeMapping TypeName="EmprestimoModel.estadociviltipo">
+    <EntitySetMapping Name="EstadoCivilTipoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.EstadoCivilTipo">
         <MappingFragment StoreEntitySet="estadociviltipo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -130,8 +130,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="lancamento">
-      <EntityTypeMapping TypeName="EmprestimoModel.lancamento">
+    <EntitySetMapping Name="LancamentoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Lancamento">
         <MappingFragment StoreEntitySet="lancamento">
           <ScalarProperty Name="data" ColumnName="data" />
           <ScalarProperty Name="fonte" ColumnName="fonte" />
@@ -146,8 +146,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="lancamentotipo">
-      <EntityTypeMapping TypeName="EmprestimoModel.lancamentotipo">
+    <EntitySetMapping Name="LancamentoTipoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.LancamentoTipo">
         <MappingFragment StoreEntitySet="lancamentotipo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -168,8 +168,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="orgaoexpedidornome">
-      <EntityTypeMapping TypeName="EmprestimoModel.orgaoexpedidornome">
+    <EntitySetMapping Name="OrgaoExpedidorNomeSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.OrgaoExpedidorNome">
         <MappingFragment StoreEntitySet="orgaoexpedidornome">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -178,8 +178,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="parcela">
-      <EntityTypeMapping TypeName="EmprestimoModel.parcela">
+    <EntitySetMapping Name="ParcelaSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Parcela">
         <MappingFragment StoreEntitySet="parcela">
           <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
           <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
@@ -197,8 +197,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="prazopagamento">
-      <EntityTypeMapping TypeName="EmprestimoModel.prazopagamento">
+    <EntitySetMapping Name="PrazoPagamentoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.PrazoPagamento">
         <MappingFragment StoreEntitySet="prazopagamento">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -209,8 +209,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="prestacaoconta">
-      <EntityTypeMapping TypeName="EmprestimoModel.prestacaoconta">
+    <EntitySetMapping Name="PrestacaoContaSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.PrestacaoConta">
         <MappingFragment StoreEntitySet="prestacaoconta">
           <ScalarProperty Name="dataprestacao" ColumnName="dataprestacao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -227,8 +227,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="statusparcela">
-      <EntityTypeMapping TypeName="EmprestimoModel.statusparcela">
+    <EntitySetMapping Name="StatusParcelaSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.StatusParcela">
         <MappingFragment StoreEntitySet="statusparcela">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -237,8 +237,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tipoemprestimo">
-      <EntityTypeMapping TypeName="EmprestimoModel.tipoemprestimo">
+    <EntitySetMapping Name="TipoEmprestimoSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.TipoEmprestimo">
         <MappingFragment StoreEntitySet="tipoemprestimo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="id" ColumnName="id" />
