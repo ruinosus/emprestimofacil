@@ -1,0 +1,1882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="emprestimoModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="emprestimoModelStoreContainer">
+          <EntitySet Name="area" EntityType="emprestimoModel.Store.area" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="bloqueado" EntityType="emprestimoModel.Store.bloqueado" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="cliente" EntityType="emprestimoModel.Store.cliente" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="despesa" EntityType="emprestimoModel.Store.despesa" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="despesatipo" EntityType="emprestimoModel.Store.despesatipo" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="emprestimo" EntityType="emprestimoModel.Store.emprestimo" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="escolaridade" EntityType="emprestimoModel.Store.escolaridade" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="estadociviltipo" EntityType="emprestimoModel.Store.estadociviltipo" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="lancamento" EntityType="emprestimoModel.Store.lancamento" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="lancamentotipo" EntityType="emprestimoModel.Store.lancamentotipo" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="municipio" EntityType="emprestimoModel.Store.municipio" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="orgaoexpedidornome" EntityType="emprestimoModel.Store.orgaoexpedidornome" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="parcela" EntityType="emprestimoModel.Store.parcela" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="prazopagamento" EntityType="emprestimoModel.Store.prazopagamento" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="prestacaoconta" EntityType="emprestimoModel.Store.prestacaoconta" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="statusparcela" EntityType="emprestimoModel.Store.statusparcela" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="tipoemprestimo" EntityType="emprestimoModel.Store.tipoemprestimo" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="usuario" EntityType="emprestimoModel.Store.usuario" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="usuariotipo" EntityType="emprestimoModel.Store.usuariotipo" store:Type="Tables" Schema="emprestimo" />
+          <AssociationSet Name="bloqueado_ibfk_1" Association="emprestimoModel.Store.bloqueado_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="bloqueado" EntitySet="bloqueado" />
+          </AssociationSet>
+          <AssociationSet Name="bloqueado_ibfk_2" Association="emprestimoModel.Store.bloqueado_ibfk_2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="bloqueado" EntitySet="bloqueado" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_1" Association="emprestimoModel.Store.cliente_ibfk_1">
+            <End Role="orgaoexpedidornome" EntitySet="orgaoexpedidornome" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_2" Association="emprestimoModel.Store.cliente_ibfk_2">
+            <End Role="estadociviltipo" EntitySet="estadociviltipo" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_3" Association="emprestimoModel.Store.cliente_ibfk_3">
+            <End Role="area" EntitySet="area" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_4" Association="emprestimoModel.Store.cliente_ibfk_4">
+            <End Role="escolaridade" EntitySet="escolaridade" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_5" Association="emprestimoModel.Store.cliente_ibfk_5">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_6" Association="emprestimoModel.Store.cliente_ibfk_6">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="despesa_ibfk_1" Association="emprestimoModel.Store.despesa_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="despesa" EntitySet="despesa" />
+          </AssociationSet>
+          <AssociationSet Name="despesa_ibfk_2" Association="emprestimoModel.Store.despesa_ibfk_2">
+            <End Role="despesatipo" EntitySet="despesatipo" />
+            <End Role="despesa" EntitySet="despesa" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_1" Association="emprestimoModel.Store.emprestimo_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_2" Association="emprestimoModel.Store.emprestimo_ibfk_2">
+            <End Role="prazopagamento" EntitySet="prazopagamento" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_3" Association="emprestimoModel.Store.emprestimo_ibfk_3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_4" Association="emprestimoModel.Store.emprestimo_ibfk_4">
+            <End Role="tipoemprestimo" EntitySet="tipoemprestimo" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="lancamento_ibfk_1" Association="emprestimoModel.Store.lancamento_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="lancamento" EntitySet="lancamento" />
+          </AssociationSet>
+          <AssociationSet Name="lancamento_ibfk_2" Association="emprestimoModel.Store.lancamento_ibfk_2">
+            <End Role="lancamentotipo" EntitySet="lancamentotipo" />
+            <End Role="lancamento" EntitySet="lancamento" />
+          </AssociationSet>
+          <AssociationSet Name="municipio_ibfk_1" Association="emprestimoModel.Store.municipio_ibfk_1">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="parcela_ibfk_1" Association="emprestimoModel.Store.parcela_ibfk_1">
+            <End Role="emprestimo" EntitySet="emprestimo" />
+            <End Role="parcela" EntitySet="parcela" />
+          </AssociationSet>
+          <AssociationSet Name="parcela_ibfk_2" Association="emprestimoModel.Store.parcela_ibfk_2">
+            <End Role="statusparcela" EntitySet="statusparcela" />
+            <End Role="parcela" EntitySet="parcela" />
+          </AssociationSet>
+          <AssociationSet Name="prestacaoconta_ibfk_1" Association="emprestimoModel.Store.prestacaoconta_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="prestacaoconta" EntitySet="prestacaoconta" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_1" Association="emprestimoModel.Store.usuario_ibfk_1">
+            <End Role="orgaoexpedidornome" EntitySet="orgaoexpedidornome" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_2" Association="emprestimoModel.Store.usuario_ibfk_2">
+            <End Role="estadociviltipo" EntitySet="estadociviltipo" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_3" Association="emprestimoModel.Store.usuario_ibfk_3">
+            <End Role="area" EntitySet="area" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_4" Association="emprestimoModel.Store.usuario_ibfk_4">
+            <End Role="usuariotipo" EntitySet="usuariotipo" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_5" Association="emprestimoModel.Store.usuario_ibfk_5">
+            <End Role="escolaridade" EntitySet="escolaridade" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="municipio_id" Type="uint" Nullable="false" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="bloqueado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="cliente_id" Type="uint" Nullable="false" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="motivo" Type="text" Nullable="false" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="usuario_id" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="area_id" Type="uint" Nullable="false" />
+          <Property Name="bairro_comerc" Type="varchar" MaxLength="50" />
+          <Property Name="bairro_resid" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="char" MaxLength="10" />
+          <Property Name="cep_comerc" Type="char" MaxLength="8" />
+          <Property Name="cep_resid" Type="char" MaxLength="8" />
+          <Property Name="cidade_comerc" Type="uint" />
+          <Property Name="cidade_resid" Type="uint" />
+          <Property Name="cpf" Type="varchar" MaxLength="11" />
+          <Property Name="ctps" Type="varchar" MaxLength="15" />
+          <Property Name="data_expedicao" Type="date" />
+          <Property Name="endereco_comerc" Type="varchar" MaxLength="200" />
+          <Property Name="endereco_resid" Type="varchar" MaxLength="200" />
+          <Property Name="escolaridade_id" Type="uint" />
+          <Property Name="estadoscivistipo_id" Type="uint" />
+          <Property Name="fone_comerc" Type="char" MaxLength="10" />
+          <Property Name="fone_ref1" Type="char" MaxLength="10" />
+          <Property Name="fone_ref2" Type="char" MaxLength="10" />
+          <Property Name="fone_resid" Type="char" MaxLength="10" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="limite" Type="float" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="nome_mae" Type="varchar" MaxLength="150" />
+          <Property Name="nome_pai" Type="varchar" MaxLength="150" />
+          <Property Name="nome_ref1" Type="varchar" MaxLength="150" />
+          <Property Name="nome_ref2" Type="varchar" MaxLength="150" />
+          <Property Name="numcartao" Type="char" MaxLength="16" />
+          <Property Name="orgaosexpedidoresnome_id" Type="uint" />
+          <Property Name="rg" Type="varchar" MaxLength="10" />
+          <Property Name="secao" Type="varchar" MaxLength="4" />
+          <Property Name="sexo" Type="char" MaxLength="1" />
+          <Property Name="situacao" Type="char" MaxLength="1" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="titulo_eleitor" Type="varchar" MaxLength="15" />
+          <Property Name="uf_comerc" Type="char" MaxLength="2" />
+          <Property Name="uf_resid" Type="char" MaxLength="2" />
+          <Property Name="zona" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="despesa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="data" Type="date" Nullable="false" />
+          <Property Name="despesatipo_id" Type="uint" Nullable="false" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="justificativa" Type="varchar" MaxLength="200" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="usuario_id" Type="uint" Nullable="false" />
+          <Property Name="valor" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="despesatipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="posdescricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="emprestimo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="cliente_id" Type="uint" Nullable="false" />
+          <Property Name="data_emprestimo" Type="date" Nullable="false" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="juros" Type="float" Nullable="false" />
+          <Property Name="prazospagamento_id" Type="uint" Nullable="false" />
+          <Property Name="qtde_parcelas" Type="uint" Nullable="false" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="tipoemprestimo_id" Type="uint" />
+          <Property Name="usuario_id" Type="uint" Nullable="false" />
+          <Property Name="valor" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="escolaridade">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="estadociviltipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="lancamento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="data" Type="date" Nullable="false" />
+          <Property Name="fonte" Type="varchar" MaxLength="15" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lancamentotipo_id" Type="uint" Nullable="false" />
+          <Property Name="observacoes" Type="text" />
+          <Property Name="outrasinfos" Type="varchar" MaxLength="100" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="usuario_id" Type="uint" Nullable="false" />
+          <Property Name="valor" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lancamentotipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sinal" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="municipio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="uf" Type="char" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="orgaoexpedidornome">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="parcela">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="data_pagamento" Type="date" />
+          <Property Name="data_vencimento" Type="date" Nullable="false" />
+          <Property Name="emprestimo_id" Type="uint" Nullable="false" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="juros_atraso" Type="float" />
+          <Property Name="multa_atraso" Type="float" />
+          <Property Name="observacoes" Type="text" />
+          <Property Name="sequencial" Type="uint" Nullable="false" />
+          <Property Name="statusparcela_id" Type="uint" Nullable="false" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="valor" Type="float" Nullable="false" />
+          <Property Name="valor_pago" Type="float" />
+        </EntityType>
+        <EntityType Name="prazopagamento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="posdescricao" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="qtde_dias" Type="uint" Nullable="false" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="prestacaoconta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="dataprestacao" Type="date" Nullable="false" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="parcelareabertas" Type="float" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="totaldespesas" Type="float" Nullable="false" />
+          <Property Name="usuario_id" Type="uint" Nullable="false" />
+          <Property Name="valorcancelado" Type="float" Nullable="false" />
+          <Property Name="valordevolvido" Type="float" Nullable="false" />
+          <Property Name="valoremprestado" Type="float" Nullable="false" />
+          <Property Name="valorrecebido" Type="float" Nullable="false" />
+          <Property Name="valorsaida" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="statusparcela">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="tipoemprestimo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="area_id" Type="uint" Nullable="false" />
+          <Property Name="bairro_resid" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="char" MaxLength="10" />
+          <Property Name="cep_resid" Type="char" MaxLength="8" />
+          <Property Name="cidade_resid" Type="varchar" MaxLength="50" />
+          <Property Name="cpf" Type="varchar" MaxLength="11" />
+          <Property Name="ctps" Type="varchar" MaxLength="15" />
+          <Property Name="data_expedicao" Type="date" />
+          <Property Name="endereco_resid" Type="varchar" MaxLength="200" />
+          <Property Name="escolaridade_id" Type="uint" />
+          <Property Name="estadoscivistipo_id" Type="uint" />
+          <Property Name="fone_resid" Type="char" MaxLength="10" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="varchar" MaxLength="16" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="nome_mae" Type="varchar" MaxLength="150" />
+          <Property Name="nome_pai" Type="varchar" MaxLength="150" />
+          <Property Name="orgaosexpedidoresnome_id" Type="uint" />
+          <Property Name="rg" Type="varchar" MaxLength="10" />
+          <Property Name="secao" Type="varchar" MaxLength="4" />
+          <Property Name="senha" Type="varchar" MaxLength="50" />
+          <Property Name="sexo" Type="char" MaxLength="1" />
+          <Property Name="situacao" Type="char" MaxLength="1" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="titulo_eleitor" Type="varchar" MaxLength="15" />
+          <Property Name="uf_resid" Type="char" MaxLength="2" />
+          <Property Name="usuariotipo_id" Type="uint" Nullable="false" />
+          <Property Name="zona" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="usuariotipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+        </EntityType>
+        <Association Name="bloqueado_ibfk_1">
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="1" />
+          <End Role="bloqueado" Type="emprestimoModel.Store.bloqueado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bloqueado">
+              <PropertyRef Name="cliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="bloqueado_ibfk_2">
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="1" />
+          <End Role="bloqueado" Type="emprestimoModel.Store.bloqueado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bloqueado">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_1">
+          <End Role="orgaoexpedidornome" Type="emprestimoModel.Store.orgaoexpedidornome" Multiplicity="0..1" />
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orgaoexpedidornome">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="orgaosexpedidoresnome_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_2">
+          <End Role="estadociviltipo" Type="emprestimoModel.Store.estadociviltipo" Multiplicity="0..1" />
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadociviltipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="estadoscivistipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_3">
+          <End Role="area" Type="emprestimoModel.Store.area" Multiplicity="1" />
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="area_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_4">
+          <End Role="escolaridade" Type="emprestimoModel.Store.escolaridade" Multiplicity="0..1" />
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="escolaridade">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="escolaridade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_5">
+          <End Role="municipio" Type="emprestimoModel.Store.municipio" Multiplicity="0..1" />
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="cidade_resid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_6">
+          <End Role="municipio" Type="emprestimoModel.Store.municipio" Multiplicity="0..1" />
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="cidade_comerc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="despesa_ibfk_1">
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="1" />
+          <End Role="despesa" Type="emprestimoModel.Store.despesa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="despesa">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="despesa_ibfk_2">
+          <End Role="despesatipo" Type="emprestimoModel.Store.despesatipo" Multiplicity="1" />
+          <End Role="despesa" Type="emprestimoModel.Store.despesa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="despesatipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="despesa">
+              <PropertyRef Name="despesatipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_1">
+          <End Role="cliente" Type="emprestimoModel.Store.cliente" Multiplicity="1" />
+          <End Role="emprestimo" Type="emprestimoModel.Store.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="cliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_2">
+          <End Role="prazopagamento" Type="emprestimoModel.Store.prazopagamento" Multiplicity="1" />
+          <End Role="emprestimo" Type="emprestimoModel.Store.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prazopagamento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="prazospagamento_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_3">
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="1" />
+          <End Role="emprestimo" Type="emprestimoModel.Store.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_4">
+          <End Role="tipoemprestimo" Type="emprestimoModel.Store.tipoemprestimo" Multiplicity="0..1" />
+          <End Role="emprestimo" Type="emprestimoModel.Store.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoemprestimo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="tipoemprestimo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="lancamento_ibfk_1">
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="1" />
+          <End Role="lancamento" Type="emprestimoModel.Store.lancamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lancamento">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="lancamento_ibfk_2">
+          <End Role="lancamentotipo" Type="emprestimoModel.Store.lancamentotipo" Multiplicity="1" />
+          <End Role="lancamento" Type="emprestimoModel.Store.lancamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lancamentotipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lancamento">
+              <PropertyRef Name="lancamentotipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="municipio_ibfk_1">
+          <End Role="municipio" Type="emprestimoModel.Store.municipio" Multiplicity="1" />
+          <End Role="area" Type="emprestimoModel.Store.area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="municipio_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="parcela_ibfk_1">
+          <End Role="emprestimo" Type="emprestimoModel.Store.emprestimo" Multiplicity="1" />
+          <End Role="parcela" Type="emprestimoModel.Store.parcela" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="emprestimo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="parcela">
+              <PropertyRef Name="emprestimo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="parcela_ibfk_2">
+          <End Role="statusparcela" Type="emprestimoModel.Store.statusparcela" Multiplicity="1" />
+          <End Role="parcela" Type="emprestimoModel.Store.parcela" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusparcela">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="parcela">
+              <PropertyRef Name="statusparcela_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="prestacaoconta_ibfk_1">
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="1" />
+          <End Role="prestacaoconta" Type="emprestimoModel.Store.prestacaoconta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestacaoconta">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_1">
+          <End Role="orgaoexpedidornome" Type="emprestimoModel.Store.orgaoexpedidornome" Multiplicity="0..1" />
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orgaoexpedidornome">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="orgaosexpedidoresnome_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_2">
+          <End Role="estadociviltipo" Type="emprestimoModel.Store.estadociviltipo" Multiplicity="0..1" />
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadociviltipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="estadoscivistipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_3">
+          <End Role="area" Type="emprestimoModel.Store.area" Multiplicity="1" />
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="area_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_4">
+          <End Role="usuariotipo" Type="emprestimoModel.Store.usuariotipo" Multiplicity="1" />
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuariotipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="usuariotipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_5">
+          <End Role="escolaridade" Type="emprestimoModel.Store.escolaridade" Multiplicity="0..1" />
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="escolaridade">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="escolaridade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmprestimoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EmprestimoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="area" EntityType="EmprestimoModel.area" />
+          <EntitySet Name="bloqueado" EntityType="EmprestimoModel.bloqueado" />
+          <EntitySet Name="cliente" EntityType="EmprestimoModel.cliente" />
+          <EntitySet Name="despesa" EntityType="EmprestimoModel.despesa" />
+          <EntitySet Name="DespesaTipoSet" EntityType="EmprestimoModel.DespesaTipo" />
+          <EntitySet Name="emprestimo" EntityType="EmprestimoModel.emprestimo" />
+          <EntitySet Name="escolaridade" EntityType="EmprestimoModel.escolaridade" />
+          <EntitySet Name="estadociviltipo" EntityType="EmprestimoModel.estadociviltipo" />
+          <EntitySet Name="lancamento" EntityType="EmprestimoModel.lancamento" />
+          <EntitySet Name="lancamentotipo" EntityType="EmprestimoModel.lancamentotipo" />
+          <EntitySet Name="municipio" EntityType="EmprestimoModel.municipio" />
+          <EntitySet Name="orgaoexpedidornome" EntityType="EmprestimoModel.orgaoexpedidornome" />
+          <EntitySet Name="parcela" EntityType="EmprestimoModel.parcela" />
+          <EntitySet Name="prazopagamento" EntityType="EmprestimoModel.prazopagamento" />
+          <EntitySet Name="prestacaoconta" EntityType="EmprestimoModel.prestacaoconta" />
+          <EntitySet Name="statusparcela" EntityType="EmprestimoModel.statusparcela" />
+          <EntitySet Name="tipoemprestimo" EntityType="EmprestimoModel.tipoemprestimo" />
+          <EntitySet Name="UsuarioSet" EntityType="EmprestimoModel.Usuario" />
+          <EntitySet Name="UsuarioTipoSet" EntityType="EmprestimoModel.UsuarioTipo" />
+          <AssociationSet Name="cliente_ibfk_3" Association="EmprestimoModel.cliente_ibfk_3">
+            <End Role="area" EntitySet="area" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="municipio_ibfk_1" Association="EmprestimoModel.municipio_ibfk_1">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_3" Association="EmprestimoModel.usuario_ibfk_3">
+            <End Role="area" EntitySet="area" />
+            <End Role="usuario" EntitySet="UsuarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="bloqueado_ibfk_1" Association="EmprestimoModel.bloqueado_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="bloqueado" EntitySet="bloqueado" />
+          </AssociationSet>
+          <AssociationSet Name="bloqueado_ibfk_2" Association="EmprestimoModel.bloqueado_ibfk_2">
+            <End Role="usuario" EntitySet="UsuarioSet" />
+            <End Role="bloqueado" EntitySet="bloqueado" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_1" Association="EmprestimoModel.cliente_ibfk_1">
+            <End Role="orgaoexpedidornome" EntitySet="orgaoexpedidornome" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_2" Association="EmprestimoModel.cliente_ibfk_2">
+            <End Role="estadociviltipo" EntitySet="estadociviltipo" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_4" Association="EmprestimoModel.cliente_ibfk_4">
+            <End Role="escolaridade" EntitySet="escolaridade" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_5" Association="EmprestimoModel.cliente_ibfk_5">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_ibfk_6" Association="EmprestimoModel.cliente_ibfk_6">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_1" Association="EmprestimoModel.emprestimo_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="despesa_ibfk_1" Association="EmprestimoModel.despesa_ibfk_1">
+            <End Role="usuario" EntitySet="UsuarioSet" />
+            <End Role="despesa" EntitySet="despesa" />
+          </AssociationSet>
+          <AssociationSet Name="despesa_ibfk_2" Association="EmprestimoModel.despesa_ibfk_2">
+            <End Role="despesatipo" EntitySet="DespesaTipoSet" />
+            <End Role="despesa" EntitySet="despesa" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_2" Association="EmprestimoModel.emprestimo_ibfk_2">
+            <End Role="prazopagamento" EntitySet="prazopagamento" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_3" Association="EmprestimoModel.emprestimo_ibfk_3">
+            <End Role="usuario" EntitySet="UsuarioSet" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="emprestimo_ibfk_4" Association="EmprestimoModel.emprestimo_ibfk_4">
+            <End Role="tipoemprestimo" EntitySet="tipoemprestimo" />
+            <End Role="emprestimo" EntitySet="emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="parcela_ibfk_1" Association="EmprestimoModel.parcela_ibfk_1">
+            <End Role="emprestimo" EntitySet="emprestimo" />
+            <End Role="parcela" EntitySet="parcela" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_5" Association="EmprestimoModel.usuario_ibfk_5">
+            <End Role="escolaridade" EntitySet="escolaridade" />
+            <End Role="usuario" EntitySet="UsuarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_2" Association="EmprestimoModel.usuario_ibfk_2">
+            <End Role="estadociviltipo" EntitySet="estadociviltipo" />
+            <End Role="usuario" EntitySet="UsuarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="lancamento_ibfk_1" Association="EmprestimoModel.lancamento_ibfk_1">
+            <End Role="usuario" EntitySet="UsuarioSet" />
+            <End Role="lancamento" EntitySet="lancamento" />
+          </AssociationSet>
+          <AssociationSet Name="lancamento_ibfk_2" Association="EmprestimoModel.lancamento_ibfk_2">
+            <End Role="lancamentotipo" EntitySet="lancamentotipo" />
+            <End Role="lancamento" EntitySet="lancamento" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_1" Association="EmprestimoModel.usuario_ibfk_1">
+            <End Role="orgaoexpedidornome" EntitySet="orgaoexpedidornome" />
+            <End Role="usuario" EntitySet="UsuarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="parcela_ibfk_2" Association="EmprestimoModel.parcela_ibfk_2">
+            <End Role="statusparcela" EntitySet="statusparcela" />
+            <End Role="parcela" EntitySet="parcela" />
+          </AssociationSet>
+          <AssociationSet Name="prestacaoconta_ibfk_1" Association="EmprestimoModel.prestacaoconta_ibfk_1">
+            <End Role="usuario" EntitySet="UsuarioSet" />
+            <End Role="prestacaoconta" EntitySet="prestacaoconta" />
+          </AssociationSet>
+          <AssociationSet Name="usuario_ibfk_4" Association="EmprestimoModel.usuario_ibfk_4">
+            <End Role="usuariotipo" EntitySet="UsuarioTipoSet" />
+            <End Role="usuario" EntitySet="UsuarioSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="municipio_id" Type="Int64" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_3" FromRole="area" ToRole="cliente" />
+          <NavigationProperty Name="municipio" Relationship="EmprestimoModel.municipio_ibfk_1" FromRole="area" ToRole="municipio" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_3" FromRole="area" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="bloqueado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="cliente_id" Type="Int64" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="motivo" Type="String" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="usuario_id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.bloqueado_ibfk_1" FromRole="bloqueado" ToRole="cliente" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.bloqueado_ibfk_2" FromRole="bloqueado" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="area_id" Type="Int64" Nullable="false" />
+          <Property Name="bairro_comerc" Type="String" />
+          <Property Name="bairro_resid" Type="String" />
+          <Property Name="celular" Type="String" />
+          <Property Name="cep_comerc" Type="String" />
+          <Property Name="cep_resid" Type="String" />
+          <Property Name="cidade_comerc" Type="Int64" />
+          <Property Name="cidade_resid" Type="Int64" />
+          <Property Name="cpf" Type="String" />
+          <Property Name="ctps" Type="String" />
+          <Property Name="data_expedicao" Type="DateTime" />
+          <Property Name="endereco_comerc" Type="String" />
+          <Property Name="endereco_resid" Type="String" />
+          <Property Name="escolaridade_id" Type="Int64" />
+          <Property Name="estadoscivistipo_id" Type="Int64" />
+          <Property Name="fone_comerc" Type="String" />
+          <Property Name="fone_ref1" Type="String" />
+          <Property Name="fone_ref2" Type="String" />
+          <Property Name="fone_resid" Type="String" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="limite" Type="Single" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="nome_mae" Type="String" />
+          <Property Name="nome_pai" Type="String" />
+          <Property Name="nome_ref1" Type="String" />
+          <Property Name="nome_ref2" Type="String" />
+          <Property Name="numcartao" Type="String" />
+          <Property Name="orgaosexpedidoresnome_id" Type="Int64" />
+          <Property Name="rg" Type="String" />
+          <Property Name="secao" Type="String" />
+          <Property Name="sexo" Type="String" />
+          <Property Name="situacao" Type="String" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="titulo_eleitor" Type="String" />
+          <Property Name="uf_comerc" Type="String" />
+          <Property Name="uf_resid" Type="String" />
+          <Property Name="zona" Type="String" />
+          <NavigationProperty Name="area" Relationship="EmprestimoModel.cliente_ibfk_3" FromRole="cliente" ToRole="area" />
+          <NavigationProperty Name="bloqueado" Relationship="EmprestimoModel.bloqueado_ibfk_1" FromRole="cliente" ToRole="bloqueado" />
+          <NavigationProperty Name="orgaoexpedidornome" Relationship="EmprestimoModel.cliente_ibfk_1" FromRole="cliente" ToRole="orgaoexpedidornome" />
+          <NavigationProperty Name="estadociviltipo" Relationship="EmprestimoModel.cliente_ibfk_2" FromRole="cliente" ToRole="estadociviltipo" />
+          <NavigationProperty Name="escolaridade" Relationship="EmprestimoModel.cliente_ibfk_4" FromRole="cliente" ToRole="escolaridade" />
+          <NavigationProperty Name="municipio" Relationship="EmprestimoModel.cliente_ibfk_5" FromRole="cliente" ToRole="municipio" />
+          <NavigationProperty Name="municipio1" Relationship="EmprestimoModel.cliente_ibfk_6" FromRole="cliente" ToRole="municipio" />
+          <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_1" FromRole="cliente" ToRole="emprestimo" />
+        </EntityType>
+        <EntityType Name="despesa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="data" Type="DateTime" Nullable="false" />
+          <Property Name="despesatipo_id" Type="Int64" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="justificativa" Type="String" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="usuario_id" Type="Int64" Nullable="false" />
+          <Property Name="valor" Type="Single" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.despesa_ibfk_1" FromRole="despesa" ToRole="usuario" />
+          <NavigationProperty Name="despesatipo" Relationship="EmprestimoModel.despesa_ibfk_2" FromRole="despesa" ToRole="despesatipo" />
+        </EntityType>
+        <EntityType Name="DespesaTipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="posdescricao" Type="String" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="despesa" Relationship="EmprestimoModel.despesa_ibfk_2" FromRole="despesatipo" ToRole="despesa" />
+        </EntityType>
+        <EntityType Name="emprestimo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="cliente_id" Type="Int64" Nullable="false" />
+          <Property Name="data_emprestimo" Type="DateTime" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="juros" Type="Single" Nullable="false" />
+          <Property Name="prazospagamento_id" Type="Int64" Nullable="false" />
+          <Property Name="qtde_parcelas" Type="Int64" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="tipoemprestimo_id" Type="Int64" />
+          <Property Name="usuario_id" Type="Int64" Nullable="false" />
+          <Property Name="valor" Type="Single" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.emprestimo_ibfk_1" FromRole="emprestimo" ToRole="cliente" />
+          <NavigationProperty Name="prazopagamento" Relationship="EmprestimoModel.emprestimo_ibfk_2" FromRole="emprestimo" ToRole="prazopagamento" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.emprestimo_ibfk_3" FromRole="emprestimo" ToRole="usuario" />
+          <NavigationProperty Name="tipoemprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_4" FromRole="emprestimo" ToRole="tipoemprestimo" />
+          <NavigationProperty Name="parcela" Relationship="EmprestimoModel.parcela_ibfk_1" FromRole="emprestimo" ToRole="parcela" />
+        </EntityType>
+        <EntityType Name="escolaridade">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_4" FromRole="escolaridade" ToRole="cliente" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_5" FromRole="escolaridade" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="estadociviltipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_2" FromRole="estadociviltipo" ToRole="cliente" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_2" FromRole="estadociviltipo" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="lancamento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="data" Type="DateTime" Nullable="false" />
+          <Property Name="fonte" Type="String" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lancamentotipo_id" Type="Int64" Nullable="false" />
+          <Property Name="observacoes" Type="String" />
+          <Property Name="outrasinfos" Type="String" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="usuario_id" Type="Int64" Nullable="false" />
+          <Property Name="valor" Type="Single" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.lancamento_ibfk_1" FromRole="lancamento" ToRole="usuario" />
+          <NavigationProperty Name="lancamentotipo" Relationship="EmprestimoModel.lancamento_ibfk_2" FromRole="lancamento" ToRole="lancamentotipo" />
+        </EntityType>
+        <EntityType Name="lancamentotipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sinal" Type="String" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="lancamento" Relationship="EmprestimoModel.lancamento_ibfk_2" FromRole="lancamentotipo" ToRole="lancamento" />
+        </EntityType>
+        <EntityType Name="municipio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="uf" Type="String" Nullable="false" />
+          <NavigationProperty Name="area" Relationship="EmprestimoModel.municipio_ibfk_1" FromRole="municipio" ToRole="area" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_5" FromRole="municipio" ToRole="cliente" />
+          <NavigationProperty Name="cliente1" Relationship="EmprestimoModel.cliente_ibfk_6" FromRole="municipio" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="orgaoexpedidornome">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_1" FromRole="orgaoexpedidornome" ToRole="cliente" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_1" FromRole="orgaoexpedidornome" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="parcela">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="data_pagamento" Type="DateTime" />
+          <Property Name="data_vencimento" Type="DateTime" Nullable="false" />
+          <Property Name="emprestimo_id" Type="Int64" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="juros_atraso" Type="Single" />
+          <Property Name="multa_atraso" Type="Single" />
+          <Property Name="observacoes" Type="String" />
+          <Property Name="sequencial" Type="Int64" Nullable="false" />
+          <Property Name="statusparcela_id" Type="Int64" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="valor" Type="Single" Nullable="false" />
+          <Property Name="valor_pago" Type="Single" />
+          <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.parcela_ibfk_1" FromRole="parcela" ToRole="emprestimo" />
+          <NavigationProperty Name="statusparcela" Relationship="EmprestimoModel.parcela_ibfk_2" FromRole="parcela" ToRole="statusparcela" />
+        </EntityType>
+        <EntityType Name="prazopagamento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="posdescricao" Type="String" Nullable="false" />
+          <Property Name="qtde_dias" Type="Int64" Nullable="false" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_2" FromRole="prazopagamento" ToRole="emprestimo" />
+        </EntityType>
+        <EntityType Name="prestacaoconta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="dataprestacao" Type="DateTime" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="parcelareabertas" Type="Single" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="totaldespesas" Type="Single" Nullable="false" />
+          <Property Name="usuario_id" Type="Int64" Nullable="false" />
+          <Property Name="valorcancelado" Type="Single" Nullable="false" />
+          <Property Name="valordevolvido" Type="Single" Nullable="false" />
+          <Property Name="valoremprestado" Type="Single" Nullable="false" />
+          <Property Name="valorrecebido" Type="Single" Nullable="false" />
+          <Property Name="valorsaida" Type="Single" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.prestacaoconta_ibfk_1" FromRole="prestacaoconta" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="statusparcela">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="parcela" Relationship="EmprestimoModel.parcela_ibfk_2" FromRole="statusparcela" ToRole="parcela" />
+        </EntityType>
+        <EntityType Name="tipoemprestimo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_4" FromRole="tipoemprestimo" ToRole="emprestimo" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="area_id" Type="Int64" Nullable="false" />
+          <Property Name="bairro_resid" Type="String" />
+          <Property Name="celular" Type="String" />
+          <Property Name="cep_resid" Type="String" />
+          <Property Name="cidade_resid" Type="String" />
+          <Property Name="cpf" Type="String" />
+          <Property Name="ctps" Type="String" />
+          <Property Name="data_expedicao" Type="DateTime" />
+          <Property Name="endereco_resid" Type="String" />
+          <Property Name="escolaridade_id" Type="Int64" />
+          <Property Name="estadoscivistipo_id" Type="Int64" />
+          <Property Name="fone_resid" Type="String" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="nome_mae" Type="String" />
+          <Property Name="nome_pai" Type="String" />
+          <Property Name="orgaosexpedidoresnome_id" Type="Int64" />
+          <Property Name="rg" Type="String" />
+          <Property Name="secao" Type="String" />
+          <Property Name="senha" Type="String" />
+          <Property Name="sexo" Type="String" />
+          <Property Name="situacao" Type="String" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="titulo_eleitor" Type="String" />
+          <Property Name="uf_resid" Type="String" />
+          <Property Name="usuariotipo_id" Type="Int64" Nullable="false" />
+          <Property Name="zona" Type="String" />
+          <NavigationProperty Name="area" Relationship="EmprestimoModel.usuario_ibfk_3" FromRole="usuario" ToRole="area" />
+          <NavigationProperty Name="bloqueado" Relationship="EmprestimoModel.bloqueado_ibfk_2" FromRole="usuario" ToRole="bloqueado" />
+          <NavigationProperty Name="despesa" Relationship="EmprestimoModel.despesa_ibfk_1" FromRole="usuario" ToRole="despesa" />
+          <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_3" FromRole="usuario" ToRole="emprestimo" />
+          <NavigationProperty Name="escolaridade" Relationship="EmprestimoModel.usuario_ibfk_5" FromRole="usuario" ToRole="escolaridade" />
+          <NavigationProperty Name="estadociviltipo" Relationship="EmprestimoModel.usuario_ibfk_2" FromRole="usuario" ToRole="estadociviltipo" />
+          <NavigationProperty Name="lancamento" Relationship="EmprestimoModel.lancamento_ibfk_1" FromRole="usuario" ToRole="lancamento" />
+          <NavigationProperty Name="orgaoexpedidornome" Relationship="EmprestimoModel.usuario_ibfk_1" FromRole="usuario" ToRole="orgaoexpedidornome" />
+          <NavigationProperty Name="prestacaoconta" Relationship="EmprestimoModel.prestacaoconta_ibfk_1" FromRole="usuario" ToRole="prestacaoconta" />
+          <NavigationProperty Name="usuariotipo" Relationship="EmprestimoModel.usuario_ibfk_4" FromRole="usuario" ToRole="usuariotipo" />
+        </EntityType>
+        <EntityType Name="UsuarioTipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
+          <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_4" FromRole="usuariotipo" ToRole="usuario" />
+        </EntityType>
+        <Association Name="cliente_ibfk_3">
+          <End Role="area" Type="EmprestimoModel.area" Multiplicity="1" />
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="area_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="municipio_ibfk_1">
+          <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="1" />
+          <End Role="area" Type="EmprestimoModel.area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="municipio_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_3">
+          <End Role="area" Type="EmprestimoModel.area" Multiplicity="1" />
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="area_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="bloqueado_ibfk_1">
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="1" />
+          <End Role="bloqueado" Type="EmprestimoModel.bloqueado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bloqueado">
+              <PropertyRef Name="cliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="bloqueado_ibfk_2">
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="1" />
+          <End Role="bloqueado" Type="EmprestimoModel.bloqueado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bloqueado">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_1">
+          <End Role="orgaoexpedidornome" Type="EmprestimoModel.orgaoexpedidornome" Multiplicity="0..1" />
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orgaoexpedidornome">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="orgaosexpedidoresnome_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_2">
+          <End Role="estadociviltipo" Type="EmprestimoModel.estadociviltipo" Multiplicity="0..1" />
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadociviltipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="estadoscivistipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_4">
+          <End Role="escolaridade" Type="EmprestimoModel.escolaridade" Multiplicity="0..1" />
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="escolaridade">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="escolaridade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_5">
+          <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="0..1" />
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="cidade_resid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_ibfk_6">
+          <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="0..1" />
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="cidade_comerc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_1">
+          <End Role="cliente" Type="EmprestimoModel.cliente" Multiplicity="1" />
+          <End Role="emprestimo" Type="EmprestimoModel.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="cliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="despesa_ibfk_1">
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="1" />
+          <End Role="despesa" Type="EmprestimoModel.despesa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="despesa">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="despesa_ibfk_2">
+          <End Role="despesatipo" Type="EmprestimoModel.DespesaTipo" Multiplicity="1" />
+          <End Role="despesa" Type="EmprestimoModel.despesa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="despesatipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="despesa">
+              <PropertyRef Name="despesatipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_2">
+          <End Role="prazopagamento" Type="EmprestimoModel.prazopagamento" Multiplicity="1" />
+          <End Role="emprestimo" Type="EmprestimoModel.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prazopagamento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="prazospagamento_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_3">
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="1" />
+          <End Role="emprestimo" Type="EmprestimoModel.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="emprestimo_ibfk_4">
+          <End Role="tipoemprestimo" Type="EmprestimoModel.tipoemprestimo" Multiplicity="0..1" />
+          <End Role="emprestimo" Type="EmprestimoModel.emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoemprestimo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="emprestimo">
+              <PropertyRef Name="tipoemprestimo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="parcela_ibfk_1">
+          <End Role="emprestimo" Type="EmprestimoModel.emprestimo" Multiplicity="1" />
+          <End Role="parcela" Type="EmprestimoModel.parcela" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="emprestimo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="parcela">
+              <PropertyRef Name="emprestimo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_5">
+          <End Role="escolaridade" Type="EmprestimoModel.escolaridade" Multiplicity="0..1" />
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="escolaridade">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="escolaridade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_2">
+          <End Role="estadociviltipo" Type="EmprestimoModel.estadociviltipo" Multiplicity="0..1" />
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadociviltipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="estadoscivistipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="lancamento_ibfk_1">
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="1" />
+          <End Role="lancamento" Type="EmprestimoModel.lancamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lancamento">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="lancamento_ibfk_2">
+          <End Role="lancamentotipo" Type="EmprestimoModel.lancamentotipo" Multiplicity="1" />
+          <End Role="lancamento" Type="EmprestimoModel.lancamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lancamentotipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lancamento">
+              <PropertyRef Name="lancamentotipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_1">
+          <End Role="orgaoexpedidornome" Type="EmprestimoModel.orgaoexpedidornome" Multiplicity="0..1" />
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orgaoexpedidornome">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="orgaosexpedidoresnome_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="parcela_ibfk_2">
+          <End Role="statusparcela" Type="EmprestimoModel.statusparcela" Multiplicity="1" />
+          <End Role="parcela" Type="EmprestimoModel.parcela" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusparcela">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="parcela">
+              <PropertyRef Name="statusparcela_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="prestacaoconta_ibfk_1">
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="1" />
+          <End Role="prestacaoconta" Type="EmprestimoModel.prestacaoconta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestacaoconta">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuario_ibfk_4">
+          <End Role="usuariotipo" Type="EmprestimoModel.UsuarioTipo" Multiplicity="1" />
+          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuariotipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="usuariotipo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="emprestimoModelStoreContainer" CdmEntityContainer="EmprestimoEntities">
+          <EntitySetMapping Name="area"><EntityTypeMapping TypeName="EmprestimoModel.area"><MappingFragment StoreEntitySet="area">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="municipio_id" ColumnName="municipio_id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="bloqueado"><EntityTypeMapping TypeName="EmprestimoModel.bloqueado"><MappingFragment StoreEntitySet="bloqueado">
+            <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="motivo" ColumnName="motivo" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cliente"><EntityTypeMapping TypeName="EmprestimoModel.cliente"><MappingFragment StoreEntitySet="cliente">
+            <ScalarProperty Name="area_id" ColumnName="area_id" />
+            <ScalarProperty Name="bairro_comerc" ColumnName="bairro_comerc" />
+            <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />
+            <ScalarProperty Name="celular" ColumnName="celular" />
+            <ScalarProperty Name="cep_comerc" ColumnName="cep_comerc" />
+            <ScalarProperty Name="cep_resid" ColumnName="cep_resid" />
+            <ScalarProperty Name="cidade_comerc" ColumnName="cidade_comerc" />
+            <ScalarProperty Name="cidade_resid" ColumnName="cidade_resid" />
+            <ScalarProperty Name="cpf" ColumnName="cpf" />
+            <ScalarProperty Name="ctps" ColumnName="ctps" />
+            <ScalarProperty Name="data_expedicao" ColumnName="data_expedicao" />
+            <ScalarProperty Name="endereco_comerc" ColumnName="endereco_comerc" />
+            <ScalarProperty Name="endereco_resid" ColumnName="endereco_resid" />
+            <ScalarProperty Name="escolaridade_id" ColumnName="escolaridade_id" />
+            <ScalarProperty Name="estadoscivistipo_id" ColumnName="estadoscivistipo_id" />
+            <ScalarProperty Name="fone_comerc" ColumnName="fone_comerc" />
+            <ScalarProperty Name="fone_ref1" ColumnName="fone_ref1" />
+            <ScalarProperty Name="fone_ref2" ColumnName="fone_ref2" />
+            <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="limite" ColumnName="limite" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
+            <ScalarProperty Name="nome_pai" ColumnName="nome_pai" />
+            <ScalarProperty Name="nome_ref1" ColumnName="nome_ref1" />
+            <ScalarProperty Name="nome_ref2" ColumnName="nome_ref2" />
+            <ScalarProperty Name="numcartao" ColumnName="numcartao" />
+            <ScalarProperty Name="orgaosexpedidoresnome_id" ColumnName="orgaosexpedidoresnome_id" />
+            <ScalarProperty Name="rg" ColumnName="rg" />
+            <ScalarProperty Name="secao" ColumnName="secao" />
+            <ScalarProperty Name="sexo" ColumnName="sexo" />
+            <ScalarProperty Name="situacao" ColumnName="situacao" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="titulo_eleitor" ColumnName="titulo_eleitor" />
+            <ScalarProperty Name="uf_comerc" ColumnName="uf_comerc" />
+            <ScalarProperty Name="uf_resid" ColumnName="uf_resid" />
+            <ScalarProperty Name="zona" ColumnName="zona" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="despesa"><EntityTypeMapping TypeName="EmprestimoModel.despesa"><MappingFragment StoreEntitySet="despesa">
+            <ScalarProperty Name="data" ColumnName="data" />
+            <ScalarProperty Name="despesatipo_id" ColumnName="despesatipo_id" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="justificativa" ColumnName="justificativa" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+            <ScalarProperty Name="valor" ColumnName="valor" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DespesaTipoSet"><EntityTypeMapping TypeName="EmprestimoModel.DespesaTipo"><MappingFragment StoreEntitySet="despesatipo">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="emprestimo"><EntityTypeMapping TypeName="EmprestimoModel.emprestimo"><MappingFragment StoreEntitySet="emprestimo">
+            <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
+            <ScalarProperty Name="data_emprestimo" ColumnName="data_emprestimo" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="juros" ColumnName="juros" />
+            <ScalarProperty Name="prazospagamento_id" ColumnName="prazospagamento_id" />
+            <ScalarProperty Name="qtde_parcelas" ColumnName="qtde_parcelas" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="tipoemprestimo_id" ColumnName="tipoemprestimo_id" />
+            <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+            <ScalarProperty Name="valor" ColumnName="valor" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="escolaridade"><EntityTypeMapping TypeName="EmprestimoModel.escolaridade"><MappingFragment StoreEntitySet="escolaridade">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="estadociviltipo"><EntityTypeMapping TypeName="EmprestimoModel.estadociviltipo"><MappingFragment StoreEntitySet="estadociviltipo">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="lancamento"><EntityTypeMapping TypeName="EmprestimoModel.lancamento"><MappingFragment StoreEntitySet="lancamento">
+            <ScalarProperty Name="data" ColumnName="data" />
+            <ScalarProperty Name="fonte" ColumnName="fonte" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="lancamentotipo_id" ColumnName="lancamentotipo_id" />
+            <ScalarProperty Name="observacoes" ColumnName="observacoes" />
+            <ScalarProperty Name="outrasinfos" ColumnName="outrasinfos" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+            <ScalarProperty Name="valor" ColumnName="valor" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="lancamentotipo"><EntityTypeMapping TypeName="EmprestimoModel.lancamentotipo"><MappingFragment StoreEntitySet="lancamentotipo">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="sinal" ColumnName="sinal" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="municipio"><EntityTypeMapping TypeName="EmprestimoModel.municipio"><MappingFragment StoreEntitySet="municipio">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="uf" ColumnName="uf" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="orgaoexpedidornome"><EntityTypeMapping TypeName="EmprestimoModel.orgaoexpedidornome"><MappingFragment StoreEntitySet="orgaoexpedidornome">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="parcela"><EntityTypeMapping TypeName="EmprestimoModel.parcela"><MappingFragment StoreEntitySet="parcela">
+            <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
+            <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
+            <ScalarProperty Name="emprestimo_id" ColumnName="emprestimo_id" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="juros_atraso" ColumnName="juros_atraso" />
+            <ScalarProperty Name="multa_atraso" ColumnName="multa_atraso" />
+            <ScalarProperty Name="observacoes" ColumnName="observacoes" />
+            <ScalarProperty Name="sequencial" ColumnName="sequencial" />
+            <ScalarProperty Name="statusparcela_id" ColumnName="statusparcela_id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="valor" ColumnName="valor" />
+            <ScalarProperty Name="valor_pago" ColumnName="valor_pago" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="prazopagamento"><EntityTypeMapping TypeName="EmprestimoModel.prazopagamento"><MappingFragment StoreEntitySet="prazopagamento">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
+            <ScalarProperty Name="qtde_dias" ColumnName="qtde_dias" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="prestacaoconta"><EntityTypeMapping TypeName="EmprestimoModel.prestacaoconta"><MappingFragment StoreEntitySet="prestacaoconta">
+            <ScalarProperty Name="dataprestacao" ColumnName="dataprestacao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="parcelareabertas" ColumnName="parcelareabertas" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="totaldespesas" ColumnName="totaldespesas" />
+            <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+            <ScalarProperty Name="valorcancelado" ColumnName="valorcancelado" />
+            <ScalarProperty Name="valordevolvido" ColumnName="valordevolvido" />
+            <ScalarProperty Name="valoremprestado" ColumnName="valoremprestado" />
+            <ScalarProperty Name="valorrecebido" ColumnName="valorrecebido" />
+            <ScalarProperty Name="valorsaida" ColumnName="valorsaida" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="statusparcela"><EntityTypeMapping TypeName="EmprestimoModel.statusparcela"><MappingFragment StoreEntitySet="statusparcela">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tipoemprestimo"><EntityTypeMapping TypeName="EmprestimoModel.tipoemprestimo"><MappingFragment StoreEntitySet="tipoemprestimo">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UsuarioSet"><EntityTypeMapping TypeName="EmprestimoModel.Usuario"><MappingFragment StoreEntitySet="usuario">
+            <ScalarProperty Name="area_id" ColumnName="area_id" />
+            <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />
+            <ScalarProperty Name="celular" ColumnName="celular" />
+            <ScalarProperty Name="cep_resid" ColumnName="cep_resid" />
+            <ScalarProperty Name="cidade_resid" ColumnName="cidade_resid" />
+            <ScalarProperty Name="cpf" ColumnName="cpf" />
+            <ScalarProperty Name="ctps" ColumnName="ctps" />
+            <ScalarProperty Name="data_expedicao" ColumnName="data_expedicao" />
+            <ScalarProperty Name="endereco_resid" ColumnName="endereco_resid" />
+            <ScalarProperty Name="escolaridade_id" ColumnName="escolaridade_id" />
+            <ScalarProperty Name="estadoscivistipo_id" ColumnName="estadoscivistipo_id" />
+            <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="login" ColumnName="login" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
+            <ScalarProperty Name="nome_pai" ColumnName="nome_pai" />
+            <ScalarProperty Name="orgaosexpedidoresnome_id" ColumnName="orgaosexpedidoresnome_id" />
+            <ScalarProperty Name="rg" ColumnName="rg" />
+            <ScalarProperty Name="secao" ColumnName="secao" />
+            <ScalarProperty Name="senha" ColumnName="senha" />
+            <ScalarProperty Name="sexo" ColumnName="sexo" />
+            <ScalarProperty Name="situacao" ColumnName="situacao" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+            <ScalarProperty Name="titulo_eleitor" ColumnName="titulo_eleitor" />
+            <ScalarProperty Name="uf_resid" ColumnName="uf_resid" />
+            <ScalarProperty Name="usuariotipo_id" ColumnName="usuariotipo_id" />
+            <ScalarProperty Name="zona" ColumnName="zona" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UsuarioTipoSet"><EntityTypeMapping TypeName="EmprestimoModel.UsuarioTipo"><MappingFragment StoreEntitySet="usuariotipo">
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+            <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EmprestimoDB">
+        <EntityTypeShape EntityType="EmprestimoModel.area" Width="1.5" PointX="3" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.bloqueado" Width="1.5" PointX="10.5" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.cliente" Width="1.5" PointX="5.25" PointY="8.5" Height="8.4948942057291639" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.despesa" Width="1.5" PointX="10.5" PointY="7.375" Height="2.5783902994791665" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.DespesaTipo" Width="1.5" PointX="8.25" PointY="5.75" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.emprestimo" Width="1.5" PointX="13.5" PointY="10.875" Height="3.5644742838541674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.escolaridade" Width="1.5" PointX="3" PointY="8.125" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.estadociviltipo" Width="1.5" PointX="3" PointY="14.75" Height="1.9210009765624978" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.lancamento" Width="1.5" PointX="13.5" PointY="7.25" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.lancamentotipo" Width="1.5" PointX="11.25" PointY="0.75" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.municipio" Width="1.5" PointX="0.75" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.orgaoexpedidornome" Width="1.5" PointX="3" PointY="17.375" Height="1.9210009765625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.parcela" Width="1.5" PointX="15.75" PointY="11" Height="3.400126953124996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.prazopagamento" Width="1.5" PointX="11.25" PointY="4.375" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.prestacaoconta" Width="1.5" PointX="10.5" PointY="18.125" Height="3.0714322916666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.statusparcela" Width="1.5" PointX="13.5" PointY="15.875" Height="1.7566536458333371" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.tipoemprestimo" Width="1.5" PointX="11.25" PointY="15.25" Height="1.7566536458333371" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Usuario" Width="1.5" PointX="8.25" PointY="9" Height="7.3444628906250049" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.UsuarioTipo" Width="1.5" PointX="6" PointY="5.875" Height="1.7566536458333388" IsExpanded="true" />
+        <AssociationConnector Association="EmprestimoModel.cliente_ibfk_3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.749847819010416" />
+          <ConnectorPoint PointX="5.25" PointY="12.749847819010416" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.municipio_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.749847819010416" />
+          <ConnectorPoint PointX="3" PointY="12.749847819010416" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.usuario_ibfk_3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.156171909505208" />
+          <ConnectorPoint PointX="5" PointY="12.156171909505208" />
+          <ConnectorPoint PointX="5" PointY="8.25" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="8.25" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="8.25" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="8.25" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="8.25" />
+          <ConnectorPoint PointX="9" PointY="8.25" />
+          <ConnectorPoint PointX="9" PointY="9" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.bloqueado_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="16.994894205729164" />
+          <ConnectorPoint PointX="6" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="8.5104141666666653" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="8.6770808333333331" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="9.3229191666666669" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="9.4895858333333347" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="10.125" PointY="17.244894205729164" />
+          <ConnectorPoint PointX="10.125" PointY="12.749847819010416" />
+          <ConnectorPoint PointX="10.5" PointY="12.749847819010416" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.bloqueado_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="12.124923909505208" />
+          <ConnectorPoint PointX="10.5" PointY="12.124923909505208" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.cliente_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.335500488281252" />
+          <ConnectorPoint PointX="5.5937475" PointY="18.335500488281252" />
+          <ConnectorPoint PointX="5.5937475" PointY="16.994894205729164" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.cliente_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.710500488281248" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="15.710500488281248" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="15.710500488281248" />
+          <ConnectorPoint PointX="5.25" PointY="15.710500488281248" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.cliente_ibfk_4" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="9.27300048828125" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="9.27300048828125" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="9.27300048828125" />
+          <ConnectorPoint PointX="5.25" PointY="9.27300048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.cliente_ibfk_5" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.874695638020832" />
+          <ConnectorPoint PointX="1.5" PointY="14.281098319010415" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="14.281098319010415" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="14.281098319010415" />
+          <ConnectorPoint PointX="5.25" PointY="14.281098319010415" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.cliente_ibfk_6" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="13.874695638020832" />
+          <ConnectorPoint PointX="1.9062525" PointY="14.515551659505208" />
+          <ConnectorPoint PointX="5.25" PointY="14.515551659505208" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="8.5" />
+          <ConnectorPoint PointX="6" PointY="8" />
+          <ConnectorPoint PointX="10.25" PointY="8" />
+          <ConnectorPoint PointX="10.25" PointY="10.203390299479167" />
+          <ConnectorPoint PointX="12.322916666666666" PointY="10.203390299479167" />
+          <ConnectorPoint PointX="12.489583333333334" PointY="10.203390299479167" />
+          <ConnectorPoint PointX="13.125" PointY="10.203390299479167" />
+          <ConnectorPoint PointX="13.125" PointY="12.657237141927084" />
+          <ConnectorPoint PointX="13.5" PointY="12.657237141927084" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.despesa_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="9.4766951497395837" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="9.4766951497395837" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="9.4766951497395837" />
+          <ConnectorPoint PointX="10.5" PointY="9.4766951497395837" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.despesa_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="6.9489236536458341" />
+          <ConnectorPoint PointX="10.84375" PointY="6.9489236536458341" />
+          <ConnectorPoint PointX="10.84375" PointY="7.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.40625" PointY="6.4603483072916674" />
+          <ConnectorPoint PointX="12.40625" PointY="11.21875" />
+          <ConnectorPoint PointX="13.041666666666666" PointY="11.21875" />
+          <ConnectorPoint PointX="13.208333333333334" PointY="11.21875" />
+          <ConnectorPoint PointX="13.5" PointY="11.21875" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_3" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="14.1883349609375" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="14.1883349609375" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="14.1883349609375" />
+          <ConnectorPoint PointX="12.494791666666666" PointY="14.1883349609375" />
+          <ConnectorPoint PointX="12.661458333333334" PointY="14.1883349609375" />
+          <ConnectorPoint PointX="13.5" PointY="14.1883349609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_4" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.578125" PointY="15.25" />
+          <ConnectorPoint PointX="12.578125" PointY="11.4218775" />
+          <ConnectorPoint PointX="13.041666666666666" PointY="11.4218775" />
+          <ConnectorPoint PointX="13.208333333333334" PointY="11.4218775" />
+          <ConnectorPoint PointX="13.5" PointY="11.4218775" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.parcela_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="15" PointY="12.700063476562498" />
+          <ConnectorPoint PointX="15.75" PointY="12.700063476562498" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.usuario_ibfk_5" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.34375" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="8.34375" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="8.34375" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="8.34375" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="8.34375" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="8.34375" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="8.34375" />
+          <ConnectorPoint PointX="8.5937475" PointY="8.34375" />
+          <ConnectorPoint PointX="8.5937475" PointY="9" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.usuario_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.198998244140622" />
+          <ConnectorPoint PointX="5" PointY="15.198998244140622" />
+          <ConnectorPoint PointX="5" PointY="17.494894205729164" />
+          <ConnectorPoint PointX="5.5104141666666671" PointY="17.494894205729164" />
+          <ConnectorPoint PointX="5.6770808333333331" PointY="17.494894205729164" />
+          <ConnectorPoint PointX="8.5104141666666653" PointY="17.494894205729164" />
+          <ConnectorPoint PointX="8.6770808333333331" PointY="17.494894205729164" />
+          <ConnectorPoint PointX="9" PointY="17.494894205729164" />
+          <ConnectorPoint PointX="9" PointY="16.344462890625003" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.lancamento_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="10.086487630208334" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="10.086487630208334" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="10.086487630208334" />
+          <ConnectorPoint PointX="12.322916666666666" PointY="10.086487630208334" />
+          <ConnectorPoint PointX="12.489583333333334" PointY="10.086487630208334" />
+          <ConnectorPoint PointX="13.5" PointY="10.086487630208334" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.lancamento_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.75" PointY="1.7105004882812498" />
+          <ConnectorPoint PointX="14.25" PointY="1.7105004882812498" />
+          <ConnectorPoint PointX="14.25" PointY="7.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.usuario_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.847003232421876" />
+          <ConnectorPoint PointX="8.5937475" PointY="18.847003232421876" />
+          <ConnectorPoint PointX="8.5937475" PointY="16.344462890625003" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.parcela_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="15" PointY="16.753326822916669" />
+          <ConnectorPoint PointX="16.5" PointY="16.753326822916669" />
+          <ConnectorPoint PointX="16.5" PointY="14.400126953124996" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.prestacaoconta_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.4062525" PointY="16.344462890625003" />
+          <ConnectorPoint PointX="9.4062525" PointY="20.021717762044272" />
+          <ConnectorPoint PointX="10.5" PointY="20.021717762044272" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.usuario_ibfk_4" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="7.6316536458333388" />
+          <ConnectorPoint PointX="7.875" PointY="8.0066536458333388" />
+          <ConnectorPoint PointX="7.875" PointY="12.672231445312502" />
+          <ConnectorPoint PointX="8.25" PointY="12.672231445312502" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

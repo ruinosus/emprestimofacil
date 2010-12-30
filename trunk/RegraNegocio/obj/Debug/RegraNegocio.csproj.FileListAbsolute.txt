@@ -1,0 +1,6 @@
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\RegraNegocio\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.dll.config
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.dll
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\RegraNegocio\bin\Debug\RegraNegocio.pdb
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\RegraNegocio\obj\Debug\RegraNegocio.dll
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\RegraNegocio\obj\Debug\RegraNegocio.pdb

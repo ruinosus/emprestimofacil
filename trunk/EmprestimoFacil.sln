@@ -25,6 +25,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Site", "Site\", "{370FD977-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteMVC", "SiteMVC\SiteMVC.csproj", "{43278B5A-AD08-4325-8362-AE43F4CB675B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegraNegocio", "RegraNegocio\RegraNegocio.csproj", "{6709D694-4FC0-41AA-B77A-F16402CF9A52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{43278B5A-AD08-4325-8362-AE43F4CB675B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43278B5A-AD08-4325-8362-AE43F4CB675B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43278B5A-AD08-4325-8362-AE43F4CB675B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6709D694-4FC0-41AA-B77A-F16402CF9A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6709D694-4FC0-41AA-B77A-F16402CF9A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6709D694-4FC0-41AA-B77A-F16402CF9A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6709D694-4FC0-41AA-B77A-F16402CF9A52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
