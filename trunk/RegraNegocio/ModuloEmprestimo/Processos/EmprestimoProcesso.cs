@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloEmprestimo.Repositorios;
-using Negocios.ModuloEmprestimo.Processos;
-using Negocios.ModuloEmprestimo.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloEmprestimo.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloEmprestimo.Repositorios;
+using RegraNegocio.ModuloEmprestimo.Processos;
+using RegraNegocio.ModuloEmprestimo.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloEmprestimo.Excecoes;
 
-namespace Negocios.ModuloEmprestimo.Processos
+namespace RegraNegocio.ModuloEmprestimo.Processos
 {
     /// <summary>
     /// Classe EmprestimoProcesso

@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBloqueado.Excecoes;
+using RegraNegocio.ModuloBloqueado.Excecoes;
 using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloBasico.VOs;
 
 
-namespace Negocios.ModuloBloqueado.Repositorios
+namespace RegraNegocio.ModuloBloqueado.Repositorios
 {
     public class BloqueadoRepositorio : IBloqueadoRepositorio
     {

@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloParcela.Repositorios;
-using Negocios.ModuloParcela.Processos;
-using Negocios.ModuloParcela.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloParcela.Excecoes;
-namespace Negocios.ModuloParcela.Processos
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloParcela.Repositorios;
+using RegraNegocio.ModuloParcela.Processos;
+using RegraNegocio.ModuloParcela.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloParcela.Excecoes;
+namespace RegraNegocio.ModuloParcela.Processos
 {
     /// <summary>
     /// Classe ParcelaProcesso

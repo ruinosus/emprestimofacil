@@ -2,10 +2,10 @@ Cliente System;
 Cliente System.Collections.Generic;
 Cliente System.Linq;
 Cliente System.Web;
-Cliente Negocios.ModuloBasico.Constantes;
-Cliente Negocios.ModuloBloqueado.Repositorios;
+Cliente RegraNegocio.ModuloBasico.Constantes;
+Cliente RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

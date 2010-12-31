@@ -2,10 +2,10 @@ UsuarioTipo System;
 UsuarioTipo System.Collections.Generic;
 UsuarioTipo System.Linq;
 UsuarioTipo System.Web;
-UsuarioTipo Negocios.ModuloBasico.Constantes;
-UsuarioTipo Negocios.ModuloBloqueado.Repositorios;
+UsuarioTipo RegraNegocio.ModuloBasico.Constantes;
+UsuarioTipo RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

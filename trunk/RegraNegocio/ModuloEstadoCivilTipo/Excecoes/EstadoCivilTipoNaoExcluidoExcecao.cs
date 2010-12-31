@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloEstadoCivilTipo.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloEstadoCivilTipo.Constantes;
 
-namespace Negocios.ModuloEstadoCivilTipo.Excecoes
+namespace RegraNegocio.ModuloEstadoCivilTipo.Excecoes
 {
     /// <summary>
     /// Classe EstadoCivilTipoNaoExcluidoExcecao

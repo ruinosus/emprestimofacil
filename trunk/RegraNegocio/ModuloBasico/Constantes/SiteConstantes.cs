@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ModuloBasico
+namespace RegraNegocio.ModuloBasico.Constantes
 {
 public static class SiteConstantes
         {

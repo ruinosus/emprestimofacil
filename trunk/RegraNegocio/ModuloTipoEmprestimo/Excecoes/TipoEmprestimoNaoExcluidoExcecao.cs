@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloTipoEmprestimo.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloTipoEmprestimo.Constantes;
 
-namespace Negocios.ModuloTipoEmprestimo.Excecoes
+namespace RegraNegocio.ModuloTipoEmprestimo.Excecoes
 {
     /// <summary>
     /// Classe TipoEmprestimoNaoExcluidoExcecao

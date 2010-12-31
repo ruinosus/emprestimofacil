@@ -2,10 +2,10 @@ EstadoCivilTipo System;
 EstadoCivilTipo System.Collections.Generic;
 EstadoCivilTipo System.Linq;
 EstadoCivilTipo System.Web;
-EstadoCivilTipo Negocios.ModuloBasico.Constantes;
-EstadoCivilTipo Negocios.ModuloBloqueado.Repositorios;
+EstadoCivilTipo RegraNegocio.ModuloBasico.Constantes;
+EstadoCivilTipo RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

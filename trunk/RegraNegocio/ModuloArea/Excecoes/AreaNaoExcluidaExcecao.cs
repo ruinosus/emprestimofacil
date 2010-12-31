@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloArea.Constantes;
-namespace Negocios.ModuloArea.Excecoes
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloArea.Constantes;
+namespace RegraNegocio.ModuloArea.Excecoes
 {
     /// <summary>
     /// Classe AreaNaoExcluidaExcecao

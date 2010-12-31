@@ -2,10 +2,10 @@ TipoEmprestimo System;
 TipoEmprestimo System.Collections.Generic;
 TipoEmprestimo System.Linq;
 TipoEmprestimo System.Web;
-TipoEmprestimo Negocios.ModuloBasico.Constantes;
-TipoEmprestimo Negocios.ModuloBloqueado.Repositorios;
+TipoEmprestimo RegraNegocio.ModuloBasico.Constantes;
+TipoEmprestimo RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

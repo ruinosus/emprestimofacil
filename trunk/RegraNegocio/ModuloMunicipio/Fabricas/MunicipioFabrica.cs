@@ -2,10 +2,10 @@ Municipio System;
 Municipio System.Collections.Generic;
 Municipio System.Linq;
 Municipio System.Web;
-Municipio Negocios.ModuloBasico.Constantes;
-Municipio Negocios.ModuloBloqueado.Repositorios;
+Municipio RegraNegocio.ModuloBasico.Constantes;
+Municipio RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

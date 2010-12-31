@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 using RegraNegocio.ModuloBasico.VOs;
 using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloBasico.Enums;
 
-namespace Negocios.ModuloArea.Repositorios
+namespace RegraNegocio.ModuloArea.Repositorios
 {
     /// <summary>
     /// Interface IAreaRepositorio

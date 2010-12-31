@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloMunicipio.Repositorios;
-using Negocios.ModuloMunicipio.Processos;
-using Negocios.ModuloMunicipio.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloMunicipio.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloMunicipio.Repositorios;
+using RegraNegocio.ModuloMunicipio.Processos;
+using RegraNegocio.ModuloMunicipio.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloMunicipio.Excecoes;
 
-namespace Negocios.ModuloMunicipio.Processos
+namespace RegraNegocio.ModuloMunicipio.Processos
 {
     /// <summary>
     /// Classe MunicipioProcesso

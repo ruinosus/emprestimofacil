@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloPrestacaoConta.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloPrestacaoConta.Constantes;
 
-namespace Negocios.ModuloPrestacaoConta.Excecoes
+namespace RegraNegocio.ModuloPrestacaoConta.Excecoes
 {
     /// <summary>
     /// Classe PrestacaoContaNaoIncluidaExcecao

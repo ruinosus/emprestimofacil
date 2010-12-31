@@ -2,10 +2,10 @@ OrgaoExpedidorNome System;
 OrgaoExpedidorNome System.Collections.Generic;
 OrgaoExpedidorNome System.Linq;
 OrgaoExpedidorNome System.Web;
-OrgaoExpedidorNome Negocios.ModuloBasico.Constantes;
-OrgaoExpedidorNome Negocios.ModuloBloqueado.Repositorios;
+OrgaoExpedidorNome RegraNegocio.ModuloBasico.Constantes;
+OrgaoExpedidorNome RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

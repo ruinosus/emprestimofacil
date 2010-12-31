@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloParcela.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloParcela.Constantes;
 
-namespace Negocios.ModuloParcela.Excecoes
+namespace RegraNegocio.ModuloParcela.Excecoes
 {
     /// <summary>
     /// Classe ParcelaNaoIncluidaExcecao

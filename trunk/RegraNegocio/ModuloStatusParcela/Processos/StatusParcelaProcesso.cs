@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloStatusParcela.Repositorios;
-using Negocios.ModuloStatusParcela.Processos;
-using Negocios.ModuloStatusParcela.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloStatusParcela.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloStatusParcela.Repositorios;
+using RegraNegocio.ModuloStatusParcela.Processos;
+using RegraNegocio.ModuloStatusParcela.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloStatusParcela.Excecoes;
 
-namespace Negocios.ModuloStatusParcela.Processos
+namespace RegraNegocio.ModuloStatusParcela.Processos
 {
     /// <summary>
     /// Classe StatusParcelaProcesso

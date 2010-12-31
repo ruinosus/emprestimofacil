@@ -2,10 +2,10 @@ PrazoPagamento System;
 PrazoPagamento System.Collections.Generic;
 PrazoPagamento System.Linq;
 PrazoPagamento System.Web;
-PrazoPagamento Negocios.ModuloBasico.Constantes;
-PrazoPagamento Negocios.ModuloBloqueado.Repositorios;
+PrazoPagamento RegraNegocio.ModuloBasico.Constantes;
+PrazoPagamento RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

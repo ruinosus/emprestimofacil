@@ -2,10 +2,10 @@ StatusParcela System;
 StatusParcela System.Collections.Generic;
 StatusParcela System.Linq;
 StatusParcela System.Web;
-StatusParcela Negocios.ModuloBasico.Constantes;
-StatusParcela Negocios.ModuloBloqueado.Repositorios;
+StatusParcela RegraNegocio.ModuloBasico.Constantes;
+StatusParcela RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

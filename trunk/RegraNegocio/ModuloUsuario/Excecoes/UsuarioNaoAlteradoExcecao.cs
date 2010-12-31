@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloUsuario.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloUsuario.Constantes;
 
-namespace Negocios.ModuloUsuario.Excecoes
+namespace RegraNegocio.ModuloUsuario.Excecoes
 {
     /// <summary>
     /// Classe UsuarioNaoAlteradoExcecao

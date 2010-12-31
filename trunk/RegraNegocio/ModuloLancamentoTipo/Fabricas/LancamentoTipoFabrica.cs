@@ -2,10 +2,10 @@ LancamentoTipo System;
 LancamentoTipo System.Collections.Generic;
 LancamentoTipo System.Linq;
 LancamentoTipo System.Web;
-LancamentoTipo Negocios.ModuloBasico.Constantes;
-LancamentoTipo Negocios.ModuloBloqueado.Repositorios;
+LancamentoTipo RegraNegocio.ModuloBasico.Constantes;
+LancamentoTipo RegraNegocio.ModuloBloqueado.Repositorios;
 
-namespace Negocios.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloBloqueado.Fabricas
 {
     /// <summary>
     /// Classe BloqueadoFabrica

@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
-using Negocios.ModuloPrestacaoConta.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloPrestacaoConta.Excecoes;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.VOs;
 
-namespace Negocios.ModuloPrestacaoConta.Repositorios
+namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
 {
     public class PrestacaoContaRepositorio : IPrestacaoContaRepositorio
     {

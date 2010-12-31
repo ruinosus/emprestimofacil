@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloDespesaTipo.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloDespesaTipo.Constantes;
 
-namespace Negocios.ModuloDespesaTipo.Excecoes
+namespace RegraNegocio.ModuloDespesaTipo.Excecoes
 {
     /// <summary>
     /// Classe DespesaTipoNaoAlteradaExcecao

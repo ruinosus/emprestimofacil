@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloPrestacaoConta.Repositorios;
-using Negocios.ModuloPrestacaoConta.Processos;
-using Negocios.ModuloPrestacaoConta.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloPrestacaoConta.Excecoes;
-namespace Negocios.ModuloPrestacaoConta.Processos
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloPrestacaoConta.Repositorios;
+using RegraNegocio.ModuloPrestacaoConta.Processos;
+using RegraNegocio.ModuloPrestacaoConta.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloPrestacaoConta.Excecoes;
+namespace RegraNegocio.ModuloPrestacaoConta.Processos
 {
     /// <summary>
     /// Classe PrestacaoContaProcesso

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 
-namespace Negocios.ModuloCliente.Constantes
+namespace RegraNegocio.ModuloCliente.Constantes
 {
 public static class ClienteConstantes
 	{

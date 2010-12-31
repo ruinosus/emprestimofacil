@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBloqueado.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBloqueado.Constantes;
 
-namespace Negocios.ModuloBloqueado.Excecoes
+namespace RegraNegocio.ModuloBloqueado.Excecoes
 {
     /// <summary>
     /// Classe BloqueadoNaoIncluidoExcecao

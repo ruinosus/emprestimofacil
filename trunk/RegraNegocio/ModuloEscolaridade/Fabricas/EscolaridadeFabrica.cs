@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloEscolaridade.Repositorios;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloEscolaridade.Repositorios;
 
-namespace Negocios.ModuloEscolaridade.Fabricas
+namespace RegraNegocio.ModuloEscolaridade.Fabricas
 {
     /// <summary>
     /// Classe EscolaridadeFabrica

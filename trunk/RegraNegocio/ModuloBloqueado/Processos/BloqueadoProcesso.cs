@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloBloqueado.Repositorios;
-using Negocios.ModuloBloqueado.Processos;
-using Negocios.ModuloBloqueado.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBloqueado.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloBloqueado.Repositorios;
+using RegraNegocio.ModuloBloqueado.Processos;
+using RegraNegocio.ModuloBloqueado.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBloqueado.Excecoes;
 
-namespace Negocios.ModuloBloqueado.Processos
+namespace RegraNegocio.ModuloBloqueado.Processos
 {
     /// <summary>
     /// Classe BloqueadoProcesso

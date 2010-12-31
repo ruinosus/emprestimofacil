@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
-using Negocios.ModuloEmprestimo.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloEmprestimo.Excecoes;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.VOs;
 
-namespace Negocios.ModuloEmprestimo.Repositorios
+namespace RegraNegocio.ModuloEmprestimo.Repositorios
 {
     public class EmprestimoRepositorio : IEmprestimoRepositorio
     {

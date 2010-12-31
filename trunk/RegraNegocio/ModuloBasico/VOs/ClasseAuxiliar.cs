@@ -18,7 +18,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using RegraNegocio.ModuloBasico;
 
-namespace ModuloBasico
+namespace RegraNegocio.ModuloBasico.VOs
 {
     /// <summary>
     /// Summary description for ClasseAuxiliar

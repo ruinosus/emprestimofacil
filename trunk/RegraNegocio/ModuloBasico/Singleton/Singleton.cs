@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ModuloBasico
+namespace RegraNegocio.ModuloBasico.Singleton
 {
     /// <summary>
     /// Classe Básica para implementação de classes singleton

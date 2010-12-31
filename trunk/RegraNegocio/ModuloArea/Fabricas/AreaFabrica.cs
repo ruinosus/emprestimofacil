@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloArea.Repositorios;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloArea.Repositorios;
 
-namespace Negocios.ModuloArea.Fabricas
+namespace RegraNegocio.ModuloArea.Fabricas
 {
     /// <summary>
     /// Classe AreaFabrica

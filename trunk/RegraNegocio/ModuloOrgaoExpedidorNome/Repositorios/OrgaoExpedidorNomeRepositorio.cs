@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
-using Negocios.ModuloOrgaoExpedidorNome.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloOrgaoExpedidorNome.Excecoes;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.VOs;
 
-namespace Negocios.ModuloOrgaoExpedidorNome.Repositorios
+namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
 {
     public class OrgaoExpedidorNomeRepositorio : IOrgaoExpedidorNomeRepositorio
     {

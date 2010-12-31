@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloPrazoPagamento.Repositorios;
-using Negocios.ModuloPrazoPagamento.Processos;
-using Negocios.ModuloPrazoPagamento.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloPrazoPagamento.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloPrazoPagamento.Repositorios;
+using RegraNegocio.ModuloPrazoPagamento.Processos;
+using RegraNegocio.ModuloPrazoPagamento.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloPrazoPagamento.Excecoes;
 
-namespace Negocios.ModuloPrazoPagamento.Processos
+namespace RegraNegocio.ModuloPrazoPagamento.Processos
 {
     /// <summary>
     /// Classe PrazoPagamentoProcesso

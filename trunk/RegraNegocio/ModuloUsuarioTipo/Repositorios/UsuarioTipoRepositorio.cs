@@ -2,13 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using MySql.Data.MySqlClient;
-using Negocios.ModuloUsuarioTipo.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloUsuarioTipo.Excecoes;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.VOs;
 
-namespace Negocios.ModuloUsuarioTipo.Repositorios
+namespace RegraNegocio.ModuloUsuarioTipo.Repositorios
 {
     public class UsuarioTipoRepositorio : IUsuarioTipoRepositorio
     {

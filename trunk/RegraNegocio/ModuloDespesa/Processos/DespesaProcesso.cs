@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloDespesa.Repositorios;
-using Negocios.ModuloDespesa.Processos;
-using Negocios.ModuloDespesa.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloDespesa.Excecoes;
-namespace Negocios.ModuloDespesa.Processos
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloDespesa.Repositorios;
+using RegraNegocio.ModuloDespesa.Processos;
+using RegraNegocio.ModuloDespesa.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloDespesa.Excecoes;
+namespace RegraNegocio.ModuloDespesa.Processos
 {
     /// <summary>
     /// Classe DespesaProcesso

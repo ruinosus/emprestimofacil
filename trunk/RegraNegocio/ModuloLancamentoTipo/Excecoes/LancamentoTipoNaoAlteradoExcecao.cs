@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloLancamentoTipo.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloLancamentoTipo.Constantes;
 
-namespace Negocios.ModuloLancamentoTipo.Excecoes
+namespace RegraNegocio.ModuloLancamentoTipo.Excecoes
 {
     /// <summary>
     /// Classe LancamentoTipoNaoAlteradoExcecao

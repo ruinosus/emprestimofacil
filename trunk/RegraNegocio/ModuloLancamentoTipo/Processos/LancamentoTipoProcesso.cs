@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloLancamentoTipo.Repositorios;
-using Negocios.ModuloLancamentoTipo.Processos;
-using Negocios.ModuloLancamentoTipo.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloLancamentoTipo.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloLancamentoTipo.Repositorios;
+using RegraNegocio.ModuloLancamentoTipo.Processos;
+using RegraNegocio.ModuloLancamentoTipo.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloLancamentoTipo.Excecoes;
 
-namespace Negocios.ModuloLancamentoTipo.Processos
+namespace RegraNegocio.ModuloLancamentoTipo.Processos
 {
     /// <summary>
     /// Classe LancamentoTipoProcesso

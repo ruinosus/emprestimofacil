@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
-using Negocios.ModuloEstadoCivilTipo.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloEstadoCivilTipo.Excecoes;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.VOs;
 
-namespace Negocios.ModuloEstadoCivilTipo.Repositorios
+namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
 {
     public class EstadoCivilTipoRepositorio : IEstadoCivilTipoRepositorio
     {

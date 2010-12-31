@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloEscolaridade.Repositorios;
-using Negocios.ModuloEscolaridade.Processos;
-using Negocios.ModuloEscolaridade.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloEscolaridade.Excecoes;
-namespace Negocios.ModuloEscolaridade.Processos
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloEscolaridade.Repositorios;
+using RegraNegocio.ModuloEscolaridade.Processos;
+using RegraNegocio.ModuloEscolaridade.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloEscolaridade.Excecoes;
+namespace RegraNegocio.ModuloEscolaridade.Processos
 {
     /// <summary>
     /// Classe EscolaridadeProcesso

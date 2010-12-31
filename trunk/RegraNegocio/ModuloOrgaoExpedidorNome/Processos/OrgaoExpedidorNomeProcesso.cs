@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloOrgaoExpedidorNome.Repositorios;
-using Negocios.ModuloOrgaoExpedidorNome.Processos;
-using Negocios.ModuloOrgaoExpedidorNome.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloOrgaoExpedidorNome.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios;
+using RegraNegocio.ModuloOrgaoExpedidorNome.Processos;
+using RegraNegocio.ModuloOrgaoExpedidorNome.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloOrgaoExpedidorNome.Excecoes;
 
-namespace Negocios.ModuloOrgaoExpedidorNome.Processos
+namespace RegraNegocio.ModuloOrgaoExpedidorNome.Processos
 {
     /// <summary>
     /// Classe OrgaoExpedidorNomeProcesso

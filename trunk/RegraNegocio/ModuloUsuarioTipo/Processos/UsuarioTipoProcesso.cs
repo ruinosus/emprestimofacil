@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloUsuarioTipo.Repositorios;
-using Negocios.ModuloUsuarioTipo.Processos;
-using Negocios.ModuloUsuarioTipo.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloUsuarioTipo.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloUsuarioTipo.Repositorios;
+using RegraNegocio.ModuloUsuarioTipo.Processos;
+using RegraNegocio.ModuloUsuarioTipo.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloUsuarioTipo.Excecoes;
 
-namespace Negocios.ModuloUsuarioTipo.Processos
+namespace RegraNegocio.ModuloUsuarioTipo.Processos
 {
     /// <summary>
     /// Classe UsuarioTipoProcesso

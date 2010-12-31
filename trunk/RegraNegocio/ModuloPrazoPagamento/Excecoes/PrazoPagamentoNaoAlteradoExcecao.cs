@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloPrazoPagamento.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloPrazoPagamento.Constantes;
 
-namespace Negocios.ModuloPrazoPagamento.Excecoes
+namespace RegraNegocio.ModuloPrazoPagamento.Excecoes
 {
     /// <summary>
     /// Classe PrazoPagamentoNaoAlteradoExcecao

@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
-using Negocios.ModuloEstadoCivilTipo.Repositorios;
-using Negocios.ModuloEstadoCivilTipo.Processos;
-using Negocios.ModuloEstadoCivilTipo.Fabricas;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloEstadoCivilTipo.Excecoes;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloEstadoCivilTipo.Repositorios;
+using RegraNegocio.ModuloEstadoCivilTipo.Processos;
+using RegraNegocio.ModuloEstadoCivilTipo.Fabricas;
+using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloEstadoCivilTipo.Excecoes;
 
-namespace Negocios.ModuloEstadoCivilTipo.Processos
+namespace RegraNegocio.ModuloEstadoCivilTipo.Processos
 {
     /// <summary>
     /// Classe EstadoCivilTipoProcesso

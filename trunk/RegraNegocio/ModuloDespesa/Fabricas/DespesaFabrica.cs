@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloDespesa.Repositorios;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloDespesa.Repositorios;
 
-namespace Negocios.ModuloDespesa.Fabricas
+namespace RegraNegocio.ModuloDespesa.Fabricas
 {
     /// <summary>
     /// Classe DespesaFabrica

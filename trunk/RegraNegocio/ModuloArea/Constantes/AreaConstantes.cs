@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Constantes;
 
-namespace Negocios.ModuloArea.Constantes
+namespace RegraNegocio.ModuloArea.Constantes
 {
 public static class AreaConstantes
 	{

@@ -3,15 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloArea.Repositorios;
-using Negocios.ModuloArea.Processos;
-using Negocios.ModuloArea.Fabricas;
-using Negocios.ModuloArea.Excecoes;
-using ModuloBasico;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloArea.Repositorios;
+using RegraNegocio.ModuloArea.Processos;
+using RegraNegocio.ModuloArea.Fabricas;
+using RegraNegocio.ModuloArea.Excecoes;
+
 using RegraNegocio.ModuloBasico.VOs;
 using RegraNegocio.ModuloBasico;
-namespace Negocios.ModuloArea.Processos
+using RegraNegocio.ModuloBasico.Singleton;
+using RegraNegocio.ModuloBasico.Enums;
+namespace RegraNegocio.ModuloArea.Processos
 {
     /// <summary>
     /// Classe AreaProcesso

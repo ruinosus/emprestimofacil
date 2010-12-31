@@ -1,5 +1,5 @@
 ﻿
-namespace RegraNegocio.ModuloBasico
+namespace RegraNegocio.ModuloBasico.Enums
 {
     public enum TipoPesquisa
     {

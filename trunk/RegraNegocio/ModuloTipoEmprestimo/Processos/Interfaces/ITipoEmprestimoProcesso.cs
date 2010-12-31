@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloBasico.Enums;
 
-namespace Negocios.ModuloTipoEmprestimo.Processos
+namespace RegraNegocio.ModuloTipoEmprestimo.Processos
 {
     /// <summary>
     /// Summary description for ITipoEmprestimoRepositorio
