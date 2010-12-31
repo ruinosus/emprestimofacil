@@ -3477,14 +3477,14 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new EstadoCivilTipo object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         public static EstadoCivilTipo CreateEstadoCivilTipo(global::System.String descricao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated)
         {
             EstadoCivilTipo estadoCivilTipo = new EstadoCivilTipo();
             estadoCivilTipo.descricao = descricao;
-            estadoCivilTipo.id = id;
+            estadoCivilTipo.ID = id;
             estadoCivilTipo.timeCreated = timeCreated;
             estadoCivilTipo.timeUpdated = timeUpdated;
             return estadoCivilTipo;
@@ -3522,27 +3522,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4019,7 +4019,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new LancamentoTipo object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="sinal">Initial value of the sinal property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
@@ -4027,7 +4027,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         {
             LancamentoTipo lancamentoTipo = new LancamentoTipo();
             lancamentoTipo.descricao = descricao;
-            lancamentoTipo.id = id;
+            lancamentoTipo.ID = id;
             lancamentoTipo.sinal = sinal;
             lancamentoTipo.timeCreated = timeCreated;
             lancamentoTipo.timeUpdated = timeUpdated;
@@ -4066,27 +4066,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4431,14 +4431,14 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new OrgaoExpedidorNome object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         public static OrgaoExpedidorNome CreateOrgaoExpedidorNome(global::System.String descricao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated)
         {
             OrgaoExpedidorNome orgaoExpedidorNome = new OrgaoExpedidorNome();
             orgaoExpedidorNome.descricao = descricao;
-            orgaoExpedidorNome.id = id;
+            orgaoExpedidorNome.ID = id;
             orgaoExpedidorNome.timeCreated = timeCreated;
             orgaoExpedidorNome.timeUpdated = timeUpdated;
             return orgaoExpedidorNome;
@@ -4476,27 +4476,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5047,7 +5047,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new PrazoPagamento object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="posdescricao">Initial value of the posdescricao property.</param>
         /// <param name="qtde_dias">Initial value of the qtde_dias property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
@@ -5056,7 +5056,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         {
             PrazoPagamento prazoPagamento = new PrazoPagamento();
             prazoPagamento.descricao = descricao;
-            prazoPagamento.id = id;
+            prazoPagamento.ID = id;
             prazoPagamento.posdescricao = posdescricao;
             prazoPagamento.qtde_dias = qtde_dias;
             prazoPagamento.timeCreated = timeCreated;
@@ -5096,27 +5096,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

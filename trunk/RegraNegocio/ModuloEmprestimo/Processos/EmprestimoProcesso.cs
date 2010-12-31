@@ -51,9 +51,7 @@ namespace RegraNegocio.ModuloEmprestimo.Processos
 
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new EmprestimoNaoExcluidoExcecao();
-
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(emprestimo);
             }
             catch (Exception e)
             {

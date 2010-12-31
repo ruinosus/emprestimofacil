@@ -52,8 +52,7 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new TipoEmprestimoNaoExcluidoExcecao();
 
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(tipoEmprestimo);
             }
             catch (Exception e)
             {

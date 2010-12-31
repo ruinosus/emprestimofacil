@@ -45,117 +45,6 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (lancamentoTipo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == lancamentoTipo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(lancamentoTipo.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(lancamentoTipo.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(lancamentoTipo.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(lancamentoTipo.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == lancamentoTipo.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (lancamentoTipo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == lancamentoTipo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.NumLancamentoTipo.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumLancamentoTipo.HasValue && c.NumLancamentoTipo.Value == lancamentoTipo.NumLancamentoTipo.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == lancamentoTipo.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == lancamentoTipo.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -168,117 +57,6 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
                                                 where
                                                 c.ID == lancamentoTipo.ID
                                                 select c).ToList());
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == lancamentoTipo.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(lancamentoTipo.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(lancamentoTipo.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(lancamentoTipo.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(lancamentoTipo.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(lancamentoTipo.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == lancamentoTipo.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (lancamentoTipo.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == lancamentoTipo.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.NumLancamentoTipo.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumLancamentoTipo.HasValue && c.NumLancamentoTipo.Value == lancamentoTipo.NumLancamentoTipo.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == lancamentoTipo.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (lancamentoTipo.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == lancamentoTipo.Valor.Value
-                                                select c).ToList());
-
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -296,7 +74,7 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
         {
             try
             {
-                db.LancamentoTipo.InsertOnSubmit(lancamentoTipo);
+                db.AddToLancamentoTipoSet(lancamentoTipo);
             }
             catch (Exception)
             {
@@ -320,7 +98,7 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
 
                 lancamentoTipoAux = resultado[0];
 
-                db.LancamentoTipo.DeleteOnSubmit(lancamentoTipoAux);
+                db.DeleteObject(lancamentoTipoAux);
 
             }
             catch (Exception)
@@ -343,15 +121,10 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new LancamentoTipoNaoAlteradoExcecao();
 
-                lancamentoTipoAux.Agencia = lancamentoTipo.Agencia;
-                lancamentoTipoAux.Banco = lancamentoTipo.Banco;
-                lancamentoTipoAux.Conta = lancamentoTipo.Conta;
-                lancamentoTipoAux.Cpf = lancamentoTipo.Cpf;
-                lancamentoTipoAux.NumLancamentoTipo = lancamentoTipo.NumLancamentoTipo;
-                lancamentoTipoAux.Parcela = lancamentoTipo.Parcela;
-                lancamentoTipoAux.Status = lancamentoTipo.Status;
-                lancamentoTipoAux.Tipo = lancamentoTipo.Tipo;
-                lancamentoTipoAux.Valor = lancamentoTipo.Valor;
+                lancamentoTipoAux.descricao = lancamentoTipo.descricao;
+                lancamentoTipoAux.ID = lancamentoTipo.ID;
+                lancamentoTipoAux.sinal = lancamentoTipo.sinal;
+                
 
                 lancamentoTipoAux = resultado[0];
 
@@ -366,7 +139,7 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
@@ -374,8 +147,8 @@ namespace RegraNegocio.ModuloLancamentoTipo.Repositorios
         #region Construtor
         public LancamentoTipoRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
+   
+            db = new EmprestimoEntities();
 
         }
         #endregion

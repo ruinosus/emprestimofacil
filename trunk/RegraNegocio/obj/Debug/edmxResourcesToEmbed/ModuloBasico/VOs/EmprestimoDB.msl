@@ -124,7 +124,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.EstadoCivilTipo">
         <MappingFragment StoreEntitySet="estadociviltipo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
         </MappingFragment>
@@ -150,7 +150,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.LancamentoTipo">
         <MappingFragment StoreEntitySet="lancamentotipo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="sinal" ColumnName="sinal" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -172,7 +172,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.OrgaoExpedidorNome">
         <MappingFragment StoreEntitySet="orgaoexpedidornome">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
         </MappingFragment>
@@ -201,7 +201,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.PrazoPagamento">
         <MappingFragment StoreEntitySet="prazopagamento">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
           <ScalarProperty Name="qtde_dias" ColumnName="qtde_dias" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />

@@ -64,27 +64,6 @@ namespace RegraNegocio.ModuloDespesa.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(despesa.Nome))
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Nome.Contains(despesa.Nome)
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (despesa.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Status.HasValue && t.Status.Value == despesa.Status.Value
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }

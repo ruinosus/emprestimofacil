@@ -52,8 +52,7 @@ namespace RegraNegocio.ModuloLancamentoTipo.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new LancamentoTipoNaoExcluidoExcecao();
 
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(lancamentoTipo);
             }
             catch (Exception e)
             {

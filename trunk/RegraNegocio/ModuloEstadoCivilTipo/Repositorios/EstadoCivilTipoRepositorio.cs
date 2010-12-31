@@ -45,117 +45,6 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (estadoCivilTipo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == estadoCivilTipo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(estadoCivilTipo.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(estadoCivilTipo.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(estadoCivilTipo.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(estadoCivilTipo.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == estadoCivilTipo.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (estadoCivilTipo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == estadoCivilTipo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.NumEstadoCivilTipo.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumEstadoCivilTipo.HasValue && c.NumEstadoCivilTipo.Value == estadoCivilTipo.NumEstadoCivilTipo.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == estadoCivilTipo.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == estadoCivilTipo.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -168,117 +57,6 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
                                                 where
                                                 c.ID == estadoCivilTipo.ID
                                                 select c).ToList());
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == estadoCivilTipo.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(estadoCivilTipo.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(estadoCivilTipo.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(estadoCivilTipo.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(estadoCivilTipo.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(estadoCivilTipo.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == estadoCivilTipo.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (estadoCivilTipo.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == estadoCivilTipo.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.NumEstadoCivilTipo.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumEstadoCivilTipo.HasValue && c.NumEstadoCivilTipo.Value == estadoCivilTipo.NumEstadoCivilTipo.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == estadoCivilTipo.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (estadoCivilTipo.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == estadoCivilTipo.Valor.Value
-                                                select c).ToList());
-
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -296,7 +74,7 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
         {
             try
             {
-                db.EstadoCivilTipo.InsertOnSubmit(estadoCivilTipo);
+                db.AddToEstadoCivilTipoSet(estadoCivilTipo);
             }
             catch (Exception)
             {
@@ -320,7 +98,7 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
 
                 estadoCivilTipoAux = resultado[0];
 
-                db.EstadoCivilTipo.DeleteOnSubmit(estadoCivilTipoAux);
+                db.DeleteObject(estadoCivilTipoAux);
 
             }
             catch (Exception)
@@ -343,16 +121,9 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new EstadoCivilTipoNaoAlteradoExcecao();
 
-                estadoCivilTipoAux.Agencia = estadoCivilTipo.Agencia;
-                estadoCivilTipoAux.Banco = estadoCivilTipo.Banco;
-                estadoCivilTipoAux.Conta = estadoCivilTipo.Conta;
-                estadoCivilTipoAux.Cpf = estadoCivilTipo.Cpf;
-                estadoCivilTipoAux.NumEstadoCivilTipo = estadoCivilTipo.NumEstadoCivilTipo;
-                estadoCivilTipoAux.Parcela = estadoCivilTipo.Parcela;
-                estadoCivilTipoAux.Status = estadoCivilTipo.Status;
-                estadoCivilTipoAux.Tipo = estadoCivilTipo.Tipo;
-                estadoCivilTipoAux.Valor = estadoCivilTipo.Valor;
-
+                estadoCivilTipoAux.descricao = estadoCivilTipo.descricao;
+                estadoCivilTipoAux.ID = estadoCivilTipo.ID;
+             
                 estadoCivilTipoAux = resultado[0];
 
                 Confirmar();
@@ -366,7 +137,7 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
@@ -374,8 +145,8 @@ namespace RegraNegocio.ModuloEstadoCivilTipo.Repositorios
         #region Construtor
         public EstadoCivilTipoRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
+     
+            db = new EmprestimoEntities();
 
         }
         #endregion

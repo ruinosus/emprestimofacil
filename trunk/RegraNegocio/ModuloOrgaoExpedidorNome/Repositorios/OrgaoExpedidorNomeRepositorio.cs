@@ -45,117 +45,6 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (orgaoExpedidorNome.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == orgaoExpedidorNome.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(orgaoExpedidorNome.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(orgaoExpedidorNome.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(orgaoExpedidorNome.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(orgaoExpedidorNome.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == orgaoExpedidorNome.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (orgaoExpedidorNome.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == orgaoExpedidorNome.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.NumOrgaoExpedidorNome.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumOrgaoExpedidorNome.HasValue && c.NumOrgaoExpedidorNome.Value == orgaoExpedidorNome.NumOrgaoExpedidorNome.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == orgaoExpedidorNome.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == orgaoExpedidorNome.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -168,117 +57,6 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
                                                 where
                                                 c.ID == orgaoExpedidorNome.ID
                                                 select c).ToList());
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == orgaoExpedidorNome.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(orgaoExpedidorNome.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(orgaoExpedidorNome.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(orgaoExpedidorNome.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(orgaoExpedidorNome.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(orgaoExpedidorNome.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == orgaoExpedidorNome.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (orgaoExpedidorNome.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == orgaoExpedidorNome.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.NumOrgaoExpedidorNome.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumOrgaoExpedidorNome.HasValue && c.NumOrgaoExpedidorNome.Value == orgaoExpedidorNome.NumOrgaoExpedidorNome.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == orgaoExpedidorNome.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (orgaoExpedidorNome.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == orgaoExpedidorNome.Valor.Value
-                                                select c).ToList());
-
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -296,7 +74,7 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
         {
             try
             {
-                db.OrgaoExpedidorNome.InsertOnSubmit(orgaoExpedidorNome);
+                db.AddToOrgaoExpedidorNomeSet(orgaoExpedidorNome);
             }
             catch (Exception)
             {
@@ -320,7 +98,7 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
 
                 orgaoExpedidorNomeAux = resultado[0];
 
-                db.OrgaoExpedidorNome.DeleteOnSubmit(orgaoExpedidorNomeAux);
+                db.DeleteObject(orgaoExpedidorNomeAux);
 
             }
             catch (Exception)
@@ -343,15 +121,9 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new OrgaoExpedidorNomeNaoAlteradoExcecao();
 
-                orgaoExpedidorNomeAux.Agencia = orgaoExpedidorNome.Agencia;
-                orgaoExpedidorNomeAux.Banco = orgaoExpedidorNome.Banco;
-                orgaoExpedidorNomeAux.Conta = orgaoExpedidorNome.Conta;
-                orgaoExpedidorNomeAux.Cpf = orgaoExpedidorNome.Cpf;
-                orgaoExpedidorNomeAux.NumOrgaoExpedidorNome = orgaoExpedidorNome.NumOrgaoExpedidorNome;
-                orgaoExpedidorNomeAux.Parcela = orgaoExpedidorNome.Parcela;
-                orgaoExpedidorNomeAux.Status = orgaoExpedidorNome.Status;
-                orgaoExpedidorNomeAux.Tipo = orgaoExpedidorNome.Tipo;
-                orgaoExpedidorNomeAux.Valor = orgaoExpedidorNome.Valor;
+                orgaoExpedidorNomeAux.descricao = orgaoExpedidorNome.descricao;
+                orgaoExpedidorNomeAux.ID = orgaoExpedidorNome.ID;
+              
 
                 orgaoExpedidorNomeAux = resultado[0];
 
@@ -366,7 +138,7 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

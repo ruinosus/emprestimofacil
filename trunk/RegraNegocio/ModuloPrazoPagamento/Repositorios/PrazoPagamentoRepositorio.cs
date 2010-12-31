@@ -45,117 +45,6 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (prazoPagamento.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == prazoPagamento.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(prazoPagamento.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(prazoPagamento.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(prazoPagamento.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(prazoPagamento.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == prazoPagamento.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (prazoPagamento.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == prazoPagamento.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.NumPrazoPagamento.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumPrazoPagamento.HasValue && c.NumPrazoPagamento.Value == prazoPagamento.NumPrazoPagamento.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == prazoPagamento.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == prazoPagamento.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -168,117 +57,6 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
                                                 where
                                                 c.ID == prazoPagamento.ID
                                                 select c).ToList());
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == prazoPagamento.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(prazoPagamento.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(prazoPagamento.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(prazoPagamento.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prazoPagamento.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(prazoPagamento.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == prazoPagamento.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (prazoPagamento.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == prazoPagamento.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.NumPrazoPagamento.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumPrazoPagamento.HasValue && c.NumPrazoPagamento.Value == prazoPagamento.NumPrazoPagamento.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == prazoPagamento.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prazoPagamento.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == prazoPagamento.Valor.Value
-                                                select c).ToList());
-
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -296,7 +74,7 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
         {
             try
             {
-                db.PrazoPagamento.InsertOnSubmit(prazoPagamento);
+                db.AddToPrazoPagamentoSet(prazoPagamento);
             }
             catch (Exception)
             {
@@ -320,7 +98,7 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
 
                 prazoPagamentoAux = resultado[0];
 
-                db.PrazoPagamento.DeleteOnSubmit(prazoPagamentoAux);
+                db.DeleteObject(prazoPagamentoAux);
 
             }
             catch (Exception)
@@ -343,15 +121,10 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new PrazoPagamentoNaoAlteradoExcecao();
 
-                prazoPagamentoAux.Agencia = prazoPagamento.Agencia;
-                prazoPagamentoAux.Banco = prazoPagamento.Banco;
-                prazoPagamentoAux.Conta = prazoPagamento.Conta;
-                prazoPagamentoAux.Cpf = prazoPagamento.Cpf;
-                prazoPagamentoAux.NumPrazoPagamento = prazoPagamento.NumPrazoPagamento;
-                prazoPagamentoAux.Parcela = prazoPagamento.Parcela;
-                prazoPagamentoAux.Status = prazoPagamento.Status;
-                prazoPagamentoAux.Tipo = prazoPagamento.Tipo;
-                prazoPagamentoAux.Valor = prazoPagamento.Valor;
+                prazoPagamentoAux.descricao = prazoPagamento.descricao;
+                prazoPagamentoAux.ID = prazoPagamento.ID;
+                prazoPagamentoAux.qtde_dias = prazoPagamento.qtde_dias;
+              
 
                 prazoPagamentoAux = resultado[0];
 
@@ -366,7 +139,7 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
@@ -374,8 +147,8 @@ namespace RegraNegocio.ModuloPrazoPagamento.Repositorios
         #region Construtor
         public PrazoPagamentoRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
+
+            db = new EmprestimoEntities();
 
         }
         #endregion

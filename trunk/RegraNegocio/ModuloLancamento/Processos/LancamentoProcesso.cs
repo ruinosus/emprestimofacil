@@ -52,8 +52,7 @@ namespace RegraNegocio.ModuloLancamento.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new LancamentoNaoExcluidoExcecao();
 
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(lancamento);
             }
             catch (Exception e)
             {

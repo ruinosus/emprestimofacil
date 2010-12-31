@@ -51,8 +51,7 @@ namespace RegraNegocio.ModuloDespesa.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new DespesaNaoExcluidaExcecao();
 
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(Despesa);
             }
             catch (Exception e)
             {

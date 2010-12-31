@@ -258,10 +258,10 @@
   </EntityType>
   <EntityType Name="EstadoCivilTipo">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="descricao" Type="String" Nullable="false" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
     <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
     <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_2" FromRole="estadociviltipo" ToRole="cliente" />
@@ -286,10 +286,10 @@
   </EntityType>
   <EntityType Name="LancamentoTipo">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="descricao" Type="String" Nullable="false" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="sinal" Type="String" Nullable="false" />
     <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
     <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -310,10 +310,10 @@
   </EntityType>
   <EntityType Name="OrgaoExpedidorNome">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="descricao" Type="String" Nullable="false" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
     <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
     <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_1" FromRole="orgaoexpedidornome" ToRole="cliente" />
@@ -341,10 +341,10 @@
   </EntityType>
   <EntityType Name="PrazoPagamento">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="descricao" Type="String" Nullable="false" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="posdescricao" Type="String" Nullable="false" />
     <Property Name="qtde_dias" Type="Int64" Nullable="false" />
     <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
@@ -508,7 +508,7 @@
     <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="orgaoexpedidornome">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="cliente">
         <PropertyRef Name="orgaosexpedidoresnome_id" />
@@ -520,7 +520,7 @@
     <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="estadociviltipo">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="cliente">
         <PropertyRef Name="estadoscivistipo_id" />
@@ -604,7 +604,7 @@
     <End Role="emprestimo" Type="EmprestimoModel.Emprestimo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="prazopagamento">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="emprestimo">
         <PropertyRef Name="prazospagamento_id" />
@@ -664,7 +664,7 @@
     <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="estadociviltipo">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="usuario">
         <PropertyRef Name="estadoscivistipo_id" />
@@ -688,7 +688,7 @@
     <End Role="lancamento" Type="EmprestimoModel.Lancamento" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="lancamentotipo">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="lancamento">
         <PropertyRef Name="lancamentotipo_id" />
@@ -700,7 +700,7 @@
     <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="orgaoexpedidornome">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="usuario">
         <PropertyRef Name="orgaosexpedidoresnome_id" />

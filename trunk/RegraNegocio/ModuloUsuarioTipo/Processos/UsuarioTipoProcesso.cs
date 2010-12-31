@@ -51,9 +51,7 @@ namespace RegraNegocio.ModuloUsuarioTipo.Processos
 
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new UsuarioTipoNaoExcluidoExcecao();
-
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(usuarioTipo);
             }
             catch (Exception e)
             {

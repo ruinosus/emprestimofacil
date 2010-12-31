@@ -17,6 +17,7 @@ using System.Drawing.Imaging;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloBasico.Constantes;
 
 namespace RegraNegocio.ModuloBasico.VOs
 {
