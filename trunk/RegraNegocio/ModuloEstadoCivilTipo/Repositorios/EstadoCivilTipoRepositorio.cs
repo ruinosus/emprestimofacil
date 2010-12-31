@@ -14,7 +14,7 @@ namespace Negocios.ModuloEstadoCivilTipo.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloEstadoCivilTipo.Repositorios
 
         public List<EstadoCivilTipo> Consultar()
         {
-            return db.EstadoCivilTipo.ToList();
+            return db.EstadoCivilTipoSet.ToList();
         }
 
         public List<EstadoCivilTipo> Consultar(EstadoCivilTipo estadoCivilTipo, TipoPesquisa tipoPesquisa)
@@ -375,7 +375,7 @@ namespace Negocios.ModuloEstadoCivilTipo.Repositorios
         public EstadoCivilTipoRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

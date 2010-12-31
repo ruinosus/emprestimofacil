@@ -17,7 +17,7 @@ namespace SiteMVC.Controllers
         {
             EmprestimoEntities db = new EmprestimoEntities();
             StatusParcela sss = new StatusParcela();
-            var teste = db.StatusParcelaSet.ToList();
+            var teste = db.StatusParcelaSetSet.ToList();
             //emprestimoEntities db = new emprestimoEntities();
             ViewData.Model = teste;
             

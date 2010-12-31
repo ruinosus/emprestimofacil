@@ -14,7 +14,7 @@ namespace Negocios.ModuloOrgaoExpedidorNome.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloOrgaoExpedidorNome.Repositorios
 
         public List<OrgaoExpedidorNome> Consultar()
         {
-            return db.OrgaoExpedidorNome.ToList();
+            return db.OrgaoExpedidorNomeSet.ToList();
         }
 
         public List<OrgaoExpedidorNome> Consultar(OrgaoExpedidorNome orgaoExpedidorNome, TipoPesquisa tipoPesquisa)
@@ -375,7 +375,7 @@ namespace Negocios.ModuloOrgaoExpedidorNome.Repositorios
         public OrgaoExpedidorNomeRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

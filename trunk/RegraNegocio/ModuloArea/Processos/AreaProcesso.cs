@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloBasico.Singleton;
 using Negocios.ModuloArea.Repositorios;
 using Negocios.ModuloArea.Processos;
 using Negocios.ModuloArea.Fabricas;
-using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloArea.Excecoes;
+using ModuloBasico;
+using RegraNegocio.ModuloBasico.VOs;
+using RegraNegocio.ModuloBasico;
 namespace Negocios.ModuloArea.Processos
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Negocios.ModuloArea.Processos
                 if (area.ID == 0)
                     throw new AreaNaoExcluidaExcecao();
 
-                List<Area> resultado = areaRepositorio.Consultar(area, TipoPesquisa.E);
+       //         List<Area> resultado = areaRepositorio.Consultar(area, TipoPesquisa.E);
+                this.areaRepositorio.Excluir(area);
+                //if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                //    throw new AreaNaoExcluidaExcecao();
 
-                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
-                    throw new AreaNaoExcluidaExcecao();
-
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                //resultado[0].Status = (int)Status.Inativo;
+                //this.Alterar(resultado[0]);
             }
             catch (Exception e)
             {

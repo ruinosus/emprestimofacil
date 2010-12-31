@@ -14,7 +14,7 @@ namespace Negocios.ModuloUsuario.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloUsuario.Repositorios
 
         public List<Usuario> Consultar()
         {
-            return db.Usuario.ToList();
+            return db.UsuarioSet.ToList();
         }
 
         public List<Usuario> Consultar(Usuario usuario, TipoPesquisa tipoPesquisa)
@@ -375,7 +375,7 @@ namespace Negocios.ModuloUsuario.Repositorios
         public UsuarioRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

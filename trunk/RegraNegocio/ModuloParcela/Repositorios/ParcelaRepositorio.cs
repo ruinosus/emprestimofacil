@@ -14,7 +14,7 @@ namespace Negocios.ModuloParcela.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloParcela.Repositorios
 
         public List<Parcela> Consultar()
         {
-            return db.Parcela.ToList();
+            return db.ParcelaSet.ToList();
         }
 
         public List<Parcela> Consultar(Parcela parcela, TipoPesquisa tipoPesquisa)
@@ -189,7 +189,7 @@ namespace Negocios.ModuloParcela.Repositorios
         public ParcelaRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

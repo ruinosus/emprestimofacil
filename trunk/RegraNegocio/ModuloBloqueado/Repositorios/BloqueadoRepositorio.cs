@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using MySql.Data.MySqlClient;
 using Negocios.ModuloBloqueado.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloBasico;
+
 
 namespace Negocios.ModuloBloqueado.Repositorios
 {
@@ -14,7 +12,7 @@ namespace Negocios.ModuloBloqueado.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +20,7 @@ namespace Negocios.ModuloBloqueado.Repositorios
 
         public List<Bloqueado> Consultar()
         {
-            return db.Bloqueado.ToList();
+            return db.BloqueadoSet.ToList();
         }
 
         public List<Bloqueado> Consultar(Bloqueado bloqueado, TipoPesquisa tipoPesquisa)
@@ -375,7 +373,7 @@ namespace Negocios.ModuloBloqueado.Repositorios
         public BloqueadoRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

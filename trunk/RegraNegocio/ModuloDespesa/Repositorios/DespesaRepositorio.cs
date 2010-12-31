@@ -14,7 +14,7 @@ namespace Negocios.ModuloDespesa.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloDespesa.Repositorios
 
         public List<Despesa> Consultar()
         {
-            return db.Despesa.ToList();
+            return db.DespesaSet.ToList();
         }
 
         public List<Despesa> Consultar(Despesa despesa, TipoPesquisa tipoPesquisa)
@@ -189,7 +189,7 @@ namespace Negocios.ModuloDespesa.Repositorios
         public DespesaRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

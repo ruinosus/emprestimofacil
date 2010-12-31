@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloBasico.Constantes;
-using MySql.Data.MySqlClient;
 using Negocios.ModuloArea.Excecoes;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloBasico.VOs;
+using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloBasico.VOs;
+
+
 
 namespace Negocios.ModuloArea.Repositorios
 {
@@ -14,7 +14,7 @@ namespace Negocios.ModuloArea.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloArea.Repositorios
 
         public List<Area> Consultar()
         {
-            return db.Area.ToList();
+            return db.AreaSet.ToList();
         }
 
         public List<Area> Consultar(Area area, TipoPesquisa tipoPesquisa)
@@ -45,27 +45,27 @@ namespace Negocios.ModuloArea.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(area.Nome))
+                        if (!string.IsNullOrEmpty(area.descricao))
                         {
 
                             resultado = ((from t in resultado
                                           where
-                                          t.Nome.Contains(area.Nome)
+                                          t.descricao.Contains(area.descricao)
                                           select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (area.Status.HasValue)
-                        {
+                        //if (area.Status.HasValue)
+                        //{
 
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Status.HasValue && t.Status.Value == area.Status.Value
-                                          select t).ToList());
+                        //    resultado = ((from t in resultado
+                        //                  where
+                        //                  t.Status.HasValue && t.Status.Value == area.Status.Value
+                        //                  select t).ToList());
 
-                            resultado = resultado.Distinct().ToList();
-                        }
+                        //    resultado = resultado.Distinct().ToList();
+                        //}
 
                         break;
                     }
@@ -84,27 +84,27 @@ namespace Negocios.ModuloArea.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(area.Nome))
+                        if (!string.IsNullOrEmpty(area.descricao))
                         {
 
                             resultado.AddRange((from t in Consultar()
                                                 where
-                                                t.Nome.Contains(area.Nome)
+                                                t.descricao.Contains(area.descricao)
                                                 select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (area.Status.HasValue)
-                        {
+                        //if (area.Status.HasValue)
+                        //{
 
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Status.HasValue && t.Status.Value == area.Status.Value
-                                                select t).ToList());
+                        //    resultado.AddRange((from t in Consultar()
+                        //                        where
+                        //                        t.Status.HasValue && t.Status.Value == area.Status.Value
+                        //                        select t).ToList());
 
-                            resultado = resultado.Distinct().ToList();
-                        }
+                        //    resultado = resultado.Distinct().ToList();
+                        //}
 
                         break;
                     }
@@ -120,7 +120,7 @@ namespace Negocios.ModuloArea.Repositorios
         {
             try
             {
-                db.Area.InsertOnSubmit(area);
+                db.AddToAreaSet(area);
             }
             catch (Exception)
             {
@@ -143,12 +143,12 @@ namespace Negocios.ModuloArea.Repositorios
 
                 areaAux = resultado[0];
 
-                db.Area.DeleteOnSubmit(areaAux);
+                db.DeleteObject(areaAux);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw new AreaNaoExcluidaExcecao();
+                throw ex;
             }
         }
 
@@ -165,8 +165,10 @@ namespace Negocios.ModuloArea.Repositorios
                     throw new AreaNaoAlteradaExcecao();
 
                 areaAux = resultado[0];
-                areaAux.Nome = area.Nome;
-                areaAux.Status = area.Status;
+                areaAux.municipio_id = area.municipio_id;
+                areaAux.timeCreated= area.timeCreated;
+                areaAux.timeUpdated = area.timeUpdated;
+                areaAux.descricao = area.descricao;
 
 
                 Confirmar();
@@ -180,7 +182,7 @@ namespace Negocios.ModuloArea.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
@@ -188,8 +190,8 @@ namespace Negocios.ModuloArea.Repositorios
         #region Construtor
         public AreaRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            
+            db = new EmprestimoEntities();
 
         }
         #endregion

@@ -14,7 +14,7 @@ namespace Negocios.ModuloLancamento.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloLancamento.Repositorios
 
         public List<Lancamento> Consultar()
         {
-            return db.Lancamento.ToList();
+            return db.LancamentoSet.ToList();
         }
 
         public List<Lancamento> Consultar(Lancamento lancamento, TipoPesquisa tipoPesquisa)
@@ -375,7 +375,7 @@ namespace Negocios.ModuloLancamento.Repositorios
         public LancamentoRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

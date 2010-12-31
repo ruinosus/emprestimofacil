@@ -14,7 +14,7 @@ namespace Negocios.ModuloEscolaridade.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloEscolaridade.Repositorios
 
         public List<Escolaridade> Consultar()
         {
-            return db.Escolaridade.ToList();
+            return db.EscolaridadeSet.ToList();
         }
 
         public List<Escolaridade> Consultar(Escolaridade escolaridade, TipoPesquisa tipoPesquisa)
@@ -189,7 +189,7 @@ namespace Negocios.ModuloEscolaridade.Repositorios
         public EscolaridadeRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

@@ -826,10 +826,10 @@
         </EntityContainer>
         <EntityType Name="Area">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" annotation:StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="municipio_id" Type="Int64" Nullable="false" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -1151,7 +1151,7 @@
           <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="area">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="cliente">
               <PropertyRef Name="area_id" />
@@ -1175,7 +1175,7 @@
           <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="area">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="usuario">
               <PropertyRef Name="area_id" />
@@ -1454,7 +1454,7 @@
         <EntityContainerMapping StorageEntityContainer="emprestimoModelStoreContainer" CdmEntityContainer="EmprestimoEntities">
           <EntitySetMapping Name="AreaSet"><EntityTypeMapping TypeName="EmprestimoModel.Area"><MappingFragment StoreEntitySet="area">
             <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="municipio_id" ColumnName="municipio_id" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />

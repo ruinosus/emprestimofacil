@@ -14,7 +14,7 @@ namespace Negocios.ModuloPrazoPagamento.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloPrazoPagamento.Repositorios
 
         public List<PrazoPagamento> Consultar()
         {
-            return db.PrazoPagamento.ToList();
+            return db.PrazoPagamentoSet.ToList();
         }
 
         public List<PrazoPagamento> Consultar(PrazoPagamento prazoPagamento, TipoPesquisa tipoPesquisa)
@@ -375,7 +375,7 @@ namespace Negocios.ModuloPrazoPagamento.Repositorios
         public PrazoPagamentoRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion

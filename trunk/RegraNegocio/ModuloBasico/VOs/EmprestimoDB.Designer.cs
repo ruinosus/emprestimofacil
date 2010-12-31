@@ -18,35 +18,35 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_3", "area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Area), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "municipio_ibfk_1", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.municipio), "area", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Area), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_3", "area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Area), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Usuario), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "bloqueado_ibfk_1", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Cliente), "bloqueado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Bloqueado), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "bloqueado_ibfk_2", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Usuario), "bloqueado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Bloqueado), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_1", "orgaoexpedidornome", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.OrgaoExpedidorNome), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_2", "estadociviltipo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.EstadoCivilTipo), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_4", "escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.Escolaridade), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_5", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_6", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_1", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Cliente), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Emprestimo), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Usuario), "despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Despesa), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_2", "despesatipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.DespesaTipo), "despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Despesa), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_2", "prazopagamento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.PrazoPagamento), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Emprestimo), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_3", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Usuario), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Emprestimo), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_4", "tipoemprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.TipoEmprestimo), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Emprestimo), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "parcela_ibfk_1", "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Emprestimo), "parcela", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Parcela), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_5", "escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.Escolaridade), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Usuario), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_2", "estadociviltipo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.EstadoCivilTipo), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Usuario), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "lancamento_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Usuario), "lancamento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Lancamento), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "lancamento_ibfk_2", "lancamentotipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.LancamentoTipo), "lancamento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Lancamento), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_1", "orgaoexpedidornome", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.OrgaoExpedidorNome), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Usuario), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "parcela_ibfk_2", "statusparcela", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.StatusParcela), "parcela", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Parcela), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "prestacaoconta_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.Usuario), "prestacaoconta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.PrestacaoConta), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_4", "usuariotipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.UsuarioTipo), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_3", "area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Area), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "municipio_ibfk_1", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.municipio), "area", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Area), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_3", "area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Area), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "bloqueado_ibfk_1", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), "bloqueado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Bloqueado), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "bloqueado_ibfk_2", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "bloqueado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Bloqueado), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_1", "orgaoexpedidornome", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.OrgaoExpedidorNome), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_2", "estadociviltipo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.EstadoCivilTipo), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_4", "escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.Escolaridade), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_5", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_6", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_1", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Emprestimo), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Despesa), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_2", "despesatipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.DespesaTipo), "despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Despesa), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_2", "prazopagamento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.PrazoPagamento), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Emprestimo), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_3", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Emprestimo), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_4", "tipoemprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.TipoEmprestimo), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Emprestimo), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "parcela_ibfk_1", "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Emprestimo), "parcela", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Parcela), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_5", "escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.Escolaridade), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_2", "estadociviltipo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.EstadoCivilTipo), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "lancamento_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "lancamento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Lancamento), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "lancamento_ibfk_2", "lancamentotipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.LancamentoTipo), "lancamento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Lancamento), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_1", "orgaoexpedidornome", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.OrgaoExpedidorNome), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "parcela_ibfk_2", "statusparcela", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.StatusParcela), "parcela", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Parcela), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "prestacaoconta_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "prestacaoconta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.PrestacaoConta), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_4", "usuariotipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.UsuarioTipo), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), true)]
 
 #endregion
 
-namespace RegraNegocio.ModuloBasico
+namespace RegraNegocio.ModuloBasico.VOs
 {
     #region Contexts
     
@@ -575,7 +575,7 @@ namespace RegraNegocio.ModuloBasico
         /// Create a new Area object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="municipio_id">Initial value of the municipio_id property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
@@ -583,7 +583,7 @@ namespace RegraNegocio.ModuloBasico
         {
             Area area = new Area();
             area.descricao = descricao;
-            area.id = id;
+            area.ID = id;
             area.municipio_id = municipio_id;
             area.timeCreated = timeCreated;
             area.timeUpdated = timeUpdated;
@@ -622,27 +622,27 @@ namespace RegraNegocio.ModuloBasico
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

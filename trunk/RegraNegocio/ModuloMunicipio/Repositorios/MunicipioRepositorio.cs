@@ -14,7 +14,7 @@ namespace Negocios.ModuloMunicipio.Repositorios
     {
         #region Atributos
 
-        ColegioDB db;
+        EmprestimoEntities db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace Negocios.ModuloMunicipio.Repositorios
 
         public List<Municipio> Consultar()
         {
-            return db.Municipio.ToList();
+            return db.MunicipioSet.ToList();
         }
 
         public List<Municipio> Consultar(Municipio municipio, TipoPesquisa tipoPesquisa)
@@ -375,7 +375,7 @@ namespace Negocios.ModuloMunicipio.Repositorios
         public MunicipioRepositorio()
         {
             Conexao conexao = new Conexao();
-            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
 
         }
         #endregion
