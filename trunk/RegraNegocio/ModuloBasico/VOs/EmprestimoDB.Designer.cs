@@ -2623,7 +2623,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new DespesaTipo object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="posdescricao">Initial value of the posdescricao property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
@@ -2631,7 +2631,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         {
             DespesaTipo despesaTipo = new DespesaTipo();
             despesaTipo.descricao = descricao;
-            despesaTipo.id = id;
+            despesaTipo.ID = id;
             despesaTipo.posdescricao = posdescricao;
             despesaTipo.timeCreated = timeCreated;
             despesaTipo.timeUpdated = timeUpdated;
@@ -2670,27 +2670,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

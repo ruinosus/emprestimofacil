@@ -45,27 +45,6 @@ namespace RegraNegocio.ModuloDespesaTipo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(despesaTipo.Nome))
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Nome.Contains(despesaTipo.Nome)
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (despesaTipo.Status.HasValue)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Status.HasValue && t.Status.Value == despesaTipo.Status.Value
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -84,27 +63,6 @@ namespace RegraNegocio.ModuloDespesaTipo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(despesaTipo.Nome))
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Nome.Contains(despesaTipo.Nome)
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (despesaTipo.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Status.HasValue && t.Status.Value == despesaTipo.Status.Value
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -120,7 +78,7 @@ namespace RegraNegocio.ModuloDespesaTipo.Repositorios
         {
             try
             {
-                db.DespesaTipo.InsertOnSubmit(despesaTipo);
+                db.AddToDespesaTipoSet(despesaTipo);
             }
             catch (Exception)
             {
@@ -143,7 +101,7 @@ namespace RegraNegocio.ModuloDespesaTipo.Repositorios
 
                 despesaTipoAux = resultado[0];
 
-                db.DespesaTipo.DeleteOnSubmit(despesaTipoAux);
+                db.DeleteObject(despesaTipoAux);
             }
             catch (Exception)
             {
@@ -165,8 +123,10 @@ namespace RegraNegocio.ModuloDespesaTipo.Repositorios
                     throw new DespesaTipoNaoAlteradaExcecao();
 
                 despesaTipoAux = resultado[0];
-                despesaTipoAux.Nome = despesaTipo.Nome;
-                despesaTipoAux.Status = despesaTipo.Status;
+                despesaTipoAux.descricao = despesaTipo.descricao;
+                despesaTipoAux.ID = despesaTipo.ID;
+                despesaTipoAux.posdescricao = despesaTipo.posdescricao;
+
 
 
                 Confirmar();
@@ -180,7 +140,7 @@ namespace RegraNegocio.ModuloDespesaTipo.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

@@ -918,10 +918,10 @@
         </EntityType>
         <EntityType Name="DespesaTipo">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="posdescricao" Type="String" Nullable="false" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -1295,7 +1295,7 @@
           <End Role="despesa" Type="EmprestimoModel.Despesa" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="despesatipo">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="despesa">
               <PropertyRef Name="despesatipo_id" />
@@ -1519,7 +1519,7 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="DespesaTipoSet"><EntityTypeMapping TypeName="EmprestimoModel.DespesaTipo"><MappingFragment StoreEntitySet="despesatipo">
             <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />

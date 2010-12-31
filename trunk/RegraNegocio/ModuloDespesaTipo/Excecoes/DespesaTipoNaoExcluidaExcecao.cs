@@ -5,7 +5,7 @@ using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
 using RegraNegocio.ModuloArea.Constantes;
 using RegraNegocio.ModuloDespesaTipo.Constantes;
-namespace RegraNegocio.ModuloArea.Excecoes
+namespace RegraNegocio.ModuloDespesaTipo.Excecoes
 {
     /// <summary>
     /// Classe DespesaTipoNaoExcluidaExcecao
