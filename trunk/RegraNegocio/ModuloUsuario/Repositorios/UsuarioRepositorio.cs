@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
-using MySql.Data.MySqlClient;
+
 using RegraNegocio.ModuloUsuario.Excecoes;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloBasico.VOs;
@@ -374,9 +374,7 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
         #region Construtor
         public UsuarioRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
-
+            db = new EmprestimoEntities();
         }
         #endregion
 

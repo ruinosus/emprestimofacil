@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
-using MySql.Data.MySqlClient;
+
 using RegraNegocio.ModuloEmprestimo.Excecoes;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloBasico.VOs;

@@ -194,7 +194,7 @@
     <Compile Include="ModuloStatusParcela\Excecoes\StatusParcelaNaoAlteradoExcecao.cs" />
     <Compile Include="ModuloStatusParcela\Excecoes\StatusParcelaNaoExcluidoExcecao.cs" />
     <Compile Include="ModuloStatusParcela\Excecoes\StatusParcelaNaoIncluidoExcecao.cs" />
-    <Compile Include="ModuloStatusParcela\Fabricas\ClienteFabrica.cs" />
+    <Compile Include="ModuloStatusParcela\Fabricas\StatusParcelaFabrica.cs" />
     <Compile Include="ModuloStatusParcela\Processos\Interfaces\IStatusParcelaProcesso.cs" />
     <Compile Include="ModuloStatusParcela\Processos\StatusParcelaProcesso.cs" />
     <Compile Include="ModuloStatusParcela\Repositorios\Interfaces\IStatusParcelaRepositorio.cs" />
@@ -212,7 +212,7 @@
     <Compile Include="ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoAlteradoExcecao.cs" />
     <Compile Include="ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoExcluidoExcecao.cs" />
     <Compile Include="ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoIncluidoExcecao.cs" />
-    <Compile Include="ModuloUsuarioTipo\Fabricas\UsuarioFabrica.cs" />
+    <Compile Include="ModuloUsuarioTipo\Fabricas\UsuarioTipoFabrica.cs" />
     <Compile Include="ModuloUsuarioTipo\Processos\Interfaces\IUsuarioTipoProcesso.cs" />
     <Compile Include="ModuloUsuarioTipo\Processos\UsuarioTipoProcesso.cs" />
     <Compile Include="ModuloUsuarioTipo\Repositorios\Interfaces\IUsuarioTipoRepositorio.cs" />

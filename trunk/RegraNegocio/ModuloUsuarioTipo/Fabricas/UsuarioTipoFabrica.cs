@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
-using RegraNegocio.ModuloUsuario.Repositorios;
+using RegraNegocio.ModuloUsuarioTipo.Repositorios;
 
-namespace RegraNegocio.ModuloUsuario.Fabricas
+namespace RegraNegocio.ModuloUsuarioTipo.Fabricas
 {
     /// <summary>
-    /// Classe UsuarioFabrica
+    /// Classe UsuarioTipoFabrica
     /// </summary>
-    public class UsuarioFabrica
+    public class UsuarioTipoFabrica
     {
         #region Atributos
-        private static IUsuarioRepositorio iUsuarioRepositorioInstance;
+        private static IUsuarioTipoRepositorio iUsuarioTipoRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IUsuarioRepositorio.
+        /// Instancia da interface IUsuarioTipoRepositorio.
         /// </summary>
-        public static IUsuarioRepositorio IUsuarioInstance
+        public static IUsuarioTipoRepositorio IUsuarioTipoInstance
         {
             get
             {
-                iUsuarioRepositorioInstance = new UsuarioRepositorio();
-                return iUsuarioRepositorioInstance;
+                iUsuarioTipoRepositorioInstance = new UsuarioTipoRepositorio();
+                return iUsuarioTipoRepositorioInstance;
             }
 
         }
