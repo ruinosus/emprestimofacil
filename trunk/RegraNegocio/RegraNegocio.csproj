@@ -200,10 +200,10 @@
     <Compile Include="ModuloStatusParcela\Repositorios\Interfaces\IStatusParcelaRepositorio.cs" />
     <Compile Include="ModuloStatusParcela\Repositorios\StatusParcelaRepositorio.cs" />
     <Compile Include="ModuloTipoEmprestimo\Constantes\TipoEmprestimoConstantes.cs" />
-    <Compile Include="ModuloTipoEmprestimo\Excecoes\ClienteNaoIncluidoExcecao.cs" />
+    <Compile Include="ModuloTipoEmprestimo\Excecoes\EmprestimoNaoIncluidoExcecao.cs" />
     <Compile Include="ModuloTipoEmprestimo\Excecoes\TipoEmprestimoNaoAlteradoExcecao.cs" />
     <Compile Include="ModuloTipoEmprestimo\Excecoes\TipoEmprestimoNaoExcluidoExcecao.cs" />
-    <Compile Include="ModuloTipoEmprestimo\Fabricas\ClienteFabrica.cs" />
+    <Compile Include="ModuloTipoEmprestimo\Fabricas\TipoEmprestimoFabrica.cs" />
     <Compile Include="ModuloTipoEmprestimo\Processos\Interfaces\ITipoEmprestimoProcesso.cs" />
     <Compile Include="ModuloTipoEmprestimo\Processos\TipoEmprestimoProcesso.cs" />
     <Compile Include="ModuloTipoEmprestimo\Repositorios\Interfaces\ITipoEmprestimoRepositorio.cs" />
@@ -212,7 +212,7 @@
     <Compile Include="ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoAlteradoExcecao.cs" />
     <Compile Include="ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoExcluidoExcecao.cs" />
     <Compile Include="ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoIncluidoExcecao.cs" />
-    <Compile Include="ModuloUsuarioTipo\Fabricas\ClienteFabrica.cs" />
+    <Compile Include="ModuloUsuarioTipo\Fabricas\UsuarioFabrica.cs" />
     <Compile Include="ModuloUsuarioTipo\Processos\Interfaces\IUsuarioTipoProcesso.cs" />
     <Compile Include="ModuloUsuarioTipo\Processos\UsuarioTipoProcesso.cs" />
     <Compile Include="ModuloUsuarioTipo\Repositorios\Interfaces\IUsuarioTipoRepositorio.cs" />

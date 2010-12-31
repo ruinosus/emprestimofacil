@@ -1,31 +1,31 @@
-Municipio System;
-Municipio System.Collections.Generic;
-Municipio System.Linq;
-Municipio System.Web;
-Municipio RegraNegocio.ModuloBasico.Constantes;
-Municipio RegraNegocio.ModuloBloqueado.Repositorios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloMunicipio.Repositorios;
 
-namespace RegraNegocio.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloMunicipio.Fabricas
 {
     /// <summary>
-    /// Classe BloqueadoFabrica
+    /// Classe MunicipioFabrica
     /// </summary>
-    public class BloqueadoFabrica
+    public class MunicipioFabrica
     {
         #region Atributos
-        private static IBloqueadoRepositorio iBloqueadoRepositorioInstance;
+        private static IMunicipioRepositorio iMunicipioRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IBloqueadoRepositorio.
+        /// Instancia da interface IMunicipioRepositorio.
         /// </summary>
-        public static IBloqueadoRepositorio IBloqueadoInstance
+        public static IMunicipioRepositorio IMunicipioInstance
         {
             get
             {
-                iBloqueadoRepositorioInstance = new BloqueadoRepositorio();
-                return iBloqueadoRepositorioInstance;
+                iMunicipioRepositorioInstance = new MunicipioRepositorio();
+                return iMunicipioRepositorioInstance;
             }
 
         }

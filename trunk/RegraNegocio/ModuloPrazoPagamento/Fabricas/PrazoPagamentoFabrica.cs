@@ -1,31 +1,31 @@
-PrazoPagamento System;
-PrazoPagamento System.Collections.Generic;
-PrazoPagamento System.Linq;
-PrazoPagamento System.Web;
-PrazoPagamento RegraNegocio.ModuloBasico.Constantes;
-PrazoPagamento RegraNegocio.ModuloBloqueado.Repositorios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloPrazoPagamento.Repositorios;
 
-namespace RegraNegocio.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloPrazoPagamento.Fabricas
 {
     /// <summary>
-    /// Classe BloqueadoFabrica
+    /// Classe PrazoPagamentoFabrica
     /// </summary>
-    public class BloqueadoFabrica
+    public class PrazoPagamentoFabrica
     {
         #region Atributos
-        private static IBloqueadoRepositorio iBloqueadoRepositorioInstance;
+        private static IPrazoPagamentoRepositorio iPrazoPagamentoRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IBloqueadoRepositorio.
+        /// Instancia da interface IPrazoPagamentoRepositorio.
         /// </summary>
-        public static IBloqueadoRepositorio IBloqueadoInstance
+        public static IPrazoPagamentoRepositorio IPrazoPagamentoInstance
         {
             get
             {
-                iBloqueadoRepositorioInstance = new BloqueadoRepositorio();
-                return iBloqueadoRepositorioInstance;
+                iPrazoPagamentoRepositorioInstance = new PrazoPagamentoRepositorio();
+                return iPrazoPagamentoRepositorioInstance;
             }
 
         }

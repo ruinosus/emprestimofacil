@@ -1,31 +1,31 @@
-Cliente System;
-Cliente System.Collections.Generic;
-Cliente System.Linq;
-Cliente System.Web;
-Cliente RegraNegocio.ModuloBasico.Constantes;
-Cliente RegraNegocio.ModuloBloqueado.Repositorios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloEmprestimo.Repositorios;
 
-namespace RegraNegocio.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloEmprestimo.Fabricas
 {
     /// <summary>
-    /// Classe BloqueadoFabrica
+    /// Classe EmprestimoFabrica
     /// </summary>
-    public class BloqueadoFabrica
+    public class EmprestimoFabrica
     {
         #region Atributos
-        private static IBloqueadoRepositorio iBloqueadoRepositorioInstance;
+        private static IEmprestimoRepositorio iEmprestimoRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IBloqueadoRepositorio.
+        /// Instancia da interface IEmprestimoRepositorio.
         /// </summary>
-        public static IBloqueadoRepositorio IBloqueadoInstance
+        public static IEmprestimoRepositorio IEmprestimoInstance
         {
             get
             {
-                iBloqueadoRepositorioInstance = new BloqueadoRepositorio();
-                return iBloqueadoRepositorioInstance;
+                iEmprestimoRepositorioInstance = new EmprestimoRepositorio();
+                return iEmprestimoRepositorioInstance;
             }
 
         }

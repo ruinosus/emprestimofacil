@@ -1,31 +1,31 @@
-Lancamento System;
-Lancamento System.Collections.Generic;
-Lancamento System.Linq;
-Lancamento System.Web;
-Lancamento RegraNegocio.ModuloBasico.Constantes;
-Lancamento RegraNegocio.ModuloBloqueado.Repositorios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloLancamento.Repositorios;
 
-namespace RegraNegocio.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloLancamento.Fabricas
 {
     /// <summary>
-    /// Classe BloqueadoFabrica
+    /// Classe LancamentoFabrica
     /// </summary>
-    public class BloqueadoFabrica
+    public class LancamentoFabrica
     {
         #region Atributos
-        private static IBloqueadoRepositorio iBloqueadoRepositorioInstance;
+        private static ILancamentoRepositorio iLancamentoRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IBloqueadoRepositorio.
+        /// Instancia da interface ILancamentoRepositorio.
         /// </summary>
-        public static IBloqueadoRepositorio IBloqueadoInstance
+        public static ILancamentoRepositorio ILancamentoInstance
         {
             get
             {
-                iBloqueadoRepositorioInstance = new BloqueadoRepositorio();
-                return iBloqueadoRepositorioInstance;
+                iLancamentoRepositorioInstance = new LancamentoRepositorio();
+                return iLancamentoRepositorioInstance;
             }
 
         }

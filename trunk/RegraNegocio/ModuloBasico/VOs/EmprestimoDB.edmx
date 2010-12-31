@@ -839,10 +839,10 @@
         </EntityType>
         <EntityType Name="Bloqueado">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="cliente_id" Type="Int64" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="motivo" Type="String" Nullable="false" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -1461,7 +1461,7 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="BloqueadoSet"><EntityTypeMapping TypeName="EmprestimoModel.Bloqueado"><MappingFragment StoreEntitySet="bloqueado">
             <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="motivo" ColumnName="motivo" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />

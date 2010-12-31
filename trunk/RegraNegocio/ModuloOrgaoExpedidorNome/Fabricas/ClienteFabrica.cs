@@ -1,31 +1,31 @@
-OrgaoExpedidorNome System;
-OrgaoExpedidorNome System.Collections.Generic;
-OrgaoExpedidorNome System.Linq;
-OrgaoExpedidorNome System.Web;
-OrgaoExpedidorNome RegraNegocio.ModuloBasico.Constantes;
-OrgaoExpedidorNome RegraNegocio.ModuloBloqueado.Repositorios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloOrgaoExpedidorNome.Repositorios;
 
-namespace RegraNegocio.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloOrgaoExpedidorNome.Fabricas
 {
     /// <summary>
-    /// Classe BloqueadoFabrica
+    /// Classe OrgaoExpedidorNomeFabrica
     /// </summary>
-    public class BloqueadoFabrica
+    public class OrgaoExpedidorNomeFabrica
     {
         #region Atributos
-        private static IBloqueadoRepositorio iBloqueadoRepositorioInstance;
+        private static IOrgaoExpedidorNomeRepositorio iOrgaoExpedidorNomeRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IBloqueadoRepositorio.
+        /// Instancia da interface IOrgaoExpedidorNomeRepositorio.
         /// </summary>
-        public static IBloqueadoRepositorio IBloqueadoInstance
+        public static IOrgaoExpedidorNomeRepositorio IOrgaoExpedidorNomeInstance
         {
             get
             {
-                iBloqueadoRepositorioInstance = new BloqueadoRepositorio();
-                return iBloqueadoRepositorioInstance;
+                iOrgaoExpedidorNomeRepositorioInstance = new OrgaoExpedidorNomeRepositorio();
+                return iOrgaoExpedidorNomeRepositorioInstance;
             }
 
         }

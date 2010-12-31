@@ -1,31 +1,31 @@
-EstadoCivilTipo System;
-EstadoCivilTipo System.Collections.Generic;
-EstadoCivilTipo System.Linq;
-EstadoCivilTipo System.Web;
-EstadoCivilTipo RegraNegocio.ModuloBasico.Constantes;
-EstadoCivilTipo RegraNegocio.ModuloBloqueado.Repositorios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using RegraNegocio.ModuloBasico.Constantes;
+using RegraNegocio.ModuloEstadoCivilTipo.Repositorios;
 
-namespace RegraNegocio.ModuloBloqueado.Fabricas
+namespace RegraNegocio.ModuloEstadoCivilTipo.Fabricas
 {
     /// <summary>
-    /// Classe BloqueadoFabrica
+    /// Classe EstadoCivilTipoFabrica
     /// </summary>
-    public class BloqueadoFabrica
+    public class EstadoCivilTipoFabrica
     {
         #region Atributos
-        private static IBloqueadoRepositorio iBloqueadoRepositorioInstance;
+        private static IEstadoCivilTipoRepositorio iEstadoCivilTipoRepositorioInstance;
         #endregion
 
         #region Propriedades
         /// <summary>
-        /// Instancia da interface IBloqueadoRepositorio.
+        /// Instancia da interface IEstadoCivilTipoRepositorio.
         /// </summary>
-        public static IBloqueadoRepositorio IBloqueadoInstance
+        public static IEstadoCivilTipoRepositorio IEstadoCivilTipoInstance
         {
             get
             {
-                iBloqueadoRepositorioInstance = new BloqueadoRepositorio();
-                return iBloqueadoRepositorioInstance;
+                iEstadoCivilTipoRepositorioInstance = new EstadoCivilTipoRepositorio();
+                return iEstadoCivilTipoRepositorioInstance;
             }
 
         }
