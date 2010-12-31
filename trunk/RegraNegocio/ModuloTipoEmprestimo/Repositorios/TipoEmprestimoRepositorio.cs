@@ -45,116 +45,6 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (tipoEmprestimo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == tipoEmprestimo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(tipoEmprestimo.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(tipoEmprestimo.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(tipoEmprestimo.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(tipoEmprestimo.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == tipoEmprestimo.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (tipoEmprestimo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == tipoEmprestimo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.NumTipoEmprestimo.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumTipoEmprestimo.HasValue && c.NumTipoEmprestimo.Value == tipoEmprestimo.NumTipoEmprestimo.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == tipoEmprestimo.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == tipoEmprestimo.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -168,117 +58,6 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
                                                 where
                                                 c.ID == tipoEmprestimo.ID
                                                 select c).ToList());
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == tipoEmprestimo.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(tipoEmprestimo.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(tipoEmprestimo.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(tipoEmprestimo.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(tipoEmprestimo.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(tipoEmprestimo.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == tipoEmprestimo.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (tipoEmprestimo.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == tipoEmprestimo.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.NumTipoEmprestimo.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumTipoEmprestimo.HasValue && c.NumTipoEmprestimo.Value == tipoEmprestimo.NumTipoEmprestimo.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == tipoEmprestimo.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (tipoEmprestimo.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == tipoEmprestimo.Valor.Value
-                                                select c).ToList());
-
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -296,7 +75,7 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
         {
             try
             {
-                db.TipoEmprestimo.InsertOnSubmit(tipoEmprestimo);
+                db.AddToTipoEmprestimoSet(tipoEmprestimo);
             }
             catch (Exception)
             {
@@ -320,7 +99,7 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
 
                 tipoEmprestimoAux = resultado[0];
 
-                db.TipoEmprestimo.DeleteOnSubmit(tipoEmprestimoAux);
+                db.DeleteObject(tipoEmprestimoAux);
 
             }
             catch (Exception)
@@ -343,15 +122,10 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new TipoEmprestimoNaoAlteradoExcecao();
 
-                tipoEmprestimoAux.Agencia = tipoEmprestimo.Agencia;
-                tipoEmprestimoAux.Banco = tipoEmprestimo.Banco;
-                tipoEmprestimoAux.Conta = tipoEmprestimo.Conta;
-                tipoEmprestimoAux.Cpf = tipoEmprestimo.Cpf;
-                tipoEmprestimoAux.NumTipoEmprestimo = tipoEmprestimo.NumTipoEmprestimo;
-                tipoEmprestimoAux.Parcela = tipoEmprestimo.Parcela;
-                tipoEmprestimoAux.Status = tipoEmprestimo.Status;
-                tipoEmprestimoAux.Tipo = tipoEmprestimo.Tipo;
-                tipoEmprestimoAux.Valor = tipoEmprestimo.Valor;
+                tipoEmprestimoAux.descricao = tipoEmprestimo.descricao;
+                tipoEmprestimoAux.ID = tipoEmprestimo.ID;
+
+   
 
                 tipoEmprestimoAux = resultado[0];
 
@@ -366,7 +140,7 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
@@ -374,8 +148,8 @@ namespace RegraNegocio.ModuloTipoEmprestimo.Repositorios
         #region Construtor
         public TipoEmprestimoRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
+
+            db = new EmprestimoEntities();
 
         }
         #endregion

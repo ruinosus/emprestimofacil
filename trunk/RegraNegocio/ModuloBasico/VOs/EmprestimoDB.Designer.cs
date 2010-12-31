@@ -3297,14 +3297,14 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new Escolaridade object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         public static Escolaridade CreateEscolaridade(global::System.String descricao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated)
         {
             Escolaridade escolaridade = new Escolaridade();
             escolaridade.descricao = descricao;
-            escolaridade.id = id;
+            escolaridade.ID = id;
             escolaridade.timeCreated = timeCreated;
             escolaridade.timeUpdated = timeUpdated;
             return escolaridade;
@@ -3342,27 +3342,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5257,7 +5257,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new PrestacaoConta object.
         /// </summary>
         /// <param name="dataprestacao">Initial value of the dataprestacao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         /// <param name="totaldespesas">Initial value of the totaldespesas property.</param>
@@ -5271,7 +5271,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         {
             PrestacaoConta prestacaoConta = new PrestacaoConta();
             prestacaoConta.dataprestacao = dataprestacao;
-            prestacaoConta.id = id;
+            prestacaoConta.ID = id;
             prestacaoConta.timeCreated = timeCreated;
             prestacaoConta.timeUpdated = timeUpdated;
             prestacaoConta.totaldespesas = totaldespesas;
@@ -5316,27 +5316,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5637,14 +5637,14 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new StatusParcela object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         public static StatusParcela CreateStatusParcela(global::System.String descricao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated)
         {
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.descricao = descricao;
-            statusParcela.id = id;
+            statusParcela.ID = id;
             statusParcela.timeCreated = timeCreated;
             statusParcela.timeUpdated = timeUpdated;
             return statusParcela;
@@ -5682,27 +5682,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5795,14 +5795,14 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new TipoEmprestimo object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         public static TipoEmprestimo CreateTipoEmprestimo(global::System.String descricao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated)
         {
             TipoEmprestimo tipoEmprestimo = new TipoEmprestimo();
             tipoEmprestimo.descricao = descricao;
-            tipoEmprestimo.id = id;
+            tipoEmprestimo.ID = id;
             tipoEmprestimo.timeCreated = timeCreated;
             tipoEmprestimo.timeUpdated = timeUpdated;
             return tipoEmprestimo;
@@ -5840,27 +5840,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

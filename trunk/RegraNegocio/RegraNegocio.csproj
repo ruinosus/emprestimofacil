@@ -83,7 +83,7 @@
     <Compile Include="ModuloCliente\Repositorios\ClienteRepositorio.cs" />
     <Compile Include="ModuloCliente\Repositorios\Interfaces\IClienteRepositorio.cs" />
     <Compile Include="ModuloDespesaTipo\Constantes\DepesaTipoConstantes.cs" />
-    <Compile Include="ModuloDespesaTipo\Excecoes\DepesaTipoNaoAlteradaExcecao.cs" />
+    <Compile Include="ModuloDespesaTipo\Excecoes\DespesaTipoNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloDespesaTipo\Excecoes\DespesaTipoNaoExcluidaExcecao.cs" />
     <Compile Include="ModuloDespesaTipo\Excecoes\DespesaTipoNaoIncluidaExcecao.cs" />
     <Compile Include="ModuloDespesaTipo\Fabricas\AreaFabrica.cs" />

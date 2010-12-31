@@ -45,28 +45,6 @@ namespace RegraNegocio.ModuloEscolaridade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(escolaridade.Nome))
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Nome.Contains(escolaridade.Nome)
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (escolaridade.Status.HasValue)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Status.HasValue && t.Status.Value == escolaridade.Status.Value
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -84,27 +62,6 @@ namespace RegraNegocio.ModuloEscolaridade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(escolaridade.Nome))
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Nome.Contains(escolaridade.Nome)
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (escolaridade.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Status.HasValue && t.Status.Value == escolaridade.Status.Value
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -120,7 +77,7 @@ namespace RegraNegocio.ModuloEscolaridade.Repositorios
         {
             try
             {
-                db.Escolaridade.InsertOnSubmit(escolaridade);
+                db.AddToEscolaridadeSet(escolaridade);
             }
             catch (Exception)
             {
@@ -143,7 +100,7 @@ namespace RegraNegocio.ModuloEscolaridade.Repositorios
 
                 escolaridadeAux = resultado[0];
 
-                db.Escolaridade.DeleteOnSubmit(escolaridadeAux);
+                db.DeleteObject(escolaridadeAux);
             }
             catch (Exception)
             {
@@ -165,9 +122,9 @@ namespace RegraNegocio.ModuloEscolaridade.Repositorios
                     throw new EscolaridadeNaoAlteradaExcecao();
 
                 escolaridadeAux = resultado[0];
-                escolaridadeAux.Nome = escolaridade.Nome;
-                escolaridadeAux.Status = escolaridade.Status;
-
+                escolaridadeAux.descricao = escolaridade.descricao;
+                escolaridadeAux.ID = escolaridade.ID;
+               
 
                 Confirmar();
             }
@@ -180,7 +137,7 @@ namespace RegraNegocio.ModuloEscolaridade.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

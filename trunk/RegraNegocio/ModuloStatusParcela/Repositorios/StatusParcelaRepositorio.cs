@@ -45,117 +45,6 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (statusParcela.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == statusParcela.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(statusParcela.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(statusParcela.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(statusParcela.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(statusParcela.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == statusParcela.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (statusParcela.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == statusParcela.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.NumStatusParcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumStatusParcela.HasValue && c.NumStatusParcela.Value == statusParcela.NumStatusParcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == statusParcela.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == statusParcela.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -168,117 +57,6 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
                                                 where
                                                 c.ID == statusParcela.ID
                                                 select c).ToList());
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == statusParcela.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(statusParcela.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(statusParcela.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(statusParcela.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(statusParcela.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(statusParcela.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == statusParcela.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (statusParcela.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == statusParcela.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.NumStatusParcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumStatusParcela.HasValue && c.NumStatusParcela.Value == statusParcela.NumStatusParcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == statusParcela.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (statusParcela.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == statusParcela.Valor.Value
-                                                select c).ToList());
-
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -296,7 +74,7 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
         {
             try
             {
-                db.StatusParcela.InsertOnSubmit(statusParcela);
+                db.AddToStatusParcelaSet(statusParcela);
             }
             catch (Exception)
             {
@@ -320,7 +98,7 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
 
                 statusParcelaAux = resultado[0];
 
-                db.StatusParcela.DeleteOnSubmit(statusParcelaAux);
+                db.DeleteObject(statusParcelaAux);
 
             }
             catch (Exception)
@@ -343,15 +121,9 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new StatusParcelaNaoAlteradoExcecao();
 
-                statusParcelaAux.Agencia = statusParcela.Agencia;
-                statusParcelaAux.Banco = statusParcela.Banco;
-                statusParcelaAux.Conta = statusParcela.Conta;
-                statusParcelaAux.Cpf = statusParcela.Cpf;
-                statusParcelaAux.NumStatusParcela = statusParcela.NumStatusParcela;
-                statusParcelaAux.Parcela = statusParcela.Parcela;
-                statusParcelaAux.Status = statusParcela.Status;
-                statusParcelaAux.Tipo = statusParcela.Tipo;
-                statusParcelaAux.Valor = statusParcela.Valor;
+                statusParcelaAux.descricao = statusParcela.descricao;
+                statusParcelaAux.ID = statusParcela.ID;
+               
 
                 statusParcelaAux = resultado[0];
 
@@ -366,7 +138,7 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

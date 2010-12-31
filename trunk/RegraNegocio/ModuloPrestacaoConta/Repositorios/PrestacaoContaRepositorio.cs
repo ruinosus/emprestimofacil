@@ -45,28 +45,6 @@ namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(prestacaoConta.Nome))
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Nome.Contains(prestacaoConta.Nome)
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prestacaoConta.Status.HasValue)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Status.HasValue && t.Status.Value == prestacaoConta.Status.Value
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -79,28 +57,6 @@ namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
                             resultado.AddRange((from t in Consultar()
                                                 where
                                                 t.ID == prestacaoConta.ID
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(prestacaoConta.Nome))
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Nome.Contains(prestacaoConta.Nome)
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (prestacaoConta.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Status.HasValue && t.Status.Value == prestacaoConta.Status.Value
                                                 select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
@@ -120,7 +76,7 @@ namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
         {
             try
             {
-                db.PrestacaoConta.InsertOnSubmit(prestacaoConta);
+                db.AddToPrestacaoContaSet(prestacaoConta);
             }
             catch (Exception)
             {
@@ -143,7 +99,7 @@ namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
 
                 prestacaoContaAux = resultado[0];
 
-                db.PrestacaoConta.DeleteOnSubmit(prestacaoContaAux);
+                db.DeleteObject(prestacaoContaAux);
             }
             catch (Exception)
             {
@@ -165,10 +121,16 @@ namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
                     throw new PrestacaoContaNaoAlteradaExcecao();
 
                 prestacaoContaAux = resultado[0];
-                prestacaoContaAux.Nome = prestacaoConta.Nome;
-                prestacaoContaAux.Status = prestacaoConta.Status;
-
-
+                prestacaoContaAux.dataprestacao = prestacaoConta.dataprestacao;
+                prestacaoContaAux.ID = prestacaoConta.ID;
+                prestacaoContaAux.totaldespesas = prestacaoConta.totaldespesas;
+                prestacaoContaAux.usuario_id = prestacaoConta.usuario_id;
+                prestacaoContaAux.valorcancelado = prestacaoConta.valorcancelado;
+                prestacaoContaAux.valordevolvido = prestacaoConta.valordevolvido;
+                prestacaoContaAux.valoremprestado = prestacaoConta.valoremprestado;
+                prestacaoContaAux.valorrecebido = prestacaoConta.valorrecebido;
+                prestacaoContaAux.valorsaida = prestacaoConta.valorsaida;
+                
                 Confirmar();
             }
             catch (Exception)
@@ -180,7 +142,7 @@ namespace RegraNegocio.ModuloPrestacaoConta.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

@@ -86,7 +86,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.DespesaTipo">
         <MappingFragment StoreEntitySet="despesatipo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="posdescricao" ColumnName="posdescricao" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -98,7 +98,7 @@
         <MappingFragment StoreEntitySet="emprestimo">
           <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
           <ScalarProperty Name="data_emprestimo" ColumnName="data_emprestimo" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="juros" ColumnName="juros" />
           <ScalarProperty Name="prazospagamento_id" ColumnName="prazospagamento_id" />
           <ScalarProperty Name="qtde_parcelas" ColumnName="qtde_parcelas" />
@@ -114,7 +114,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.Escolaridade">
         <MappingFragment StoreEntitySet="escolaridade">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
         </MappingFragment>
@@ -213,7 +213,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.PrestacaoConta">
         <MappingFragment StoreEntitySet="prestacaoconta">
           <ScalarProperty Name="dataprestacao" ColumnName="dataprestacao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="parcelareabertas" ColumnName="parcelareabertas" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -231,7 +231,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.StatusParcela">
         <MappingFragment StoreEntitySet="statusparcela">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
         </MappingFragment>
@@ -241,7 +241,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.TipoEmprestimo">
         <MappingFragment StoreEntitySet="tipoemprestimo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
         </MappingFragment>

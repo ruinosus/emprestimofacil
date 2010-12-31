@@ -950,10 +950,10 @@
         </EntityType>
         <EntityType Name="Escolaridade">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
           <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_4" FromRole="escolaridade" ToRole="cliente" />
@@ -1056,10 +1056,10 @@
         </EntityType>
         <EntityType Name="PrestacaoConta">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="dataprestacao" Type="DateTime" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="parcelareabertas" Type="Single" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -1074,20 +1074,20 @@
         </EntityType>
         <EntityType Name="StatusParcela">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
           <NavigationProperty Name="parcela" Relationship="EmprestimoModel.parcela_ibfk_2" FromRole="statusparcela" ToRole="parcela" />
         </EntityType>
         <EntityType Name="TipoEmprestimo">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
           <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_4" FromRole="tipoemprestimo" ToRole="emprestimo" />
@@ -1235,7 +1235,7 @@
           <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="escolaridade">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="cliente">
               <PropertyRef Name="escolaridade_id" />
@@ -1331,7 +1331,7 @@
           <End Role="emprestimo" Type="EmprestimoModel.Emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tipoemprestimo">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="emprestimo">
               <PropertyRef Name="tipoemprestimo_id" />
@@ -1355,7 +1355,7 @@
           <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="escolaridade">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="usuario">
               <PropertyRef Name="escolaridade_id" />
@@ -1415,7 +1415,7 @@
           <End Role="parcela" Type="EmprestimoModel.Parcela" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="statusparcela">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="parcela">
               <PropertyRef Name="statusparcela_id" />
@@ -1539,7 +1539,7 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="EscolaridadeSet"><EntityTypeMapping TypeName="EmprestimoModel.Escolaridade"><MappingFragment StoreEntitySet="escolaridade">
             <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -1606,7 +1606,7 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="PrestacaoContaSet"><EntityTypeMapping TypeName="EmprestimoModel.PrestacaoConta"><MappingFragment StoreEntitySet="prestacaoconta">
             <ScalarProperty Name="dataprestacao" ColumnName="dataprestacao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="parcelareabertas" ColumnName="parcelareabertas" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -1620,13 +1620,13 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="StatusParcelaSet"><EntityTypeMapping TypeName="EmprestimoModel.StatusParcela"><MappingFragment StoreEntitySet="statusparcela">
             <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="TipoEmprestimoSet"><EntityTypeMapping TypeName="EmprestimoModel.TipoEmprestimo"><MappingFragment StoreEntitySet="tipoemprestimo">
             <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
