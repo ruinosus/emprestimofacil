@@ -903,11 +903,11 @@
         </EntityType>
         <EntityType Name="Despesa">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="data" Type="DateTime" Nullable="false" />
           <Property Name="despesatipo_id" Type="Int64" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="justificativa" Type="String" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -1094,7 +1094,7 @@
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="area_id" Type="Int64" Nullable="false" />
           <Property Name="bairro_resid" Type="String" />
@@ -1108,7 +1108,7 @@
           <Property Name="escolaridade_id" Type="Int64" />
           <Property Name="estadoscivistipo_id" Type="Int64" />
           <Property Name="fone_resid" Type="String" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="login" Type="String" />
           <Property Name="nome" Type="String" Nullable="false" />
           <Property Name="nome_mae" Type="String" />
@@ -1199,7 +1199,7 @@
           <End Role="bloqueado" Type="EmprestimoModel.Bloqueado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="bloqueado">
               <PropertyRef Name="usuario_id" />
@@ -1283,7 +1283,7 @@
           <End Role="despesa" Type="EmprestimoModel.Despesa" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="despesa">
               <PropertyRef Name="usuario_id" />
@@ -1319,7 +1319,7 @@
           <End Role="emprestimo" Type="EmprestimoModel.Emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="emprestimo">
               <PropertyRef Name="usuario_id" />
@@ -1379,7 +1379,7 @@
           <End Role="lancamento" Type="EmprestimoModel.Lancamento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="lancamento">
               <PropertyRef Name="usuario_id" />
@@ -1427,7 +1427,7 @@
           <End Role="prestacaoconta" Type="EmprestimoModel.PrestacaoConta" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="prestacaoconta">
               <PropertyRef Name="usuario_id" />
@@ -1510,7 +1510,7 @@
           <EntitySetMapping Name="DespesaSet"><EntityTypeMapping TypeName="EmprestimoModel.Despesa"><MappingFragment StoreEntitySet="despesa">
             <ScalarProperty Name="data" ColumnName="data" />
             <ScalarProperty Name="despesatipo_id" ColumnName="despesatipo_id" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="justificativa" ColumnName="justificativa" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -1643,7 +1643,7 @@
             <ScalarProperty Name="escolaridade_id" ColumnName="escolaridade_id" />
             <ScalarProperty Name="estadoscivistipo_id" ColumnName="estadoscivistipo_id" />
             <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="login" ColumnName="login" />
             <ScalarProperty Name="nome" ColumnName="nome" />
             <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />

@@ -45,117 +45,7 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (usuario.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == usuario.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(usuario.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(usuario.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(usuario.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(usuario.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == usuario.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (usuario.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == usuario.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.NumUsuario.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumUsuario.HasValue && c.NumUsuario.Value == usuario.NumUsuario.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == usuario.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == usuario.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                        
                         break;
                     }
                 #endregion
@@ -171,116 +61,6 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (usuario.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == usuario.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(usuario.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(usuario.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(usuario.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(usuario.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(usuario.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == usuario.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (usuario.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == usuario.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.NumUsuario.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumUsuario.HasValue && c.NumUsuario.Value == usuario.NumUsuario.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == usuario.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (usuario.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == usuario.Valor.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -296,7 +76,7 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
         {
             try
             {
-                db.Usuario.InsertOnSubmit(usuario);
+                db.AddToUsuarioSet(usuario);
             }
             catch (Exception)
             {
@@ -320,7 +100,7 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
 
                 usuarioAux = resultado[0];
 
-                db.Usuario.DeleteOnSubmit(usuarioAux);
+                db.DeleteObject(usuarioAux);
 
             }
             catch (Exception)
@@ -343,16 +123,34 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new UsuarioNaoAlteradoExcecao();
 
-                usuarioAux.Agencia = usuario.Agencia;
-                usuarioAux.Banco = usuario.Banco;
-                usuarioAux.Conta = usuario.Conta;
-                usuarioAux.Cpf = usuario.Cpf;
-                usuarioAux.NumUsuario = usuario.NumUsuario;
-                usuarioAux.Parcela = usuario.Parcela;
-                usuarioAux.Status = usuario.Status;
-                usuarioAux.Tipo = usuario.Tipo;
-                usuarioAux.Valor = usuario.Valor;
-
+                usuarioAux.area_id = usuario.area_id;
+                usuarioAux.bairro_resid = usuario.bairro_resid;
+                usuarioAux.celular = usuario.celular;
+                usuarioAux.cep_resid = usuario.cep_resid;
+                usuarioAux.cidade_resid = usuario.cidade_resid;
+                usuarioAux.cpf = usuario.cpf;
+                usuarioAux.ctps = usuario.ctps;
+                usuarioAux.data_expedicao = usuario.data_expedicao;
+                usuarioAux.endereco_resid = usuario.endereco_resid;
+                usuarioAux.escolaridade_id = usuario.escolaridade_id;
+                usuarioAux.estadoscivistipo_id = usuario.estadoscivistipo_id;
+                usuarioAux.ID = usuario.ID;
+                usuarioAux.login = usuario.login;
+                usuarioAux.nome = usuario.nome;
+                usuarioAux.nome_mae = usuario.nome_mae;
+                usuarioAux.nome_pai = usuario.nome_pai;
+                usuarioAux.orgaosexpedidoresnome_id = usuario.orgaosexpedidoresnome_id;
+                usuarioAux.rg = usuario.rg;
+                usuarioAux.secao = usuario.secao;
+                usuarioAux.senha = usuario.senha;
+                usuarioAux.sexo = usuario.sexo;
+                usuarioAux.situacao = usuario.situacao;
+                usuarioAux.timeCreated = usuario.timeCreated;
+                usuarioAux.titulo_eleitor = usuario.titulo_eleitor;
+                usuarioAux.uf_resid = usuario.uf_resid;
+                usuarioAux.usuariotipo_id = usuario.usuariotipo_id;
+                usuarioAux.zona = usuario.zona;
+      
                 usuarioAux = resultado[0];
 
                 Confirmar();
@@ -366,7 +164,7 @@ namespace RegraNegocio.ModuloUsuario.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

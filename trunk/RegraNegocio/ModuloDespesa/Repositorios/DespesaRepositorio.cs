@@ -45,27 +45,7 @@ namespace RegraNegocio.ModuloDespesa.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(despesa.Nome))
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Nome.Contains(despesa.Nome)
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (despesa.Status.HasValue)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Status.HasValue && t.Status.Value == despesa.Status.Value
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
+                        
 
                         break;
                     }
@@ -120,7 +100,7 @@ namespace RegraNegocio.ModuloDespesa.Repositorios
         {
             try
             {
-                db.Despesa.InsertOnSubmit(despesa);
+                db.AddToDespesaSet(despesa);
             }
             catch (Exception)
             {
@@ -143,7 +123,7 @@ namespace RegraNegocio.ModuloDespesa.Repositorios
 
                 despesaAux = resultado[0];
 
-                db.Despesa.DeleteOnSubmit(despesaAux);
+                db.DeleteObject(despesaAux);
             }
             catch (Exception)
             {
@@ -165,10 +145,12 @@ namespace RegraNegocio.ModuloDespesa.Repositorios
                     throw new DespesaNaoAlteradaExcecao();
 
                 despesaAux = resultado[0];
-                despesaAux.Nome = despesa.Nome;
-                despesaAux.Status = despesa.Status;
-
-
+                despesaAux.data = despesa.data;
+                despesaAux.despesatipo_id = despesa.despesatipo_id;
+                despesaAux.ID = despesa.ID;
+                despesaAux.justificativa = despesa.justificativa;
+                despesaAux.timeCreated = despesa.timeCreated;
+                despesaAux.timeUpdated = despesa.timeUpdated;
                 Confirmar();
             }
             catch (Exception)
@@ -180,7 +162,7 @@ namespace RegraNegocio.ModuloDespesa.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
