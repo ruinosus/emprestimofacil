@@ -10,6 +10,7 @@ using RegraNegocio.ModuloEscolaridade.Processos;
 using RegraNegocio.ModuloEscolaridade.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloEscolaridade.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 namespace RegraNegocio.ModuloEscolaridade.Processos
 {
     /// <summary>

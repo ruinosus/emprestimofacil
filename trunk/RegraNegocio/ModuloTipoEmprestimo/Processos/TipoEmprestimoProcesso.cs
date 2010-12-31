@@ -9,6 +9,7 @@ using RegraNegocio.ModuloTipoEmprestimo.Processos;
 using RegraNegocio.ModuloTipoEmprestimo.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloTipoEmprestimo.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloTipoEmprestimo.Processos
 {

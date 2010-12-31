@@ -10,6 +10,7 @@ using RegraNegocio.ModuloPrestacaoConta.Processos;
 using RegraNegocio.ModuloPrestacaoConta.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloPrestacaoConta.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 namespace RegraNegocio.ModuloPrestacaoConta.Processos
 {
     /// <summary>

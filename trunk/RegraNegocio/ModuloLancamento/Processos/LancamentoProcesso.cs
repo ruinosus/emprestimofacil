@@ -9,6 +9,7 @@ using RegraNegocio.ModuloLancamento.Processos;
 using RegraNegocio.ModuloLancamento.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloLancamento.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloLancamento.Processos
 {

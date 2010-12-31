@@ -11,7 +11,7 @@
     <EntitySet Name="EstadoCivilTipoSet" EntityType="EmprestimoModel.EstadoCivilTipo" />
     <EntitySet Name="LancamentoSet" EntityType="EmprestimoModel.Lancamento" />
     <EntitySet Name="LancamentoTipoSet" EntityType="EmprestimoModel.LancamentoTipo" />
-    <EntitySet Name="municipio" EntityType="EmprestimoModel.municipio" />
+    <EntitySet Name="MunicipioSet" EntityType="EmprestimoModel.Municipio" />
     <EntitySet Name="OrgaoExpedidorNomeSet" EntityType="EmprestimoModel.OrgaoExpedidorNome" />
     <EntitySet Name="ParcelaSet" EntityType="EmprestimoModel.Parcela" />
     <EntitySet Name="PrazoPagamentoSet" EntityType="EmprestimoModel.PrazoPagamento" />
@@ -25,7 +25,7 @@
       <End Role="cliente" EntitySet="ClienteSet" />
     </AssociationSet>
     <AssociationSet Name="municipio_ibfk_1" Association="EmprestimoModel.municipio_ibfk_1">
-      <End Role="municipio" EntitySet="municipio" />
+      <End Role="municipio" EntitySet="MunicipioSet" />
       <End Role="area" EntitySet="AreaSet" />
     </AssociationSet>
     <AssociationSet Name="usuario_ibfk_3" Association="EmprestimoModel.usuario_ibfk_3">
@@ -53,11 +53,11 @@
       <End Role="cliente" EntitySet="ClienteSet" />
     </AssociationSet>
     <AssociationSet Name="cliente_ibfk_5" Association="EmprestimoModel.cliente_ibfk_5">
-      <End Role="municipio" EntitySet="municipio" />
+      <End Role="municipio" EntitySet="MunicipioSet" />
       <End Role="cliente" EntitySet="ClienteSet" />
     </AssociationSet>
     <AssociationSet Name="cliente_ibfk_6" Association="EmprestimoModel.cliente_ibfk_6">
-      <End Role="municipio" EntitySet="municipio" />
+      <End Role="municipio" EntitySet="MunicipioSet" />
       <End Role="cliente" EntitySet="ClienteSet" />
     </AssociationSet>
     <AssociationSet Name="emprestimo_ibfk_1" Association="EmprestimoModel.emprestimo_ibfk_1">
@@ -295,7 +295,7 @@
     <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
     <NavigationProperty Name="lancamento" Relationship="EmprestimoModel.lancamento_ibfk_2" FromRole="lancamentotipo" ToRole="lancamento" />
   </EntityType>
-  <EntityType Name="municipio">
+  <EntityType Name="Municipio">
     <Key>
       <PropertyRef Name="id" />
     </Key>
@@ -456,7 +456,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="municipio_ibfk_1">
-    <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="1" />
+    <End Role="municipio" Type="EmprestimoModel.Municipio" Multiplicity="1" />
     <End Role="area" Type="EmprestimoModel.Area" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="municipio">
@@ -540,7 +540,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="cliente_ibfk_5">
-    <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="0..1" />
+    <End Role="municipio" Type="EmprestimoModel.Municipio" Multiplicity="0..1" />
     <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="municipio">
@@ -552,7 +552,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="cliente_ibfk_6">
-    <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="0..1" />
+    <End Role="municipio" Type="EmprestimoModel.Municipio" Multiplicity="0..1" />
     <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="municipio">

@@ -4,19 +4,20 @@ using System.Linq;
 using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
 using RegraNegocio.ModuloArea.Constantes;
+using RegraNegocio.ModuloDespesaTipo.Constantes;
 namespace RegraNegocio.ModuloArea.Excecoes
 {
     /// <summary>
-    /// Classe DespesaNaoExcluidaExcecao
+    /// Classe DespesaTipoNaoExcluidaExcecao
     /// </summary>
-    public class DespesaNaoExcluidaExcecao: Exception
+    public class DespesaTipoNaoExcluidaExcecao: Exception
     {
         /// <summary>
         /// Contrutor da classe de exception, 
         /// passando como mensagem a constante. 
         /// </summary>
-        public DespesaNaoExcluidaExcecao()
-            : base(DespesaConstantes.DESPESA_TIPO_NAOEXCLUIDA)
+        public DespesaTipoNaoExcluidaExcecao()
+            : base(DespesaTipoConstantes.DESPESA_TIPO_NAOEXCLUIDA)
         { }
     }
 }

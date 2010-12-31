@@ -9,6 +9,7 @@ using RegraNegocio.ModuloOrgaoExpedidorNome.Processos;
 using RegraNegocio.ModuloOrgaoExpedidorNome.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloOrgaoExpedidorNome.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloOrgaoExpedidorNome.Processos
 {
@@ -51,8 +52,7 @@ namespace RegraNegocio.ModuloOrgaoExpedidorNome.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new OrgaoExpedidorNomeNaoExcluidoExcecao();
 
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(orgaoExpedidorNome);
             }
             catch (Exception e)
             {

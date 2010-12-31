@@ -10,6 +10,7 @@ using RegraNegocio.ModuloParcela.Processos;
 using RegraNegocio.ModuloParcela.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloParcela.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 namespace RegraNegocio.ModuloParcela.Processos
 {
     /// <summary>

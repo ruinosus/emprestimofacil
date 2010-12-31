@@ -714,7 +714,7 @@
           <EntitySet Name="EstadoCivilTipoSet" EntityType="EmprestimoModel.EstadoCivilTipo" />
           <EntitySet Name="LancamentoSet" EntityType="EmprestimoModel.Lancamento" />
           <EntitySet Name="LancamentoTipoSet" EntityType="EmprestimoModel.LancamentoTipo" />
-          <EntitySet Name="municipio" EntityType="EmprestimoModel.municipio" />
+          <EntitySet Name="MunicipioSet" EntityType="EmprestimoModel.Municipio" />
           <EntitySet Name="OrgaoExpedidorNomeSet" EntityType="EmprestimoModel.OrgaoExpedidorNome" />
           <EntitySet Name="ParcelaSet" EntityType="EmprestimoModel.Parcela" />
           <EntitySet Name="PrazoPagamentoSet" EntityType="EmprestimoModel.PrazoPagamento" />
@@ -728,7 +728,7 @@
             <End Role="cliente" EntitySet="ClienteSet" />
           </AssociationSet>
           <AssociationSet Name="municipio_ibfk_1" Association="EmprestimoModel.municipio_ibfk_1">
-            <End Role="municipio" EntitySet="municipio" />
+            <End Role="municipio" EntitySet="MunicipioSet" />
             <End Role="area" EntitySet="AreaSet" />
           </AssociationSet>
           <AssociationSet Name="usuario_ibfk_3" Association="EmprestimoModel.usuario_ibfk_3">
@@ -756,11 +756,11 @@
             <End Role="cliente" EntitySet="ClienteSet" />
           </AssociationSet>
           <AssociationSet Name="cliente_ibfk_5" Association="EmprestimoModel.cliente_ibfk_5">
-            <End Role="municipio" EntitySet="municipio" />
+            <End Role="municipio" EntitySet="MunicipioSet" />
             <End Role="cliente" EntitySet="ClienteSet" />
           </AssociationSet>
           <AssociationSet Name="cliente_ibfk_6" Association="EmprestimoModel.cliente_ibfk_6">
-            <End Role="municipio" EntitySet="municipio" />
+            <End Role="municipio" EntitySet="MunicipioSet" />
             <End Role="cliente" EntitySet="ClienteSet" />
           </AssociationSet>
           <AssociationSet Name="emprestimo_ibfk_1" Association="EmprestimoModel.emprestimo_ibfk_1">
@@ -998,7 +998,7 @@
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
           <NavigationProperty Name="lancamento" Relationship="EmprestimoModel.lancamento_ibfk_2" FromRole="lancamentotipo" ToRole="lancamento" />
         </EntityType>
-        <EntityType Name="municipio">
+        <EntityType Name="Municipio">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -1159,7 +1159,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="municipio_ibfk_1">
-          <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="1" />
+          <End Role="municipio" Type="EmprestimoModel.Municipio" Multiplicity="1" />
           <End Role="area" Type="EmprestimoModel.Area" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="municipio">
@@ -1243,7 +1243,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="cliente_ibfk_5">
-          <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="0..1" />
+          <End Role="municipio" Type="EmprestimoModel.Municipio" Multiplicity="0..1" />
           <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="municipio">
@@ -1255,7 +1255,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="cliente_ibfk_6">
-          <End Role="municipio" Type="EmprestimoModel.municipio" Multiplicity="0..1" />
+          <End Role="municipio" Type="EmprestimoModel.Municipio" Multiplicity="0..1" />
           <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="municipio">
@@ -1568,7 +1568,7 @@
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="municipio"><EntityTypeMapping TypeName="EmprestimoModel.municipio"><MappingFragment StoreEntitySet="municipio">
+          <EntitySetMapping Name="MunicipioSet"><EntityTypeMapping TypeName="EmprestimoModel.Municipio"><MappingFragment StoreEntitySet="municipio">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="nome" ColumnName="nome" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
@@ -1687,7 +1687,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="EmprestimoDB">
+      <Diagram Name="EmprestimoDB" ZoomLevel="64">
         <EntityTypeShape EntityType="EmprestimoModel.Area" Width="1.5" PointX="3" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.Bloqueado" Width="1.5" PointX="10.5" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.Cliente" Width="1.5" PointX="5.25" PointY="8.5" Height="8.4948942057291639" IsExpanded="true" />
@@ -1698,7 +1698,7 @@
         <EntityTypeShape EntityType="EmprestimoModel.EstadoCivilTipo" Width="1.5" PointX="3" PointY="14.75" Height="1.9210009765624978" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.Lancamento" Width="1.5" PointX="13.5" PointY="7.25" Height="2.9070849609374996" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.LancamentoTipo" Width="1.5" PointX="11.25" PointY="0.75" Height="1.9210009765624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.municipio" Width="1.5" PointX="0.75" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Municipio" Width="1.5" PointX="0.75" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.OrgaoExpedidorNome" Width="1.5" PointX="3" PointY="17.375" Height="1.9210009765625031" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.Parcela" Width="1.5" PointX="15.75" PointY="11" Height="3.400126953124996" IsExpanded="true" />
         <EntityTypeShape EntityType="EmprestimoModel.PrazoPagamento" Width="1.5" PointX="11.25" PointY="4.375" Height="2.0853483072916674" IsExpanded="true" />

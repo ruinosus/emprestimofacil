@@ -5,6 +5,7 @@ using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
 using RegraNegocio.ModuloBasico.VOs;
 using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloBasico.Enums;
 
 namespace RegraNegocio.ModuloArea.Processos
 {

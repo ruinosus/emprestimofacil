@@ -9,6 +9,7 @@ using RegraNegocio.ModuloEstadoCivilTipo.Processos;
 using RegraNegocio.ModuloEstadoCivilTipo.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloEstadoCivilTipo.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloEstadoCivilTipo.Processos
 {

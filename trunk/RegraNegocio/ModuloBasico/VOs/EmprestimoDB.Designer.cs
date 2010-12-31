@@ -19,15 +19,15 @@ using System.Runtime.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_3", "area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Area), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "municipio_ibfk_1", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.municipio), "area", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Area), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "municipio_ibfk_1", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Municipio), "area", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Area), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_3", "area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Area), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "bloqueado_ibfk_1", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), "bloqueado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Bloqueado), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "bloqueado_ibfk_2", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "bloqueado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Bloqueado), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_1", "orgaoexpedidornome", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.OrgaoExpedidorNome), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_2", "estadociviltipo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.EstadoCivilTipo), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_4", "escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.Escolaridade), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_5", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
-[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_6", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_5", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.Municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_6", "municipio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RegraNegocio.ModuloBasico.VOs.Municipio), "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_1", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Cliente), "emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Emprestimo), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.Usuario), "despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Despesa), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_2", "despesatipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RegraNegocio.ModuloBasico.VOs.DespesaTipo), "despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RegraNegocio.ModuloBasico.VOs.Despesa), true)]
@@ -257,18 +257,18 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<municipio> municipio
+        public ObjectSet<Municipio> MunicipioSet
         {
             get
             {
-                if ((_municipio == null))
+                if ((_MunicipioSet == null))
                 {
-                    _municipio = base.CreateObjectSet<municipio>("municipio");
+                    _MunicipioSet = base.CreateObjectSet<Municipio>("MunicipioSet");
                 }
-                return _municipio;
+                return _MunicipioSet;
             }
         }
-        private ObjectSet<municipio> _municipio;
+        private ObjectSet<Municipio> _MunicipioSet;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -482,11 +482,11 @@ namespace RegraNegocio.ModuloBasico.VOs
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the municipio EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the MunicipioSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTomunicipio(municipio municipio)
+        public void AddToMunicipioSet(Municipio municipio)
         {
-            base.AddObject("municipio", municipio);
+            base.AddObject("MunicipioSet", municipio);
         }
     
         /// <summary>
@@ -749,15 +749,15 @@ namespace RegraNegocio.ModuloBasico.VOs
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "municipio_ibfk_1", "municipio")]
-        public municipio municipio
+        public Municipio municipio
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.municipio_ibfk_1", "municipio").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.municipio_ibfk_1", "municipio").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.municipio_ibfk_1", "municipio").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.municipio_ibfk_1", "municipio").Value = value;
             }
         }
         /// <summary>
@@ -765,17 +765,17 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<municipio> municipioReference
+        public EntityReference<Municipio> municipioReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.municipio_ibfk_1", "municipio");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.municipio_ibfk_1", "municipio");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<municipio>("EmprestimoModel.municipio_ibfk_1", "municipio", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Municipio>("EmprestimoModel.municipio_ibfk_1", "municipio", value);
                 }
             }
         }
@@ -2201,15 +2201,15 @@ namespace RegraNegocio.ModuloBasico.VOs
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "cliente_ibfk_5", "municipio")]
-        public municipio municipio
+        public Municipio municipio
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_5", "municipio").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_5", "municipio").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_5", "municipio").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_5", "municipio").Value = value;
             }
         }
         /// <summary>
@@ -2217,17 +2217,17 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<municipio> municipioReference
+        public EntityReference<Municipio> municipioReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_5", "municipio");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_5", "municipio");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_5", "municipio", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_5", "municipio", value);
                 }
             }
         }
@@ -2239,15 +2239,15 @@ namespace RegraNegocio.ModuloBasico.VOs
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "cliente_ibfk_6", "municipio")]
-        public municipio municipio1
+        public Municipio municipio1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_6", "municipio").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_6", "municipio").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_6", "municipio").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_6", "municipio").Value = value;
             }
         }
         /// <summary>
@@ -2255,17 +2255,17 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<municipio> municipio1Reference
+        public EntityReference<Municipio> municipio1Reference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_6", "municipio");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_6", "municipio");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<municipio>("EmprestimoModel.cliente_ibfk_6", "municipio", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Municipio>("EmprestimoModel.cliente_ibfk_6", "municipio", value);
                 }
             }
         }
@@ -4192,24 +4192,24 @@ namespace RegraNegocio.ModuloBasico.VOs
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EmprestimoModel", Name="municipio")]
+    [EdmEntityTypeAttribute(NamespaceName="EmprestimoModel", Name="Municipio")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class municipio : EntityObject
+    public partial class Municipio : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new municipio object.
+        /// Create a new Municipio object.
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="nome">Initial value of the nome property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         /// <param name="uf">Initial value of the uf property.</param>
-        public static municipio Createmunicipio(global::System.Int64 id, global::System.String nome, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated, global::System.String uf)
+        public static Municipio CreateMunicipio(global::System.Int64 id, global::System.String nome, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated, global::System.String uf)
         {
-            municipio municipio = new municipio();
+            Municipio municipio = new Municipio();
             municipio.id = id;
             municipio.nome = nome;
             municipio.timeCreated = timeCreated;

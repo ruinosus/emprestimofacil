@@ -157,8 +157,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="municipio">
-      <EntityTypeMapping TypeName="EmprestimoModel.municipio">
+    <EntitySetMapping Name="MunicipioSet">
+      <EntityTypeMapping TypeName="EmprestimoModel.Municipio">
         <MappingFragment StoreEntitySet="municipio">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nome" ColumnName="nome" />

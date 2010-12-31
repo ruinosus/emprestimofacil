@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using RegraNegocio.ModuloBasico.Constantes;
 using RegraNegocio.ModuloBasico.Enums;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloLancamento.Repositorios
 {

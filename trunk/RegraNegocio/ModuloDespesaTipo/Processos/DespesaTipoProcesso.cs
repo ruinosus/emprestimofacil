@@ -10,6 +10,7 @@ using RegraNegocio.ModuloDespesaTipo.Processos;
 using RegraNegocio.ModuloDespesaTipo.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloDespesaTipo.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 namespace RegraNegocio.ModuloDespesaTipo.Processos
 {
     /// <summary>

@@ -9,6 +9,7 @@ using RegraNegocio.ModuloBloqueado.Processos;
 using RegraNegocio.ModuloBloqueado.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloBloqueado.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloBloqueado.Processos
 {
@@ -51,8 +52,7 @@ namespace RegraNegocio.ModuloBloqueado.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new BloqueadoNaoExcluidoExcecao();
 
-                resultado[0].Status = (int)Status.Inativo;
-                this.Alterar(resultado[0]);
+                this.Excluir(bloqueado);
             }
             catch (Exception e)
             {

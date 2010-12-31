@@ -9,6 +9,7 @@ using RegraNegocio.ModuloPrazoPagamento.Processos;
 using RegraNegocio.ModuloPrazoPagamento.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloPrazoPagamento.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloPrazoPagamento.Processos
 {

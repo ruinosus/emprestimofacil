@@ -9,6 +9,7 @@ using RegraNegocio.ModuloUsuarioTipo.Processos;
 using RegraNegocio.ModuloUsuarioTipo.Fabricas;
 using RegraNegocio.ModuloBasico.Enums;
 using RegraNegocio.ModuloUsuarioTipo.Excecoes;
+using RegraNegocio.ModuloBasico.VOs;
 
 namespace RegraNegocio.ModuloUsuarioTipo.Processos
 {
