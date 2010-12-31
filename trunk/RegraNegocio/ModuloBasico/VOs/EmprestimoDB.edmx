@@ -852,7 +852,7 @@
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="area_id" Type="Int64" Nullable="false" />
           <Property Name="bairro_comerc" Type="String" />
@@ -873,7 +873,7 @@
           <Property Name="fone_ref1" Type="String" />
           <Property Name="fone_ref2" Type="String" />
           <Property Name="fone_resid" Type="String" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="limite" Type="Single" />
           <Property Name="nome" Type="String" Nullable="false" />
           <Property Name="nome_mae" Type="String" />
@@ -1138,10 +1138,10 @@
         </EntityType>
         <EntityType Name="UsuarioTipo">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
           <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_4" FromRole="usuariotipo" ToRole="usuario" />
@@ -1187,7 +1187,7 @@
           <End Role="bloqueado" Type="EmprestimoModel.Bloqueado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="cliente">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="bloqueado">
               <PropertyRef Name="cliente_id" />
@@ -1271,7 +1271,7 @@
           <End Role="emprestimo" Type="EmprestimoModel.Emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="cliente">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="emprestimo">
               <PropertyRef Name="cliente_id" />
@@ -1439,7 +1439,7 @@
           <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuariotipo">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="usuario">
               <PropertyRef Name="usuariotipo_id" />
@@ -1487,7 +1487,7 @@
             <ScalarProperty Name="fone_ref1" ColumnName="fone_ref1" />
             <ScalarProperty Name="fone_ref2" ColumnName="fone_ref2" />
             <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="limite" ColumnName="limite" />
             <ScalarProperty Name="nome" ColumnName="nome" />
             <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
@@ -1663,7 +1663,7 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="UsuarioTipoSet"><EntityTypeMapping TypeName="EmprestimoModel.UsuarioTipo"><MappingFragment StoreEntitySet="usuariotipo">
             <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>

@@ -1083,7 +1083,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new Cliente object.
         /// </summary>
         /// <param name="area_id">Initial value of the area_id property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="nome">Initial value of the nome property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
@@ -1091,7 +1091,7 @@ namespace RegraNegocio.ModuloBasico.VOs
         {
             Cliente cliente = new Cliente();
             cliente.area_id = area_id;
-            cliente.id = id;
+            cliente.ID = id;
             cliente.nome = nome;
             cliente.timeCreated = timeCreated;
             cliente.timeUpdated = timeUpdated;
@@ -1562,27 +1562,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -6993,14 +6993,14 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// Create a new UsuarioTipo object.
         /// </summary>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
         /// <param name="timeCreated">Initial value of the timeCreated property.</param>
         /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
         public static UsuarioTipo CreateUsuarioTipo(global::System.String descricao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated)
         {
             UsuarioTipo usuarioTipo = new UsuarioTipo();
             usuarioTipo.descricao = descricao;
-            usuarioTipo.id = id;
+            usuarioTipo.ID = id;
             usuarioTipo.timeCreated = timeCreated;
             usuarioTipo.timeUpdated = timeUpdated;
             return usuarioTipo;
@@ -7038,27 +7038,27 @@ namespace RegraNegocio.ModuloBasico.VOs
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int64 ID
         {
             get
             {
-                return _id;
+                return _ID;
             }
             set
             {
-                if (_id != value)
+                if (_ID != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
-        partial void OnidChanged();
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

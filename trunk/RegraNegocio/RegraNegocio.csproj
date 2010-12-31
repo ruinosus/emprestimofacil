@@ -61,7 +61,7 @@
       <DependentUpon>EmprestimoDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="ModuloBasico\VOs\ClasseAuxiliar.cs" />
-    <Compile Include="ModuloBasico\Enums\Enumeradores.cs" />
+    <Compile Include="ModuloBasico\Enuns\Enumeradores.cs" />
     <Compile Include="ModuloBasico\Singleton\Singleton.cs" />
     <Compile Include="ModuloBasico\Constantes\SiteConstantes.cs" />
     <Compile Include="ModuloBloqueado\Constantes\BloqueadoConstantes.cs" />

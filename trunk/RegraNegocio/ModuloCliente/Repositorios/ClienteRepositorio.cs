@@ -45,117 +45,6 @@ namespace RegraNegocio.ModuloCliente.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (cliente.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == cliente.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(cliente.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(cliente.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(cliente.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(cliente.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == cliente.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (cliente.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == cliente.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.NumCliente.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumCliente.HasValue && c.NumCliente.Value == cliente.NumCliente.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == cliente.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == cliente.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         break;
                     }
                 #endregion
@@ -171,116 +60,6 @@ namespace RegraNegocio.ModuloCliente.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (cliente.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == cliente.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Agencia))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(cliente.Agencia)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Banco))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(cliente.Banco)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Conta))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(cliente.Conta)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(cliente.Cpf))
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(cliente.Cpf)
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.Tipo != 0)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == cliente.Tipo
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (cliente.Parcela.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == cliente.Parcela.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.NumCliente.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumCliente.HasValue && c.NumCliente.Value == cliente.NumCliente.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == cliente.Status.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (cliente.Valor.HasValue)
-                        {
-
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == cliente.Valor.Value
-                                                select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -296,7 +75,7 @@ namespace RegraNegocio.ModuloCliente.Repositorios
         {
             try
             {
-                db.Cliente.InsertOnSubmit(cliente);
+                db.AddToClienteSet(cliente);
             }
             catch (Exception)
             {
@@ -320,7 +99,7 @@ namespace RegraNegocio.ModuloCliente.Repositorios
 
                 clienteAux = resultado[0];
 
-                db.Cliente.DeleteOnSubmit(clienteAux);
+                db.DeleteObject(clienteAux);
 
             }
             catch (Exception)
@@ -343,16 +122,42 @@ namespace RegraNegocio.ModuloCliente.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new ClienteNaoAlteradoExcecao();
 
-                clienteAux.Agencia = cliente.Agencia;
-                clienteAux.Banco = cliente.Banco;
-                clienteAux.Conta = cliente.Conta;
-                clienteAux.Cpf = cliente.Cpf;
-                clienteAux.NumCliente = cliente.NumCliente;
-                clienteAux.Parcela = cliente.Parcela;
-                clienteAux.Status = cliente.Status;
-                clienteAux.Tipo = cliente.Tipo;
-                clienteAux.Valor = cliente.Valor;
-
+                clienteAux.area_id = cliente.area_id;
+                clienteAux.bairro_comerc = cliente.bairro_comerc;
+                clienteAux.bairro_resid = cliente.bairro_resid;
+                clienteAux.celular = cliente.celular;
+                clienteAux.cep_comerc = cliente.cep_comerc;
+                clienteAux.cep_resid = cliente.cep_resid;
+                clienteAux.cidade_comerc = cliente.cidade_comerc;
+                clienteAux.cidade_resid = cliente.cidade_resid;
+                clienteAux.cpf = cliente.cpf;
+                clienteAux.ctps = cliente.ctps;
+                clienteAux.data_expedicao = cliente.data_expedicao;
+                clienteAux.endereco_comerc = cliente.endereco_comerc;
+                clienteAux.endereco_resid = cliente.endereco_resid;
+                clienteAux.escolaridade_id = cliente.escolaridade_id;
+                clienteAux.estadoscivistipo_id = cliente.estadoscivistipo_id;
+                clienteAux.fone_comerc = cliente.fone_comerc;
+                clienteAux.fone_ref1 = cliente.fone_ref1;
+                clienteAux.fone_ref2 = cliente.fone_ref2;
+                clienteAux.fone_resid = cliente.fone_resid;
+                clienteAux.ID = cliente.ID;
+                clienteAux.limite = cliente.limite;
+                clienteAux.nome = cliente.nome;
+                clienteAux.nome_mae = cliente.nome_mae;
+                clienteAux.nome_pai = cliente.nome_pai;
+                clienteAux.nome_ref1 = cliente.nome_ref1;
+                clienteAux.nome_ref2 = cliente.nome_ref2;
+                clienteAux.numcartao = cliente.numcartao;
+                clienteAux.orgaosexpedidoresnome_id = cliente.orgaosexpedidoresnome_id;
+                clienteAux.rg = cliente.rg;
+                clienteAux.secao = cliente.secao;
+                clienteAux.sexo = cliente.sexo;
+                clienteAux.titulo_eleitor = cliente.titulo_eleitor;
+                clienteAux.uf_comerc = cliente.uf_comerc;
+                clienteAux.uf_resid = cliente.uf_resid;
+                clienteAux.zona = cliente.zona;
+                
                 clienteAux = resultado[0];
 
                 Confirmar();

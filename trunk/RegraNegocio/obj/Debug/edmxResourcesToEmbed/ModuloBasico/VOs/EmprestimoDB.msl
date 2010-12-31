@@ -73,7 +73,7 @@
         <MappingFragment StoreEntitySet="despesa">
           <ScalarProperty Name="data" ColumnName="data" />
           <ScalarProperty Name="despesatipo_id" ColumnName="despesatipo_id" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="justificativa" ColumnName="justificativa" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -262,7 +262,7 @@
           <ScalarProperty Name="escolaridade_id" ColumnName="escolaridade_id" />
           <ScalarProperty Name="estadoscivistipo_id" ColumnName="estadoscivistipo_id" />
           <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="login" ColumnName="login" />
           <ScalarProperty Name="nome" ColumnName="nome" />
           <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
@@ -286,7 +286,7 @@
       <EntityTypeMapping TypeName="EmprestimoModel.UsuarioTipo">
         <MappingFragment StoreEntitySet="usuariotipo">
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
         </MappingFragment>
