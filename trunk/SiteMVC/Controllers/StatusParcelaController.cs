@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using RegraNegocio.ModuloBasico;
 using RegraNegocio.ModuloStatusParcela.Processos;
+using RegraNegocio.ModuloBasico.VOs;
 
 
 namespace SiteMVC.Controllers
@@ -16,7 +17,7 @@ namespace SiteMVC.Controllers
 
         public ActionResult Index()
         {
-            StatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+            IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             ViewData.Model = processo.Consultar();
             //EmprestimoEntities db = new EmprestimoEntities();
             //StatusParcela sss = new StatusParcela();
@@ -40,7 +41,7 @@ namespace SiteMVC.Controllers
 
         public ActionResult Create()
         {
-           
+            ViewData.Model = new StatusParcela();
             return View();
         } 
 
@@ -48,12 +49,13 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(StatusParcela statusParcela)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+                processo.Incluir(statusParcela);
+                processo.Confirmar();
                 return RedirectToAction("Index");
             }
             catch
