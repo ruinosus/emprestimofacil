@@ -16,7 +16,7 @@ namespace SiteMVC.Controllers
 
         public ActionResult Index()
         {
-            StatusParcelaProcesso processo = new StatusParcelaProcesso();
+            StatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             ViewData.Model = processo.Consultar();
             //EmprestimoEntities db = new EmprestimoEntities();
             //StatusParcela sss = new StatusParcela();

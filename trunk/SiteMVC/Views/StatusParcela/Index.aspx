@@ -1,6 +1,6 @@
 ﻿<%@ Import Namespace = "System.Data" %>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<RegraNegocio.ModuloBasico.StatusParcela>>" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<RegraNegocio.ModuloBasico.VOs.StatusParcela>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
@@ -31,15 +31,15 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.id }) %> |
-                <%: Html.ActionLink("Details", "Details", new { id=item.id })%> |
-                <%: Html.ActionLink("Delete", "Delete", new { id=item.id })%>
+                <%: Html.ActionLink("Edit", "Edit", new { id=item.ID }) %> |
+                <%: Html.ActionLink("Details", "Details", new { id=item.ID })%> |
+                <%: Html.ActionLink("Delete", "Delete", new { id=item.ID })%>
             </td>
             <td>
                 <%: item.descricao %>
             </td>
             <td>
-                <%: item.id %>
+                <%: item.ID %>
             </td>
             <td>
                 <%: item.timeCreated %>
