@@ -929,11 +929,11 @@
         </EntityType>
         <EntityType Name="Emprestimo">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="cliente_id" Type="Int64" Nullable="false" />
           <Property Name="data_emprestimo" Type="DateTime" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="juros" Type="Single" Nullable="false" />
           <Property Name="prazospagamento_id" Type="Int64" Nullable="false" />
           <Property Name="qtde_parcelas" Type="Int64" Nullable="false" />
@@ -972,11 +972,11 @@
         </EntityType>
         <EntityType Name="Lancamento">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="data" Type="DateTime" Nullable="false" />
           <Property Name="fonte" Type="String" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="lancamentotipo_id" Type="Int64" Nullable="false" />
           <Property Name="observacoes" Type="String" />
           <Property Name="outrasinfos" Type="String" />
@@ -1000,9 +1000,9 @@
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nome" Type="String" Nullable="false" />
           <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -1024,12 +1024,12 @@
         </EntityType>
         <EntityType Name="Parcela">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="data_pagamento" Type="DateTime" />
           <Property Name="data_vencimento" Type="DateTime" Nullable="false" />
           <Property Name="emprestimo_id" Type="Int64" Nullable="false" />
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="juros_atraso" Type="Single" />
           <Property Name="multa_atraso" Type="Single" />
           <Property Name="observacoes" Type="String" />
@@ -1163,7 +1163,7 @@
           <End Role="area" Type="EmprestimoModel.Area" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="municipio">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="area">
               <PropertyRef Name="municipio_id" />
@@ -1247,7 +1247,7 @@
           <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="municipio">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="cliente">
               <PropertyRef Name="cidade_resid" />
@@ -1259,7 +1259,7 @@
           <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="municipio">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="cliente">
               <PropertyRef Name="cidade_comerc" />
@@ -1343,7 +1343,7 @@
           <End Role="parcela" Type="EmprestimoModel.Parcela" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="emprestimo">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="parcela">
               <PropertyRef Name="emprestimo_id" />
@@ -1527,7 +1527,7 @@
           <EntitySetMapping Name="EmprestimoSet"><EntityTypeMapping TypeName="EmprestimoModel.Emprestimo"><MappingFragment StoreEntitySet="emprestimo">
             <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
             <ScalarProperty Name="data_emprestimo" ColumnName="data_emprestimo" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="juros" ColumnName="juros" />
             <ScalarProperty Name="prazospagamento_id" ColumnName="prazospagamento_id" />
             <ScalarProperty Name="qtde_parcelas" ColumnName="qtde_parcelas" />
@@ -1552,7 +1552,7 @@
           <EntitySetMapping Name="LancamentoSet"><EntityTypeMapping TypeName="EmprestimoModel.Lancamento"><MappingFragment StoreEntitySet="lancamento">
             <ScalarProperty Name="data" ColumnName="data" />
             <ScalarProperty Name="fonte" ColumnName="fonte" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="lancamentotipo_id" ColumnName="lancamentotipo_id" />
             <ScalarProperty Name="observacoes" ColumnName="observacoes" />
             <ScalarProperty Name="outrasinfos" ColumnName="outrasinfos" />
@@ -1569,7 +1569,7 @@
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="MunicipioSet"><EntityTypeMapping TypeName="EmprestimoModel.Municipio"><MappingFragment StoreEntitySet="municipio">
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="nome" ColumnName="nome" />
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -1585,7 +1585,7 @@
             <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
             <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
             <ScalarProperty Name="emprestimo_id" ColumnName="emprestimo_id" />
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ID" ColumnName="id" />
             <ScalarProperty Name="juros_atraso" ColumnName="juros_atraso" />
             <ScalarProperty Name="multa_atraso" ColumnName="multa_atraso" />
             <ScalarProperty Name="observacoes" ColumnName="observacoes" />

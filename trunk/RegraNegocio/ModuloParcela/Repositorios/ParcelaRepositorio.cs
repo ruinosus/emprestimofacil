@@ -45,27 +45,6 @@ namespace RegraNegocio.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(parcela.Nome))
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Nome.Contains(parcela.Nome)
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (parcela.Status.HasValue)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.Status.HasValue && t.Status.Value == parcela.Status.Value
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -84,27 +63,6 @@ namespace RegraNegocio.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(parcela.Nome))
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Nome.Contains(parcela.Nome)
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (parcela.Status.HasValue)
-                        {
-
-                            resultado.AddRange((from t in Consultar()
-                                                where
-                                                t.Status.HasValue && t.Status.Value == parcela.Status.Value
-                                                select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -120,7 +78,7 @@ namespace RegraNegocio.ModuloParcela.Repositorios
         {
             try
             {
-                db.Parcela.InsertOnSubmit(parcela);
+                db.AddToParcelaSet(parcela);
             }
             catch (Exception)
             {
@@ -143,7 +101,7 @@ namespace RegraNegocio.ModuloParcela.Repositorios
 
                 parcelaAux = resultado[0];
 
-                db.Parcela.DeleteOnSubmit(parcelaAux);
+                db.DeleteObject(parcelaAux);
             }
             catch (Exception)
             {
@@ -165,8 +123,19 @@ namespace RegraNegocio.ModuloParcela.Repositorios
                     throw new ParcelaNaoAlteradaExcecao();
 
                 parcelaAux = resultado[0];
-                parcelaAux.Nome = parcela.Nome;
-                parcelaAux.Status = parcela.Status;
+                parcelaAux.data_pagamento = parcela.data_pagamento;
+                parcelaAux.data_vencimento = parcela.data_vencimento;
+                parcelaAux.emprestimo_id = parcela.emprestimo_id;
+                parcelaAux.ID = parcela.ID;
+                parcelaAux.juros_atraso = parcela.juros_atraso;
+                parcelaAux.multa_atraso = parcela.multa_atraso;
+                parcelaAux.observacoes = parcela.observacoes;
+                parcelaAux.sequencial = parcela.sequencial;
+                parcelaAux.statusparcela_id = parcela.statusparcela_id;
+                parcelaAux.valor = parcela.valor;
+                parcelaAux.valor_pago = parcela.valor_pago;
+                
+
 
 
                 Confirmar();
@@ -180,7 +149,7 @@ namespace RegraNegocio.ModuloParcela.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion

@@ -149,7 +149,7 @@
   </EntityType>
   <EntityType Name="Cliente">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="area_id" Type="Int64" Nullable="false" />
     <Property Name="bairro_comerc" Type="String" />
@@ -170,7 +170,7 @@
     <Property Name="fone_ref1" Type="String" />
     <Property Name="fone_ref2" Type="String" />
     <Property Name="fone_resid" Type="String" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="limite" Type="Single" />
     <Property Name="nome" Type="String" Nullable="false" />
     <Property Name="nome_mae" Type="String" />
@@ -269,11 +269,11 @@
   </EntityType>
   <EntityType Name="Lancamento">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="data" Type="DateTime" Nullable="false" />
     <Property Name="fonte" Type="String" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="lancamentotipo_id" Type="Int64" Nullable="false" />
     <Property Name="observacoes" Type="String" />
     <Property Name="outrasinfos" Type="String" />
@@ -297,9 +297,9 @@
   </EntityType>
   <EntityType Name="Municipio">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nome" Type="String" Nullable="false" />
     <Property Name="timeCreated" Type="DateTimeOffset" Nullable="false" />
     <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
@@ -321,12 +321,12 @@
   </EntityType>
   <EntityType Name="Parcela">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="data_pagamento" Type="DateTime" />
     <Property Name="data_vencimento" Type="DateTime" Nullable="false" />
     <Property Name="emprestimo_id" Type="Int64" Nullable="false" />
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="juros_atraso" Type="Single" />
     <Property Name="multa_atraso" Type="Single" />
     <Property Name="observacoes" Type="String" />
@@ -460,7 +460,7 @@
     <End Role="area" Type="EmprestimoModel.Area" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="municipio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="area">
         <PropertyRef Name="municipio_id" />
@@ -484,7 +484,7 @@
     <End Role="bloqueado" Type="EmprestimoModel.Bloqueado" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="cliente">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="bloqueado">
         <PropertyRef Name="cliente_id" />
@@ -544,7 +544,7 @@
     <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="municipio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="cliente">
         <PropertyRef Name="cidade_resid" />
@@ -556,7 +556,7 @@
     <End Role="cliente" Type="EmprestimoModel.Cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="municipio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="cliente">
         <PropertyRef Name="cidade_comerc" />
@@ -568,7 +568,7 @@
     <End Role="emprestimo" Type="EmprestimoModel.Emprestimo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="cliente">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="emprestimo">
         <PropertyRef Name="cliente_id" />

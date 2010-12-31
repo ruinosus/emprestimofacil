@@ -46,7 +46,7 @@
           <ScalarProperty Name="fone_ref1" ColumnName="fone_ref1" />
           <ScalarProperty Name="fone_ref2" ColumnName="fone_ref2" />
           <ScalarProperty Name="fone_resid" ColumnName="fone_resid" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="limite" ColumnName="limite" />
           <ScalarProperty Name="nome" ColumnName="nome" />
           <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
@@ -135,7 +135,7 @@
         <MappingFragment StoreEntitySet="lancamento">
           <ScalarProperty Name="data" ColumnName="data" />
           <ScalarProperty Name="fonte" ColumnName="fonte" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="lancamentotipo_id" ColumnName="lancamentotipo_id" />
           <ScalarProperty Name="observacoes" ColumnName="observacoes" />
           <ScalarProperty Name="outrasinfos" ColumnName="outrasinfos" />
@@ -160,7 +160,7 @@
     <EntitySetMapping Name="MunicipioSet">
       <EntityTypeMapping TypeName="EmprestimoModel.Municipio">
         <MappingFragment StoreEntitySet="municipio">
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="nome" ColumnName="nome" />
           <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
           <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
@@ -184,7 +184,7 @@
           <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
           <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
           <ScalarProperty Name="emprestimo_id" ColumnName="emprestimo_id" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID" ColumnName="id" />
           <ScalarProperty Name="juros_atraso" ColumnName="juros_atraso" />
           <ScalarProperty Name="multa_atraso" ColumnName="multa_atraso" />
           <ScalarProperty Name="observacoes" ColumnName="observacoes" />

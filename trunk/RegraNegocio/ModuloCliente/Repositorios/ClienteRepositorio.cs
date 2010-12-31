@@ -171,7 +171,7 @@ namespace RegraNegocio.ModuloCliente.Repositorios
 
         public void Confirmar()
         {
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         #endregion
@@ -179,8 +179,8 @@ namespace RegraNegocio.ModuloCliente.Repositorios
         #region Construtor
         public ClienteRepositorio()
         {
-            Conexao conexao = new Conexao();
-            db = new EmprestimoEntities(new MySqlConnection(conexao.ToString()));
+            
+            db = new EmprestimoEntities();
 
         }
         #endregion

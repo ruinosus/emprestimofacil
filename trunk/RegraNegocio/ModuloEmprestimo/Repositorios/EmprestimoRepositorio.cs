@@ -45,116 +45,6 @@ namespace RegraNegocio.ModuloEmprestimo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (emprestimo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == emprestimo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(emprestimo.Agencia))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Agencia.Contains(emprestimo.Agencia)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(emprestimo.Banco))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Banco.Contains(emprestimo.Banco)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(emprestimo.Conta))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Conta.Contains(emprestimo.Conta)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(emprestimo.Cpf))
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Cpf.Contains(emprestimo.Cpf)
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (emprestimo.Tipo != 0)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Tipo == emprestimo.Tipo
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (emprestimo.Parcela.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Parcela.HasValue && c.Parcela.Value == emprestimo.Parcela.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (emprestimo.NumEmprestimo.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.NumEmprestimo.HasValue && c.NumEmprestimo.Value == emprestimo.NumEmprestimo.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (emprestimo.Status.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Status.HasValue && c.Status.Value == emprestimo.Status.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (emprestimo.Valor.HasValue)
-                        {
-
-                            resultado = ((from c in resultado
-                                          where
-                                          c.Valor.HasValue && c.Valor.Value == emprestimo.Valor.Value
-                                          select c).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -162,7 +52,7 @@ namespace RegraNegocio.ModuloEmprestimo.Repositorios
                 #region Case Ou
                 case TipoPesquisa.Ou:
                     {
-                        if (emprestimo.ID != 0)
+                        if (emprestimo.id != 0)
                         {
                             resultado.AddRange((from c in Consultar()
                                                 where
