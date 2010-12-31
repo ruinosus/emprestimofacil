@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RegraNegocio.ModuloBasico;
+using RegraNegocio.ModuloStatusParcela.Processos;
 
 
 namespace SiteMVC.Controllers
@@ -15,6 +16,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Index()
         {
+            StatusParcelaProcesso processo = new StatusParcelaProcesso();
+            ViewData.Model = processo.Consultar();
             //EmprestimoEntities db = new EmprestimoEntities();
             //StatusParcela sss = new StatusParcela();
             //var teste = db.StatusParcelaSetSet.ToList();

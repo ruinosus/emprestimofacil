@@ -15,8 +15,8 @@ namespace RegraNegocio.ModuloBasico.Singleton
         {
             get
             {
-               // return SingletonCreator.instance;
-                return  new T();;
+                return SingletonCreator.instance;
+             //   return  new T();;
             }
         }
 

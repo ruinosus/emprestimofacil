@@ -236,7 +236,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EmprestimoDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
+    <None Include="ModuloBasico\VOs\App.Config" />
     <None Include="Modelo\modelo.mwb" />
     <None Include="Modelo\modelo.mwb.bak" />
   </ItemGroup>
