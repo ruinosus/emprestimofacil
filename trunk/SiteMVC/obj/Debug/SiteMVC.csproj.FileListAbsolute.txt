@@ -1,3 +1,8 @@
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\bin\SiteMVC.dll
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
+C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.dll
 E:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\bin\RegraNegocio.dll
@@ -5,8 +10,3 @@ E:\Projetos\EmprestimoFacil\SiteMVC\bin\RegraNegocio.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb
-C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\bin\SiteMVC.dll
-C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
-C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
-C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb

@@ -52,7 +52,7 @@ namespace RegraNegocio.ModuloStatusParcela.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new StatusParcelaNaoExcluidoExcecao();
 
-                this.Excluir(statusParcela);
+                statusParcelaRepositorio.Excluir(statusParcela);
             }
             catch (Exception e)
             {

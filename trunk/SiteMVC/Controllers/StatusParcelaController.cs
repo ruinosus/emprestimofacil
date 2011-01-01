@@ -95,19 +95,13 @@ namespace SiteMVC.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        //
-        // POST: /StatusParcela/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add delete logic here
- 
+                IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+                StatusParcela statusParcela = new StatusParcela();
+                statusParcela.ID = id;
+                processo.Excluir(statusParcela);
+                processo.Confirmar();
                 return RedirectToAction("Index");
             }
             catch
@@ -115,5 +109,23 @@ namespace SiteMVC.Controllers
                 return View();
             }
         }
+
+        ////
+        //// POST: /StatusParcela/Delete/5
+
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
+ 
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }
