@@ -120,12 +120,12 @@ namespace RegraNegocio.ModuloStatusParcela.Repositorios
 
                 if (resultado == null || resultado.Count == 0)
                     throw new StatusParcelaNaoAlteradoExcecao();
-
+                statusParcelaAux = resultado[0];
                 statusParcelaAux.descricao = statusParcela.descricao;
                 statusParcelaAux.ID = statusParcela.ID;
                
 
-                statusParcelaAux = resultado[0];
+               
 
                 Confirmar();
             }

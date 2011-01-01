@@ -33,6 +33,10 @@ namespace SiteMVC.Controllers
 
         public ActionResult Details(int id)
         {
+            IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+            StatusParcela statusParcela = new StatusParcela();
+            statusParcela.ID = id;
+            ViewData.Model = processo.Consultar(statusParcela,RegraNegocio.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
         }
 
@@ -69,6 +73,10 @@ namespace SiteMVC.Controllers
  
         public ActionResult Edit(int id)
         {
+            IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+            StatusParcela statusParcela = new StatusParcela();
+            statusParcela.ID = id;
+            ViewData.Model = processo.Consultar(statusParcela, RegraNegocio.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
         }
 
@@ -76,10 +84,14 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, StatusParcela statusParcela)
         {
             try
             {
+                statusParcela.ID = id;
+                IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+                processo.Alterar(statusParcela);
+                processo.Confirmar();
                 // TODO: Add update logic here
  
                 return RedirectToAction("Index");
