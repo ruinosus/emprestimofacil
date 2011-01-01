@@ -1,14 +1,15 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 <%
-    if (Request.IsAuthenticated) {
+    if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado!= null) {
 %>
-        Welcome <b><%: Page.User.Identity.Name %></b>!
-        [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]
+        Bem Vindo, <b><%= Html.Encode(SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.nome)%></b>!
+        [ <%= Html.ActionLink("Deslogar", "Deslogar", "Usuario") %> ]
+        [ <%= Html.ActionLink("Alterar Senha", "Alterar", "Usuario") %> ]
 <%
     }
     else {
 %> 
-        [ <%: Html.ActionLink("Log On", "LogOn", "Account") %> ]
+        [ <%= Html.ActionLink("Logar", "Logar", "Usuario")%> ]
 <%
     }
 %>

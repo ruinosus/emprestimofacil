@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SiteMVC.ModuloBasico.VOs;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloUsuario.Processos;
 using SiteMVC.ModuloBasico.Enums;

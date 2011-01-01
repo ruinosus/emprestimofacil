@@ -271,6 +271,7 @@
     <Content Include="Views\StatusParcela\Detalhar.aspx" />
     <Content Include="Views\StatusParcela\Alterar.aspx" />
     <Content Include="Views\StatusParcela\Listar.aspx" />
+    <Content Include="Views\Usuario\Logar.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
