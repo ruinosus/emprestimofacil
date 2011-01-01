@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using SiteMVC.ModuloBasico;
 using SiteMVC.ModuloStatusParcela.Processos;
 using SiteMVC.Models.ModuloBasico.VOs;
-using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloBasico.Enums;
 
 
@@ -18,6 +17,11 @@ namespace SiteMVC.Controllers
         // GET: /StatusParcela/
 
         public ActionResult Index()
+        {
+            return RedirectToAction("Listar");
+        }
+
+        public ActionResult Listar()
         {
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             ViewData.Model = processo.Consultar();
@@ -33,7 +37,7 @@ namespace SiteMVC.Controllers
         //
         // GET: /StatusParcela/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Detalhar(int id)
         {
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
@@ -45,7 +49,7 @@ namespace SiteMVC.Controllers
         //
         // GET: /StatusParcela/Create
 
-        public ActionResult Create()
+        public ActionResult Incluir()
         {
             ViewData.Model = new StatusParcela();
             return View();
@@ -55,7 +59,7 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Create
 
         [HttpPost]
-        public ActionResult Create(StatusParcela statusParcela)
+        public ActionResult Incluir(StatusParcela statusParcela)
         {
             try
             {
@@ -83,7 +87,7 @@ namespace SiteMVC.Controllers
         //
         // GET: /StatusParcela/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Alterar(int id)
         {
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
@@ -96,7 +100,7 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, StatusParcela statusParcela)
+        public ActionResult Alterar(int id, StatusParcela statusParcela)
         {
             try
             {
@@ -127,7 +131,7 @@ namespace SiteMVC.Controllers
         //
         // GET: /StatusParcela/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Excluir(int id)
         {
             try
             {

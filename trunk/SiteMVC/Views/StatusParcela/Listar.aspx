@@ -31,9 +31,9 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.ID }) %> |
-                <%: Html.ActionLink("Details", "Details", new { id=item.ID })%> |
-                <%: Html.ActionLink("Delete", "Delete", new { id=item.ID })%>
+                <%: Html.ActionLink("Alterar", "Alterar", new { id = item.ID })%> |
+                <%: Html.ActionLink("Detalhar", "Detalhar", new { id = item.ID })%> |
+                <%: Html.ActionLink("Excluir", "Excluir", new { id = item.ID })%>
             </td>
             <td>
                 <%: item.descricao %>
@@ -54,7 +54,7 @@
     </table>
 
     <p>
-        <%: Html.ActionLink("Create New", "Create") %>
+        <%: Html.ActionLink("Incluir", "Incluir") %>
     </p>
 
 </asp:Content>

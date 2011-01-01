@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusParcelaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,11 +266,11 @@
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\LogOnUserControl.ascx" />
-    <Content Include="Views\StatusParcela\Create.aspx" />
-    <Content Include="Views\StatusParcela\Details.aspx" />
-    <Content Include="Views\StatusParcela\Edit.aspx" />
-    <Content Include="Views\StatusParcela\Index.aspx" />
+    <Content Include="Views\Shared\LogarUserControl.ascx" />
+    <Content Include="Views\StatusParcela\Incluir.aspx" />
+    <Content Include="Views\StatusParcela\Detalhar.aspx" />
+    <Content Include="Views\StatusParcela\Alterar.aspx" />
+    <Content Include="Views\StatusParcela\Listar.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
