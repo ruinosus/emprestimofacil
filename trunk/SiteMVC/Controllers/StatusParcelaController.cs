@@ -24,7 +24,7 @@ namespace SiteMVC.Controllers
             //var teste = db.StatusParcelaSetSet.ToList();
             ////emprestimoEntities db = new emprestimoEntities();
             //ViewData.Model = teste;
-            
+
             return View();
         }
 
@@ -36,7 +36,7 @@ namespace SiteMVC.Controllers
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.ID = id;
-            ViewData.Model = processo.Consultar(statusParcela,RegraNegocio.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            ViewData.Model = processo.Consultar(statusParcela, RegraNegocio.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
         }
 
@@ -47,7 +47,7 @@ namespace SiteMVC.Controllers
         {
             ViewData.Model = new StatusParcela();
             return View();
-        } 
+        }
 
         //
         // POST: /StatusParcela/Create
@@ -57,20 +57,30 @@ namespace SiteMVC.Controllers
         {
             try
             {
-                IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
-                processo.Incluir(statusParcela);
-                processo.Confirmar();
-                return RedirectToAction("Index");
+                if (string.IsNullOrEmpty(statusParcela.descricao))
+                    ModelState.AddModelError("descricao", "Informe a descrição.");
+              
+                if (ModelState.IsValid)
+                {
+                    IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+                    processo.Incluir(statusParcela);
+                    processo.Confirmar();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(statusParcela);
+                }
             }
             catch
             {
                 return View();
             }
         }
-        
+
         //
         // GET: /StatusParcela/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
@@ -88,13 +98,23 @@ namespace SiteMVC.Controllers
         {
             try
             {
-                statusParcela.ID = id;
-                IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
-                processo.Alterar(statusParcela);
-                processo.Confirmar();
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
+                if (string.IsNullOrEmpty(statusParcela.descricao))
+                    ModelState.AddModelError("descricao", "Informe a descrição.");
+              
+                if (ModelState.IsValid)
+                {
+                    statusParcela.ID = id;
+                    IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+                    processo.Alterar(statusParcela);
+                    processo.Confirmar();
+                    // TODO: Add update logic here
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(statusParcela);
+                }
             }
             catch
             {
@@ -104,7 +124,7 @@ namespace SiteMVC.Controllers
 
         //
         // GET: /StatusParcela/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
             try
@@ -131,7 +151,7 @@ namespace SiteMVC.Controllers
         //    try
         //    {
         //        // TODO: Add delete logic here
- 
+
         //        return RedirectToAction("Index");
         //    }
         //    catch
