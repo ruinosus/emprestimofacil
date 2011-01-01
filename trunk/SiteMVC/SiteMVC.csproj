@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -72,11 +73,194 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModuloArea\Constantes\AreaConstantes.cs" />
+    <Compile Include="Models\ModuloArea\Excecoes\AreaNaoAlteradaExcecao.cs" />
+    <Compile Include="Models\ModuloArea\Excecoes\AreaNaoExcluidaExcecao.cs" />
+    <Compile Include="Models\ModuloArea\Excecoes\AreaNaoIncluidaExcecao.cs" />
+    <Compile Include="Models\ModuloArea\Fabricas\AreaFabrica.cs" />
+    <Compile Include="Models\ModuloArea\Processos\AreaProcesso.cs" />
+    <Compile Include="Models\ModuloArea\Processos\Interfaces\IAreaProcesso.cs" />
+    <Compile Include="Models\ModuloArea\Repositorios\AreaRepositorio.cs" />
+    <Compile Include="Models\ModuloArea\Repositorios\Interfaces\IAreaRepositorio.cs" />
+    <Compile Include="Models\ModuloBasico\Constantes\BasicoConstantes.cs" />
+    <Compile Include="Models\ModuloBasico\Constantes\SiteConstantes.cs" />
+    <Compile Include="Models\ModuloBasico\Enuns\Enumeradores.cs" />
+    <Compile Include="Models\ModuloBasico\Singleton\Singleton.cs" />
+    <Compile Include="Models\ModuloBasico\VOs\ClasseAuxiliar.cs" />
+    <Compile Include="Models\ModuloBasico\VOs\EmprestimoDB.Designer.cs">
+      <DependentUpon>EmprestimoDB.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\ModuloBloqueado\Constantes\BloqueadoConstantes.cs" />
+    <Compile Include="Models\ModuloBloqueado\Excecoes\BloqueadoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloBloqueado\Excecoes\BloqueadoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloBloqueado\Excecoes\BloqueadoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloBloqueado\Fabricas\BloqueadoFabrica.cs" />
+    <Compile Include="Models\ModuloBloqueado\Processos\BloqueadoProcesso.cs" />
+    <Compile Include="Models\ModuloBloqueado\Processos\Interfaces\IBloqueadoProcesso.cs" />
+    <Compile Include="Models\ModuloBloqueado\Repositorios\BloqueadoRepositorio.cs" />
+    <Compile Include="Models\ModuloBloqueado\Repositorios\Interfaces\IBloqueadoRepositorio.cs" />
+    <Compile Include="Models\ModuloCliente\Constantes\ClienteConstantes.cs" />
+    <Compile Include="Models\ModuloCliente\Excecoes\ClienteNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloCliente\Excecoes\ClienteNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloCliente\Excecoes\ClienteNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloCliente\Fabricas\ClienteFabrica.cs" />
+    <Compile Include="Models\ModuloCliente\Processos\ClienteProcesso.cs" />
+    <Compile Include="Models\ModuloCliente\Processos\Interfaces\IClienteProcesso.cs" />
+    <Compile Include="Models\ModuloCliente\Repositorios\ClienteRepositorio.cs" />
+    <Compile Include="Models\ModuloCliente\Repositorios\Interfaces\IClienteRepositorio.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Constantes\DepesaTipoConstantes.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Excecoes\DespesaTipoNaoAlteradaExcecao.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Excecoes\DespesaTipoNaoExcluidaExcecao.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Excecoes\DespesaTipoNaoIncluidaExcecao.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Fabricas\AreaFabrica.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Processos\DespesaTipoProcesso.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Processos\Interfaces\IAreaProcesso.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Repositorios\DespesaTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\Repositorios\Interfaces\IDespesaTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloDespesa\Constantes\DespesaConstantes.cs" />
+    <Compile Include="Models\ModuloDespesa\Excecoes\DespesaNaoAlteradaExcecao.cs" />
+    <Compile Include="Models\ModuloDespesa\Excecoes\DespesaNaoExcluidaExcecao.cs" />
+    <Compile Include="Models\ModuloDespesa\Excecoes\DespesaNaoIncluidaExcecao.cs" />
+    <Compile Include="Models\ModuloDespesa\Fabricas\DespesaFabrica.cs" />
+    <Compile Include="Models\ModuloDespesa\Processos\DespesaProcesso.cs" />
+    <Compile Include="Models\ModuloDespesa\Processos\Interfaces\IDespesaProcesso.cs" />
+    <Compile Include="Models\ModuloDespesa\Repositorios\DespesaRepositorio.cs" />
+    <Compile Include="Models\ModuloDespesa\Repositorios\Interfaces\IDespesaRepositorio.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Constantes\EmprestimoConstantes.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Excecoes\EmprestimoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Excecoes\EmprestimoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Excecoes\EmprestimoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Fabricas\EmprestimoFabrica.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Processos\EmprestimoProcesso.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Processos\Interfaces\IEmprestimoProcesso.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Repositorios\EmprestimoRepositorio.cs" />
+    <Compile Include="Models\ModuloEmprestimo\Repositorios\Interfaces\IEmprestimoRepositorio.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Constantes\EscolaridadeConstantes.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Excecoes\EscolaridadeNaoAlteradaExcecao.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Excecoes\EscolaridadeNaoExcluidaExcecao.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Excecoes\EscolaridadeNaoIncluidaExcecao.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Fabricas\EscolaridadeFabrica.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Processos\EscolaridadeProcesso.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Processos\Interfaces\IEscolaridadeProcesso.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Repositorios\EscolaridadeRepositorio.cs" />
+    <Compile Include="Models\ModuloEscolaridade\Repositorios\Interfaces\IEscolaridadeRepositorio.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Constantes\EstadoCivilTipoConstantes.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Excecoes\EstadoCivilTipoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Excecoes\EstadoCivilTipoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Excecoes\EstadoCivilTipoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Fabricas\EstadoCivilTipoFabrica.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Processos\EstadoCivilTipoProcesso.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Processos\Interfaces\IEstadoCivilTipoProcesso.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Repositorios\EstadoCivilTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloEstadoCivilTipo\Repositorios\Interfaces\IEstadoCivilTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Constantes\LancamentoTipoConstantes.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Excecoes\LancamentoTipoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Excecoes\LancamentoTipoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Excecoes\LancamentoTipoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Fabricas\LancamentoTipoFabrica.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Processos\Interfaces\ILancamentoTipoProcesso.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Processos\LancamentoTipoProcesso.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Repositorios\Interfaces\ILancamentoTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloLancamentoTipo\Repositorios\LancamentoTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloLancamento\Constantes\LancamentoConstantes.cs" />
+    <Compile Include="Models\ModuloLancamento\Excecoes\LancamentoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloLancamento\Excecoes\LancamentoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloLancamento\Excecoes\LancamentoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloLancamento\Fabricas\LancamentoFabrica.cs" />
+    <Compile Include="Models\ModuloLancamento\Processos\Interfaces\ILancamentoProcesso.cs" />
+    <Compile Include="Models\ModuloLancamento\Processos\LancamentoProcesso.cs" />
+    <Compile Include="Models\ModuloLancamento\Repositorios\Interfaces\ILancamentoRepositorio.cs" />
+    <Compile Include="Models\ModuloLancamento\Repositorios\LancamentoRepositorio.cs" />
+    <Compile Include="Models\ModuloMunicipio\Constantes\MunicipioConstantes.cs" />
+    <Compile Include="Models\ModuloMunicipio\Excecoes\MunicipioNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloMunicipio\Excecoes\MunicipioNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloMunicipio\Excecoes\MunicipioNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloMunicipio\Fabricas\MunicipioFabrica.cs" />
+    <Compile Include="Models\ModuloMunicipio\Processos\Interfaces\IMunicipioProcesso.cs" />
+    <Compile Include="Models\ModuloMunicipio\Processos\MunicipioProcesso.cs" />
+    <Compile Include="Models\ModuloMunicipio\Repositorios\Interfaces\IMunicipioRepositorio.cs" />
+    <Compile Include="Models\ModuloMunicipio\Repositorios\MunicipioRepositorio.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Constantes\OrgaoExpedidorNomeConstantes.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Excecoes\OrgaoExpedidorNomeNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Excecoes\OrgaoExpedidorNomeNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Excecoes\OrgaoExpedidorNomeNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Fabricas\ClienteFabrica.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Processos\Interfaces\IOrgaoExpedidorNomeProcesso.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Processos\OrgaoExpedidorNomeProcesso.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Repositorios\Interfaces\IOrgaoExpedidorNomeRepositorio.cs" />
+    <Compile Include="Models\ModuloOrgaoExpedidorNome\Repositorios\OrgaoExpedidorNomeRepositorio.cs" />
+    <Compile Include="Models\ModuloParcela\Constantes\ParcelaConstantes.cs" />
+    <Compile Include="Models\ModuloParcela\Excecoes\ParcelaNaoAlteradaExcecao.cs" />
+    <Compile Include="Models\ModuloParcela\Excecoes\ParcelaNaoExcluidaExcecao.cs" />
+    <Compile Include="Models\ModuloParcela\Excecoes\ParcelaNaoIncluidaExcecao.cs" />
+    <Compile Include="Models\ModuloParcela\Fabricas\ParcelaFabrica.cs" />
+    <Compile Include="Models\ModuloParcela\Processos\Interfaces\IParcelaProcesso.cs" />
+    <Compile Include="Models\ModuloParcela\Processos\ParcelaProcesso.cs" />
+    <Compile Include="Models\ModuloParcela\Repositorios\Interfaces\IParcelaRepositorio.cs" />
+    <Compile Include="Models\ModuloParcela\Repositorios\ParcelaRepositorio.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Constantes\ClienteConstantes.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Excecoes\PrazoPagamentoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Excecoes\PrazoPagamentoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Excecoes\PrazoPagamentoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Fabricas\PrazoPagamentoFabrica.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Processos\Interfaces\IPrazoPagamentoProcesso.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Processos\PrazoPagamentoProcesso.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Repositorios\Interfaces\IPrazoPagamentoRepositorio.cs" />
+    <Compile Include="Models\ModuloPrazoPagamento\Repositorios\PrazoPagamentoRepositorio.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Constantes\PrestacaoContaConstantes.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Excecoes\PrestacaoContaNaoAlteradaExcecao.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Excecoes\PrestacaoContaNaoExcluidaExcecao.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Excecoes\PrestacaoContaNaoIncluidaExcecao.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Fabricas\AreaFabrica.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Processos\Interfaces\IPrestacaoContaProcesso.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Processos\PrestacaoContaProcesso.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Repositorios\Interfaces\IPrestacaoContaRepositorio.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\Repositorios\PrestacaoContaRepositorio.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Constantes\StatusParcelaConstantes.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Excecoes\StatusParcelaNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Excecoes\StatusParcelaNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Excecoes\StatusParcelaNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Fabricas\StatusParcelaFabrica.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Processos\Interfaces\IStatusParcelaProcesso.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Processos\StatusParcelaProcesso.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Repositorios\Interfaces\IStatusParcelaRepositorio.cs" />
+    <Compile Include="Models\ModuloStatusParcela\Repositorios\StatusParcelaRepositorio.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Constantes\TipoEmprestimoConstantes.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Excecoes\EmprestimoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Excecoes\TipoEmprestimoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Excecoes\TipoEmprestimoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Fabricas\TipoEmprestimoFabrica.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Processos\Interfaces\ITipoEmprestimoProcesso.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Processos\TipoEmprestimoProcesso.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Repositorios\Interfaces\ITipoEmprestimoRepositorio.cs" />
+    <Compile Include="Models\ModuloTipoEmprestimo\Repositorios\TipoEmprestimoRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Constantes\UsuarioTipoConstantes.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Fabricas\UsuarioTipoFabrica.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Processos\Interfaces\IUsuarioTipoProcesso.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Processos\UsuarioTipoProcesso.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Repositorios\Interfaces\IUsuarioTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuarioTipo\Repositorios\UsuarioTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuario\Constantes\UsuarioConstantes.cs" />
+    <Compile Include="Models\ModuloUsuario\Excecoes\UsuarioNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuario\Excecoes\UsuarioNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuario\Excecoes\UsuarioNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuario\Fabricas\UsuarioFabrica.cs" />
+    <Compile Include="Models\ModuloUsuario\Processos\Interfaces\IUsuarioProcesso.cs" />
+    <Compile Include="Models\ModuloUsuario\Processos\UsuarioProcesso.cs" />
+    <Compile Include="Models\ModuloUsuario\Repositorios\Interfaces\IUsuarioRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuario\Repositorios\UsuarioRepositorio.cs" />
+    <Compile Include="Models\ModuloStatusParcela\VOs\StatusParcela.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Modelo\emprestcard.sql" />
     <Content Include="Views\StatusParcela\Create.aspx" />
     <Content Include="Views\StatusParcela\Details.aspx" />
     <Content Include="Views\StatusParcela\Edit.aspx" />
@@ -106,14 +290,17 @@
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RegraNegocio\RegraNegocio.csproj">
-      <Project>{6709D694-4FC0-41AA-B77A-F16402CF9A52}</Project>
-      <Name>RegraNegocio</Name>
-    </ProjectReference>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Include="Models\Modelo\modelo.mwb" />
+    <None Include="Models\Modelo\modelo.mwb.bak" />
+    <EntityDeploy Include="Models\ModuloBasico\VOs\EmprestimoDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmprestimoDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

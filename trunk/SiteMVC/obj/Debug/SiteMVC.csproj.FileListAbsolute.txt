@@ -5,8 +5,6 @@ C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\Sit
 C:\Documents and Settings\Ruinosus\Desktop\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.dll
 E:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
-E:\Projetos\EmprestimoFacil\SiteMVC\bin\RegraNegocio.dll
-E:\Projetos\EmprestimoFacil\SiteMVC\bin\RegraNegocio.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb

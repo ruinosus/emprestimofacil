@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using RegraNegocio.ModuloBasico;
-using RegraNegocio.ModuloStatusParcela.Processos;
-using RegraNegocio.ModuloBasico.VOs;
+using SiteMVC.ModuloBasico;
+using SiteMVC.ModuloStatusParcela.Processos;
+using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.ModuloBasico.Enums;
 
 
 namespace SiteMVC.Controllers
@@ -36,7 +38,7 @@ namespace SiteMVC.Controllers
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.ID = id;
-            ViewData.Model = processo.Consultar(statusParcela, RegraNegocio.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            ViewData.Model = processo.Consultar(statusParcela, TipoPesquisa.E)[0];
             return View();
         }
 
@@ -86,7 +88,7 @@ namespace SiteMVC.Controllers
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.ID = id;
-            ViewData.Model = processo.Consultar(statusParcela, RegraNegocio.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            ViewData.Model = processo.Consultar(statusParcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
         }
 
