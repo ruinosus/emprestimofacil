@@ -16,8 +16,8 @@ namespace SiteMVC.Controllers
         [HttpPost]
         public ActionResult Incluir(Usuario usuario)
         {
-            if (ClasseAuxiliar.UsuarioLogado == null)
-                return Redirect("/Usuario/Logar");
+            //if (ClasseAuxiliar.UsuarioLogado == null)
+            //    return Redirect("/Usuario/Logar");
 
             if (ModelState.IsValid)
             {
@@ -33,8 +33,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
-            if (ClasseAuxiliar.UsuarioLogado == null)
-                return Redirect("/Usuario/Logar");
+            //if (ClasseAuxiliar.UsuarioLogado == null)
+            //    return Redirect("/Usuario/Logar");
 
             Usuario usuario = new Usuario();
             return View(usuario);

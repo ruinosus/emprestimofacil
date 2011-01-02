@@ -51,6 +51,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+            ViewData["dropTeste"] = processo.Consultar();
             ViewData.Model = new StatusParcela();
             return View();
         }
@@ -63,8 +65,8 @@ namespace SiteMVC.Controllers
         {
             try
             {
-                if (string.IsNullOrEmpty(statusParcela.descricao))
-                    ModelState.AddModelError("descricao", "Informe a descrição.");
+                //if (string.IsNullOrEmpty(statusParcela.descricao))
+                //    ModelState.AddModelError("descricao", "Informe a descrição.");
               
                 if (ModelState.IsValid)
                 {
@@ -104,8 +106,8 @@ namespace SiteMVC.Controllers
         {
             try
             {
-                if (string.IsNullOrEmpty(statusParcela.descricao))
-                    ModelState.AddModelError("descricao", "Informe a descrição.");
+                //if (string.IsNullOrEmpty(statusParcela.descricao))
+                //    ModelState.AddModelError("descricao", "Informe a descrição.");
               
                 if (ModelState.IsValid)
                 {
@@ -133,6 +135,20 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
+            StatusParcela statusParcela = new StatusParcela();
+            statusParcela.ID = id;
+            ViewData.Model = processo.Consultar(statusParcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            return View();
+            
+        }
+
+        ////
+        //// POST: /StatusParcela/Delete/5
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
             try
             {
                 IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
@@ -147,23 +163,5 @@ namespace SiteMVC.Controllers
                 return View();
             }
         }
-
-        ////
-        //// POST: /StatusParcela/Delete/5
-
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
     }
 }

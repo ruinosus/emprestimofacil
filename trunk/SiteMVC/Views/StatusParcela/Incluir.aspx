@@ -21,30 +21,10 @@
                 <%: Html.TextBoxFor(model => model.descricao) %>
                 <%: Html.ValidationMessageFor(model => model.descricao) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.ID) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ID) %>
-                <%: Html.ValidationMessageFor(model => model.ID) %>
-            </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.timeCreated) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.timeCreated) %>
-                <%: Html.ValidationMessageFor(model => model.timeCreated) %>
-            </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.timeUpdated) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.timeUpdated) %>
-                <%: Html.ValidationMessageFor(model => model.timeUpdated) %>
-            </div>
+            <%--<div>
+            <%= Html.DropDownList("dropTeste", new SelectList((IEnumerable)ViewData["dropTeste"], "ID", "descricao"), "--Choose industry--", new { onchange = "this.form.submit();" }) %>
+
+            </div>--%>
             
             <p>
                 <input type="submit" value="Incluir" />
@@ -54,7 +34,7 @@
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink("Voltar", "Index") %>
     </div>
 
 </asp:Content>

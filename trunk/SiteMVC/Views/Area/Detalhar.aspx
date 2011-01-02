@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.StatusParcela>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.Area>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Details
+	Detalhar
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Principal" runat="server">
 
-    <h2>Details</h2>
+    <h2>Detalhar</h2>
 
     <fieldset>
         <legend>Fields</legend>
@@ -16,6 +16,9 @@
         
         <div class="display-label">ID</div>
         <div class="display-field"><%: Model.ID %></div>
+        
+        <div class="display-label">municipio_id</div>
+        <div class="display-field"><%: Model.municipio_id %></div>
         
         <div class="display-label">timeCreated</div>
         <div class="display-field"><%: Model.timeCreated %></div>

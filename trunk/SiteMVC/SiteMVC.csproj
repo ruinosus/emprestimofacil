@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusParcelaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Models\ModuloArea\Processos\Interfaces\IAreaProcesso.cs" />
     <Compile Include="Models\ModuloArea\Repositorios\AreaRepositorio.cs" />
     <Compile Include="Models\ModuloArea\Repositorios\Interfaces\IAreaRepositorio.cs" />
+    <Compile Include="Models\ModuloArea\VOs\Area.cs" />
     <Compile Include="Models\ModuloBasico\Constantes\BasicoConstantes.cs" />
     <Compile Include="Models\ModuloBasico\Constantes\SiteConstantes.cs" />
     <Compile Include="Models\ModuloBasico\Enuns\Enumeradores.cs" />
@@ -263,14 +265,21 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\Modelo\emprestcard.sql" />
+    <Content Include="Views\Area\Alterar.aspx" />
+    <Content Include="Views\Area\Detalhar.aspx" />
+    <Content Include="Views\Area\Excluir.aspx" />
+    <Content Include="Views\Area\Incluir.aspx" />
+    <Content Include="Views\Area\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogarUserControl.ascx" />
+    <Content Include="Views\StatusParcela\Excluir.aspx" />
     <Content Include="Views\StatusParcela\Incluir.aspx" />
     <Content Include="Views\StatusParcela\Detalhar.aspx" />
     <Content Include="Views\StatusParcela\Alterar.aspx" />
     <Content Include="Views\StatusParcela\Listar.aspx" />
+    <Content Include="Views\Usuario\Incluir.aspx" />
     <Content Include="Views\Usuario\Logar.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
