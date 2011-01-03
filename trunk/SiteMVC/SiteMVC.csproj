@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusParcelaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Models\ModuloMunicipio\Processos\MunicipioProcesso.cs" />
     <Compile Include="Models\ModuloMunicipio\Repositorios\Interfaces\IMunicipioRepositorio.cs" />
     <Compile Include="Models\ModuloMunicipio\Repositorios\MunicipioRepositorio.cs" />
+    <Compile Include="Models\ModuloMunicipio\VOs\Municipio.cs" />
     <Compile Include="Models\ModuloOrgaoExpedidorNome\Constantes\OrgaoExpedidorNomeConstantes.cs" />
     <Compile Include="Models\ModuloOrgaoExpedidorNome\Excecoes\OrgaoExpedidorNomeNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloOrgaoExpedidorNome\Excecoes\OrgaoExpedidorNomeNaoExcluidoExcecao.cs" />
@@ -272,7 +274,13 @@
     <Content Include="Views\Area\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Municipio\Alterar.aspx" />
+    <Content Include="Views\Municipio\Detalhar.aspx" />
+    <Content Include="Views\Municipio\Excluir.aspx" />
+    <Content Include="Views\Municipio\Incluir.aspx" />
+    <Content Include="Views\Municipio\Listar.aspx" />
     <Content Include="Views\Shared\EditorTemplates\MunicipioDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\UfDropDown.ascx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogarUserControl.ascx" />
     <Content Include="Views\StatusParcela\Excluir.aspx" />
