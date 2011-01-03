@@ -50,11 +50,12 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
-            IMunicipioProcesso processo = MunicipioProcesso.Instance;
-            List<Municipio> resultado = processo.Consultar();
-            AreaFormViewModel areaFormViewModel = new AreaFormViewModel(new Area(), resultado);
-            ViewData.Model = areaFormViewModel;
-            ViewData["Municipios"] = areaFormViewModel.MunicipioSelectList;
+            //IMunicipioProcesso processo = MunicipioProcesso.Instance;
+            //List<Municipio> resultado = processo.Consultar();
+            //AreaFormViewModel areaFormViewModel = new AreaFormViewModel(new Area(), resultado);
+            //ViewData.Model = areaFormViewModel;
+            ViewData.Model = new Area();
+            //ViewData["Municipios"] = areaFormViewModel.MunicipioSelectList;
             return View();
         }
 
@@ -64,7 +65,7 @@ namespace SiteMVC.Controllers
         [HttpPost]
         [ValidateInput(false)]
 
-        public ActionResult Incluir(AreaFormViewModel areaFormViewModel, FormCollection collection)
+        public ActionResult Incluir(Area area, FormCollection collection)
         {
             //var Municipio_ID = this.Request["municipio_id"];
             try
@@ -80,24 +81,24 @@ namespace SiteMVC.Controllers
                 {
                     IAreaProcesso processo = AreaProcesso.Instance;
                    
-                    processo.Incluir(areaFormViewModel.Area);
+                    processo.Incluir(area);
                     processo.Confirmar();
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                    List<Municipio> resultado = processo.Consultar();
-                    areaFormViewModel.CarregarMunicipioSelectList(resultado, areaFormViewModel.Area.municipio_id);
-                    return View(areaFormViewModel);
+                    //IMunicipioProcesso processo = MunicipioProcesso.Instance;
+                    //List<Municipio> resultado = processo.Consultar();
+                    //area.CarregarMunicipioSelectList(resultado, area.Area.municipio_id);
+                    return View(area);
                 }
             }
             catch
             {
-                IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                    List<Municipio> resultado = processo.Consultar();
-                    areaFormViewModel.CarregarMunicipioSelectList(resultado, areaFormViewModel.Area.municipio_id);
-                    return View(areaFormViewModel);
+                //IMunicipioProcesso processo = MunicipioProcesso.Instance;
+                //    List<Municipio> resultado = processo.Consultar();
+                //    area.CarregarMunicipioSelectList(resultado, area.Area.municipio_id);
+                    return View(area);
             }
         }
 

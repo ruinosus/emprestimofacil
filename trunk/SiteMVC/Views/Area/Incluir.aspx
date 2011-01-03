@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.AreaFormViewModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.Area>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Incluir
@@ -15,11 +15,11 @@
             <legend>Fields</legend>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Area.descricao) %>
+                <%: Html.LabelFor(model => model.descricao) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Area.descricao)%>
-                <%: Html.ValidationMessageFor(model => model.Area.descricao)%>
+                <%: Html.TextBoxFor(model => model.descricao)%>
+                <%: Html.ValidationMessageFor(model => model.descricao)%>
             </div>
         
             
@@ -27,12 +27,12 @@
                Municipio
             </div>
             <div class="editor-field">
-        <%: Html.EditorFor(model => model.Area.municipio_id)%>
+        <%: Html.EditorFor(model => model.municipio_id)%>
          <%--   <%= 
                 Html.DropDownList("municipio_id", Model.MunicipioSelectList)%>--%>
 
 
-                <%: Html.ValidationMessageFor(model => model.Area.municipio_id)%>
+                <%: Html.ValidationMessageFor(model => model.municipio_id)%>
             </div>
 
             
