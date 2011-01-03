@@ -8,3 +8,5 @@ E:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb
+E:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.dll
+E:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.pdb

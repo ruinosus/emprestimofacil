@@ -7,6 +7,7 @@ using SiteMVC.ModuloArea.Processos;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
+using SiteMVC;
 
 namespace SiteMVC.Controllers
 {
@@ -14,23 +15,28 @@ namespace SiteMVC.Controllers
     {
         //
         // GET: /Area/
-
+        private const int defaultPageSize = 10;
         public ActionResult Index()
         {
             return RedirectToAction("Listar");
         }
 
-        public ActionResult Listar()
+        public ActionResult Listar(int? page)
         {
+             
             IAreaProcesso processo = AreaProcesso.Instance;
-            ViewData.Model = processo.Consultar();
+            var resultado =  processo.Consultar();
+            List<Area> areas = resultado;
+            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+            return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
+		
             //EmprestimoEntities db = new EmprestimoEntities();
             //StatusParcela sss = new StatusParcela();
             //var teste = db.StatusParcelaSetSet.ToList();
             ////emprestimoEntities db = new emprestimoEntities();
             //ViewData.Model = teste;
 
-            return View();
+            //return View();
         }
 
         //
