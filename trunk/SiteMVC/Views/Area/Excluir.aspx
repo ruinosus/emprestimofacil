@@ -19,7 +19,7 @@
         <div class="display-field"><%: Model.ID %></div>
         
         <div class="display-label">municipio_id</div>
-        <div class="display-field"><%: Model.municipio_id %></div>
+        <div class="display-field"><%: Model.municipio.nome %></div>
         
         <div class="display-label">timeCreated</div>
         <div class="display-field"><%: Model.timeCreated %></div>

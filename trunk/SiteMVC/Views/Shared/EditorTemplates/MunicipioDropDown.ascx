@@ -13,6 +13,7 @@
    MunicipioSelectList = from m in municipios
                                select new SelectListItem
                                {
+                                   Selected = (m.ID == Model),
                                    Text = m.nome,
                                    Value = m.ID.ToString()
                                };

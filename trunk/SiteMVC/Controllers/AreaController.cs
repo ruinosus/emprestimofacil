@@ -67,16 +67,9 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir(Area area, FormCollection collection)
         {
-            //var Municipio_ID = this.Request["municipio_id"];
+
             try
             {
-                //var teste = collection;
-              //  var Municipio_ID = this.Request["municipios"];
-
-                //if (string.IsNullOrEmpty(Municipio_ID) || Municipio_ID.Equals("0"))
-                //    ModelState.AddModelError("municipio_id", "Informe o municipio.");
-                //else
-                //    areaFormViewModel.Area.municipio_id = Convert.ToInt16(Municipio_ID);
                 if (ModelState.IsValid)
                 {
                     IAreaProcesso processo = AreaProcesso.Instance;
@@ -87,17 +80,11 @@ namespace SiteMVC.Controllers
                 }
                 else
                 {
-                    //IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                    //List<Municipio> resultado = processo.Consultar();
-                    //area.CarregarMunicipioSelectList(resultado, area.Area.municipio_id);
                     return View(area);
                 }
             }
             catch
             {
-                //IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                //    List<Municipio> resultado = processo.Consultar();
-                //    area.CarregarMunicipioSelectList(resultado, area.Area.municipio_id);
                     return View(area);
             }
         }
@@ -124,9 +111,6 @@ namespace SiteMVC.Controllers
         {
             try
             {
-                if (string.IsNullOrEmpty(area.descricao))
-                    ModelState.AddModelError("descricao", "Informe a descrição.");
-
                 if (ModelState.IsValid)
                 {
                     area.ID = id;
@@ -139,15 +123,11 @@ namespace SiteMVC.Controllers
                 }
                 else
                 {
-                    IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                    ViewData["municipios"] = processo.Consultar();
                     return View(area);
                 }
             }
             catch
             {
-                IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                ViewData["municipios"] = processo.Consultar();
                 return View();
             }
         }
@@ -169,7 +149,7 @@ namespace SiteMVC.Controllers
         //// POST: /StatusParcela/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Excluir(int id, FormCollection collection)
         {
             try
             {

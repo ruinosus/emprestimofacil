@@ -21,22 +21,23 @@
                 <%: Html.TextBoxFor(model => model.descricao) %>
                 <%: Html.ValidationMessageFor(model => model.descricao) %>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.ID) %>
+                  
+           <div class="editor-label">
+               Municipio
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ID) %>
-                <%: Html.ValidationMessageFor(model => model.ID) %>
+            <%
+           
+                var teste = Model.municipio_id;
+            %>
+        <%: Html.EditorFor(model => model.municipio_id)%>
+         <%--   <%= 
+                Html.DropDownList("municipio_id", Model.MunicipioSelectList)%>--%>
+
+
+                <%: Html.ValidationMessageFor(model => model.municipio_id)%>
             </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.municipio_id) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.municipio_id) %>
-                <%: Html.ValidationMessageFor(model => model.municipio_id) %>
-            </div>
+
          
             
             <p>
