@@ -27,9 +27,9 @@
                Municipio
             </div>
             <div class="editor-field">
-        
-            <%= 
-                Html.DropDownList("municipios", Model.MunicipioSelectList)%>
+        <%: Html.EditorFor(model => model.Area.municipio_id)%>
+         <%--   <%= 
+                Html.DropDownList("municipio_id", Model.MunicipioSelectList)%>--%>
 
 
                 <%: Html.ValidationMessageFor(model => model.Area.municipio_id)%>

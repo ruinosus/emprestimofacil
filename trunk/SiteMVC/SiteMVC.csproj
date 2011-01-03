@@ -272,6 +272,7 @@
     <Content Include="Views\Area\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\MunicipioDropDown.ascx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogarUserControl.ascx" />
     <Content Include="Views\StatusParcela\Excluir.aspx" />

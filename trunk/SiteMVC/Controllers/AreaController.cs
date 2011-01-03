@@ -52,7 +52,9 @@ namespace SiteMVC.Controllers
         {
             IMunicipioProcesso processo = MunicipioProcesso.Instance;
             List<Municipio> resultado = processo.Consultar();
-            ViewData.Model = new AreaFormViewModel(new Area(),resultado);
+            AreaFormViewModel areaFormViewModel = new AreaFormViewModel(new Area(), resultado);
+            ViewData.Model = areaFormViewModel;
+            ViewData["Municipios"] = areaFormViewModel.MunicipioSelectList;
             return View();
         }
 
@@ -64,18 +66,20 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir(AreaFormViewModel areaFormViewModel, FormCollection collection)
         {
-            var Municipio_ID = this.Request["municipios"];
+            //var Municipio_ID = this.Request["municipio_id"];
             try
             {
                 //var teste = collection;
               //  var Municipio_ID = this.Request["municipios"];
 
-                if (string.IsNullOrEmpty(Municipio_ID))
-                    ModelState.AddModelError("municipio_id", "Informe o municipio.");
-
+                //if (string.IsNullOrEmpty(Municipio_ID) || Municipio_ID.Equals("0"))
+                //    ModelState.AddModelError("municipio_id", "Informe o municipio.");
+                //else
+                //    areaFormViewModel.Area.municipio_id = Convert.ToInt16(Municipio_ID);
                 if (ModelState.IsValid)
                 {
                     IAreaProcesso processo = AreaProcesso.Instance;
+                   
                     processo.Incluir(areaFormViewModel.Area);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -84,7 +88,7 @@ namespace SiteMVC.Controllers
                 {
                     IMunicipioProcesso processo = MunicipioProcesso.Instance;
                     List<Municipio> resultado = processo.Consultar();
-                    areaFormViewModel.CarregarMunicipioSelectList(resultado, Convert.ToInt16(Municipio_ID));
+                    areaFormViewModel.CarregarMunicipioSelectList(resultado, areaFormViewModel.Area.municipio_id);
                     return View(areaFormViewModel);
                 }
             }
@@ -92,7 +96,7 @@ namespace SiteMVC.Controllers
             {
                 IMunicipioProcesso processo = MunicipioProcesso.Instance;
                     List<Municipio> resultado = processo.Consultar();
-                    areaFormViewModel.CarregarMunicipioSelectList(resultado, Convert.ToInt16(Municipio_ID));
+                    areaFormViewModel.CarregarMunicipioSelectList(resultado, areaFormViewModel.Area.municipio_id);
                     return View(areaFormViewModel);
             }
         }
