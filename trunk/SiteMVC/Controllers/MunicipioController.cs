@@ -157,10 +157,11 @@ namespace SiteMVC.Controllers
         [HttpPost]
         public ActionResult Excluir(int id, Municipio municipio)
         {
+           // Municipio municipioAux = municipio;
             try
             {
                 IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                municipio = new Municipio();
+                // municipio = new Municipio();
                 municipio.ID = id;
                 processo.Excluir(municipio);
                 processo.Confirmar();
@@ -168,8 +169,9 @@ namespace SiteMVC.Controllers
             }
             catch(Exception e)
             {
-
-                return View(municipio);
+                ViewData["Mensagem"] = "O registro não pode ser excluído.";
+                ViewData.Model = municipio;
+                return View();
             }
         }
     }
