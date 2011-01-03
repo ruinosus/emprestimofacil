@@ -11,19 +11,19 @@
     <fieldset>
         <legend>Fields</legend>
         
-        <div class="display-label">descricao</div>
+        <div class="display-label">Descrição</div>
         <div class="display-field"><%: Model.descricao %></div>
         
         <div class="display-label">ID</div>
         <div class="display-field"><%: Model.ID %></div>
         
-        <div class="display-label">municipio_id</div>
-        <div class="display-field"><%: Model.municipio_id %></div>
+        <div class="display-label">Município</div>
+        <div class="display-field"><%: Model.municipio.nome %></div>
         
-        <div class="display-label">timeCreated</div>
+        <div class="display-label">Data Criação</div>
         <div class="display-field"><%: Model.timeCreated %></div>
         
-        <div class="display-label">timeUpdated</div>
+        <div class="display-label">Data Atualização</div>
         <div class="display-field"><%: Model.timeUpdated %></div>
         
     </fieldset>

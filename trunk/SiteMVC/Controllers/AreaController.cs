@@ -73,7 +73,7 @@ namespace SiteMVC.Controllers
                 if (ModelState.IsValid)
                 {
                     IAreaProcesso processo = AreaProcesso.Instance;
-                   
+                    area.timeCreated = DateTime.Now;
                     processo.Incluir(area);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -115,6 +115,7 @@ namespace SiteMVC.Controllers
                 {
                     area.ID = id;
                     IAreaProcesso processo = AreaProcesso.Instance;
+                    area.timeUpdated = DateTime.Now;
                     processo.Alterar(area);
                     processo.Confirmar();
                     // TODO: Add update logic here

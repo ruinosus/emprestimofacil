@@ -40,6 +40,8 @@
 
          
             
+                  <%: Html.HiddenFor(model => model.timeCreated)%>
+                  <%: Html.HiddenFor(model => model.timeUpdated)%>
             <p>
                 <input type="submit" value="Salvar" />
             </p>
