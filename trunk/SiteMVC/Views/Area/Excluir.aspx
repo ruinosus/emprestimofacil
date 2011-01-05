@@ -7,7 +7,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Principal" runat="server">
 
     <h2>Excluir</h2>
-
+       <%
+        string mensagem = "";
+        if (ViewData["mensagem"] != null)
+            mensagem = (string)ViewData["mensagem"];
+    %>
+   <h3 style="color:Red"><%:mensagem %></h3> 
     <h3>Você tem certeza que deseja excluir esse registro?</h3>
     <fieldset>
         <legend>Fields</legend>
@@ -31,6 +36,11 @@
     </fieldset>
     <% using (Html.BeginForm()) { %>
         <p>
+                 <%: Html.HiddenFor(model => model.descricao) %>
+         <%: Html.HiddenFor(model => model.ID) %>
+         <%: Html.HiddenFor(model => model.timeCreated)%>
+         <%: Html.HiddenFor(model => model.timeCreated)%>
+         <%: Html.HiddenFor(model => model.municipio_id) %>
 		    <input type="submit" value="Confirmar" /> |
 		    <%: Html.ActionLink("Voltar", "Index") %>
         </p>

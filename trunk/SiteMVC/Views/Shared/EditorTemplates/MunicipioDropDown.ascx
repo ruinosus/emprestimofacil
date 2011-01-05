@@ -10,7 +10,7 @@
     SiteMVC.Models.ModuloBasico.VOs.Municipio municipioInicial = new SiteMVC.Models.ModuloBasico.VOs.Municipio();
     municipioInicial.nome = "Selecione...";
     municipios.Insert(0, municipioInicial);
-   MunicipioSelectList = from m in municipios
+    MunicipioSelectList = from m in municipios
                                select new SelectListItem
                                {
                                    Selected = (m.ID == Model),

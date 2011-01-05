@@ -115,6 +115,7 @@
     <Compile Include="Models\ModuloCliente\Processos\Interfaces\IClienteProcesso.cs" />
     <Compile Include="Models\ModuloCliente\Repositorios\ClienteRepositorio.cs" />
     <Compile Include="Models\ModuloCliente\Repositorios\Interfaces\IClienteRepositorio.cs" />
+    <Compile Include="Models\ModuloCliente\VOs\Cliente.cs" />
     <Compile Include="Models\ModuloDespesaTipo\Constantes\DepesaTipoConstantes.cs" />
     <Compile Include="Models\ModuloDespesaTipo\Excecoes\DespesaTipoNaoAlteradaExcecao.cs" />
     <Compile Include="Models\ModuloDespesaTipo\Excecoes\DespesaTipoNaoExcluidaExcecao.cs" />

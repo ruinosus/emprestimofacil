@@ -12,7 +12,7 @@
         if (ViewData["mensagem"] != null)
             mensagem = (string)ViewData["mensagem"];
     %>
-    <%:mensagem %>
+   <h3 style="color:Red"><%:mensagem %></h3> 
     <h3>Você tem certeza que deseja excluir esse registro?</h3>
     <fieldset>
         <legend>Fields</legend>

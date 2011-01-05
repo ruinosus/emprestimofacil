@@ -28,8 +28,7 @@
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.uf) %>
                 <%: Html.ValidationMessageFor(model => model.uf) %>
-            </div>
-            
+            </div>            
             <p>
                 <input type="submit" value="Incluir" />
             </p>

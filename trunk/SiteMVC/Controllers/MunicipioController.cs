@@ -47,6 +47,7 @@ namespace SiteMVC.Controllers
             IMunicipioProcesso processo = MunicipioProcesso.Instance;
             Municipio municipio = new Municipio();
             municipio.ID = id;
+
             ViewData.Model = processo.Consultar(municipio, TipoPesquisa.E)[0];
             return View();
         }
@@ -56,12 +57,9 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
-            //IMunicipioProcesso processo = MunicipioProcesso.Instance;
-            //List<Municipio> resultado = processo.Consultar();
-            //MunicipioFormViewModel municipioFormViewModel = new MunicipioFormViewModel(new Municipio(), resultado);
-            //ViewData.Model = municipioFormViewModel;
-            ViewData.Model = new Municipio();
-            //ViewData["Municipios"] = municipioFormViewModel.MunicipioSelectList;
+           Municipio municipio = new Municipio();
+            municipio.uf = "0";
+            ViewData.Model = municipio;
             return View();
         }
 
@@ -169,7 +167,7 @@ namespace SiteMVC.Controllers
             }
             catch(Exception e)
             {
-                ViewData["Mensagem"] = "O registro não pode ser excluído.";
+                ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
                 ViewData.Model = municipio;
                 return View();
             }

@@ -27,17 +27,9 @@
                Municipio
             </div>
             <div class="editor-field">
-        <%: Html.EditorFor(model => model.municipio_id)%>
-         <%--   <%= 
-                Html.DropDownList("municipio_id", Model.MunicipioSelectList)%>--%>
-
-
+                <%: Html.EditorFor(model => model.municipio_id)%>
                 <%: Html.ValidationMessageFor(model => model.municipio_id)%>
             </div>
-
-            
-           
-            
             <p>
                 <input type="submit" value="Incluir" />
             </p>

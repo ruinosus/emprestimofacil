@@ -156,12 +156,12 @@ namespace SiteMVC.Controllers
         //// POST: /StatusParcela/Delete/5
 
         [HttpPost]
-        public ActionResult Excluir(int id, FormCollection collection)
+        public ActionResult Excluir(int id, Area area)
         {
             try
             {
                 IAreaProcesso processo = AreaProcesso.Instance;
-                Area area = new Area();
+             
                 area.ID = id;
                 processo.Excluir(area);
                 processo.Confirmar();
@@ -169,8 +169,13 @@ namespace SiteMVC.Controllers
             }
             catch
             {
+                ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
+                ViewData.Model = area;
                 return View();
             }
+
+
+            
         }
     }
 }

@@ -1,7 +1,29 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<string>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<String>" %>
 
 <%
-    SelectList sl = new SelectList(new[]{
+    IEnumerable<SelectListItem> sl;
+    //List<SiteMVC.Models.ModuloBasico.VOs.Municipio> lista = new List<SiteMVC.Models.ModuloBasico.VOs.Municipio>();
+
+    //lista.Add(new SiteMVC.Models.ModuloBasico.VOs.Municipio
+    //{
+    //    nome = "Selecione...",
+    //    uf = "0"
+    //});
+    //lista.Add(new SiteMVC.Models.ModuloBasico.VOs.Municipio
+    //{
+    //    nome = "Acre",
+    //    uf = "AC"
+    //});
+
+    //lista.Add(new SiteMVC.Models.ModuloBasico.VOs.Municipio
+    //{
+    //    nome = "Alagoas",
+    //    uf = "AL"
+    //});
+
+
+    sl = new SelectList(new[]{
+  new SelectListItem{ Text="Selecione...", Value="0"},
   new SelectListItem{ Text="Acre", Value="AC"},
   new SelectListItem{ Text="Alagoas", Value="AL"},
   new SelectListItem{ Text="Amapá", Value="AP"},
@@ -27,13 +49,19 @@
   new SelectListItem{ Text="Santa Catarina", Value="SC"},
   new SelectListItem{ Text="São Paulo", Value="SP"},
   new SelectListItem{ Text="Sergipe", Value="SE"},
-  new SelectListItem{ Text="Tocantins", Value="TO"}
-  
-}, "Value", "Text", Model);
+  new SelectListItem{ Text="Tocantins", Value="TO"}}, "Value", "Text", Model.ToString());
 
-    
+    ////sl = null;
+
+    //sl = from m in lista
+    //     select new SelectListItem
+    //     {
+    //         Selected = (m.uf.Equals(Model)),
+    //         Text = m.nome,
+    //         Value = m.uf
+    //     };
     
     
      %>
 
-<%= Html.DropDownList("",sl,Model) %>
+<%= Html.DropDownList("", sl)%>
