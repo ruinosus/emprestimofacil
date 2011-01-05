@@ -267,7 +267,6 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Modelo\dados_tabelas.txt" />
     <Content Include="Models\Modelo\emprestcard.sql" />
     <Content Include="Views\Area\Alterar.aspx" />
     <Content Include="Views\Area\Detalhar.aspx" />
