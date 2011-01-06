@@ -21,7 +21,6 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Nome:")]
             public string nome { get; set; }
 
-
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Uf")]
             [UIHint("UfDropDown")]
             [DisplayName("Uf:")]
