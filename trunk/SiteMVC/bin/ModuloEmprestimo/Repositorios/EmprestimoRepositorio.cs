@@ -45,6 +45,17 @@ namespace SiteMVC.ModuloEmprestimo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (emprestimo.cliente_id != 0)
+                        {
+
+                            resultado = ((from c in resultado
+                                          where
+                                          c.cliente_id == emprestimo.cliente_id
+                                          select c).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
 
                         break;
                     }
@@ -57,6 +68,15 @@ namespace SiteMVC.ModuloEmprestimo.Repositorios
                             resultado.AddRange((from c in Consultar()
                                                 where
                                                 c.ID == emprestimo.ID
+                                                select c).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (emprestimo.cliente_id != 0)
+                        {
+                            resultado.AddRange((from c in Consultar()
+                                                where
+                                                c.cliente_id == emprestimo.cliente_id
                                                 select c).ToList());
                             resultado = resultado.Distinct().ToList();
                         }

@@ -286,6 +286,7 @@
     <Content Include="Views\Cliente\Incluir.aspx" />
     <Content Include="Views\Cliente\Listar.aspx" />
     <Content Include="Views\Emprestimo\Detalhar.aspx" />
+    <Content Include="Views\Emprestimo\EmprestimoCliente.aspx" />
     <Content Include="Views\Emprestimo\Excluir.aspx" />
     <Content Include="Views\Emprestimo\Incluir.aspx" />
     <Content Include="Views\Emprestimo\Listar.aspx" />

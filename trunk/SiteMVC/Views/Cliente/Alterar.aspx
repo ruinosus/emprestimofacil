@@ -66,7 +66,7 @@
                 <%: Html.LabelFor(model => model.cidade_comerc) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.cidade_comerc) %>
+                <%: Html.EditorFor(model => model.cidade_comerc)%>
                 <%: Html.ValidationMessageFor(model => model.cidade_comerc) %>
             </div>
             
@@ -74,7 +74,7 @@
                 <%: Html.LabelFor(model => model.cidade_resid) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.cidade_resid) %>
+                <%: Html.EditorFor(model => model.cidade_resid)%>
                 <%: Html.ValidationMessageFor(model => model.cidade_resid) %>
             </div>
             

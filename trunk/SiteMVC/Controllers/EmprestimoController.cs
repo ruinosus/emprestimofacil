@@ -8,6 +8,7 @@ using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
 using SiteMVC;
+using SiteMVC.ModuloCliente.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -30,6 +31,28 @@ namespace SiteMVC.Controllers
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
             return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
 		
+
+        }
+
+        public ActionResult EmprestimoCliente(int? page,int ID)
+        {
+            IClienteProcesso processoCliente = ClienteProcesso.Instance;
+            Cliente cliente = new Cliente();
+            cliente.ID = ID;
+            cliente = processoCliente.Consultar(cliente, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+
+            Session["ClienteSelecionado"] = cliente;
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.cliente_id = ID;
+            var resultado = processo.Consultar(emprestimo,TipoPesquisa.E);
+
+
+
+            List<Emprestimo> emprestimos = resultado;
+            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+            return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
+
 
         }
 

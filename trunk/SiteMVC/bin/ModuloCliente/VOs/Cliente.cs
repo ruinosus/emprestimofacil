@@ -56,11 +56,18 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Cep Residencial:")]
             public string cep_resid { get; set; }
 
+            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Cidade Comercial")]
+            [UIHint("MunicipioDropDown")]
             [DisplayName("Cidade Comercial:")]
-            public string cidade_comerc { get; set; }
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public long cidade_comerc { get; set; }
 
+
+            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Cidade Residencial")]
+            [UIHint("MunicipioDropDown")]
             [DisplayName("Cep Residencial:")]
-            public string cidade_resid { get; set; }
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public long cidade_resid { get; set; }
 
             [Required(ErrorMessage = "O cpf é necessário para o cadastro.")]
             [DisplayName("Cpf:")]

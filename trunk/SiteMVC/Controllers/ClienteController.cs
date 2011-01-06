@@ -54,6 +54,8 @@ namespace SiteMVC.Controllers
             cliente.escolaridade_id = 0;
             cliente.estadoscivistipo_id= 0;
             cliente.orgaosexpedidoresnome_id = 0;
+            cliente.cidade_comerc= 0;
+            cliente.cidade_resid= 0;
             ViewData.Model = cliente;
             return View();
         }
@@ -82,7 +84,7 @@ namespace SiteMVC.Controllers
                     return View(cliente);
                 }
             }
-            catch
+            catch(Exception e)
             {
                     return View(cliente);
             }

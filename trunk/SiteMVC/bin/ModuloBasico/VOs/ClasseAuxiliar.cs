@@ -30,6 +30,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
         private static Usuario usuarioLogado;
 
+        private static Cliente clienteSelecionado;
+
         /// <summary>
         /// Propriedade que representa um Usuario no sistema.
         /// </summary>
@@ -46,6 +48,24 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             }
             private set { usuarioLogado = value; }
         }
+
+        /// <summary>
+        /// Propriedade que representa um Cliente no sistema.
+        /// </summary>
+        public static Cliente ClienteSelecionado
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["ClienteSelecionado"] != null)
+                    clienteSelecionado = (Cliente)System.Web.HttpContext.Current.Session["ClienteSelecionado"];
+                else
+                    clienteSelecionado = null;
+
+                return clienteSelecionado;
+            }
+            private set { clienteSelecionado = value; }
+        }
+
 
         /// <summary>
         /// Verifica se o Usuario está logado na aplicação.

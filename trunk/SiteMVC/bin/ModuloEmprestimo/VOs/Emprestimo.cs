@@ -53,5 +53,15 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         }
     }
 
+    public class EmprestimoFormViewModel
+    {
+
+        public Emprestimo Emprestimo { get; set; }
+
+        public Cliente Cliente { get; set; }
+
+
+    }
+
 
 }

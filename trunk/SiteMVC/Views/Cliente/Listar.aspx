@@ -20,6 +20,9 @@
     
         <tr>
             <td>
+            
+
+             <%: Html.ActionLink("Visualizar Emprestimos", "EmprestimoCliente", "Emprestimo", new { id = item.ID },null)%> |
                 <%: Html.ActionLink("Alterar", "Alterar", new { id = item.ID })%> |
                 <%: Html.ActionLink("Detalhar", "Detalhar", new { id = item.ID })%> |
                 <%: Html.ActionLink("Excluir", "Excluir", new { id = item.ID })%>
