@@ -49,7 +49,7 @@
   new SelectListItem{ Text="Santa Catarina", Value="SC"},
   new SelectListItem{ Text="São Paulo", Value="SP"},
   new SelectListItem{ Text="Sergipe", Value="SE"},
-  new SelectListItem{ Text="Tocantins", Value="TO"}}, "Value", "Text", Model.ToString());
+  new SelectListItem{ Text="Tocantins", Value="TO"}}, "Value", "Text", Model);
 
     ////sl = null;
 
