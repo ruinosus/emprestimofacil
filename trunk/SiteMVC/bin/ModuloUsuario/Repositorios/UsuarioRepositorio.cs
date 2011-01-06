@@ -149,6 +149,7 @@ namespace SiteMVC.ModuloUsuario.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new UsuarioNaoAlteradoExcecao();
 
+                usuarioAux = resultado[0];
                 usuarioAux.area_id = usuario.area_id;
                 usuarioAux.bairro_resid = usuario.bairro_resid;
                 usuarioAux.celular = usuario.celular;
@@ -177,7 +178,6 @@ namespace SiteMVC.ModuloUsuario.Repositorios
                 usuarioAux.usuariotipo_id = usuario.usuariotipo_id;
                 usuarioAux.zona = usuario.zona;
       
-                usuarioAux = resultado[0];
 
                 Confirmar();
             }

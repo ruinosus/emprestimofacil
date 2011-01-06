@@ -45,6 +45,20 @@ namespace SiteMVC.ModuloCliente.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (cliente.area_id != 0)
+                        {
+
+                            resultado = ((from c in resultado
+                                          where
+                                          c.area_id == cliente.area_id
+                                          select c).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+
+
                         break;
                     }
                 #endregion
@@ -56,6 +70,15 @@ namespace SiteMVC.ModuloCliente.Repositorios
                             resultado.AddRange((from c in Consultar()
                                                 where
                                                 c.ID == cliente.ID
+                                                select c).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (cliente.area_id != 0)
+                        {
+                            resultado.AddRange((from c in Consultar()
+                                                where
+                                                c.area_id == cliente.area_id
                                                 select c).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
