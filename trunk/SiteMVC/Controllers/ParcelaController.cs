@@ -79,6 +79,7 @@ namespace SiteMVC.Controllers
                     parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
                     parcela.valor_pago = valorPago;
                     parcela.statusparcela_id = 1;
+                    parcela.data_pagamento= DateTime.Now;
                     parcela.timeUpdated = DateTime.Now;
                     processo.Alterar(parcela);
                     processo.Confirmar();
@@ -91,9 +92,9 @@ namespace SiteMVC.Controllers
                     return View(parcela);
                 }
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                return View(parcela);
             }
         }
 

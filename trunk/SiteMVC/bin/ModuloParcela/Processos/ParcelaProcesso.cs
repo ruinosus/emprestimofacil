@@ -11,6 +11,8 @@ using SiteMVC.ModuloParcela.Fabricas;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloParcela.Excecoes;
 using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.ModuloEmprestimo.Processos;
+using SiteMVC.ModuloPrazoPagamento.Processos;
 namespace SiteMVC.ModuloParcela.Processos
 {
     /// <summary>
@@ -62,12 +64,127 @@ namespace SiteMVC.ModuloParcela.Processos
 
         public void Alterar(Parcela parcela)
         {
-            this.parcelaRepositorio.Alterar(parcela);
+            parcela.data_pagamento = DateTime.Now;
+            parcela.statusparcela_id = 1;
+
+            if (parcela.valor_pago.Value > parcela.valor)
+            {
+                float valorRestante = parcela.valor_pago.Value - parcela.valor;
+                parcela.valor_pago = parcela.valor;
+                this.parcelaRepositorio.Alterar(parcela);
+                this.PagarProximaParcela(parcela, valorRestante);
+            }
+            else if (parcela.valor_pago.Value < parcela.valor)
+            {
+                this.parcelaRepositorio.Alterar(parcela);
+                this.AdicionarParcelaExtra(parcela);
+
+            }
+            else
+            {
+                this.parcelaRepositorio.Alterar(parcela);
+            }
+        }
+
+        private void PagarProximaParcela(Parcela parcela, float valorRestante)
+        {
+            Parcela p = new Parcela();
+            p.emprestimo_id = parcela.emprestimo_id;
+            List<Parcela> resultado = this.Consultar(p, TipoPesquisa.E);
+
+            p = this.verificarProximaParcela(resultado);
+
+            if (p != null)
+            {
+                p.data_pagamento = DateTime.Now;
+                p.statusparcela_id = 2;
+                p.valor_pago = valorRestante;
+                if (valorRestante > parcela.valor)
+                {
+                    //valorRestante = parcela.valor_pago.Value - parcela.valor;
+                    //p.valor_pago = parcela.valor;
+                    this.Alterar(p);
+                    //this.PagarProximaParcela(p, valorRestante);
+                }
+                else if (valorRestante < parcela.valor)
+                {
+                    //p.valor_pago = valorRestante;
+                    this.Alterar(p);
+                   // this.AdicionarParcelaExtra(p);
+                }
+                else
+                {
+                    //p.valor_pago = valorRestante;
+                    this.Alterar(p);
+                }
+            }
+
+
+        }
+
+        private void AdicionarParcelaExtra(Parcela parcela)
+        {
+
+            Parcela p = new Parcela();
+            p.emprestimo_id = parcela.emprestimo_id;
+            List<Parcela> resultado = this.Consultar(p, TipoPesquisa.E);
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+
+            Emprestimo emp = new Emprestimo();
+            emp.ID = p.emprestimo_id;
+
+            emp = processo.Consultar(emp, TipoPesquisa.E)[0];
+
+            IPrazoPagamentoProcesso prazoPagamentoProcesso = PrazoPagamentoProcesso.Instance;
+
+            PrazoPagamento prazo = new PrazoPagamento();
+            prazo.ID = emp.prazospagamento_id;
+
+            prazo = prazoPagamentoProcesso.Consultar(prazo, TipoPesquisa.E)[0];
+
+            p = resultado[resultado.Count - 1];
+
+            if (p != null)
+            {
+                Parcela par = new Parcela();
+                par.emprestimo_id = emp.ID;
+                par.valor = parcela.valor - parcela.valor_pago.Value;
+                par.data_vencimento = p.data_vencimento.AddDays(prazo.qtde_dias);
+                par.statusparcela_id = 2;
+                if (par.data_vencimento.DayOfWeek == DayOfWeek.Saturday)
+                    par.data_vencimento = par.data_vencimento.AddDays(2);
+                else if (par.data_vencimento.DayOfWeek == DayOfWeek.Monday)
+                    par.data_vencimento = par.data_vencimento.AddDays(1);
+
+
+
+                par.timeCreated = DateTime.Now;
+                this.parcelaRepositorio.Incluir(par);
+            }
+
+
+        }
+
+        private Parcela verificarProximaParcela(List<Parcela> resultado)
+        {
+
+
+            for (int i = 0; i < resultado.Count; i++)
+            {
+                if (resultado[i].statusparcela_id == 2)
+                {
+                    return resultado[i];
+                }
+
+            }
+
+
+            return null;
         }
 
         public List<Parcela> Consultar(Parcela parcela, TipoPesquisa tipoPesquisa)
         {
-            List<Parcela> parcelaList = this.parcelaRepositorio.Consultar(parcela,tipoPesquisa);           
+            List<Parcela> parcelaList = this.parcelaRepositorio.Consultar(parcela, tipoPesquisa);
 
             return parcelaList;
         }
