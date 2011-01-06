@@ -9,17 +9,27 @@ using System.Web.Mvc;
 namespace SiteMVC.Models.ModuloBasico.VOs
 {
 
-    [MetadataType(typeof(ClienteMetadata))]
-    public partial class Cliente
+    [MetadataType(typeof(UsuarioMetadata))]
+    public partial class Usuario
     {
-        
-        internal class ClienteMetadata
+
+        internal class UsuarioMetadata
         {
 
             [Required(ErrorMessage = "O nome é necessário para o cadastro.")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             [DisplayName("Nome:")]
             public string nome { get; set; }
+
+            [Required(ErrorMessage = "O login é necessário para o cadastro.")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            [DisplayName("Login:")]
+            public string login { get; set; }
+
+            [Required(ErrorMessage = "A Senha é necessária para o cadastro.")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            [DisplayName("Senha:")]
+            public string senha { get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Area.")]
             [UIHint("AreaDropDown")]
@@ -31,6 +41,11 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Orgão Expedidor:")]
             public long? orgaosexpedidoresnome_id { get; set; }
 
+            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o tipo do usuário.")]
+            [UIHint("UsuarioTipoDropDown")]
+            [DisplayName("Orgão Expedidor:")]
+            public long? usuariotipo_id { get; set; }
+
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o estado civil.")]
             [UIHint("EstadoCivilTipoDropDown")]
             [DisplayName("Estado Civil:")]
@@ -40,9 +55,6 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [UIHint("EscolaridadeDropDown")]
             [DisplayName("Escolaridade:")]
             public long? escolaridade_id { get; set; }
-
-            [DisplayName("Bairro Comercial:")]
-            public string bairro_comerc { get; set; }
 
             [DisplayName("Bairro Residencial:")]
             public string bairro_resid { get; set; }
@@ -55,9 +67,6 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [DisplayName("Cep Residencial:")]
             public string cep_resid { get; set; }
-
-            [DisplayName("Cidade Comercial:")]
-            public string cidade_comerc { get; set; }
 
             [DisplayName("Cep Residencial:")]
             public string cidade_resid { get; set; }
@@ -72,26 +81,14 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Data Expedição:")]
             public DateTime? data_expedicao { get; set; }
 
-            [DisplayName("Endereço Comercial:")]
-            public string endereco_comerc { get; set; }
-
             [DisplayName("Endereço Residencial:")]
             public string endereco_resid { get; set; }
 
-            [DisplayName("Telefone Comercial:")]
-            public string fone_comerc { get; set; }
 
             [DisplayName("Telefone Residencial:")]
             public string fone_resid { get; set; }
 
-            [DisplayName("Telefone Referencia 1:")]
-            public string fone_ref1{ get; set; }
 
-            [DisplayName("Telefone Referencia 2:")]
-            public string fone_ref2 { get; set; }
-
-            [DisplayName("Limite:")]
-            public float? limite { get; set; }
 
             [DisplayName("Nome da Mãe:")]
             public string nome_mae { get; set; }
@@ -99,14 +96,6 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Nome do Pai:")]
             public string nome_pai { get; set; }
 
-            [DisplayName("Nome referencia 1:")]
-            public string nome_ref1 { get; set; }
-
-            [DisplayName("Nome referencia 2:")]
-            public string nome_ref2 { get; set; }
-
-            [DisplayName("Número do cartão:")]
-            public string numcartao { get; set; }
 
             [DisplayName("Rg:")]
             public string rg { get; set; }
@@ -122,12 +111,6 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [DisplayName("Título Eleitor:")]
             public string titulo_eleitor { get; set; }
-
-            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Uf comercial")]
-            [UIHint("UfDropDown")]
-            [DisplayName("Uf Comercial:")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String uf_comerc { get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Uf Residencial")]
             [UIHint("UfDropDown")]

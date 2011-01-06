@@ -122,6 +122,7 @@ namespace SiteMVC.ModuloCliente.Repositorios
                 if (resultado == null || resultado.Count == 0)
                     throw new ClienteNaoAlteradoExcecao();
 
+                clienteAux = resultado[0];
                 clienteAux.area_id = cliente.area_id;
                 clienteAux.bairro_comerc = cliente.bairro_comerc;
                 clienteAux.bairro_resid = cliente.bairro_resid;
@@ -157,8 +158,7 @@ namespace SiteMVC.ModuloCliente.Repositorios
                 clienteAux.uf_comerc = cliente.uf_comerc;
                 clienteAux.uf_resid = cliente.uf_resid;
                 clienteAux.zona = cliente.zona;
-                
-                clienteAux = resultado[0];
+
 
                 Confirmar();
             }

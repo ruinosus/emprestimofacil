@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.Cliente>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Incluir
+	Alterar
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Principal" runat="server">
 
-    <h2>Incluir</h2>
+    <h2>Alterar</h2>
 
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
@@ -296,7 +296,7 @@
             </div>
             
             <p>
-                <input type="submit" value="Incluir" />
+                <input type="submit" value="Salvar" />
             </p>
         </fieldset>
 

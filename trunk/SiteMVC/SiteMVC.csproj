@@ -263,6 +263,7 @@
     <Compile Include="Models\ModuloUsuario\Repositorios\Interfaces\IUsuarioRepositorio.cs" />
     <Compile Include="Models\ModuloUsuario\Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Models\ModuloStatusParcela\VOs\StatusParcela.cs" />
+    <Compile Include="Models\ModuloUsuario\VOs\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +276,10 @@
     <Content Include="Views\Area\Excluir.aspx" />
     <Content Include="Views\Area\Incluir.aspx" />
     <Content Include="Views\Area\Listar.aspx" />
+    <Content Include="Views\Cliente\Alterar.aspx" />
+    <Content Include="Views\Cliente\Detalhar.aspx" />
+    <Content Include="Views\Cliente\Excluir.aspx" />
+    <Content Include="Views\Cliente\Incluir.aspx" />
     <Content Include="Views\Cliente\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
@@ -283,6 +288,7 @@
     <Content Include="Views\Municipio\Excluir.aspx" />
     <Content Include="Views\Municipio\Incluir.aspx" />
     <Content Include="Views\Municipio\Listar.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\UsuarioTipoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\EscolaridadeDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\EstadoCivilTipoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\OrgaoExpedidorNomeDropDown.ascx" />
