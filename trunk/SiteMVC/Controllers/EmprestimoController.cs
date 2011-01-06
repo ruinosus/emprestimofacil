@@ -24,13 +24,13 @@ namespace SiteMVC.Controllers
 
         public ActionResult Listar(int? page)
         {
-             
+
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
-            var resultado =  processo.Consultar();
+            var resultado = processo.Consultar();
             List<Emprestimo> emprestimos = resultado;
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
             return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
-		
+
 
         }
 
@@ -42,7 +42,7 @@ namespace SiteMVC.Controllers
         {
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
-            emprestimo.prazospagamento_id= 0;
+            emprestimo.prazospagamento_id = 0;
             emprestimo.tipoemprestimo_id = 0;
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
             ViewData.Model = emprestimo;
@@ -60,11 +60,12 @@ namespace SiteMVC.Controllers
 
             try
             {
+                IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
                 if (ModelState.IsValid)
                 {
                     emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
                     emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
-                    IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+
                     emprestimo.timeCreated = DateTime.Now;
                     processo.Incluir(emprestimo);
                     processo.Confirmar();
@@ -75,9 +76,9 @@ namespace SiteMVC.Controllers
                     return View(emprestimo);
                 }
             }
-            catch(Exception e )
+            catch (Exception e)
             {
-                    return View(emprestimo);
+                return View(emprestimo);
             }
         }
 
@@ -90,7 +91,7 @@ namespace SiteMVC.Controllers
 
 
 
-        public ActionResult EmprestimoCliente(int? page,int ID)
+        public ActionResult EmprestimoCliente(int? page, int ID)
         {
             IClienteProcesso processoCliente = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
@@ -101,7 +102,7 @@ namespace SiteMVC.Controllers
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = ID;
-            var resultado = processo.Consultar(emprestimo,TipoPesquisa.E);
+            var resultado = processo.Consultar(emprestimo, TipoPesquisa.E);
 
 
 
@@ -164,7 +165,7 @@ namespace SiteMVC.Controllers
             }
             catch
             {
-                    return View(emprestimo);
+                return View(emprestimo);
             }
         }
 
@@ -220,7 +221,7 @@ namespace SiteMVC.Controllers
             emprestimo.ID = id;
             ViewData.Model = processo.Consultar(emprestimo, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
-            
+
         }
 
         ////
@@ -232,7 +233,7 @@ namespace SiteMVC.Controllers
             try
             {
                 IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
-             
+
                 emprestimo.ID = id;
                 processo.Excluir(emprestimo);
                 processo.Confirmar();
@@ -246,7 +247,7 @@ namespace SiteMVC.Controllers
             }
 
 
-            
+
         }
     }
 }

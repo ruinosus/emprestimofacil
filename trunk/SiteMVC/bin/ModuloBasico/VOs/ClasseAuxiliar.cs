@@ -32,6 +32,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
         private static Cliente clienteSelecionado;
 
+        private static Emprestimo emprestimoSelecionado;
+
         /// <summary>
         /// Propriedade que representa um Usuario no sistema.
         /// </summary>
@@ -64,6 +66,20 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 return clienteSelecionado;
             }
             private set { clienteSelecionado = value; }
+        }
+
+        public static Emprestimo EmprestimoSelecionado
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["EmprestimoSelecionado"] != null)
+                    emprestimoSelecionado = (Emprestimo)System.Web.HttpContext.Current.Session["EmprestimoSelecionado"];
+                else
+                    emprestimoSelecionado = null;
+
+                return emprestimoSelecionado;
+            }
+            private set { emprestimoSelecionado = value; }
         }
 
 

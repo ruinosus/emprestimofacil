@@ -45,6 +45,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (parcela.emprestimo_id != 0)
+                        {
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.emprestimo_id == parcela.emprestimo_id
+                                          select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
 
                         break;
                     }
@@ -58,6 +69,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                             resultado.AddRange((from t in Consultar()
                                                 where
                                                 t.ID == parcela.ID
+                                                select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (parcela.emprestimo_id != 0)
+                        {
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.emprestimo_id == parcela.emprestimo_id
                                                 select t).ToList());
 
                             resultado = resultado.Distinct().ToList();

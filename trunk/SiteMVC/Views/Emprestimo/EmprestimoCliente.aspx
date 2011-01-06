@@ -50,6 +50,7 @@
     
         <tr>
             <td>
+                 <%: Html.ActionLink("Visualizar Parcelas", "ParcelaEmprestimo", "Parcela", new { id = item.ID },null)%> |
                <%-- <%: Html.ActionLink("Edit", "Edit", new { id=item.ID }) %> |
                 <%: Html.ActionLink("Details", "Details", new { id=item.ID })%> |
                 <%: Html.ActionLink("Delete", "Delete", new { id=item.ID })%>--%>

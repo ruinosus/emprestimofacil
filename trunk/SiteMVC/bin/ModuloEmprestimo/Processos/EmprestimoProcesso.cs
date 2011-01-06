@@ -37,6 +37,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
 
         public void Incluir(Emprestimo emprestimo)
         {
+
             this.emprestimoRepositorio.Incluir(emprestimo);
             this.Confirmar();
             IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;

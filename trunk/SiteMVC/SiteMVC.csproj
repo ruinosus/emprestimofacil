@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ParcelaController.cs" />
     <Compile Include="Controllers\LancamentoController.cs" />
     <Compile Include="Controllers\EmprestimoController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Models\ModuloParcela\Processos\ParcelaProcesso.cs" />
     <Compile Include="Models\ModuloParcela\Repositorios\Interfaces\IParcelaRepositorio.cs" />
     <Compile Include="Models\ModuloParcela\Repositorios\ParcelaRepositorio.cs" />
+    <Compile Include="Models\ModuloParcela\VOs\Parcela.cs" />
     <Compile Include="Models\ModuloPrazoPagamento\Constantes\ClienteConstantes.cs" />
     <Compile Include="Models\ModuloPrazoPagamento\Excecoes\PrazoPagamentoNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloPrazoPagamento\Excecoes\PrazoPagamentoNaoExcluidoExcecao.cs" />
@@ -302,6 +304,8 @@
     <Content Include="Views\Municipio\Excluir.aspx" />
     <Content Include="Views\Municipio\Incluir.aspx" />
     <Content Include="Views\Municipio\Listar.aspx" />
+    <Content Include="Views\Parcela\Alterar.aspx" />
+    <Content Include="Views\Parcela\ParcelaEmprestimo.aspx" />
     <Content Include="Views\Shared\EditorTemplates\ClienteDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\LancamentoTipoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\UsuarioDropDown.ascx" />
