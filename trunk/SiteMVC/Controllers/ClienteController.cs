@@ -50,7 +50,11 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
-            ViewData.Model = new Cliente();
+            Cliente cliente = new Cliente();
+            cliente.escolaridade_id = 0;
+            cliente.estadoscivistipo_id= 0;
+            cliente.orgaosexpedidoresnome_id = 0;
+            ViewData.Model = cliente;
             return View();
         }
 
