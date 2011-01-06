@@ -75,7 +75,7 @@ namespace SiteMVC.Controllers
                     return View(emprestimo);
                 }
             }
-            catch
+            catch(Exception e )
             {
                     return View(emprestimo);
             }

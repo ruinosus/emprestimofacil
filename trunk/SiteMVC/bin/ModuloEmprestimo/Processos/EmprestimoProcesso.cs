@@ -10,6 +10,8 @@ using SiteMVC.ModuloEmprestimo.Fabricas;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloEmprestimo.Excecoes;
 using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.ModuloParcela.Processos;
+using SiteMVC.ModuloPrazoPagamento.Processos;
 
 namespace SiteMVC.ModuloEmprestimo.Processos
 {
@@ -36,6 +38,39 @@ namespace SiteMVC.ModuloEmprestimo.Processos
         public void Incluir(Emprestimo emprestimo)
         {
             this.emprestimoRepositorio.Incluir(emprestimo);
+            this.Confirmar();
+            IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+            IPrazoPagamentoProcesso prazoPagamentoProcesso = PrazoPagamentoProcesso.Instance;
+
+            PrazoPagamento prazo = new PrazoPagamento();
+            prazo.ID = emprestimo.prazospagamento_id;
+
+            prazo = prazoPagamentoProcesso.Consultar(prazo, TipoPesquisa.E)[0];
+
+            Parcela parcela;
+            //float valor = emprestimo.valor / emprestimo.qtde_parcelas;
+
+            //if (valor % 2 == 1)
+            //{
+
+            //}
+
+            
+            for (int i = 1; i <= emprestimo.qtde_parcelas; i++)
+            {
+                parcela = new Parcela();
+                parcela.emprestimo_id = emprestimo.ID;
+                parcela.data_pagamento = null;
+               DateTime dataAtual = DateTime.Now;
+               parcela.data_vencimento = dataAtual.AddDays(prazo.qtde_dias * i);
+                parcela.valor = emprestimo.valor;
+                parcela.statusparcela_id = 2;
+                parcelaProcesso.Incluir(parcela);
+                parcelaProcesso.Confirmar();
+            }
+
+
+            
 
         }
 
