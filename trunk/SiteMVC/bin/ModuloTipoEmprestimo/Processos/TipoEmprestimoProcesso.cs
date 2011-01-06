@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloTipoEmprestimo.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new TipoEmprestimoNaoExcluidoExcecao();
 
-                this.Excluir(tipoEmprestimo);
+                this.tipoEmprestimoRepositorio.Excluir(tipoEmprestimo);
             }
             catch (Exception e)
             {

@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloBloqueado.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new BloqueadoNaoExcluidoExcecao();
 
-                this.Excluir(bloqueado);
+                this.bloqueadoRepositorio.Excluir(bloqueado);
             }
             catch (Exception e)
             {

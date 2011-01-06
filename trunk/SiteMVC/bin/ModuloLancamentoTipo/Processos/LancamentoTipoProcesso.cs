@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloLancamentoTipo.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new LancamentoTipoNaoExcluidoExcecao();
 
-                this.Excluir(lancamentoTipo);
+                this.lancamentoTipoRepositorio.Excluir(lancamentoTipo);
             }
             catch (Exception e)
             {

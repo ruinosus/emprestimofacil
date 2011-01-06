@@ -12,7 +12,8 @@
         <legend>Fields</legend>
         
         <div class="display-label">area_id</div>
-        <div class="display-field"><%: Model.area.descricao %></div>
+        <div class="display-field"><%: Model.area
+ %></div>
         
         <div class="display-label">bairro_comerc</div>
         <div class="display-field"><%: Model.bairro_comerc %></div>

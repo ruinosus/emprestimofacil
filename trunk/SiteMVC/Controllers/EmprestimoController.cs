@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SiteMVC.ModuloCliente.Processos;
+using SiteMVC.ModuloEmprestimo.Processos;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
@@ -11,10 +11,10 @@ using SiteMVC;
 
 namespace SiteMVC.Controllers
 {
-    public class ClienteController : Controller
+    public class EmprestimoController : Controller
     {
         //
-        // GET: /Cliente/
+        // GET: /Emprestimo/
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
@@ -24,9 +24,9 @@ namespace SiteMVC.Controllers
         public ActionResult Listar(int? page)
         {
              
-            IClienteProcesso processo = ClienteProcesso.Instance;
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
             var resultado =  processo.Consultar();
-            List<Cliente> clientes = resultado;
+            List<Emprestimo> emprestimos = resultado;
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
             return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
 		
@@ -38,10 +38,10 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
-            IClienteProcesso processo = ClienteProcesso.Instance;
-            Cliente cliente = new Cliente();
-            cliente.ID = id;
-            ViewData.Model = processo.Consultar(cliente, TipoPesquisa.E)[0];
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.ID = id;
+            ViewData.Model = processo.Consultar(emprestimo, TipoPesquisa.E)[0];
             return View();
         }
 
@@ -50,11 +50,11 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
-            Cliente cliente = new Cliente();
-            cliente.escolaridade_id = 0;
-            cliente.estadoscivistipo_id= 0;
-            cliente.orgaosexpedidoresnome_id = 0;
-            ViewData.Model = cliente;
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.cliente_id = 0;
+            emprestimo.prazospagamento_id= 0;
+            emprestimo.tipoemprestimo_id = 0;
+            ViewData.Model = emprestimo;
             return View();
         }
 
@@ -64,27 +64,27 @@ namespace SiteMVC.Controllers
         [HttpPost]
         [ValidateInput(false)]
 
-        public ActionResult Incluir(Cliente cliente, FormCollection collection)
+        public ActionResult Incluir(Emprestimo emprestimo, FormCollection collection)
         {
 
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IClienteProcesso processo = ClienteProcesso.Instance;
-                    cliente.timeCreated = DateTime.Now;
-                    processo.Incluir(cliente);
+                    IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+                    emprestimo.timeCreated = DateTime.Now;
+                    processo.Incluir(emprestimo);
                     processo.Confirmar();
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    return View(cliente);
+                    return View(emprestimo);
                 }
             }
             catch
             {
-                    return View(cliente);
+                    return View(emprestimo);
             }
         }
 
@@ -93,10 +93,10 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
-            IClienteProcesso processo = ClienteProcesso.Instance;
-            Cliente cliente = new Cliente();
-            cliente.ID = id;
-            ViewData.Model = processo.Consultar(cliente, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.ID = id;
+            ViewData.Model = processo.Consultar(emprestimo, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
         }
 
@@ -104,16 +104,16 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Edit/5
 
         [HttpPost]
-        public ActionResult Alterar(int id, Cliente cliente)
+        public ActionResult Alterar(int id, Emprestimo emprestimo)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    cliente.ID = id;
-                    IClienteProcesso processo = ClienteProcesso.Instance;
-                    cliente.timeUpdated = DateTime.Now;
-                    processo.Alterar(cliente);
+                    emprestimo.ID = id;
+                    IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+                    emprestimo.timeUpdated = DateTime.Now;
+                    processo.Alterar(emprestimo);
                     processo.Confirmar();
                     // TODO: Add update logic here
 
@@ -121,7 +121,7 @@ namespace SiteMVC.Controllers
                 }
                 else
                 {
-                    return View(cliente);
+                    return View(emprestimo);
                 }
             }
             catch
@@ -135,10 +135,10 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
-            IClienteProcesso processo = ClienteProcesso.Instance;
-            Cliente cliente = new Cliente();
-            cliente.ID = id;
-            ViewData.Model = processo.Consultar(cliente, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.ID = id;
+            ViewData.Model = processo.Consultar(emprestimo, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
             
         }
@@ -147,23 +147,21 @@ namespace SiteMVC.Controllers
         //// POST: /StatusParcela/Delete/5
 
         [HttpPost]
-        public ActionResult Excluir(int id, Cliente cliente)
+        public ActionResult Excluir(int id, Emprestimo emprestimo)
         {
-            IClienteProcesso processo = ClienteProcesso.Instance;
             try
             {
-                
+                IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
              
-                cliente.ID = id;
-                processo.Excluir(cliente);
+                emprestimo.ID = id;
+                processo.Excluir(emprestimo);
                 processo.Confirmar();
                 return RedirectToAction("Index");
             }
             catch
             {
-                cliente.ID = id;
                 ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
-             ViewData.Model = processo.Consultar(cliente, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
+                ViewData.Model = emprestimo;
                 return View();
             }
 

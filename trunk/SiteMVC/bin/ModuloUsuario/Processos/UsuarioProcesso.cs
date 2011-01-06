@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloUsuario.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new UsuarioNaoExcluidoExcecao();
 
-                this.Excluir(usuario);
+                this.usuarioRepositorio.Excluir(usuario);
             }
             catch (Exception e)
             {

@@ -51,7 +51,7 @@ namespace SiteMVC.ModuloUsuarioTipo.Processos
 
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new UsuarioTipoNaoExcluidoExcecao();
-                this.Excluir(usuarioTipo);
+                this.usuarioTipoRepositorio.Excluir(usuarioTipo);
             }
             catch (Exception e)
             {

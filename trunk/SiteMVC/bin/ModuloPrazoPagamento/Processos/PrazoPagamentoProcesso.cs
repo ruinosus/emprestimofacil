@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloPrazoPagamento.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new PrazoPagamentoNaoExcluidoExcecao();
 
-                this.Excluir(prazoPagamento);
+                this.prazoPagamentoRepositorio.Excluir(prazoPagamento);
             }
             catch (Exception e)
             {

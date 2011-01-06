@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloOrgaoExpedidorNome.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new OrgaoExpedidorNomeNaoExcluidoExcecao();
 
-                this.Excluir(orgaoExpedidorNome);
+                this.orgaoExpedidorNomeRepositorio.Excluir(orgaoExpedidorNome);
             }
             catch (Exception e)
             {

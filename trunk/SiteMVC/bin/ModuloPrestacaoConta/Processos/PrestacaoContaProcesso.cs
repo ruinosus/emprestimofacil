@@ -51,7 +51,7 @@ namespace SiteMVC.ModuloPrestacaoConta.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new PrestacaoContaNaoExcluidaExcecao();
 
-                this.Excluir(prestacaoConta);
+                this.prestacaoContaRepositorio.Excluir(prestacaoConta);
             }
             catch (Exception e)
             {

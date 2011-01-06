@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloCliente.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new ClienteNaoExcluidoExcecao();
 
-                this.Excluir(cliente);
+                this.clienteRepositorio.Excluir(cliente);
             }
             catch (Exception e)
             {

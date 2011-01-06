@@ -51,7 +51,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
 
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new EmprestimoNaoExcluidoExcecao();
-                this.Excluir(emprestimo);
+                this.emprestimoRepositorio.Excluir(emprestimo);
             }
             catch (Exception e)
             {

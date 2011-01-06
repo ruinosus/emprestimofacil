@@ -52,7 +52,7 @@ namespace SiteMVC.ModuloEstadoCivilTipo.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new EstadoCivilTipoNaoExcluidoExcecao();
 
-                this.Excluir(estadoCivilTipo);
+                this.estadoCivilTipoRepositorio.Excluir(estadoCivilTipo);
             }
             catch (Exception e)
             {

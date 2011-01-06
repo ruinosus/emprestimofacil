@@ -51,7 +51,7 @@ namespace SiteMVC.ModuloDespesaTipo.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new DespesaTipoNaoExcluidaExcecao();
 
-                this.Excluir(despesaTipo);
+                this.despesaTipoRepositorio.Excluir(despesaTipo);
             }
             catch (Exception e)
             {

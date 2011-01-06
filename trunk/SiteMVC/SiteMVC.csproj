@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EmprestimoController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusParcelaController.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Models\ModuloEmprestimo\Processos\Interfaces\IEmprestimoProcesso.cs" />
     <Compile Include="Models\ModuloEmprestimo\Repositorios\EmprestimoRepositorio.cs" />
     <Compile Include="Models\ModuloEmprestimo\Repositorios\Interfaces\IEmprestimoRepositorio.cs" />
+    <Compile Include="Models\ModuloEmprestimo\VOs\Emprestimo.cs" />
     <Compile Include="Models\ModuloEscolaridade\Constantes\EscolaridadeConstantes.cs" />
     <Compile Include="Models\ModuloEscolaridade\Excecoes\EscolaridadeNaoAlteradaExcecao.cs" />
     <Compile Include="Models\ModuloEscolaridade\Excecoes\EscolaridadeNaoExcluidaExcecao.cs" />
@@ -180,6 +182,7 @@
     <Compile Include="Models\ModuloLancamento\Processos\LancamentoProcesso.cs" />
     <Compile Include="Models\ModuloLancamento\Repositorios\Interfaces\ILancamentoRepositorio.cs" />
     <Compile Include="Models\ModuloLancamento\Repositorios\LancamentoRepositorio.cs" />
+    <Compile Include="Models\ModuloLancamento\VOs\Lancamento.cs" />
     <Compile Include="Models\ModuloMunicipio\Constantes\MunicipioConstantes.cs" />
     <Compile Include="Models\ModuloMunicipio\Excecoes\MunicipioNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloMunicipio\Excecoes\MunicipioNaoExcluidoExcecao.cs" />
@@ -281,6 +284,10 @@
     <Content Include="Views\Cliente\Excluir.aspx" />
     <Content Include="Views\Cliente\Incluir.aspx" />
     <Content Include="Views\Cliente\Listar.aspx" />
+    <Content Include="Views\Emprestimo\Detalhar.aspx" />
+    <Content Include="Views\Emprestimo\Excluir.aspx" />
+    <Content Include="Views\Emprestimo\Incluir.aspx" />
+    <Content Include="Views\Emprestimo\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Municipio\Alterar.aspx" />
@@ -288,6 +295,11 @@
     <Content Include="Views\Municipio\Excluir.aspx" />
     <Content Include="Views\Municipio\Incluir.aspx" />
     <Content Include="Views\Municipio\Listar.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\ClienteDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\LancamentoTipoDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\UsuarioDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\TipoEmprestimoDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\PrazoPagamentoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\UsuarioTipoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\EscolaridadeDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\EstadoCivilTipoDropDown.ascx" />

@@ -51,7 +51,7 @@ namespace SiteMVC.ModuloEscolaridade.Processos
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new EscolaridadeNaoExcluidaExcecao();
 
-                this.Excluir(escolaridade);
+                this.escolaridadeRepositorio.Excluir(escolaridade);
             }
             catch (Exception e)
             {
