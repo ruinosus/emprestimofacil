@@ -41,7 +41,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             public float valor { get; set; }
             
            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o Tipo do Lancamento")]
-            [UIHint("TipoLancamentoDropDown")]
+           [UIHint("LancamentoTipoDropDown")]
             [DisplayName("Tipo Lancamento:")]
             public long lancamentotipo_id { get; set; }
 

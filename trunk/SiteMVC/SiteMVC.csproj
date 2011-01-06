@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\LancamentoController.cs" />
     <Compile Include="Controllers\EmprestimoController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -290,6 +291,10 @@
     <Content Include="Views\Emprestimo\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Lancamento\Detalhar.aspx" />
+    <Content Include="Views\Lancamento\Excluir.aspx" />
+    <Content Include="Views\Lancamento\Incluir.aspx" />
+    <Content Include="Views\Lancamento\Listar.aspx" />
     <Content Include="Views\Municipio\Alterar.aspx" />
     <Content Include="Views\Municipio\Detalhar.aspx" />
     <Content Include="Views\Municipio\Excluir.aspx" />
