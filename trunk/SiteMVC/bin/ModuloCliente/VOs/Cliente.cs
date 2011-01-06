@@ -12,7 +12,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     [MetadataType(typeof(ClienteMetadata))]
     public partial class Cliente
     {
-
+        
         internal class ClienteMetadata
         {
 
@@ -41,10 +41,106 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Escolaridade:")]
             public long escolaridade_id { get; set; }
 
-            // and if you don't want metadata for lastname, you can leave it out
+            [DisplayName("Bairro Comercial:")]
+            public string bairro_comerc { get; set; }
+
+            [DisplayName("Bairro Residencial:")]
+            public string bairro_resid { get; set; }
+
+            [DisplayName("Celularl:")]
+            public string celular { get; set; }
+
+            [DisplayName("Cep Comercial:")]
+            public string cep_comerc { get; set; }
+
+            [DisplayName("Cep Residencial:")]
+            public string cep_resid { get; set; }
+
+            [DisplayName("Cidade Comercial:")]
+            public string cidade_comerc { get; set; }
+
+            [DisplayName("Cep Residencial:")]
+            public string cidade_resid { get; set; }
+
+            [Required(ErrorMessage = "O cpf é necessário para o cadastro.")]
+            [DisplayName("Cpf:")]
+            public string cpf { get; set; }
+
+            [DisplayName("Ctps:")]
+            public string ctps { get; set; }
+
+            [DisplayName("Data Expedição:")]
+            public DateTime? data_expedicao { get; set; }
+
+            [DisplayName("Endereço Comercial:")]
+            public string endereco_comerc { get; set; }
+
+            [DisplayName("Endereço Residencial:")]
+            public string endereco_resid { get; set; }
+
+            [DisplayName("Telefone Comercial:")]
+            public string fone_comerc { get; set; }
+
+            [DisplayName("Telefone Residencial:")]
+            public string fone_resid { get; set; }
+
+            [DisplayName("Telefone Referencia 1:")]
+            public string fone_ref1{ get; set; }
+
+            [DisplayName("Telefone Referencia 2:")]
+            public string fone_ref2 { get; set; }
+
+            [DisplayName("Limite:")]
+            public float? limite { get; set; }
+
+            [DisplayName("Nome da Mãe:")]
+            public string nome_mae { get; set; }
+
+            [DisplayName("Nome do Pai:")]
+            public string nome_pai { get; set; }
+
+            [DisplayName("Nome referencia 1:")]
+            public string nome_ref1 { get; set; }
+
+            [DisplayName("Nome referencia 2:")]
+            public string nome_ref2 { get; set; }
+
+            [DisplayName("Número do cartão:")]
+            public string numcartao { get; set; }
+
+            [DisplayName("Rg:")]
+            public string rg { get; set; }
+
+            [DisplayName("Seção:")]
+            public string secao { get; set; }
+
+            [DisplayName("Sexo:")]
+            public string sexo { get; set; }
+
+            [DisplayName("Situação")]
+            public string situacao { get; set; }
+
+            [DisplayName("Título Eleitor:")]
+            public string titulo_eleitor { get; set; }
+
+            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Uf")]
+            [UIHint("UfDropDown")]
+            [DisplayName("Uf Comercial:")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public string uf_comerc { get; set; }
+
+            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Uf")]
+            [UIHint("UfDropDown")]
+            [DisplayName("Uf Residencial:")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public string uf_resid { get; set; }
+
+            [DisplayName("Zona:")]
+            public string zona { get; set; }
+
         }
     }
 
 
-   
+
 }
