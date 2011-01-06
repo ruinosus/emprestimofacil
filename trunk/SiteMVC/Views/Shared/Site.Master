@@ -21,22 +21,32 @@
             </div>
             <div id="menucontainer">
                 <ul id="menu">
-                             <li>
-                        <%: Html.ActionLink("Lancamento", "Listar", "Lancamento")%></li>
-                <li>
-                        <%: Html.ActionLink("Emprestimo", "Listar", "Emprestimo")%></li>
-                <li>
-                        <%: Html.ActionLink("Usuario", "Listar", "Usuario")%></li>
-                    <li>
-                        <%: Html.ActionLink("Cliente", "Listar", "Cliente")%></li>
-                    <li>
-                        <%: Html.ActionLink("Municipio", "Listar", "Municipio")%></li>
-                    <li>
-                        <%: Html.ActionLink("Area", "Listar", "Area")%></li>
-                    <li>
-                        <%: Html.ActionLink("Status Parcela", "Listar", "StatusParcela")%></li>
-                    <li>
-                        <%: Html.ActionLink("About", "About", "Home")%></li>
+                <%if(SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null){
+                      
+                                  if(SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1){
+                                   %>
+                                         <li>
+                                    <%: Html.ActionLink("Lancamento", "Listar", "Lancamento")%></li>
+                                    <%}
+                                   %>
+                            <li>
+                                    <%: Html.ActionLink("Emprestimo", "Listar", "Emprestimo")%></li>
+                                    <%if(SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1) {%>
+                            <li>
+                                    <%: Html.ActionLink("Usuario", "Listar", "Usuario")%></li>
+                                    <%}
+                                    %>
+                                <li>
+                                    <%: Html.ActionLink("Cliente", "Listar", "Cliente")%></li>
+                                <li>
+                                    <%: Html.ActionLink("Municipio", "Listar", "Municipio")%></li>
+                                      <%if(SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1) {%>
+                                <li>
+                                    <%: Html.ActionLink("Area", "Listar", "Area")%></li>         
+                                    <%}
+                         %>         
+                    <%}
+                         %>
                 </ul>
             </div>
         </div>
