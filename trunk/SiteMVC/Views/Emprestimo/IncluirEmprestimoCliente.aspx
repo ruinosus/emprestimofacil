@@ -14,13 +14,6 @@
         <fieldset>
             <legend>Fields</legend>
             
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.cliente_id) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.EditorFor(model => model.cliente_id) %>
-                <%: Html.ValidationMessageFor(model => model.cliente_id) %>
-            </div>
 
               <div class="editor-label">
                 <%: Html.LabelFor(model => model.qtde_parcelas) %>
@@ -65,8 +58,7 @@
                 <%: Html.ValidationMessageFor(model => model.tipoemprestimo_id) %>
             </div>
             
-
-            
+           
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.valor) %>
             </div>
@@ -74,7 +66,7 @@
                 <%: Html.TextBoxFor(model => model.valor) %>
                 <%: Html.ValidationMessageFor(model => model.valor) %>
             </div>
-            
+               <%: Html.HiddenFor(model => model.cliente_id) %>
                     <%: Html.HiddenFor(model => model.usuario_id) %>
             <p>
                 <input type="submit" value="Incluir" />

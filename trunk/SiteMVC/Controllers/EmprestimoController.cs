@@ -34,6 +34,62 @@ namespace SiteMVC.Controllers
 
         }
 
+
+
+
+
+        public ActionResult IncluirEmprestimoCliente()
+        {
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
+            emprestimo.prazospagamento_id= 0;
+            emprestimo.tipoemprestimo_id = 0;
+            emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+            ViewData.Model = emprestimo;
+            return View();
+        }
+
+        //
+        // POST: /StatusParcela/Create
+
+        [HttpPost]
+        [ValidateInput(false)]
+
+        public ActionResult IncluirEmprestimoCliente(Emprestimo emprestimo, FormCollection collection)
+        {
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
+                    emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+                    IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+                    emprestimo.timeCreated = DateTime.Now;
+                    processo.Incluir(emprestimo);
+                    processo.Confirmar();
+                    return RedirectToAction("EmprestimoCliente", new { id = ClasseAuxiliar.ClienteSelecionado.ID });
+                }
+                else
+                {
+                    return View(emprestimo);
+                }
+            }
+            catch
+            {
+                    return View(emprestimo);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
         public ActionResult EmprestimoCliente(int? page,int ID)
         {
             IClienteProcesso processoCliente = ClienteProcesso.Instance;
@@ -75,8 +131,9 @@ namespace SiteMVC.Controllers
         {
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = 0;
-            emprestimo.prazospagamento_id= 0;
+            emprestimo.prazospagamento_id = 0;
             emprestimo.tipoemprestimo_id = 0;
+            emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
             ViewData.Model = emprestimo;
             return View();
         }
