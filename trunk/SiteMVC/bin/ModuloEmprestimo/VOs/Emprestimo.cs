@@ -12,7 +12,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     [MetadataType(typeof(EmprestimoMetadata))]
     public partial class Emprestimo
     {
-        
+   
         internal class EmprestimoMetadata
         {
 
@@ -42,7 +42,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o Tipo do Emprestimo")]
             [UIHint("TipoEmprestimoDropDown")]
             [DisplayName("Tipo Emprestimo:")]
-            public long tipoemprestimo_id { get; set; }
+            public long? tipoemprestimo_id { get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o Usuário")]
             [UIHint("UsuarioDropDown")]
