@@ -48,29 +48,39 @@ namespace SiteMVC.ModuloEmprestimo.Processos
             prazo = prazoPagamentoProcesso.Consultar(prazo, TipoPesquisa.E)[0];
 
             Parcela parcela;
-            //float valor = emprestimo.valor / emprestimo.qtde_parcelas;
+            float valorJuros = emprestimo.valor + (emprestimo.valor * emprestimo.juros / 100);
+            float valor = valorJuros / emprestimo.qtde_parcelas;
 
             //if (valor % 2 == 1)
             //{
 
             //}
 
-            
+            DateTime dataAtual = DateTime.Now;
+            DateTime dataVencimento = DateTime.Now;
             for (int i = 1; i <= emprestimo.qtde_parcelas; i++)
             {
                 parcela = new Parcela();
                 parcela.emprestimo_id = emprestimo.ID;
                 parcela.data_pagamento = null;
-               DateTime dataAtual = DateTime.Now;
-               parcela.data_vencimento = dataAtual.AddDays(prazo.qtde_dias * i);
-                parcela.valor = emprestimo.valor;
+
+                dataVencimento = dataVencimento.AddDays(prazo.qtde_dias);
+
+                if (dataVencimento.DayOfWeek == DayOfWeek.Saturday)
+                    dataVencimento = dataVencimento.AddDays(2);
+                else if (dataVencimento.DayOfWeek == DayOfWeek.Monday)
+                    dataVencimento = dataVencimento.AddDays(1);
+
+
+                parcela.data_vencimento = dataVencimento;
+                parcela.valor = valor;
                 parcela.statusparcela_id = 2;
                 parcelaProcesso.Incluir(parcela);
                 parcelaProcesso.Confirmar();
             }
 
 
-            
+
 
         }
 
@@ -103,7 +113,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
 
         public List<Emprestimo> Consultar(Emprestimo emprestimo, TipoPesquisa tipoPesquisa)
         {
-            List<Emprestimo> emprestimoList = this.emprestimoRepositorio.Consultar(emprestimo,tipoPesquisa);           
+            List<Emprestimo> emprestimoList = this.emprestimoRepositorio.Consultar(emprestimo, tipoPesquisa);
 
             return emprestimoList;
         }
@@ -115,7 +125,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
             return emprestimoList;
         }
 
-     
+
         public void Confirmar()
         {
             this.emprestimoRepositorio.Confirmar();
