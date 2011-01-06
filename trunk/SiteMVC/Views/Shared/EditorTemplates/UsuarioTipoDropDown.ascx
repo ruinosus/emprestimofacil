@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<long?>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<long>" %>
 <%
 
     IEnumerable<SelectListItem> UsuarioTipoSelectList;
@@ -13,11 +13,11 @@
     UsuarioTipoSelectList = from m in municipios
                                select new SelectListItem
                                {
-                                   Selected = (m.ID == Model.Value),
+                                   Selected = (m.ID == Model),
                                    Text = m.descricao,
                                    Value = m.ID.ToString()
                                };
 
  %>
 
- <%= Html.DropDownList("", UsuarioTipoSelectList,Model.Value)%>
+ <%= Html.DropDownList("", UsuarioTipoSelectList,Model)%>

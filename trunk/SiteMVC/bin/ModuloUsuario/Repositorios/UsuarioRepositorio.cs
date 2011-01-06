@@ -45,6 +45,19 @@ namespace SiteMVC.ModuloUsuario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (!string.IsNullOrEmpty(usuario.login) &&
+                           !string.IsNullOrEmpty(usuario.senha))
+                        {
+
+                            resultado = ((from c in resultado
+                                          where
+                                          c.login.Equals(usuario.login) &&
+                                          c.senha.Equals(usuario.senha)
+                                          select c).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         
                         break;
                     }
@@ -58,6 +71,19 @@ namespace SiteMVC.ModuloUsuario.Repositorios
                                                 where
                                                 c.ID == usuario.ID
                                                 select c).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(usuario.login) &&
+                           !string.IsNullOrEmpty(usuario.senha))
+                        {
+
+                            resultado.AddRange((from c in resultado
+                                          where
+                                          c.login.Equals(usuario.login) &&
+                                          c.senha.Equals(usuario.senha)
+                                          select c).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 

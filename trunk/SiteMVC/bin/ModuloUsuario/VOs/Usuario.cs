@@ -43,8 +43,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o tipo do usuário.")]
             [UIHint("UsuarioTipoDropDown")]
-            [DisplayName("Orgão Expedidor:")]
-            public long? usuariotipo_id { get; set; }
+            [DisplayName("Tipo de Usuário:")]
+            public long usuariotipo_id { get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o estado civil.")]
             [UIHint("EstadoCivilTipoDropDown")]
@@ -61,9 +61,6 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [DisplayName("Celularl:")]
             public string celular { get; set; }
-
-            [DisplayName("Cep Comercial:")]
-            public string cep_comerc { get; set; }
 
             [DisplayName("Cep Residencial:")]
             public string cep_resid { get; set; }

@@ -4,7 +4,7 @@
 %>
         Bem Vindo, <b><%= Html.Encode(SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.nome)%></b>!
         [ <%= Html.ActionLink("Deslogar", "Deslogar", "Usuario") %> ]
-        [ <%= Html.ActionLink("Alterar Senha", "Alterar", "Usuario") %> ]
+        [ <%= Html.ActionLink("Alterar Senha", "AlterarSenha/"+SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.ID, "Usuario") %> ]
 <%
     }
     else {

@@ -12,66 +12,208 @@ namespace SiteMVC.Controllers
     public class UsuarioController : Controller
     {
 
-        #region Incluir
-        [HttpPost]
-        public ActionResult Incluir(Usuario usuario)
+        //
+        // GET: /Usuario/
+        private const int defaultPageSize = 10;
+        public ActionResult Index()
         {
-            //if (ClasseAuxiliar.UsuarioLogado == null)
-            //    return Redirect("/Usuario/Logar");
-
-            if (ModelState.IsValid)
-            {
-                IUsuarioProcesso processo = UsuarioProcesso.Instance;
-                processo.Incluir(usuario);
-                processo.Confirmar();
-                return Redirect("/");
-            }
-            //Invalido - volta a tela mostrando os erros contidos.
-            return View(usuario);
-
+            return RedirectToAction("Listar");
         }
+
+        public ActionResult Listar(int? page)
+        {
+
+            IUsuarioProcesso processo = UsuarioProcesso.Instance;
+            var resultado = processo.Consultar();
+            List<Usuario> usuarios = resultado;
+            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+            return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
+        }
+
+        //
+        // GET: /StatusParcela/Details/5
+
+        public ActionResult Detalhar(int id)
+        {
+            IUsuarioProcesso processo = UsuarioProcesso.Instance;
+            Usuario usuario = new Usuario();
+            usuario.ID = id;
+            ViewData.Model = processo.Consultar(usuario, TipoPesquisa.E)[0];
+            return View();
+        }
+
+        //
+        // GET: /StatusParcela/Create
 
         public ActionResult Incluir()
         {
-            //if (ClasseAuxiliar.UsuarioLogado == null)
-            //    return Redirect("/Usuario/Logar");
-
             Usuario usuario = new Usuario();
-            return View(usuario);
+            usuario.escolaridade_id = 0;
+            usuario.estadoscivistipo_id = 0;
+            usuario.orgaosexpedidoresnome_id = 0;
+            usuario.usuariotipo_id = 0;
+            ViewData.Model = usuario;
+            return View();
         }
-        #endregion
 
-        #region Alterar
+        //
+        // POST: /StatusParcela/Create
+
         [HttpPost]
-        public ActionResult Alterar(Usuario usuario)
-        {
-            if (ClasseAuxiliar.UsuarioLogado == null)
-                return Redirect("/Usuario/Logar");
+        [ValidateInput(false)]
 
-            string senha = usuario.senha;
-            usuario = ClasseAuxiliar.UsuarioLogado;
-            usuario.senha = senha;
-            if (string.IsNullOrEmpty(senha))
+        public ActionResult Incluir(Usuario usuario, FormCollection collection)
+        {
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    IUsuarioProcesso processo = UsuarioProcesso.Instance;
+                    usuario.timeCreated = DateTime.Now;
+                    processo.Incluir(usuario);
+                    processo.Confirmar();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(usuario);
+                }
+            }
+            catch
             {
                 return View(usuario);
             }
-
-            IUsuarioProcesso processo = UsuarioProcesso.Instance;
-            processo.Alterar(usuario);
-            processo.Confirmar();
-            return Redirect("/PainelAdministrador/ListaPonto");
-
-
         }
 
-        public ActionResult Alterar()
+        //
+        // GET: /StatusParcela/Edit/5
+
+        public ActionResult Alterar(int id)
         {
-            if (ClasseAuxiliar.UsuarioLogado == null)
-                return Redirect("/Usuario/Logar");
-            return View(ClasseAuxiliar.UsuarioLogado);
+            IUsuarioProcesso processo = UsuarioProcesso.Instance;
+          
+            Usuario usuario = new Usuario();
+            usuario.ID = id;
+            ViewData.Model = processo.Consultar(usuario, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            return View();
         }
-        #endregion
 
+        //
+        // POST: /StatusParcela/Edit/5
+
+        [HttpPost]
+        public ActionResult Alterar(int id, Usuario usuario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    usuario.ID = id;
+                    IUsuarioProcesso processo = UsuarioProcesso.Instance;
+                    usuario.timeUpdated = DateTime.Now;
+                    processo.Alterar(usuario);
+                    processo.Confirmar();
+                    // TODO: Add update logic here
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(usuario);
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+
+
+        public ActionResult AlterarSenha(int id)
+        {
+            IUsuarioProcesso processo = UsuarioProcesso.Instance;
+
+            Usuario usuario = new Usuario();
+            usuario.ID = id;
+            ViewData.Model = processo.Consultar(usuario, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            return View();
+        }
+
+        //
+        // POST: /StatusParcela/Edit/5
+
+        [HttpPost]
+        public ActionResult AlterarSenha(int id, Usuario usuario)
+        {
+            try
+            {
+              //  if (ModelState.IsValid)
+                {
+                    IUsuarioProcesso processo = UsuarioProcesso.Instance;
+                    string senhaModificada = usuario.senha;
+                    usuario = processo.Consultar(usuario, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+                    usuario.ID = id;
+                    usuario.senha = senhaModificada;
+                    usuario.timeUpdated = DateTime.Now;
+                    processo.Alterar(usuario);
+                    processo.Confirmar();
+                    // TODO: Add update logic here
+
+                    return RedirectToAction("Index", "Home");
+                }
+              //  else
+                {
+                //    return View(usuario);
+                }
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+
+        //
+        // GET: /StatusParcela/Delete/5
+
+        public ActionResult Excluir(int id)
+        {
+            IUsuarioProcesso processo = UsuarioProcesso.Instance;
+            Usuario usuario = new Usuario();
+            usuario.ID = id;
+            ViewData.Model = processo.Consultar(usuario, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            return View();
+
+        }
+
+        ////
+        //// POST: /StatusParcela/Delete/5
+
+        [HttpPost]
+        public ActionResult Excluir(int id, Usuario usuario)
+        {
+            try
+            {
+                IUsuarioProcesso processo = UsuarioProcesso.Instance;
+
+                usuario.ID = id;
+                processo.Excluir(usuario);
+                processo.Confirmar();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
+                ViewData.Model = usuario;
+                return View();
+            }
+
+
+
+        }
         #region Controle de Acesso
 
         public ActionResult Deslogar()
@@ -79,7 +221,7 @@ namespace SiteMVC.Controllers
             Session.Remove("UsuarioLogado");
             Session.Remove("UsuarioPontoLogadoLista");
 
-            return RedirectToAction("Index", "Ponto");
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Logar()
@@ -98,7 +240,7 @@ namespace SiteMVC.Controllers
             if (ClasseAuxiliar.UsuarioLogado != null)
                 return Redirect("/PainelAdministrador/ListaPonto");
 
-            if (ModelState.IsValid)
+         //   if (ModelState.IsValid)
             {
                 IUsuarioProcesso processo = UsuarioProcesso.Instance;
                 List<Usuario> usuarioLista = processo.Consultar(usuario, TipoPesquisa.E);
@@ -107,7 +249,7 @@ namespace SiteMVC.Controllers
                 else
                 {
                     Session.Add("UsuarioLogado", usuarioLista[0]);
-                    return Redirect("/PainelAdministrador/ListaPonto");
+                    return Redirect("/");
                 }
             }
             //Invalido - volta a tela mostrando os erros contidos.

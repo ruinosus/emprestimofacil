@@ -21,6 +21,8 @@
             </div>
             <div id="menucontainer">
                 <ul id="menu">
+                <li>
+                        <%: Html.ActionLink("Usuario", "Listar", "Usuario")%></li>
                     <li>
                         <%: Html.ActionLink("Cliente", "Listar", "Cliente")%></li>
                     <li>
