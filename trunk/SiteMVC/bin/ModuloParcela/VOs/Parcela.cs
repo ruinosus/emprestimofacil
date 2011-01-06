@@ -18,7 +18,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [Required(ErrorMessage = "Informe o valor a ser pago.")]
             [DisplayName("Valor Pago:")]
-            [Range(1, 9999999999999)]
+            [Range(1, 9999999999999, ErrorMessage = "Valor tem que ser maior que zero.")]
             public long? valor_pago { get; set; }
 
         }

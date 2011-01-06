@@ -32,7 +32,7 @@
             </div>
             
             <p>
-                <input type="submit" value="Save" />
+                <input type="submit" value="Salvar" />
             </p>
         </fieldset>
 

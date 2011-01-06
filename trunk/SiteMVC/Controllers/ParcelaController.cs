@@ -84,7 +84,7 @@ namespace SiteMVC.Controllers
                     processo.Confirmar();
                     // TODO: Add update logic here
 
-                    return RedirectToAction("ParcelaEmprestimo", new { id = ClasseAuxiliar.ClienteSelecionado.ID });
+                    return RedirectToAction("ParcelaEmprestimo", new { id = ClasseAuxiliar.EmprestimoSelecionado.ID });
                 }
                 else
                 {
