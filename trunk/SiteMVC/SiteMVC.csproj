@@ -395,6 +395,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EmprestimoDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Scripts\jquery.datePicker.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcPaging\MvcPaging.csproj">

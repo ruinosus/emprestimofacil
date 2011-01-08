@@ -4,7 +4,7 @@
 	EmprestimoCliente
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="Principal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Emprestimos do Cliente: <%:SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.ClienteSelecionado.nome %></h2>
 

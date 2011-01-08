@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Incluir
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Principal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Incluir</h2>
     <% using (Html.BeginForm())
@@ -16,9 +16,7 @@
         <div class="date-container">
             <%: Html.EditorFor(model => model.data.Date)%>
         </div>
-        <div class="time-container">
-            <%: Html.EditorFor(model => model.data.TimeOfDay)%>
-        </div>
+        
         <div class="clear">
             <%: Html.ValidationMessageFor(model => model.data)%>
         </div>
