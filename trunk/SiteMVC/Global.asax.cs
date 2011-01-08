@@ -29,6 +29,8 @@ namespace SiteMVC
             AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);
+
+            ModelBinders.Binders.Add(typeof(DateTime), new SiteMVC.Models.ModuloBasico.VOs.DateTimeModelBinder());
         }
     }
 }

@@ -96,6 +96,7 @@
     <Compile Include="Models\ModuloBasico\Enuns\Enumeradores.cs" />
     <Compile Include="Models\ModuloBasico\Singleton\Singleton.cs" />
     <Compile Include="Models\ModuloBasico\VOs\ClasseAuxiliar.cs" />
+    <Compile Include="Models\ModuloBasico\VOs\DateTimeModelBinder.cs" />
     <Compile Include="Models\ModuloBasico\VOs\EmprestimoDB.Designer.cs">
       <DependentUpon>EmprestimoDB.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -273,10 +274,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\ui-lightness\jquery-ui-1.8.5.custom.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\Modelo\dados_tabelas.txt" />
     <Content Include="Models\Modelo\emprestcard.sql" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\timedropdown\timedropdown.js" />
+    <Content Include="Scripts\txtdropdown\jquery.scrollTo-min.js" />
+    <Content Include="Scripts\txtdropdown\txtdropdown-btn-hover.png" />
+    <Content Include="Scripts\txtdropdown\txtdropdown-btn.png" />
+    <Content Include="Scripts\txtdropdown\txtdropdown.css" />
+    <Content Include="Scripts\txtdropdown\txtdropdown.js" />
     <Content Include="Views\Area\Alterar.aspx" />
     <Content Include="Views\Area\Detalhar.aspx" />
     <Content Include="Views\Area\Excluir.aspx" />
@@ -307,6 +332,8 @@
     <Content Include="Views\Parcela\Alterar.aspx" />
     <Content Include="Views\Parcela\ParcelaEmprestimo.aspx" />
     <Content Include="Views\Shared\EditorTemplates\ClienteDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\TimeSpan.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
     <Content Include="Views\Shared\EditorTemplates\LancamentoTipoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\UsuarioDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\TipoEmprestimoDropDown.ascx" />
@@ -332,7 +359,9 @@
     <Content Include="Views\Usuario\Incluir.aspx" />
     <Content Include="Views\Usuario\Listar.aspx" />
     <Content Include="Views\Usuario\Logar.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

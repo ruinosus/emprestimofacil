@@ -228,7 +228,7 @@ namespace SiteMVC.Controllers
         {
 
             if (ClasseAuxiliar.UsuarioLogado != null)
-                return Redirect("/PainelAdministrador/ListaPonto");
+                return RedirectToAction("Index", "Home");
             Usuario usuario = new Usuario();
 
             return View(usuario);
@@ -238,7 +238,7 @@ namespace SiteMVC.Controllers
         public ActionResult Logar(Usuario usuario)
         {
             if (ClasseAuxiliar.UsuarioLogado != null)
-                return Redirect("/PainelAdministrador/ListaPonto");
+                return RedirectToAction("Index", "Home");
 
          //   if (ModelState.IsValid)
             {
