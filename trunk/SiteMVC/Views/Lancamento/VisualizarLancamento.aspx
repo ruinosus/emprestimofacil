@@ -25,62 +25,166 @@
         <%: Html.ActionLink("Voltar", "Index") %>
     </p>
     <% } %>
-    <table>
-        <tr>
+    <%
+        float valorEntradas = 0;
+        float valorSaida = 0;
 
-            <th>
-                data
-            </th>
-            <th>
-                fonte
-            </th>
-            <th>
-                ID
-            </th>
-            <th>
-                lancamentotipo_id
-            </th>
-            <th>
-                observacoes
-            </th>
-            <th>
-                outrasinfos
-            </th>
-            <th>
-                usuario_id
-            </th>
-            <th>
-                valor
-            </th>
-        </tr>
-        <% foreach (var item in (List<SiteMVC.Models.ModuloBasico.VOs.Lancamento>)ViewData["lancamentos"])
-           { %>
-        <tr>
-            <td>
-                <%: String.Format("{0:g}", item.data) %>
-            </td>
-            <td>
-                <%: item.fonte %>
-            </td>
-            <td>
-                <%: item.ID %>
-            </td>
-            <td>
-                <%: item.lancamentotipo_id %>
-            </td>
-            <td>
-                <%: item.observacoes %>
-            </td>
-            <td>
-                <%: item.outrasinfos %>
-            </td>
-            <td>
-                <%: item.usuario_id %>
-            </td>
-            <td>
-                <%: item.valor %>
-            </td>
-        </tr>
-        <% } %>
-    </table>
+    %>
+    <fieldset>
+        <legend>Entradas</legend>
+        <table>
+            <tr>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Fonte
+                </th>
+                <th>
+                    ID
+                </th>
+                  <th>
+                    Tipo do lançamento
+                </th>
+                <th>
+                    Observações
+                </th>
+                <th>
+                    Outras Informações
+                </th>
+                <th>
+                    Usuário
+                </th>
+                <th>
+                    Valor
+                </th>
+            </tr>
+            <% foreach (var item in (List<SiteMVC.Models.ModuloBasico.VOs.Lancamento>)ViewData["lancamentos"])
+               {
+                   if (item.lancamentotipo.sinal.Equals("+"))
+                   {
+                       valorEntradas += item.valor; 
+            %>
+            <tr>
+                <td>
+                    <%: String.Format("{0:g}", item.data)%>
+                </td>
+                <td>
+                    <%: item.fonte%>
+                </td>
+                <td>
+                    <%: item.ID%>
+                </td>
+                <td>
+                    <%: item.lancamentotipo.descricao%>
+                </td>
+                <td>
+                    <%: item.observacoes%>
+                </td>
+                <td>
+                    <%: item.outrasinfos%>
+                </td>
+                <td>
+                    <%: item.usuario.nome%>
+                </td>
+                <td>
+                    <%: item.valor%>
+                </td>
+            </tr>
+            <% }
+               } %>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Saidas</legend>
+        <table>
+            <tr>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Fonte
+                </th>
+                <th>
+                    ID
+                </th>
+                  <th>
+                    Tipo do lançamento
+                </th>
+                <th>
+                    Observações
+                </th>
+                <th>
+                    Outras Informações
+                </th>
+                <th>
+                    Usuário
+                </th>
+                <th>
+                    Valor
+                </th>
+            </tr>
+            <% foreach (var item in (List<SiteMVC.Models.ModuloBasico.VOs.Lancamento>)ViewData["lancamentos"])
+               {
+                   if (item.lancamentotipo.sinal.Equals("-"))
+                   {
+                       valorSaida += item.valor; 
+            %>
+            <tr>
+                <td>
+                    <%: String.Format("{0:g}", item.data)%>
+                </td>
+                <td>
+                    <%: item.fonte%>
+                </td>
+                <td>
+                    <%: item.ID%>
+                </td>
+                <td>
+                    <%: item.lancamentotipo.descricao%>
+                </td>
+                <td>
+                    <%: item.observacoes%>
+                </td>
+                <td>
+                    <%: item.outrasinfos%>
+                </td>
+                <td>
+                    <%: item.usuario.nome%>
+                </td>
+                <td>
+                    <%: item.valor%>
+                </td>
+            </tr>
+            <% }
+               } %>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Totais do dia</legend>
+        <table>
+            <tr>
+                <th>
+                    Total Valor Entrada
+                </th>
+                <th>
+                    Total Valor Saída
+                </th>
+                <th>
+                    Total do dia
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <%:valorEntradas %>
+                </td>
+                <td>
+                    <%:valorSaida %>
+                </td>
+                <td>
+                    <%:valorEntradas - valorSaida %>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
 </asp:Content>
