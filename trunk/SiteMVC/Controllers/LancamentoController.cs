@@ -53,7 +53,7 @@ namespace SiteMVC.Controllers
             Lancamento lancamento = new Lancamento();
             lancamento.lancamentotipo_id = 0;
             lancamento.usuario_id= 0;
-         
+            lancamento.data = DateTime.Now;
             ViewData.Model = lancamento;
             return View();
         }

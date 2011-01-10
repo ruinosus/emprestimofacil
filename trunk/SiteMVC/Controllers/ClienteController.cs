@@ -63,6 +63,7 @@ namespace SiteMVC.Controllers
             cliente.orgaosexpedidoresnome_id = 0;
             cliente.cidade_comerc= 0;
             cliente.cidade_resid= 0;
+            cliente.data_expedicao = DateTime.Now;
             ViewData.Model = cliente;
             return View();
         }

@@ -52,6 +52,7 @@ namespace SiteMVC.Controllers
             usuario.estadoscivistipo_id = 0;
             usuario.orgaosexpedidoresnome_id = 0;
             usuario.usuariotipo_id = 0;
+            usuario.data_expedicao = DateTime.Now;
             ViewData.Model = usuario;
             return View();
         }

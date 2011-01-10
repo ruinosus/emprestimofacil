@@ -23,6 +23,65 @@ namespace SiteMVC.Controllers
             return RedirectToAction("Listar");
         }
 
+        public ActionResult Informar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Informar(int? id)
+        {
+            try
+            {
+                if (id.HasValue)
+                {
+                    IParcelaProcesso processo = ParcelaProcesso.Instance;
+                    Parcela parcela = new Parcela();
+                    parcela.ID = id.Value;
+                    List<Parcela> resultado = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
+                    if (resultado.Count > 0)
+                        if (resultado[0].statusparcela_id == 2)
+                        {
+                            parcela.ID = parcela.ID - 1;
+                            List<Parcela> resultado2 = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
+
+                            if (resultado2.Count > 0)
+                            {
+                                if (resultado2[0].statusparcela_id == 2)
+                                {
+                                    ModelState.AddModelError("id", "Você deve dar baixa na parcela de número: ["+parcela.ID+"]");
+                                    return View();
+                                }
+                            }
+
+                            return RedirectToAction("PagarParcela", new { id = id.Value });
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("id", "A parcela informada já foi paga.");
+                            return View();
+                        }
+                    else
+                    {
+                        ModelState.AddModelError("id", "Parcela Não encontrada.");
+                        return View();
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("id", "Informe o número da parcela");
+                    return View();
+                }
+
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("id", "Informe um valor numérico.");
+                return View();
+            }
+        }
+
+
         public ActionResult ParcelaEmprestimo(int? page, int ID)
         {
             IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
@@ -45,10 +104,53 @@ namespace SiteMVC.Controllers
 
         }
 
+        public ActionResult PagarParcela(int id)
+        {
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+            Parcela parcela = new Parcela();
+            parcela.ID = id;
+            ViewData.Model = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PagarParcela(int id, Parcela parcela)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    float valorPago = parcela.valor_pago.Value;
+
+                    parcela.ID = id;
+
+                    IParcelaProcesso processo = ParcelaProcesso.Instance;
+                    parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+                    parcela.valor_pago = valorPago;
+                    parcela.statusparcela_id = 1;
+                    parcela.data_pagamento = DateTime.Now;
+                    parcela.timeUpdated = DateTime.Now;
+                    processo.Alterar(parcela);
+                    processo.Confirmar();
+                    // TODO: Add update logic here
+
+                    return RedirectToAction("Informar");
+                }
+                else
+                {
+                    return View(parcela);
+                }
+            }
+            catch (Exception e)
+            {
+                return View(parcela);
+            }
+        }
+
         //
         // GET: /StatusParcela/Details/5
 
-            
+
         //
         // GET: /StatusParcela/Edit/5
 
@@ -61,6 +163,7 @@ namespace SiteMVC.Controllers
             return View();
         }
 
+
         //
         // POST: /StatusParcela/Edit/5
 
@@ -72,14 +175,14 @@ namespace SiteMVC.Controllers
                 if (ModelState.IsValid)
                 {
                     float valorPago = parcela.valor_pago.Value;
-                
+
                     parcela.ID = id;
-                    
+
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
                     parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
                     parcela.valor_pago = valorPago;
                     parcela.statusparcela_id = 1;
-                    parcela.data_pagamento= DateTime.Now;
+                    parcela.data_pagamento = DateTime.Now;
                     parcela.timeUpdated = DateTime.Now;
                     processo.Alterar(parcela);
                     processo.Confirmar();
@@ -92,7 +195,7 @@ namespace SiteMVC.Controllers
                     return View(parcela);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return View(parcela);
             }

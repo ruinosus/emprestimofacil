@@ -28,7 +28,7 @@
                 <%: Html.LabelFor(model => model.data_emprestimo) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.data_emprestimo) %>
+                <%: Html.EditorFor(model => model.data_emprestimo.Date)%>
                 <%: Html.ValidationMessageFor(model => model.data_emprestimo) %>
             </div>
             

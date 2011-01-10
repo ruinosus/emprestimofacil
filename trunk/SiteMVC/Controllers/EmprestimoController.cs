@@ -43,6 +43,7 @@ namespace SiteMVC.Controllers
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
             emprestimo.prazospagamento_id = 0;
+            emprestimo.data_emprestimo = DateTime.Now;
             emprestimo.tipoemprestimo_id = 0;
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
             ViewData.Model = emprestimo;
@@ -132,6 +133,7 @@ namespace SiteMVC.Controllers
         {
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = 0;
+            emprestimo.data_emprestimo = DateTime.Now;
             emprestimo.prazospagamento_id = 0;
             emprestimo.tipoemprestimo_id = 0;
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;

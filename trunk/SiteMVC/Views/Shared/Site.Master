@@ -38,7 +38,10 @@
                     <li>
                         <%: Html.ActionLink("Lancamento", "Listar", "Lancamento")%></li>
                     <%}
+                          
                     %>
+                       <li>
+                        <%: Html.ActionLink("Baixar Parcela", "Informar", "Parcela")%></li>
                     <li>
                         <%if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
                           {%>

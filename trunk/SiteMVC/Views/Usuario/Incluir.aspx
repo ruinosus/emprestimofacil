@@ -74,7 +74,7 @@
                 <%: Html.LabelFor(model => model.data_expedicao) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.data_expedicao) %>
+               <%: Html.EditorFor(model => model.data_expedicao.Value.Date)%>
                 <%: Html.ValidationMessageFor(model => model.data_expedicao) %>
             </div>
             
