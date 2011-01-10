@@ -65,7 +65,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Cep Residencial:")]
             public string cep_resid { get; set; }
 
-            [DisplayName("Cep Residencial:")]
+            [DisplayName("Cidade Residencial:")]
             public string cidade_resid { get; set; }
 
             [Required(ErrorMessage = "O cpf é necessário para o cadastro.")]

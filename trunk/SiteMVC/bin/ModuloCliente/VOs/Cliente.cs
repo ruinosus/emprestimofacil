@@ -65,7 +65,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Cidade Residencial")]
             [UIHint("MunicipioDropDown")]
-            [DisplayName("Cep Residencial:")]
+            [DisplayName("Cidade Residencial:")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public long cidade_resid { get; set; }
 
