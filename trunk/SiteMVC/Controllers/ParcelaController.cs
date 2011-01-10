@@ -82,6 +82,28 @@ namespace SiteMVC.Controllers
         }
 
 
+        public ActionResult ImprimirParcelas( int ID)
+        {
+            IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
+            Emprestimo emprestimo = new Emprestimo();
+            emprestimo.ID = ID;
+            emprestimo = processoEmprestimo.Consultar(emprestimo, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+
+            Session["EmprestimoSelecionado"] = emprestimo;
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+            Parcela parcela = new Parcela();
+            parcela.emprestimo_id = ID;
+            var resultado = processo.Consultar(parcela, TipoPesquisa.E);
+
+
+
+            List<Parcela> parcelas = resultado;
+         
+            return View(resultado);
+
+
+        }
+
         public ActionResult ParcelaEmprestimo(int? page, int ID)
         {
             IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;

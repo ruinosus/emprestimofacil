@@ -330,6 +330,7 @@
     <Content Include="Views\Municipio\Incluir.aspx" />
     <Content Include="Views\Municipio\Listar.aspx" />
     <Content Include="Views\Parcela\Alterar.aspx" />
+    <Content Include="Views\Parcela\ImprimirParcelas.aspx" />
     <Content Include="Views\Parcela\Informar.aspx" />
     <Content Include="Views\Parcela\PagarParcela.aspx" />
     <Content Include="Views\Parcela\ParcelaEmprestimo.aspx" />

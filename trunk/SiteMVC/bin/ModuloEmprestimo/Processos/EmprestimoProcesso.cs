@@ -64,7 +64,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
                 parcela = new Parcela();
                 parcela.emprestimo_id = emprestimo.ID;
                 parcela.data_pagamento = null;
-
+                parcela.sequencial = i;
                 dataVencimento = dataVencimento.AddDays(prazo.qtde_dias);
 
                 if (dataVencimento.DayOfWeek == DayOfWeek.Saturday)
