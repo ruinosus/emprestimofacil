@@ -4,6 +4,27 @@
     Visualizar Lancamento
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+ <script type="text/javascript">
+     function CallPrint(strid) {
+
+         var prtContent = document.getElementById(strid);
+
+         var WinPrint = window.open('', '', 'letf=0,top=0,width=1,height=1,toolbar=0,scrollbars=0,status=0');
+
+         WinPrint.document.write(prtContent.innerHTML);
+
+         WinPrint.document.close();
+
+         WinPrint.focus();
+
+         WinPrint.print();
+
+         WinPrint.close();
+
+         prtContent.innerHTML = strOldOne;
+
+     }
+    </script>
     <h2>
         Visualizar Lancamento</h2>
     <% using (Html.BeginForm())
@@ -30,6 +51,7 @@
         float valorSaida = 0;
 
     %>
+     <div id="divPrint">
     <fieldset>
         <legend>Entradas</legend>
         <table>
@@ -187,4 +209,7 @@
             </tr>
         </table>
     </fieldset>
+    </div>
+        <input type="image" src="../../Content/ui-lightness/images/impressora.jpg"
+ onclick="CallPrint('divPrint');" style="width:40px; height:40px"  />
 </asp:Content>
