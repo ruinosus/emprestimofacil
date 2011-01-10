@@ -23,13 +23,54 @@ namespace SiteMVC.Controllers
 
         public ActionResult Listar(int? page)
         {
-             
+
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
-            var resultado =  processo.Consultar();
+            var resultado = processo.Consultar();
             List<Lancamento> lancamentos = resultado;
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
             return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
-		
+
+
+        }
+
+        public ActionResult VisualizarLancamento()
+        {
+            List<Lancamento> lancamentos = new List<Lancamento>();
+            ViewData["lancamentos"] = lancamentos;
+            Lancamento lancamento = new Lancamento();
+            lancamento.data = DateTime.Now;
+         
+            return View(lancamento);
+
+
+        }
+        [HttpPost]
+        public ActionResult VisualizarLancamento(Lancamento lancamento)
+        {
+            List<Lancamento> lancamentos = new List<Lancamento>();
+            try
+            {
+                if (default(DateTime) != lancamento.data)
+                {
+                    ILancamentoProcesso processo = LancamentoProcesso.Instance;
+                    var resultado = processo.Consultar(lancamento, TipoPesquisa.E);
+                    lancamentos = resultado;
+                    ViewData["lancamentos"] = lancamentos;
+                    return View(lancamento);
+                }
+                else
+                {
+                    throw new Exception("Data do lançamento não informada ou inválida");
+                }
+
+            }
+            catch (Exception e)
+            {
+                ViewData["lancamentos"] = lancamentos;
+                ModelState.AddModelError("data", e.Message);
+                return View(lancamento);
+
+            }
 
         }
 
@@ -52,7 +93,7 @@ namespace SiteMVC.Controllers
         {
             Lancamento lancamento = new Lancamento();
             lancamento.lancamentotipo_id = 0;
-            lancamento.usuario_id= 0;
+            lancamento.usuario_id = 0;
             lancamento.data = DateTime.Now;
             ViewData.Model = lancamento;
             return View();
@@ -84,7 +125,7 @@ namespace SiteMVC.Controllers
             }
             catch
             {
-                    return View(lancamento);
+                return View(lancamento);
             }
         }
 
@@ -140,7 +181,7 @@ namespace SiteMVC.Controllers
             lancamento.ID = id;
             ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
-            
+
         }
 
         ////
@@ -152,8 +193,8 @@ namespace SiteMVC.Controllers
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
             try
             {
-                
-             
+
+
                 lancamento.ID = id;
                 processo.Excluir(lancamento);
                 processo.Confirmar();
@@ -163,12 +204,12 @@ namespace SiteMVC.Controllers
             {
                 lancamento.ID = id;
                 ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
-             ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
+                ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
                 return View();
             }
 
 
-            
+
         }
     }
 }

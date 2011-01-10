@@ -45,6 +45,18 @@ namespace SiteMVC.ModuloLancamento.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (default(DateTime) != lancamento.data )
+                        {
+
+                            resultado = ((from c in resultado
+                                          where
+                                          c.data.ToShortDateString() == lancamento.data.ToShortDateString()
+                                          select c).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
                         break;
                     }
                 #endregion
@@ -59,6 +71,17 @@ namespace SiteMVC.ModuloLancamento.Repositorios
                                                 select c).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
+                        if (default(DateTime) != lancamento.data)
+                        {
+
+                            resultado.AddRange((from c in resultado
+                                          where
+                                          c.data.ToShortDateString() == lancamento.data.ToShortDateString()
+                                          select c).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
 
                         break;
                     }

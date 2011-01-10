@@ -23,7 +23,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            [DisplayName("Obsercações:")]
+            [DisplayName("observações:")]
             public string observacoes { get; set; }
 
             [DisplayFormat(ConvertEmptyStringToNull = false)]
@@ -32,7 +32,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
 
 
-            [Required(ErrorMessage = "A data do Lancamento é necessária para o cadastro.")]
+            [Required(ErrorMessage = "Informe a data do Lançamento.")]
             [DisplayName("Data do Lancamento:")]
             public DateTime data { get; set; }
 

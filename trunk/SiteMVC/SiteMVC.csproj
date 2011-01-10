@@ -324,6 +324,7 @@
     <Content Include="Views\Lancamento\Excluir.aspx" />
     <Content Include="Views\Lancamento\Incluir.aspx" />
     <Content Include="Views\Lancamento\Listar.aspx" />
+    <Content Include="Views\Lancamento\VisualizarLancamento.aspx" />
     <Content Include="Views\Municipio\Alterar.aspx" />
     <Content Include="Views\Municipio\Detalhar.aspx" />
     <Content Include="Views\Municipio\Excluir.aspx" />
