@@ -197,6 +197,7 @@
     <NavigationProperty Name="municipio" Relationship="EmprestimoModel.cliente_ibfk_5" FromRole="cliente" ToRole="municipio" />
     <NavigationProperty Name="municipio1" Relationship="EmprestimoModel.cliente_ibfk_6" FromRole="cliente" ToRole="municipio" />
     <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_1" FromRole="cliente" ToRole="emprestimo" />
+    <Property Type="String" Name="observacao" />
   </EntityType>
   <EntityType Name="Despesa">
     <Key>

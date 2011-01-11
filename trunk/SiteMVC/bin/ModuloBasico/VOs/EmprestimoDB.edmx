@@ -178,6 +178,7 @@
           <Property Name="nome_ref1" Type="varchar" MaxLength="150" />
           <Property Name="nome_ref2" Type="varchar" MaxLength="150" />
           <Property Name="numcartao" Type="char" MaxLength="16" />
+          <Property Name="observacao" Type="varchar" />
           <Property Name="orgaosexpedidoresnome_id" Type="uint" />
           <Property Name="rg" Type="varchar" MaxLength="10" />
           <Property Name="secao" Type="varchar" MaxLength="4" />
@@ -899,6 +900,7 @@
           <NavigationProperty Name="municipio" Relationship="EmprestimoModel.cliente_ibfk_5" FromRole="cliente" ToRole="municipio" />
           <NavigationProperty Name="municipio1" Relationship="EmprestimoModel.cliente_ibfk_6" FromRole="cliente" ToRole="municipio" />
           <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_1" FromRole="cliente" ToRole="emprestimo" />
+          <Property Type="String" Name="observacao" />
         </EntityType>
         <EntityType Name="Despesa">
           <Key>
@@ -1467,7 +1469,8 @@
             <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="ClienteSet"><EntityTypeMapping TypeName="EmprestimoModel.Cliente"><MappingFragment StoreEntitySet="cliente">
-            <ScalarProperty Name="area_id" ColumnName="area_id" />
+            <ScalarProperty Name="observacao" ColumnName="observacao" />
+                <ScalarProperty Name="area_id" ColumnName="area_id" />
             <ScalarProperty Name="bairro_comerc" ColumnName="bairro_comerc" />
             <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />
             <ScalarProperty Name="celular" ColumnName="celular" />

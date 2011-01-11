@@ -173,6 +173,7 @@
     <Property Name="nome_ref1" Type="varchar" MaxLength="150" />
     <Property Name="nome_ref2" Type="varchar" MaxLength="150" />
     <Property Name="numcartao" Type="char" MaxLength="16" />
+    <Property Name="observacao" Type="varchar" />
     <Property Name="orgaosexpedidoresnome_id" Type="uint" />
     <Property Name="rg" Type="varchar" MaxLength="10" />
     <Property Name="secao" Type="varchar" MaxLength="4" />

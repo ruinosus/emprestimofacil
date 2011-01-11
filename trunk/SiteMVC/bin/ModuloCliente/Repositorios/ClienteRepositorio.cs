@@ -181,7 +181,7 @@ namespace SiteMVC.ModuloCliente.Repositorios
                 clienteAux.uf_comerc = cliente.uf_comerc;
                 clienteAux.uf_resid = cliente.uf_resid;
                 clienteAux.zona = cliente.zona;
-
+                clienteAux.observacao = cliente.observacao;
 
                 Confirmar();
             }

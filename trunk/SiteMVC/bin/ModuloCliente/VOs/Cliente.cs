@@ -47,8 +47,11 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Bairro Residencial:")]
             public string bairro_resid { get; set; }
 
-            [DisplayName("Celularl:")]
+            [DisplayName("Celular:")]
             public string celular { get; set; }
+
+            [DisplayName("Observação:")]
+            public string observacao { get; set; }
 
             [DisplayName("Cep Comercial:")]
             public string cep_comerc { get; set; }

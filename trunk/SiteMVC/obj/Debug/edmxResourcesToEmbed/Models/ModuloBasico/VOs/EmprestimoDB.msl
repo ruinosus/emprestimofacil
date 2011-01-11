@@ -27,6 +27,7 @@
     <EntitySetMapping Name="ClienteSet">
       <EntityTypeMapping TypeName="EmprestimoModel.Cliente">
         <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
           <ScalarProperty Name="area_id" ColumnName="area_id" />
           <ScalarProperty Name="bairro_comerc" ColumnName="bairro_comerc" />
           <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />

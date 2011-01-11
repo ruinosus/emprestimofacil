@@ -13,6 +13,7 @@ using SiteMVC.ModuloParcela.Excecoes;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloEmprestimo.Processos;
 using SiteMVC.ModuloPrazoPagamento.Processos;
+using SiteMVC.ModuloLancamento.Processos;
 namespace SiteMVC.ModuloParcela.Processos
 {
     /// <summary>
@@ -66,23 +67,53 @@ namespace SiteMVC.ModuloParcela.Processos
         {
             parcela.data_pagamento = DateTime.Now;
             parcela.statusparcela_id = 1;
+            LancamentoProcesso processoLancamento = LancamentoProcesso.Instance;
+
+          
 
             if (parcela.valor_pago.Value > parcela.valor)
             {
                 float valorRestante = parcela.valor_pago.Value - parcela.valor;
                 parcela.valor_pago = parcela.valor;
                 this.parcelaRepositorio.Alterar(parcela);
+                Lancamento lancamento = new Lancamento();
+                lancamento.valor = parcela.valor_pago.Value;
+                lancamento.lancamentotipo_id = 1;
+                lancamento.data = parcela.data_pagamento.Value;
+                lancamento.fonte = "parcela";
+                lancamento.timeCreated = DateTime.Now;
+                lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+                processoLancamento.Incluir(lancamento);
+                processoLancamento.Confirmar();
                 this.PagarProximaParcela(parcela, valorRestante);
             }
             else if (parcela.valor_pago.Value < parcela.valor)
             {
                 this.parcelaRepositorio.Alterar(parcela);
+                Lancamento lancamento = new Lancamento();
+                lancamento.valor = parcela.valor_pago.Value;
+                lancamento.lancamentotipo_id = 1;
+                lancamento.data = parcela.data_pagamento.Value;
+                lancamento.fonte = "parcela";
+                lancamento.timeCreated = DateTime.Now;
+                lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+                processoLancamento.Incluir(lancamento);
+                processoLancamento.Confirmar();
                 this.AdicionarParcelaExtra(parcela);
 
             }
             else
             {
                 this.parcelaRepositorio.Alterar(parcela);
+                Lancamento lancamento = new Lancamento();
+                lancamento.valor = parcela.valor_pago.Value;
+                lancamento.lancamentotipo_id = 1;
+                lancamento.data = parcela.data_pagamento.Value;
+                lancamento.fonte = "parcela";
+                lancamento.timeCreated = DateTime.Now;
+                lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+                processoLancamento.Incluir(lancamento);
+                processoLancamento.Confirmar();
             }
         }
 

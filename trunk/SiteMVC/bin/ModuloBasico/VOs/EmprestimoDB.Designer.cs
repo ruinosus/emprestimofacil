@@ -2015,6 +2015,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.String _zona;
         partial void OnzonaChanging(global::System.String value);
         partial void OnzonaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String observacao
+        {
+            get
+            {
+                return _observacao;
+            }
+            set
+            {
+                OnobservacaoChanging(value);
+                ReportPropertyChanging("observacao");
+                _observacao = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("observacao");
+                OnobservacaoChanged();
+            }
+        }
+        private global::System.String _observacao;
+        partial void OnobservacaoChanging(global::System.String value);
+        partial void OnobservacaoChanged();
 
         #endregion
     

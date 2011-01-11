@@ -12,6 +12,7 @@ using SiteMVC.ModuloEmprestimo.Excecoes;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloParcela.Processos;
 using SiteMVC.ModuloPrazoPagamento.Processos;
+using SiteMVC.ModuloLancamento.Processos;
 
 namespace SiteMVC.ModuloEmprestimo.Processos
 {
@@ -47,6 +48,18 @@ namespace SiteMVC.ModuloEmprestimo.Processos
             prazo.ID = emprestimo.prazospagamento_id;
 
             prazo = prazoPagamentoProcesso.Consultar(prazo, TipoPesquisa.E)[0];
+            LancamentoProcesso processoLancamento = LancamentoProcesso.Instance;
+
+            Lancamento lancamento = new Lancamento();
+            lancamento.valor = emprestimo.valor;
+            lancamento.lancamentotipo_id = 3;
+            lancamento.data = emprestimo.data_emprestimo;
+            lancamento.fonte = "Emprestimo";
+            lancamento.timeCreated = DateTime.Now;
+            lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+            processoLancamento.Incluir(lancamento);
+            processoLancamento.Confirmar();
+
 
             Parcela parcela;
             float valorJuros = emprestimo.valor + (emprestimo.valor * emprestimo.juros / 100);
