@@ -46,8 +46,9 @@
                     <br />Criar relatorio geral e detalhado dos lançamentos agrupados por area.
                     <br />Filtrar os perfis de acesso de acordo com a area do usuário logado, exceto para gerentes e o administrador.
                     <br />remover opção de exclusão no lançamento.
-                    <br />Verificar opção de exclui de todos os controllers.(da erro no relacionamento )
+                    <br />Verificar opção de exclui de todos os controllers.(da erro no relacionamento)
                     <br />Criar verificação de login no cadastro de usuário.    
+                    <br />Avisar na hora do emprestimo para um determinado cliente sobre o limite disponível para o tal.
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
