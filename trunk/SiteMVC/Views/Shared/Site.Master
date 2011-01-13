@@ -36,12 +36,18 @@
                     <br />Melhorar visual do projeto.
                     <br />Arrumar Css do textBox de senha.
                     <br />Ajustar campo data no jQuery.
+                    <br />Criar mascaras para campos.(inteiros, monetarios,cpf)
                     <br />Criar pesquisas mais detalhadas para os controllers.(por nome, tipo, etc)
                     <br />Criar relatório especifico para cada cliente.(Quanto de emprestimo o cliente ja pegou,Quanto o cliente ja pagou, quanto ainda deve).
                     <br />Criar relatorio mostrando as dividas existentes dos clientes.(Mostrar quanto ainda falta receber de todos clientes separados por datas)[prévia de lançamentos futuros]
                     <br />Validar se o cliente pode fazer emprestimo baseado na divida e no limite.(um cliente com divida não pode fazer emprestimo)
                     <br />Exibir na tela de baixa de parcela o nome do cliente e o número da parcela paga, quanto ainda deve e exibir mensagem de informação sobre a parcela paga.
-                    <br />
+                    <br />Modificar boletos para impressão da parcela.
+                    <br />Criar relatorio geral e detalhado dos lançamentos agrupados por area.
+                    <br />Filtrar os perfis de acesso de acordo com a area do usuário logado, exceto para gerentes e o administrador.
+                    <br />remover opção de exclusão no lançamento.
+                    <br />Verificar opção de exclui de todos os controllers.(da erro no relacionamento )
+                    <br />Criar verificação de login no cadastro de usuário.    
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
