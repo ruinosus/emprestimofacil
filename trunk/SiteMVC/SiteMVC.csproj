@@ -321,11 +321,12 @@
     <Content Include="Views\Emprestimo\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Lancamento\VisualizarResumoLancamento.aspx" />
     <Content Include="Views\Lancamento\Detalhar.aspx" />
     <Content Include="Views\Lancamento\Excluir.aspx" />
     <Content Include="Views\Lancamento\Incluir.aspx" />
     <Content Include="Views\Lancamento\Listar.aspx" />
-    <Content Include="Views\Lancamento\VisualizarLancamento.aspx" />
+    <Content Include="Views\Lancamento\VisualizarDetalheLancamento.aspx" />
     <Content Include="Views\Municipio\Alterar.aspx" />
     <Content Include="Views\Municipio\Detalhar.aspx" />
     <Content Include="Views\Municipio\Excluir.aspx" />

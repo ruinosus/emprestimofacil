@@ -1,16 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IPagedList<SiteMVC.Models.ModuloBasico.VOs.Lancamento>>" %>
-<%@ Import Namespace="SiteMVC"%>
+
+<%@ Import Namespace="SiteMVC" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Listar
+    Listar
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>Listar</h2>
-
+    <h2>
+        Listar</h2>
     <table>
         <tr>
-            <th></th>
+            <th>
+            </th>
             <th>
                 data
             </th>
@@ -29,7 +29,6 @@
             <th>
                 outrasinfos
             </th>
-         
             <th>
                 usuario_id
             </th>
@@ -37,13 +36,12 @@
                 valor
             </th>
         </tr>
-
-    <% foreach (var item in Model) { %>
-    
+        <% foreach (var item in Model)
+           { %>
         <tr>
             <td>
-   
-                <%: Html.ActionLink("Detalhar", "Detalhar", new { id = item.ID })%> |
+                <%: Html.ActionLink("Detalhar", "Detalhar", new { id = item.ID })%>
+                |
                 <%: Html.ActionLink("Excluir", "Excluir", new { id = item.ID })%>
             </td>
             <td>
@@ -64,7 +62,6 @@
             <td>
                 <%: item.outrasinfos %>
             </td>
-            
             <td>
                 <%: item.usuario_id %>
             </td>
@@ -72,18 +69,18 @@
                 <%: item.valor %>
             </td>
         </tr>
-    
-    <% } %>
-
+        <% } %>
     </table>
     <div class="pager">
-		<%= Html.Pager(ViewData.Model.PageSize, ViewData.Model.PageNumber, ViewData.Model.TotalItemCount) %>
-	</div>
+        <%= Html.Pager(ViewData.Model.PageSize, ViewData.Model.PageNumber, ViewData.Model.TotalItemCount) %>
+    </div>
     <p>
         <%: Html.ActionLink("Incluir", "Incluir") %>
     </p>
- <p>
-        <%: Html.ActionLink("Visualizar Lancamentos", "VisualizarLancamento") %>
+    <p>
+        <%: Html.ActionLink("Visualizar Lancamentos Detalhados", "VisualizarDetalheLancamento")%>
+    </p>
+     <p>
+        <%: Html.ActionLink("Visualizar Resumo dos Lancamentos", "VisualizarResumoLancamento") %>
     </p>
 </asp:Content>
-

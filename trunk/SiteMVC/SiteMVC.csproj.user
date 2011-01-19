@@ -11,8 +11,7 @@
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
-          <ExternalProgram>
-          </ExternalProgram>
+          <ExternalProgram>C:\Program Files\Internet Explorer\iexplore.exe</ExternalProgram>
           <StartExternalURL>
           </StartExternalURL>
           <StartCmdLineArguments>

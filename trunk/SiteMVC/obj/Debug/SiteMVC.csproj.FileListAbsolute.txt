@@ -10,3 +10,10 @@ E:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.pdb
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
 E:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.dll
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.dll
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.pdb
+D:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.dll
+D:\Projetos\EmprestimoFacil\SiteMVC\obj\Debug\SiteMVC.pdb

@@ -304,6 +304,7 @@
     <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
     <Property Name="valor" Type="float" Nullable="false" />
     <Property Name="valor_pago" Type="float" />
+    <Property Name="visualizada" Type="char" MaxLength="1" />
   </EntityType>
   <EntityType Name="prazopagamento">
     <Key>

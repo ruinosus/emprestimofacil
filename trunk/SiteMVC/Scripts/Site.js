@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $(".datepicker").datepicker({
         showAnim: '',
-        dateFormat: 'dd/mm/yyyy',
+        dateFormat: 'dd/mm/yy',
         showOn: 'button',
         buttonImageOnly: true,
         buttonImage: '../../Scripts/txtdropdown/txtdropdown-btn.png',
