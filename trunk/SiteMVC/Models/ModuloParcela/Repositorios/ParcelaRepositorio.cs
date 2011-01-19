@@ -56,6 +56,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (parcela.data_pagamento.HasValue)
+                        {
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.data_pagamento == parcela.data_pagamento
+                                          select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
 
                         break;
                     }
@@ -81,6 +92,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                                                 where
                                                 t.emprestimo_id == parcela.emprestimo_id
                                                 select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (parcela.data_pagamento.HasValue)
+                        {
+
+                            resultado.AddRange((from t in resultado
+                                          where
+                                          t.data_pagamento == parcela.data_pagamento
+                                          select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
