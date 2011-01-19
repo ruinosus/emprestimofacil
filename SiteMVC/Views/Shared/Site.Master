@@ -24,31 +24,6 @@
                 <h1>
                     Emprest Fácil - Seu empréstimo com facilidade.</h1>
 
-                    <br />Criar tela de "Resumo Lançamento". Onde seja mostrado o total das parcelas pagas, e o total de emprestimos realizados.
-                    <br />Criar tela mostranto as parcelas pagas, mas que foi informado a data anterior a data atual.(Adicionar Flag na parcela que indique que essa ja foi visualizada)
-                    <br />Deixar tela de cadastro de Lançamento igual a tela de cadastro de cliente.
-                    <br />Adicionar nome do cliente no "Detalhamento do Dia".
-                    <br />Criar tela de Inserir despesas dentro do controller de lançamento
-                    <br />Tirar tela de incluir Lançamento para deixar que a propria aplicação adicione os lançamentos.
-                    <br />Criar Opção para cancelar a parcela paga erroneamente.
-                    <br />Alterar criação de parcelas extras da ultima data, para a data da parcela atual. ex: um cliente paga um valor de R$ 45,00 numa parcela de R$60,00, sobrando R$15,00 da para ser criada uma proxima parcela com a data dessa parcela paga incompleta.
-                    <br />Criar verificação se o usuário está logado em cada view.
-                    <br />Melhorar visual do projeto.
-                    <br />Arrumar Css do textBox de senha.
-                    <br />Ajustar campo data no jQuery.
-                    <br />Criar mascaras para campos.(inteiros, monetarios,cpf)
-                    <br />Criar pesquisas mais detalhadas para os controllers.(por nome, tipo, etc)
-                    <br />Criar relatório especifico para cada cliente.(Quanto de emprestimo o cliente ja pegou,Quanto o cliente ja pagou, quanto ainda deve).
-                    <br />Criar relatorio mostrando as dividas existentes dos clientes.(Mostrar quanto ainda falta receber de todos clientes separados por datas)[prévia de lançamentos futuros]
-                    <br />Validar se o cliente pode fazer emprestimo baseado na divida e no limite.(um cliente com divida não pode fazer emprestimo)
-                    <br />Exibir na tela de baixa de parcela o nome do cliente e o número da parcela paga, quanto ainda deve e exibir mensagem de informação sobre a parcela paga.
-                    <br />Modificar boletos para impressão da parcela.
-                    <br />Criar relatorio geral e detalhado dos lançamentos agrupados por area.
-                    <br />Filtrar os perfis de acesso de acordo com a area do usuário logado, exceto para gerentes e o administrador.
-                    <br />remover opção de exclusão no lançamento.
-                    <br />Verificar opção de exclui de todos os controllers.(da erro no relacionamento)
-                    <br />Criar verificação de login no cadastro de usuário.    
-                    <br />Avisar na hora do emprestimo para um determinado cliente sobre o limite disponível para o tal.
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>

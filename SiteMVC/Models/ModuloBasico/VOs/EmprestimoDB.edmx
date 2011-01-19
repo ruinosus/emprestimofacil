@@ -309,6 +309,7 @@
           <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
           <Property Name="valor" Type="float" Nullable="false" />
           <Property Name="valor_pago" Type="float" />
+          <Property Name="visualizada" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="prazopagamento">
           <Key>
@@ -1042,6 +1043,7 @@
           <Property Name="valor_pago" Type="Single" />
           <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.parcela_ibfk_1" FromRole="parcela" ToRole="emprestimo" />
           <NavigationProperty Name="statusparcela" Relationship="EmprestimoModel.parcela_ibfk_2" FromRole="parcela" ToRole="statusparcela" />
+          <Property Type="String" Name="visualizada" />
         </EntityType>
         <EntityType Name="PrazoPagamento">
           <Key>
@@ -1584,7 +1586,8 @@
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="ParcelaSet"><EntityTypeMapping TypeName="EmprestimoModel.Parcela"><MappingFragment StoreEntitySet="parcela">
-            <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
+            <ScalarProperty Name="visualizada" ColumnName="visualizada" />
+                <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
             <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
             <ScalarProperty Name="emprestimo_id" ColumnName="emprestimo_id" />
             <ScalarProperty Name="ID" ColumnName="id" />

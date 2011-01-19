@@ -4973,6 +4973,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private Nullable<global::System.Single> _valor_pago;
         partial void Onvalor_pagoChanging(Nullable<global::System.Single> value);
         partial void Onvalor_pagoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String visualizada
+        {
+            get
+            {
+                return _visualizada;
+            }
+            set
+            {
+                OnvisualizadaChanging(value);
+                ReportPropertyChanging("visualizada");
+                _visualizada = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("visualizada");
+                OnvisualizadaChanged();
+            }
+        }
+        private global::System.String _visualizada;
+        partial void OnvisualizadaChanging(global::System.String value);
+        partial void OnvisualizadaChanged();
 
         #endregion
     

@@ -156,6 +156,7 @@ namespace SiteMVC.ModuloParcela.Repositorios
                 parcelaAux.statusparcela_id = parcela.statusparcela_id;
                 parcelaAux.valor = parcela.valor;
                 parcelaAux.valor_pago = parcela.valor_pago;
+                parcelaAux.visualizada = parcela.visualizada;
                 
 
 

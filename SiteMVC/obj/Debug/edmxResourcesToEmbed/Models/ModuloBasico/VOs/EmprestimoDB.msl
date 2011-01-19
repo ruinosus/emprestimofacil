@@ -182,6 +182,7 @@
     <EntitySetMapping Name="ParcelaSet">
       <EntityTypeMapping TypeName="EmprestimoModel.Parcela">
         <MappingFragment StoreEntitySet="parcela">
+          <ScalarProperty Name="visualizada" ColumnName="visualizada" />
           <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
           <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
           <ScalarProperty Name="emprestimo_id" ColumnName="emprestimo_id" />

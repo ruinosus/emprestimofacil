@@ -1,5 +1,5 @@
 ﻿
-ALTER TABLE `emprestimo`.`cliente` ADD COLUMN `observacao` VARCHAR(1000) NULL  AFTER `limite` ;
+ALTER TABLE `emprestimo`.`cliente` ADD COLUMN `observacao` VARCHAR(1000) NULL  AFTER `limite` ;ALTER TABLE `emprestimo`.`parcela` ADD COLUMN `visualizada` char(1) NULL  AFTER `observacoes` ;
 
 
 INSERT INTO `despesatipo` (`id`, `descricao`, `posdescricao`, `timeCreated`, `timeUpdated`) VALUES

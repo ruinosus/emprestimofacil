@@ -8,3 +8,8 @@ E:\Projetos\EmprestimoFacil\MvcPaging\bin\Debug\MvcPaging.pdb
 E:\Projetos\EmprestimoFacil\MvcPaging\obj\Debug\ResolveAssemblyReference.cache
 E:\Projetos\EmprestimoFacil\MvcPaging\obj\Debug\MvcPaging.dll
 E:\Projetos\EmprestimoFacil\MvcPaging\obj\Debug\MvcPaging.pdb
+D:\Projetos\EmprestimoFacil\MvcPaging\bin\Debug\MvcPaging.dll
+D:\Projetos\EmprestimoFacil\MvcPaging\bin\Debug\MvcPaging.pdb
+D:\Projetos\EmprestimoFacil\MvcPaging\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\EmprestimoFacil\MvcPaging\obj\Debug\MvcPaging.dll
+D:\Projetos\EmprestimoFacil\MvcPaging\obj\Debug\MvcPaging.pdb

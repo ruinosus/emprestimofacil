@@ -182,10 +182,11 @@ namespace SiteMVC.ModuloParcela.Processos
                 par.valor = parcela.valor - parcela.valor_pago.Value;
                 par.data_vencimento = p.data_vencimento.AddDays(prazo.qtde_dias);
                 par.statusparcela_id = 2;
-                if (par.data_vencimento.DayOfWeek == DayOfWeek.Saturday)
-                    par.data_vencimento = par.data_vencimento.AddDays(2);
-                else if (par.data_vencimento.DayOfWeek == DayOfWeek.Monday)
-                    par.data_vencimento = par.data_vencimento.AddDays(1);
+                par.data_vencimento = parcela.data_vencimento;
+                //if (par.data_vencimento.DayOfWeek == DayOfWeek.Saturday)
+                //    par.data_vencimento = par.data_vencimento.AddDays(2);
+                //else if (par.data_vencimento.DayOfWeek == DayOfWeek.Monday)
+                //    par.data_vencimento = par.data_vencimento.AddDays(1);
 
 
 

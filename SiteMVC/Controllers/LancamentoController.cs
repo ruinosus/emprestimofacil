@@ -33,7 +33,48 @@ namespace SiteMVC.Controllers
 
         }
 
-        public ActionResult VisualizarLancamento()
+        public ActionResult VisualizarResumoLancamento()
+        {
+            List<Lancamento> lancamentos = new List<Lancamento>();
+            ViewData["lancamentos"] = lancamentos;
+            Lancamento lancamento = new Lancamento();
+            lancamento.data = DateTime.Now;
+
+            return View(lancamento);
+
+
+        }
+        [HttpPost]
+        public ActionResult VisualizarResumoLancamento(Lancamento lancamento)
+        {
+            List<Lancamento> lancamentos = new List<Lancamento>();
+            try
+            {
+                if (default(DateTime) != lancamento.data)
+                {
+                    ILancamentoProcesso processo = LancamentoProcesso.Instance;
+                    var resultado = processo.Consultar(lancamento, TipoPesquisa.E);
+                    lancamentos = resultado;
+                    ViewData["lancamentos"] = lancamentos;
+                    return View(lancamento);
+                }
+                else
+                {
+                    throw new Exception("Data do lançamento não informada ou inválida");
+                }
+
+            }
+            catch (Exception e)
+            {
+                ViewData["lancamentos"] = lancamentos;
+                ModelState.AddModelError("data", e.Message);
+                return View(lancamento);
+
+            }
+
+        }
+
+        public ActionResult VisualizarDetalheLancamento()
         {
             List<Lancamento> lancamentos = new List<Lancamento>();
             ViewData["lancamentos"] = lancamentos;
@@ -45,7 +86,7 @@ namespace SiteMVC.Controllers
 
         }
         [HttpPost]
-        public ActionResult VisualizarLancamento(Lancamento lancamento)
+        public ActionResult VisualizarDetalheLancamento(Lancamento lancamento)
         {
             List<Lancamento> lancamentos = new List<Lancamento>();
             try

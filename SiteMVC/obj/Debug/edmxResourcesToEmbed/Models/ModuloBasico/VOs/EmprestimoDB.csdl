@@ -339,6 +339,7 @@
     <Property Name="valor_pago" Type="Single" />
     <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.parcela_ibfk_1" FromRole="parcela" ToRole="emprestimo" />
     <NavigationProperty Name="statusparcela" Relationship="EmprestimoModel.parcela_ibfk_2" FromRole="parcela" ToRole="statusparcela" />
+    <Property Type="String" Name="visualizada" />
   </EntityType>
   <EntityType Name="PrazoPagamento">
     <Key>
