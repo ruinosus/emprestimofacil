@@ -42,7 +42,6 @@
             <td>
                 <%: Html.ActionLink("Detalhar", "Detalhar", new { id = item.ID })%>
                 |
-                <%: Html.ActionLink("Excluir", "Excluir", new { id = item.ID })%>
             </td>
             <td>
                 <%: String.Format("{0:g}", item.data) %>
@@ -82,5 +81,8 @@
     </p>
      <p>
         <%: Html.ActionLink("Visualizar Resumo dos Lancamentos", "VisualizarResumoLancamento") %>
+    </p>
+    <p>
+        <%: Html.ActionLink("Visualizar Parcelas Pagas", "VisualizarDetalheParcelas")%>
     </p>
 </asp:Content>

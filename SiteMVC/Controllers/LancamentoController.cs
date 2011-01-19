@@ -8,6 +8,7 @@ using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
 using SiteMVC;
+using SiteMVC.ModuloParcela.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -114,6 +115,48 @@ namespace SiteMVC.Controllers
             }
 
         }
+
+        public ActionResult VisualizarDetalheParcelas()
+        {
+            List<Parcela> parcelas = new List<Parcela>();
+            ViewData["parcelas"] = parcelas;
+            Parcela parcela = new Parcela();
+            parcela.data_pagamento = DateTime.Now;
+
+            return View(parcela);
+
+
+        }
+        [HttpPost]
+        public ActionResult VisualizarDetalheParcelas(Parcela parcela)
+        {
+            List<Parcela> parcelas = new List<Parcela>();
+            try
+            {
+                if (default(DateTime) != parcela.data_pagamento)
+                {
+                    IParcelaProcesso processo = ParcelaProcesso.Instance;
+                    var resultado = processo.Consultar(parcela, TipoPesquisa.E);
+                    parcelas = resultado;
+                    ViewData["parcelas"] = parcelas;
+                    return View(parcela);
+                }
+                else
+                {
+                    throw new Exception("Data das parcelas não informada ou inválida");
+                }
+
+            }
+            catch (Exception e)
+            {
+                ViewData["parcelas"] = parcelas;
+                ModelState.AddModelError("data_pagamento", e.Message);
+                return View(parcela);
+
+            }
+
+        }
+
 
         //
         // GET: /StatusParcela/Details/5
@@ -252,5 +295,7 @@ namespace SiteMVC.Controllers
 
 
         }
+
+        public List<Parcela> parcelas { get; set; }
     }
 }
