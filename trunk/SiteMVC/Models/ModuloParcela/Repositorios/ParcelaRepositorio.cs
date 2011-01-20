@@ -67,6 +67,16 @@ namespace SiteMVC.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (!string.IsNullOrEmpty(parcela.visualizada))
+                        {
+
+                            resultado = ((from t in resultado
+                                          where
+                                         t.visualizada!=null && t.visualizada.Equals(parcela.visualizada)
+                                          select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
 
                         break;
                     }
@@ -106,6 +116,18 @@ namespace SiteMVC.ModuloParcela.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
+
+                        if (!string.IsNullOrEmpty(parcela.visualizada))
+                        {
+
+                            resultado.AddRange((from t in resultado
+                                          where
+                                           t.visualizada != null && t.visualizada.Equals(parcela.visualizada)
+                                          select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
 
 
                         break;

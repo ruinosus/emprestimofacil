@@ -29,61 +29,124 @@
     </script>
     <div id="divPrint">
         <table border="1" width="100%">
-            <% foreach (var item in Model)
-               { %>
+
+            <%
+                int i = 0;
+                foreach (var item in Model)
+               {
+                   i++; %>
             <tr>
                 <td style="width: 50%">
-                    <table border="1">
+                    <table cellpadding="0" cellspacing="0" border="1" width="100%">
                         <tr>
-                            <td style="width: 250px">
-                                Sequencial:<b>
-                                    <%: item.sequencial %></b>
-                            </td>
-                            <td style="width: 200px">
-                                Data Vencimento:<b><%: item.data_vencimento.ToString("dd/MM/yyyy")%></b>
-                            </td>
                             <td colspan="2">
-                                Valor:<b>
-                                    <%: item.valor %></b>
+                                Emprest Fácil - Documento:
+                            </td>
+                            <td>
+                                  <%: item.ID %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                 <%: item.emprestimo.cliente.ID%> -   <%: item.emprestimo.cliente.nome%>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                            </td>
-                            <td>
-                                Data Pagamento:&nbsp;&nbsp;
+                                Area:
                             </td>
                             <td colspan="2">
-                                Valor Pago:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <%: item.emprestimo.cliente.area.descricao %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Vendedor:
+                            </td>
+                            <td colspan="2">
+                             <%: item.emprestimo.usuario.nome%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Vencimento:
+                            </td>
+                            <td colspan="2">
+                             <%: item.data_vencimento.ToString("dd/MM/yyyy")%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Parcela:
+                            </td>
+                            <td colspan="2">
+                             <%: i %>/<%: Model.Count() %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Valor R$:
+                            </td>
+                            <td colspan="2">
+                            <%: item.valor%>
                             </td>
                         </tr>
                     </table>
+                    
                 </td>
                 <td style="width: 50%">
-                    <table border="1">
+                <table class="clear" cellpadding="0" cellspacing="0" border="1" width="100%">
                         <tr>
-                            <td style="width: 250px">
-                                Sequencial:<b>
-                                    <%: item.sequencial %></b>
-                            </td>
-                            <td style="width: 200px">
-                                Data Vencimento:<b><%:  item.data_vencimento.ToString("dd/MM/yyyy") %></b>
-                            </td>
                             <td colspan="2">
-                                Valor:<b>
-                                    <%: item.valor %></b>
+                                Emprest Fácil - Documento:
+                            </td>
+                            <td>
+                                  <%: item.ID %></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                 <%: item.emprestimo.cliente.ID%> -   <%: item.emprestimo.cliente.nome%>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Identificador:<b>
-                                    <%: item.ID %></b>
-                            </td>
-                            <td>
-                                Data Pagamento:&nbsp;&nbsp;
+                                Area:
                             </td>
                             <td colspan="2">
-                                Valor Pago:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <%: item.emprestimo.cliente.area.descricao %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Vendedor:
+                            </td>
+                            <td colspan="2">
+                             <%: item.emprestimo.usuario.nome%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Vencimento:
+                            </td>
+                            <td colspan="2">
+                             <%: item.data_vencimento.ToString("dd/MM/yyyy")%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Parcela:
+                            </td>
+                            <td colspan="2">
+                             <%: i %>/<%: Model.Count() %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Valor R$:
+                            </td>
+                            <td colspan="2">
+                            <%: item.valor%>
                             </td>
                         </tr>
                     </table>
