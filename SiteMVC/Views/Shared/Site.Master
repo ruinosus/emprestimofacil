@@ -23,7 +23,6 @@
             <div id="title">
                 <h1>
                     Emprest Fácil - Seu empréstimo com facilidade.</h1>
-
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
@@ -35,13 +34,24 @@
 
                           if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
                           {
+                              if (Session["visualizarParcelas"] != null)
+                              {
+                    %>
+                    <li>
+                        <%: Html.ActionLink("!!!!", "VisualizarParcelas", "Parcela")%></li>
+                    <%
+                              }
                     %>
                     <li>
                         <%: Html.ActionLink("Lancamento", "Listar", "Lancamento")%></li>
-                    <%}
+                    <%
+                             
+                              
+                        
+                          }
                           
                     %>
-                       <li>
+                    <li>
                         <%: Html.ActionLink("Baixar Parcela", "Informar", "Parcela")%></li>
                     <li>
                         <%if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)

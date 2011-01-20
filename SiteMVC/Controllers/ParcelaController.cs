@@ -49,12 +49,12 @@ namespace SiteMVC.Controllers
                             {
                                 if (resultado2[0].statusparcela_id == 2)
                                 {
-                                    ModelState.AddModelError("id", "Você deve dar baixa na parcela de número: ["+parcela.ID+"]");
+                                    ModelState.AddModelError("id", "Você deve dar baixa na parcela de número: [" + parcela.ID + "]");
                                     return View();
                                 }
                             }
 
-                            return RedirectToAction("PagarParcela", new { id = id.Value });
+                            return RedirectToAction("BaixarParcela", new { id = id.Value });
                         }
                         else
                         {
@@ -82,7 +82,7 @@ namespace SiteMVC.Controllers
         }
 
 
-        public ActionResult ImprimirParcelas( int ID)
+        public ActionResult ImprimirParcelas(int ID)
         {
             IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
             Emprestimo emprestimo = new Emprestimo();
@@ -98,7 +98,7 @@ namespace SiteMVC.Controllers
 
 
             List<Parcela> parcelas = resultado;
-         
+
             return View(resultado);
 
 
@@ -126,17 +126,19 @@ namespace SiteMVC.Controllers
 
         }
 
-        public ActionResult PagarParcela(int id)
+        public ActionResult BaixarParcela(int id)
         {
             IParcelaProcesso processo = ParcelaProcesso.Instance;
             Parcela parcela = new Parcela();
             parcela.ID = id;
-            ViewData.Model = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            parcela.data_pagamento = DateTime.Now;
+            ViewData.Model = parcela;
             return View();
         }
 
         [HttpPost]
-        public ActionResult PagarParcela(int id, Parcela parcela)
+        public ActionResult BaixarParcela(int id, Parcela parcela)
         {
             try
             {
@@ -147,10 +149,13 @@ namespace SiteMVC.Controllers
                     parcela.ID = id;
 
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
-                    parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+                    parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.Ou)[0];
                     parcela.valor_pago = valorPago;
                     parcela.statusparcela_id = 1;
-                    parcela.data_pagamento = DateTime.Now;
+                    if (parcela.data_pagamento.Value.Date < DateTime.Now.Date)
+                    {
+                        parcela.visualizada = "F";
+                    }
                     parcela.timeUpdated = DateTime.Now;
                     processo.Alterar(parcela);
                     processo.Confirmar();
@@ -220,6 +225,56 @@ namespace SiteMVC.Controllers
             catch (Exception e)
             {
                 return View(parcela);
+            }
+        }
+
+
+
+        public ActionResult VisualizarParcelas()
+        {
+            if (Session["VisualizarParcelas"] != null)
+            {
+                ViewData.Model = (List<Parcela>)Session["VisualizarParcelas"];
+                return View();
+            }
+            else
+                return RedirectToAction("Index", "Home");
+        }
+
+
+        //
+        // POST: /StatusParcela/Edit/5
+
+        [HttpPost]
+        public ActionResult VisualizarParcelas(FormCollection form)
+        {
+            List<Parcela> parcelas = null;
+            if (Session["VisualizarParcelas"] != null)
+            {
+                parcelas = (List<Parcela>)Session["VisualizarParcelas"];
+            }
+            else
+                return RedirectToAction("Index", "Home");
+          
+
+            try
+            {
+                foreach (Parcela parcela in parcelas)
+                {
+                    IParcelaProcesso processo = ParcelaProcesso.Instance;
+                    parcela.timeUpdated = DateTime.Now;
+                    parcela.visualizada = "V";
+                    processo.Alterar(parcela);
+                    processo.Confirmar();
+                }
+                Session["VisualizarParcelas"] = null;
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception e)
+            {
+                ViewData.Model = (List<Parcela>)Session["VisualizarParcelas"];
+                return View();
+
             }
         }
 

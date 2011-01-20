@@ -336,8 +336,9 @@
     <Content Include="Views\Parcela\Alterar.aspx" />
     <Content Include="Views\Parcela\ImprimirParcelas.aspx" />
     <Content Include="Views\Parcela\Informar.aspx" />
-    <Content Include="Views\Parcela\PagarParcela.aspx" />
+    <Content Include="Views\Parcela\BaixarParcela.aspx" />
     <Content Include="Views\Parcela\ParcelaEmprestimo.aspx" />
+    <Content Include="Views\Parcela\VisualizarParcelas.aspx" />
     <Content Include="Views\Shared\EditorTemplates\ClienteDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\TimeSpan.ascx" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
