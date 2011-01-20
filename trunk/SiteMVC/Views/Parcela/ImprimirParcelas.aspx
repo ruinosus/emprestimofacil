@@ -92,6 +92,6 @@
             <% } %>
         </table>
     </div>
-        <input type="image" src="../../Content/ui-lightness/images/impressora.jpg"
- onclick="CallPrint('divPrint');" style="width:40px; height:40px"  />
+    <input type="image" src="../../Content/ui-lightness/images/impressora.jpg" onclick="CallPrint('divPrint');"
+        style="width: 40px; height: 40px" />
 </asp:Content>
