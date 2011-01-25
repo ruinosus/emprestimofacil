@@ -27,14 +27,42 @@
 
         }
     </script>
-    <div id="divPrint">
+
+    <%
+        decimal quantidadePaginas = (decimal)ViewData["quantidadePaginas"];
+        int cont = 0;
+        int paginaAtual = -1;
+        int cont2 = 0;
+       
+        for (int j = 0; j < quantidadePaginas; j++)
+      {
+          cont = 0;
+          paginaAtual++;
+     %>
+    <div id="divPrint<%:j%>">
         <table border="1" width="100%">
 
             <%
+          //int valorMaximo = 5;
+
+          //if (Model.Count() <= 5)
+          //{
+          //    valorMaximo = Model.Count();
+          //}
+          
+          
                 int i = 0;
-                foreach (var item in Model)
+                SiteMVC.Models.ModuloBasico.VOs.Parcela item = new SiteMVC.Models.ModuloBasico.VOs.Parcela();
+                List<SiteMVC.Models.ModuloBasico.VOs.Parcela> lista = (List<SiteMVC.Models.ModuloBasico.VOs.Parcela>)Model;
+                for (int k = cont2; k < lista.Count; k++)
                {
-                   i++; %>
+                   item = lista[k];
+                   i++;
+                   cont++;
+                   cont2++;
+                   if (cont > 5)
+                       break;
+                     %>
             <tr>
                 <td style="width: 50%">
                     <table cellpadding="0" cellspacing="0" border="1" width="100%">
@@ -101,7 +129,7 @@
                                 Emprest Fácil - Documento:
                             </td>
                             <td>
-                                  <%: item.ID %></b>
+                                  <%: item.ID %>
                             </td>
                         </tr>
                         <tr>
@@ -155,6 +183,7 @@
             <% } %>
         </table>
     </div>
-    <input type="image" src="../../Content/ui-lightness/images/impressora.jpg" onclick="CallPrint('divPrint');"
+    <input type="image" src="../../Content/ui-lightness/images/impressora.jpg" onclick="CallPrint('divPrint<%:j%>');"
         style="width: 40px; height: 40px" />
+         <%} %>
 </asp:Content>

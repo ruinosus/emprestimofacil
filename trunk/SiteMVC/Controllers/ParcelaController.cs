@@ -95,7 +95,7 @@ namespace SiteMVC.Controllers
             parcela.emprestimo_id = ID;
             var resultado = processo.Consultar(parcela, TipoPesquisa.E);
 
-
+            ViewData["quantidadePaginas"] = Math.Ceiling((decimal)resultado.Count / 5);
 
             List<Parcela> parcelas = resultado;
 
