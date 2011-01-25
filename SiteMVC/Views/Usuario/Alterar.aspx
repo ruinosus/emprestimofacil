@@ -317,8 +317,8 @@
                 </td>
                 <td>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.senha) %>
-                        <%: Html.ValidationMessageFor(model => model.senha) %>
+                        <%: Html.HiddenFor(model => model.senha) %>
+                       
                     </div>
                 </td>
                 <td>

@@ -78,7 +78,7 @@
         <div class="display-field"><%: Model.secao %></div>
         
         <div class="display-label">senha</div>
-        <div class="display-field"><%: Model.senha %></div>
+
         
         <div class="display-label">sexo</div>
         <div class="display-field"><%: Model.sexo %></div>

@@ -448,16 +448,13 @@
                         <%: Html.LabelFor(model => model.observacao) %>
                     </div>
                 </td>
-                <td>
+                <td colspan="3">
                    <div class="editor-field">
                         <%: Html.TextAreaFor(model => model.observacao)%>
                         <%: Html.ValidationMessageFor(model => model.observacao) %>
                     </div>
                 </td>
-                <td>
-                </td>
-                <td>
-                </td>
+               
             </tr>
         </table>
     </fieldset>
