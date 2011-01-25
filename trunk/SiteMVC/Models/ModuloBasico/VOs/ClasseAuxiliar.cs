@@ -19,6 +19,7 @@ using System.Drawing.Drawing2D;
 using SiteMVC.ModuloBasico;
 using SiteMVC.ModuloBasico.Constantes;
 using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.Helpers;
 
 namespace SiteMVC.Models.ModuloBasico.VOs
 {
@@ -114,6 +115,40 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             }
         }
 
+        /// <summary>
+        /// Método responsável por montar um combo com um Enum.
+        /// </summary>
+        /// <typeparam name="T">Enum a ser exibido no combo.</typeparam>
+        /// <param name="cbo">combo para montatem</param>
+        public static List<CheckBoxListInfo> CarregarCheckBoxEnum<T> (List<int> enumeradores)
+        {   
+            var rolesList = new List<CheckBoxListInfo>();
+            Type objType = typeof(T);
+            FieldInfo[] propriedades = objType.GetFields();
+            bool marcado = false;
+            foreach (FieldInfo objField in propriedades)
+            {
+
+                DescriptionAttribute[] attributes = (DescriptionAttribute[])objField.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+                if (attributes.Length > 0)
+                {
+                    
+                    if (enumeradores != null)
+                        for (int i = 0; i < enumeradores.Count; i++)
+                        {
+                            if (Convert.ToInt16(objField.GetRawConstantValue().ToString()) == (enumeradores[i]) && !marcado)
+                                marcado = true;
+                        }
+                    rolesList.Add(new CheckBoxListInfo(objField.GetRawConstantValue().ToString(), attributes[0].Description, marcado));
+                    marcado = false;
+                }
+
+            }
+
+            return rolesList;
+        }
+
 
         /// <summary>
         /// Método responsável por converter uma imagem em um array de bytes.
@@ -156,7 +191,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             return ms.ToArray();
         }
 
-         /// <summary>
+        /// <summary>
         /// Método responsável por converter um array de bytes em uma imagem.
         /// </summary>
         /// <param name="byteArrayIn">Array de bytes a ser convertido.</param>
@@ -167,7 +202,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
             return returnImage;
 
-        }        
+        }
 
     }
 }

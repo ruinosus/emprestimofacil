@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.Emprestimo>" %>
-<%@ Import Namespace="SiteMVC.ModuloBasico.Enums"%>
+
+<%@ Import Namespace="SiteMVC.ModuloBasico.Enums" %>
+<%@ Import Namespace="SiteMVC.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Incluir
 </asp:Content>
@@ -53,22 +55,11 @@
             <%: Html.TextBoxFor(model => model.valor) %>
             <%: Html.ValidationMessageFor(model => model.valor) %>
         </div>
-     <%--   <% foreach (var dayOfWeek in Model.WeekDays)
-           {%>
-        <%= dayOfWeek.ToString()%><%= Html.CheckBox(dayOfWeek.ToString()) %>
-        <%} %>--%>
-
-        <% foreach (var dayOfWeek in Enum.GetValues(typeof(SiteMVC.ModuloBasico.Enums.DayOfWeek)))
-           {
-               
-               
-               var teste = Model. %>
-  <label>
-    <!-- The HasFlag stuff is optional and is just there to show how it would be populated if you're doing a `GET` request. -->
-    <input type="checkbox" name="WeekDays[]" value="<%= (int)dayOfWeek%>" <%: Model.WeekDays.HasFlag(dayOfWeek) ? "checked='checked'" : "" %>" />
-    <%= dayOfWeek %>
-  </label>
-<% } %>
+         <div class="editor-label">
+            Dias Úteis
+        </div>
+        <div class="editor-field">
+            <%= Html.CheckBoxList("dias", (List<CheckBoxListInfo>)ViewData["DiasUteis"])%></div>
         <%: Html.HiddenFor(model => model.cliente_id) %>
         <%: Html.HiddenFor(model => model.usuario_id) %>
         <p>

@@ -9,6 +9,7 @@ using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
 using SiteMVC;
 using SiteMVC.ModuloCliente.Processos;
+using SiteMVC.Helpers;
 
 namespace SiteMVC.Controllers
 {
@@ -45,7 +46,24 @@ namespace SiteMVC.Controllers
             emprestimo.prazospagamento_id = 0;
             emprestimo.data_emprestimo = DateTime.Now;
             emprestimo.tipoemprestimo_id = 0;
-            emprestimo.WeekDays = new List<SiteMVC.ModuloBasico.Enums.DayOfWeek>();
+            //emprestimo.WeekDays = new List<SiteMVC.ModuloBasico.Enums.DiasUteis>();
+
+            //emprestimo.WeekDays.Add(DiasUteis.Segunda);
+            //emprestimo.WeekDays.Add(DiasUteis.Terca);
+            //emprestimo.WeekDays.Add(DiasUteis.Quarta);
+            //emprestimo.WeekDays.Add(DiasUteis.Quinta);
+            //emprestimo.WeekDays.Add(DiasUteis.Sexta);
+            //emprestimo.WeekDays.Add(DiasUteis.Sabado);
+            //emprestimo.WeekDays.Add(DiasUteis.Domingo);
+
+            //var rolesList = new List<CheckBoxListInfo>();
+            //foreach (var dias in emprestimo.WeekDays)
+            //{
+            //    rolesList.Add(new CheckBoxListInfo(dias, dias, false));
+            //}
+            ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(null);
+
+
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
             ViewData.Model = emprestimo;
             return View();
@@ -55,13 +73,41 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Create
 
         [HttpPost]
-        [ValidateInput(false)]
+        // [ValidateInput(false)]
 
-        public ActionResult IncluirEmprestimoCliente(Emprestimo emprestimo, FormCollection collection)
+        public ActionResult IncluirEmprestimoCliente(Emprestimo emprestimo, string[] dias)
         {
 
             try
             {
+
+                List<int> diasUteis = new List<int>();
+                List<DayOfWeek> dayOfWeeks = new List<DayOfWeek>();
+                if(dias!=null)
+                for (int i = 0; i < dias.Length; i++)
+                {
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Friday)
+                        dayOfWeeks.Add(DayOfWeek.Friday);
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Monday)
+                        dayOfWeeks.Add(DayOfWeek.Monday);
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Saturday)
+                        dayOfWeeks.Add(DayOfWeek.Saturday);
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Sunday)
+                        dayOfWeeks.Add(DayOfWeek.Sunday);
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Thursday)
+                        dayOfWeeks.Add(DayOfWeek.Thursday);
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Tuesday)
+                        dayOfWeeks.Add(DayOfWeek.Tuesday);
+                    if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Wednesday)
+                        dayOfWeeks.Add(DayOfWeek.Wednesday);
+
+
+                        diasUteis.Add(Convert.ToInt16(dias[i]));
+                }
+
+                ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
+
+                var teste = Request;
                 IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
                 if (ModelState.IsValid)
                 {
@@ -69,7 +115,7 @@ namespace SiteMVC.Controllers
                     emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
 
                     emprestimo.timeCreated = DateTime.Now;
-                    processo.Incluir(emprestimo);
+                    processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
                     return RedirectToAction("EmprestimoCliente", new { id = ClasseAuxiliar.ClienteSelecionado.ID });
                 }
@@ -157,7 +203,7 @@ namespace SiteMVC.Controllers
                 {
                     IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
                     emprestimo.timeCreated = DateTime.Now;
-                    processo.Incluir(emprestimo);
+                    processo.Incluir(emprestimo,null);
                     processo.Confirmar();
                     return RedirectToAction("Index");
                 }

@@ -81,6 +81,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\ModuloArea\Constantes\AreaConstantes.cs" />
     <Compile Include="Models\ModuloArea\Excecoes\AreaNaoAlteradaExcecao.cs" />
     <Compile Include="Models\ModuloArea\Excecoes\AreaNaoExcluidaExcecao.cs" />

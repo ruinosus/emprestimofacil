@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 namespace SiteMVC.ModuloBasico.Enums
 {
     public enum TipoPesquisa
@@ -8,16 +9,23 @@ namespace SiteMVC.ModuloBasico.Enums
         Ou = 1
     }
 
-    [Flags]//<-- Note the Flags attribute
-    public enum DayOfWeek
+
+    public enum DiasUteis
     {
-        Monday = 1,
-        Tuesday = 2,
-        Wednesday = 4,
-        Thursday = 8,
-        Friday = 16,
-        Saturday = 32,
-        Sunday = 64,
+        [Description("Segunda-feira")]
+        Segunda = 1,
+        [Description("Terça-feira")]
+        Terca = 2,
+        [Description("Quarta-feira")]
+        Quarta = 3,
+        [Description("Quinta-feira")]
+        Quinta = 4,
+        [Description("Sexta-feira")]
+        Sexta = 5,
+        [Description("Sabado")]
+        Sabado = 6,
+        [Description("Domingo")]
+        Domingo = 7,
     }
 
     //public static class Enum<T>

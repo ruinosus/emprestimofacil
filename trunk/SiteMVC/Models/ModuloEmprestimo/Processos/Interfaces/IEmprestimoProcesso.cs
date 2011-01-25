@@ -17,7 +17,8 @@ namespace SiteMVC.ModuloEmprestimo.Processos
         /// Método responsável por incluir um emprestimo no sistema.
         /// </summary>
         /// <param name="emprestimo">Objeto do tipo emprestimo a ser incluido.</param>
-        void Incluir(Emprestimo emprestimo);
+        /// <param name="diasUteis">Dias uteis a serem contabilizados</param>
+        void Incluir(Emprestimo emprestimo, List<DayOfWeek> diasUteis);
 
         /// <summary>
         /// Método responsável por excluir um emprestimo do sistema.
