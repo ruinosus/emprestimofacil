@@ -43,6 +43,14 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "parcela_ibfk_2", "statusparcela", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.StatusParcela), "parcela", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Parcela), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "prestacaoconta_ibfk_1", "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "prestacaoconta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.PrestacaoConta), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_4", "usuariotipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.UsuarioTipo), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "area_ibfk_2", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Area), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "cliente_ibfk_7", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Cliente), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_3", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Despesa), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_5", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Emprestimo), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "lancamento_ibfk_3", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Lancamento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Lancamento), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "parcela_ibfk_3", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Parcela", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Parcela), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "prestacaoconta_ibfk_2", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "PrestacaoConta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.PrestacaoConta), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "usuario_ibfk_6", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), "Usuario1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Usuario), true)]
 
 #endregion
 
@@ -715,6 +723,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.DateTimeOffset _timeUpdated;
         partial void OntimeUpdatedChanging(global::System.DateTimeOffset value);
         partial void OntimeUpdatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -798,6 +830,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("EmprestimoModel.usuario_ibfk_3", "usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "area_ibfk_2", "Usuario")]
+        public Usuario usuario_1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.area_ibfk_2", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.area_ibfk_2", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuario_1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.area_ibfk_2", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.area_ibfk_2", "Usuario", value);
                 }
             }
         }
@@ -2039,6 +2109,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.String _observacao;
         partial void OnobservacaoChanging(global::System.String value);
         partial void OnobservacaoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -2315,6 +2409,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "cliente_ibfk_7", "Usuario")]
+        public Usuario usuario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.cliente_ibfk_7", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.cliente_ibfk_7", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.cliente_ibfk_7", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.cliente_ibfk_7", "Usuario", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -2549,6 +2681,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.Single _valor;
         partial void OnvalorChanging(global::System.Single value);
         partial void OnvalorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -2626,6 +2782,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<DespesaTipo>("EmprestimoModel.despesa_ibfk_2", "despesatipo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "despesa_ibfk_3", "Usuario")]
+        public Usuario usuario1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.despesa_ibfk_3", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.despesa_ibfk_3", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuario1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.despesa_ibfk_3", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.despesa_ibfk_3", "Usuario", value);
                 }
             }
         }
@@ -3125,6 +3319,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.Single _valor;
         partial void OnvalorChanging(global::System.Single value);
         partial void OnvalorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -3300,6 +3518,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Parcela>("EmprestimoModel.parcela_ibfk_1", "parcela", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "emprestimo_ibfk_5", "Usuario")]
+        public Usuario usuario1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.emprestimo_ibfk_5", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.emprestimo_ibfk_5", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuario1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.emprestimo_ibfk_5", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.emprestimo_ibfk_5", "Usuario", value);
                 }
             }
         }
@@ -3945,6 +4201,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.Single _valor;
         partial void OnvalorChanging(global::System.Single value);
         partial void OnvalorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -4022,6 +4302,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LancamentoTipo>("EmprestimoModel.lancamento_ibfk_2", "lancamentotipo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "lancamento_ibfk_3", "Usuario")]
+        public Usuario usuario1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.lancamento_ibfk_3", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.lancamento_ibfk_3", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuario1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.lancamento_ibfk_3", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.lancamento_ibfk_3", "Usuario", value);
                 }
             }
         }
@@ -4997,6 +5315,54 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.String _visualizada;
         partial void OnvisualizadaChanging(global::System.String value);
         partial void OnvisualizadaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String contabilizada
+        {
+            get
+            {
+                return _contabilizada;
+            }
+            set
+            {
+                OncontabilizadaChanging(value);
+                ReportPropertyChanging("contabilizada");
+                _contabilizada = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("contabilizada");
+                OncontabilizadaChanged();
+            }
+        }
+        private global::System.String _contabilizada;
+        partial void OncontabilizadaChanging(global::System.String value);
+        partial void OncontabilizadaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -5074,6 +5440,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StatusParcela>("EmprestimoModel.parcela_ibfk_2", "statusparcela", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "parcela_ibfk_3", "Usuario")]
+        public Usuario usuario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.parcela_ibfk_3", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.parcela_ibfk_3", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.parcela_ibfk_3", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.parcela_ibfk_3", "Usuario", value);
                 }
             }
         }
@@ -5625,6 +6029,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.Single _valorsaida;
         partial void OnvalorsaidaChanging(global::System.Single value);
         partial void OnvalorsaidaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -5664,6 +6092,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.prestacaoconta_ibfk_1", "usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "prestacaoconta_ibfk_2", "Usuario")]
+        public Usuario usuario1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.prestacaoconta_ibfk_2", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.prestacaoconta_ibfk_2", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuario1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.prestacaoconta_ibfk_2", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.prestacaoconta_ibfk_2", "Usuario", value);
                 }
             }
         }
@@ -6719,6 +7185,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private global::System.String _zona;
         partial void OnzonaChanging(global::System.String value);
         partial void OnzonaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> usuariomodificacao_id
+        {
+            get
+            {
+                return _usuariomodificacao_id;
+            }
+            set
+            {
+                Onusuariomodificacao_idChanging(value);
+                ReportPropertyChanging("usuariomodificacao_id");
+                _usuariomodificacao_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("usuariomodificacao_id");
+                Onusuariomodificacao_idChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _usuariomodificacao_id;
+        partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
+        partial void Onusuariomodificacao_idChanged();
 
         #endregion
     
@@ -7020,6 +7510,220 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UsuarioTipo>("EmprestimoModel.usuario_ibfk_4", "usuariotipo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "area_ibfk_2", "Area")]
+        public EntityCollection<Area> area_1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Area>("EmprestimoModel.area_ibfk_2", "Area");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Area>("EmprestimoModel.area_ibfk_2", "Area", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "cliente_ibfk_7", "Cliente")]
+        public EntityCollection<Cliente> cliente
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cliente>("EmprestimoModel.cliente_ibfk_7", "Cliente");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cliente>("EmprestimoModel.cliente_ibfk_7", "Cliente", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "despesa_ibfk_3", "Despesa")]
+        public EntityCollection<Despesa> despesa1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Despesa>("EmprestimoModel.despesa_ibfk_3", "Despesa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Despesa>("EmprestimoModel.despesa_ibfk_3", "Despesa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "emprestimo_ibfk_5", "Emprestimo")]
+        public EntityCollection<Emprestimo> emprestimo1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Emprestimo>("EmprestimoModel.emprestimo_ibfk_5", "Emprestimo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Emprestimo>("EmprestimoModel.emprestimo_ibfk_5", "Emprestimo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "lancamento_ibfk_3", "Lancamento")]
+        public EntityCollection<Lancamento> lancamento1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Lancamento>("EmprestimoModel.lancamento_ibfk_3", "Lancamento");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Lancamento>("EmprestimoModel.lancamento_ibfk_3", "Lancamento", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "parcela_ibfk_3", "Parcela")]
+        public EntityCollection<Parcela> parcela
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Parcela>("EmprestimoModel.parcela_ibfk_3", "Parcela");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Parcela>("EmprestimoModel.parcela_ibfk_3", "Parcela", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "prestacaoconta_ibfk_2", "PrestacaoConta")]
+        public EntityCollection<PrestacaoConta> prestacaoconta1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PrestacaoConta>("EmprestimoModel.prestacaoconta_ibfk_2", "PrestacaoConta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PrestacaoConta>("EmprestimoModel.prestacaoconta_ibfk_2", "PrestacaoConta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "usuario_ibfk_6", "Usuario1")]
+        public EntityCollection<Usuario> usuario1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Usuario>("EmprestimoModel.usuario_ibfk_6", "Usuario1");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("EmprestimoModel.usuario_ibfk_6", "Usuario1", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "usuario_ibfk_6", "Usuario")]
+        public Usuario usuario2
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.usuario_ibfk_6", "Usuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.usuario_ibfk_6", "Usuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> usuario2Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("EmprestimoModel.usuario_ibfk_6", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.usuario_ibfk_6", "Usuario", value);
                 }
             }
         }

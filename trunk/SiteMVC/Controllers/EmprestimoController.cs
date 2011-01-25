@@ -45,6 +45,7 @@ namespace SiteMVC.Controllers
             emprestimo.prazospagamento_id = 0;
             emprestimo.data_emprestimo = DateTime.Now;
             emprestimo.tipoemprestimo_id = 0;
+            emprestimo.WeekDays = new List<SiteMVC.ModuloBasico.Enums.DayOfWeek>();
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
             ViewData.Model = emprestimo;
             return View();
