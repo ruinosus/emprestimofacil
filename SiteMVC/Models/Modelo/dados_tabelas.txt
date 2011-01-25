@@ -1,5 +1,13 @@
 ﻿
-ALTER TABLE `emprestimo`.`cliente` ADD COLUMN `observacao` VARCHAR(1000) NULL  AFTER `limite` ;ALTER TABLE `emprestimo`.`parcela` ADD COLUMN `visualizada` char(1) NULL  AFTER `observacoes` ;
+ALTER TABLE `emprestimo`.`cliente` ADD COLUMN `observacao` VARCHAR(1000) NULL  AFTER `limite` ;
+ALTER TABLE `emprestimo`.`parcela` ADD COLUMN `visualizada` char(1) NULL  AFTER `observacoes` ;
+ALTER TABLE `emprestimo`.`parcela` ADD COLUMN `contabilizada` char(1) NULL  AFTER `visualizada` ;
+
+
+ALTER TABLE `emprestimo`.`area` ADD COLUMN `usuarioModificacao_id` INT(10) NULL  AFTER `timeUpdated` ;
+
+
+
 
 
 INSERT INTO `despesatipo` (`id`, `descricao`, `posdescricao`, `timeCreated`, `timeUpdated`) VALUES

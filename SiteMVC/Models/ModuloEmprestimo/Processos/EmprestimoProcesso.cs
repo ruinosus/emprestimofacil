@@ -80,7 +80,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
                 parcela.sequencial = i;
                 dataVencimento = dataVencimento.AddDays(prazo.qtde_dias);
                 
-                if (dataVencimento.DayOfWeek == DayOfWeek.Monday)
+                if (dataVencimento.DayOfWeek == System.DayOfWeek.Monday)
                     dataVencimento = dataVencimento.AddDays(1);
 
 

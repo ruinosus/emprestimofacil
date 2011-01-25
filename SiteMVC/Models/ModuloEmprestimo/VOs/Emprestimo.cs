@@ -12,9 +12,15 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     [MetadataType(typeof(EmprestimoMetadata))]
     public partial class Emprestimo
     {
-   
+
+        public List<SiteMVC.ModuloBasico.Enums.DayOfWeek> WeekDays { get; set; }
+
         internal class EmprestimoMetadata
         {
+
+
+            [DisplayName("Dias Uteis:")]
+            public List<SiteMVC.ModuloBasico.Enums.DayOfWeek> WeekDays { get; set; }
 
             [Required(ErrorMessage = "A data do Emprestimo é necessária para o cadastro.")]
             [DisplayName("Data Emprestimo:")]
