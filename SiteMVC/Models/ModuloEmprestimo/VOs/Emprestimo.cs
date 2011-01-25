@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Objects.DataClasses;
 using System.ComponentModel;
 using System.Web.Mvc;
+using SiteMVC.Helpers;
 namespace SiteMVC.Models.ModuloBasico.VOs
 {
 
@@ -13,14 +14,14 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     public partial class Emprestimo
     {
 
-        public List<SiteMVC.ModuloBasico.Enums.DayOfWeek> WeekDays { get; set; }
+        public List<CheckBoxListInfo> DiasUteis { get; set; }
 
         internal class EmprestimoMetadata
         {
 
 
             [DisplayName("Dias Uteis:")]
-            public List<SiteMVC.ModuloBasico.Enums.DayOfWeek> WeekDays { get; set; }
+            public List<CheckBoxListInfo> DiasUteis { get; set; }
 
             [Required(ErrorMessage = "A data do Emprestimo é necessária para o cadastro.")]
             [DisplayName("Data Emprestimo:")]

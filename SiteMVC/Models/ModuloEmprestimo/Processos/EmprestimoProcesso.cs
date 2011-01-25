@@ -36,7 +36,7 @@ namespace SiteMVC.ModuloEmprestimo.Processos
 
         #region Métodos da Interface
 
-        public void Incluir(Emprestimo emprestimo)
+        public void Incluir(Emprestimo emprestimo, List<DayOfWeek> diasUteis)
         {
 
             this.emprestimoRepositorio.Incluir(emprestimo);
@@ -79,10 +79,10 @@ namespace SiteMVC.ModuloEmprestimo.Processos
                 parcela.data_pagamento = null;
                 parcela.sequencial = i;
                 dataVencimento = dataVencimento.AddDays(prazo.qtde_dias);
-                
-                if (dataVencimento.DayOfWeek == System.DayOfWeek.Monday)
-                    dataVencimento = dataVencimento.AddDays(1);
 
+                //if (dataVencimento.DayOfWeek == System.DayOfWeek.Monday)
+                //    dataVencimento = dataVencimento.AddDays(1);
+                dataVencimento = VerificarProximaData(dataVencimento, diasUteis);
 
                 parcela.data_vencimento = dataVencimento;
                 parcela.valor = valor;
@@ -94,6 +94,25 @@ namespace SiteMVC.ModuloEmprestimo.Processos
 
 
 
+        }
+
+        private DateTime VerificarProximaData(DateTime dataAtual, List<DayOfWeek> diasUteis)
+        {
+            DateTime dataNova = dataAtual;
+            bool valida = false;
+            foreach (DayOfWeek day in diasUteis)
+            {
+                if (day == dataNova.DayOfWeek)
+                    valida = true;
+            }
+            if(!valida)
+            {
+                dataNova = dataNova.AddDays(1);
+                return VerificarProximaData(dataNova, diasUteis);
+
+            }
+            
+            return dataNova;
         }
 
         public void Excluir(Emprestimo emprestimo)
