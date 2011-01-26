@@ -14,7 +14,7 @@ using SiteMVC.ModuloEmprestimo.Processos;
 
 namespace SiteMVC.Controllers
 {
-    public class LancamentoController : Controller
+    public class MovimentacaoController : Controller
     {
         //
         // GET: /Lancamento/
