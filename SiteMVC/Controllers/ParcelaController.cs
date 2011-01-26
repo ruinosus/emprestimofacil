@@ -154,7 +154,7 @@ namespace SiteMVC.Controllers
                     parcela.ID = id;
 
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
-                    parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.Ou)[0];
+                    parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
                     parcela.valor_pago = valorPago;
                     parcela.data_pagamento = dataAtual;
                     parcela.statusparcela_id = 1;
