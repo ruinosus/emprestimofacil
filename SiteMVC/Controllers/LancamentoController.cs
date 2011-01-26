@@ -10,6 +10,7 @@ using SiteMVC.ModuloMunicipio.Processos;
 using SiteMVC;
 using SiteMVC.ModuloParcela.Processos;
 using SiteMVC.ModuloCliente.Processos;
+using SiteMVC.ModuloEmprestimo.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -168,8 +169,45 @@ namespace SiteMVC.Controllers
             IClienteProcesso processo = ClienteProcesso.Instance;
             var resultado = processo.ConsultarClientesDevedores();
             Cliente cliente = new Cliente();
-     
+
             return View(resultado);
+        }
+
+        public ActionResult VisualizarEmprestimosPorPeriodo()
+        {
+            List<Emprestimo> emprestimos = new List<Emprestimo>();
+            EmprestimoPesquisa emprestimoPesquisa = new EmprestimoPesquisa();
+            emprestimoPesquisa.DataInicio = DateTime.Now;
+            emprestimoPesquisa.DataFim = DateTime.Now;
+            ViewData["emprestimos"] = emprestimos;
+            return View(emprestimoPesquisa);
+        }
+
+        [HttpPost]
+        public ActionResult VisualizarEmprestimosPorPeriodo(EmprestimoPesquisa emprestimoPesquisa)
+        {
+            List<Emprestimo> emprestimos = new List<Emprestimo>();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+                    emprestimos = processo.ConsultarEmprestimosPorPeriodo(emprestimoPesquisa.DataInicio, emprestimoPesquisa.DataFim);
+                    ViewData["emprestimos"] = emprestimos;
+                    ViewData.Model = emprestimoPesquisa;
+                    return View(emprestimoPesquisa);
+                }
+                else
+                {
+                    return View(emprestimoPesquisa);
+                }
+            }
+            catch (Exception e)
+            {
+                ViewData["emprestimos"] = emprestimos;
+                return View(emprestimoPesquisa);
+            }
+
         }
 
         #endregion

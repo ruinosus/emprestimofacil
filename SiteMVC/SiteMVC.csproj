@@ -325,6 +325,7 @@
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Lancamento\VisualizarClientesDevedores.aspx" />
     <Content Include="Views\Lancamento\VisualizarDetalheParcelas.aspx" />
+    <Content Include="Views\Lancamento\VisualizarEmprestimosPorPeriodo.aspx" />
     <Content Include="Views\Lancamento\VisualizarResumoLancamento.aspx" />
     <Content Include="Views\Lancamento\Detalhar.aspx" />
     <Content Include="Views\Lancamento\Excluir.aspx" />

@@ -13,7 +13,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     [MetadataType(typeof(EmprestimoMetadata))]
     public partial class Emprestimo
     {
-
+       
         public List<CheckBoxListInfo> DiasUteis { get; set; }
 
         internal class EmprestimoMetadata
@@ -60,15 +60,18 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         }
     }
 
-    public class EmprestimoFormViewModel
+    public class EmprestimoPesquisa
     {
-
-        public Emprestimo Emprestimo { get; set; }
-
-        public Cliente Cliente { get; set; }
-
+        [Required(ErrorMessage = "A data inicial é necessária para a pesquisa.")]
+        [DisplayName("Data Início:")]
+        public DateTime DataInicio { get; set; }
+        [Required(ErrorMessage = "A data final é necessária para a pesquisa.")]
+        [DisplayName("Data Fim:")]
+        public DateTime DataFim { get; set; }
 
     }
+
+
 
 
 }
