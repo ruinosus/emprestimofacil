@@ -175,7 +175,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult VisualizarEmprestimosPorPeriodo()
         {
-            List<Emprestimo> emprestimos = new List<Emprestimo>();
+            IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+            List<Emprestimo> emprestimos = processo.Consultar();
             EmprestimoPesquisa emprestimoPesquisa = new EmprestimoPesquisa();
             emprestimoPesquisa.DataInicio = DateTime.Now;
             emprestimoPesquisa.DataFim = DateTime.Now;
@@ -189,6 +190,9 @@ namespace SiteMVC.Controllers
             List<Emprestimo> emprestimos = new List<Emprestimo>();
             try
             {
+                if(emprestimoPesquisa.DataFim < emprestimoPesquisa.DataInicio)
+                    ModelState.AddModelError("DataFim", "A data final nao pode ser maior que a data inicial.");
+
                 if (ModelState.IsValid)
                 {
                     IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
@@ -199,6 +203,7 @@ namespace SiteMVC.Controllers
                 }
                 else
                 {
+                    ViewData["emprestimos"] = emprestimos;
                     return View(emprestimoPesquisa);
                 }
             }
