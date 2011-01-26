@@ -153,5 +153,12 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     }
 
 
+    public class ClientePesquisa
+    {
+        [UIHint("AreaDropDown")]
+        [DisplayName("Area:")]
+        public long area { get; set; }
+
+    }
 
 }

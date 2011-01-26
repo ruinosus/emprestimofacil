@@ -234,6 +234,18 @@ namespace SiteMVC.ModuloParcela.Processos
             this.parcelaRepositorio.Confirmar();
         }
 
+        public List<Parcela> ConsultarParcelasPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            List<Parcela> parcelas = this.Consultar();
+
+            parcelas = (from p in parcelas
+                        where p.data_vencimento.Date >= dataInicio.Date && p.data_vencimento.Date <= dataFim.Date && p.statusparcela_id == 2
+                           select p).ToList();
+
+            return parcelas;
+
+        }
+
         #endregion
     }
 }

@@ -51,6 +51,8 @@ namespace SiteMVC.ModuloCliente.Processos
         /// <returns>Lista contendo todos os clientes cadastrados.</returns>
         List<Cliente> ConsultarClientesDevedores();
 
+   
+
         /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
