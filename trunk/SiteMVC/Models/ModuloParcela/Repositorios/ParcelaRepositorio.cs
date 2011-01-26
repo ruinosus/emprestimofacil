@@ -44,52 +44,54 @@ namespace SiteMVC.ModuloParcela.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
-
-                        if (parcela.emprestimo_id != 0)
+                        else
                         {
 
-                            resultado = ((from t in resultado
-                                          where
-                                          t.emprestimo_id == parcela.emprestimo_id
-                                          select t).ToList());
+                            if (parcela.emprestimo_id != 0)
+                            {
 
-                            resultado = resultado.Distinct().ToList();
+                                resultado = ((from t in resultado
+                                              where
+                                              t.emprestimo_id == parcela.emprestimo_id
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+                            if (parcela.statusparcela_id != 0)
+                            {
+
+                                resultado = ((from t in resultado
+                                              where
+                                              t.statusparcela_id == parcela.statusparcela_id
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+                            if (parcela.data_pagamento.HasValue)
+                            {
+
+                                resultado = ((from t in resultado
+                                              where
+                                              t.data_pagamento == parcela.data_pagamento
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+                            if (!string.IsNullOrEmpty(parcela.visualizada))
+                            {
+
+                                resultado = ((from t in resultado
+                                              where
+                                             t.visualizada != null && t.visualizada.Equals(parcela.visualizada)
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
                         }
-
-                        if (parcela.statusparcela_id != 0)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.statusparcela_id == parcela.statusparcela_id
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (parcela.data_pagamento.HasValue)
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                          t.data_pagamento == parcela.data_pagamento
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(parcela.visualizada))
-                        {
-
-                            resultado = ((from t in resultado
-                                          where
-                                         t.visualizada!=null && t.visualizada.Equals(parcela.visualizada)
-                                          select t).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
 
                         break;
                     }
@@ -112,9 +114,9 @@ namespace SiteMVC.ModuloParcela.Repositorios
                         {
 
                             resultado.AddRange((from t in resultado
-                                          where
-                                          t.statusparcela_id == parcela.statusparcela_id
-                                          select t).ToList());
+                                                where
+                                                t.statusparcela_id == parcela.statusparcela_id
+                                                select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -134,9 +136,9 @@ namespace SiteMVC.ModuloParcela.Repositorios
                         {
 
                             resultado.AddRange((from t in resultado
-                                          where
-                                          t.data_pagamento == parcela.data_pagamento
-                                          select t).ToList());
+                                                where
+                                                t.data_pagamento == parcela.data_pagamento
+                                                select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -145,9 +147,9 @@ namespace SiteMVC.ModuloParcela.Repositorios
                         {
 
                             resultado.AddRange((from t in resultado
-                                          where
-                                           t.visualizada != null && t.visualizada.Equals(parcela.visualizada)
-                                          select t).ToList());
+                                                where
+                                                 t.visualizada != null && t.visualizada.Equals(parcela.visualizada)
+                                                select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -225,7 +227,7 @@ namespace SiteMVC.ModuloParcela.Repositorios
                 parcelaAux.valor = parcela.valor;
                 parcelaAux.valor_pago = parcela.valor_pago;
                 parcelaAux.visualizada = parcela.visualizada;
-                
+
 
 
 
