@@ -61,7 +61,13 @@ namespace SiteMVC.Controllers
             //{
             //    rolesList.Add(new CheckBoxListInfo(dias, dias, false));
             //}
-            ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(null);
+            List<int> diasUteis = new List<int>();
+            diasUteis.Add(1);
+            diasUteis.Add(2);
+            diasUteis.Add(3);
+            diasUteis.Add(4);
+            diasUteis.Add(5);
+            ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
 
 
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
