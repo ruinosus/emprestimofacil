@@ -94,6 +94,16 @@ namespace SiteMVC.ModuloCliente.Repositorios
             return resultado;
         }
 
+        //public List<Cliente> ConsultarClientesDevedores()
+        //{
+        //    List<Cliente> resultado = Consultar();
+
+        //   var clienteList = from c in resultado
+                             
+
+        //    return resultado;
+        //}
+
         public void Incluir(Cliente cliente)
         {
             try

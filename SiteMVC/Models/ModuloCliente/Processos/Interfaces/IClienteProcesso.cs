@@ -46,6 +46,12 @@ namespace SiteMVC.ModuloCliente.Processos
         List<Cliente> Consultar();
 
         /// <summary>
+        /// Método responsável por consultar todos os comentários do sistema.
+        /// </summary>
+        /// <returns>Lista contendo todos os clientes cadastrados.</returns>
+        List<Cliente> ConsultarClientesDevedores();
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
         void Confirmar();

@@ -9,6 +9,7 @@ using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
 using SiteMVC;
 using SiteMVC.ModuloParcela.Processos;
+using SiteMVC.ModuloCliente.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -22,6 +23,7 @@ namespace SiteMVC.Controllers
             return RedirectToAction("Listar");
         }
 
+        #region Relatorios
         public ActionResult Listar(int? page)
         {
 
@@ -45,6 +47,7 @@ namespace SiteMVC.Controllers
 
 
         }
+
         [HttpPost]
         public ActionResult VisualizarResumoLancamento(Lancamento lancamento)
         {
@@ -81,11 +84,12 @@ namespace SiteMVC.Controllers
             ViewData["lancamentos"] = lancamentos;
             Lancamento lancamento = new Lancamento();
             lancamento.data = DateTime.Now;
-         
+
             return View(lancamento);
 
 
         }
+
         [HttpPost]
         public ActionResult VisualizarDetalheLancamento(Lancamento lancamento)
         {
@@ -127,6 +131,7 @@ namespace SiteMVC.Controllers
 
 
         }
+
         [HttpPost]
         public ActionResult VisualizarDetalheParcelas(Parcela parcela)
         {
@@ -157,10 +162,50 @@ namespace SiteMVC.Controllers
 
         }
 
+        public ActionResult VisualizarClientesDevedores()
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            IClienteProcesso processo = ClienteProcesso.Instance;
+            var resultado = processo.ConsultarClientesDevedores();
+            Cliente cliente = new Cliente();
+            // lancamento.data = DateTime.Now;
+            return View(resultado);
+        }
+
+        //[HttpPost]
+        //public ActionResult VisualizarClientesDevedores(Cliente cliente)
+        //{
+        //    List<Cliente> clientes = new List<Cliente>();
+        //    try
+        //    {
+        //        if (cliente.area_id == 0)
+        //        {
+        //            IClienteProcesso processo = ClienteProcesso.Instance;
+        //            var resultado = processo.Consultar(cliente, TipoPesquisa.E);
+        //            clientes = resultado;
+        //            ViewData["clientes"] = clientes;
+        //            return View(cliente);
+        //        }
+        //        else
+        //        {
+        //            throw new Exception("Data do lançamento não informada ou inválida");
+        //        }
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        ViewData["clientes"] = clientes;
+        //        //ModelState.AddModelError("data", e.Message);
+        //        return View(cliente);
+
+        //    }
+
+        //}
+
+        #endregion
 
         //
         // GET: /StatusParcela/Details/5
-
         public ActionResult Detalhar(int id)
         {
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
@@ -172,7 +217,6 @@ namespace SiteMVC.Controllers
 
         //
         // GET: /StatusParcela/Create
-
         public ActionResult Incluir()
         {
             Lancamento lancamento = new Lancamento();
@@ -185,10 +229,8 @@ namespace SiteMVC.Controllers
 
         //
         // POST: /StatusParcela/Create
-
         [HttpPost]
         [ValidateInput(false)]
-
         public ActionResult Incluir(Lancamento lancamento, FormCollection collection)
         {
 
@@ -215,7 +257,6 @@ namespace SiteMVC.Controllers
 
         //
         // GET: /StatusParcela/Edit/5
-
         public ActionResult Alterar(int id)
         {
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
@@ -227,7 +268,6 @@ namespace SiteMVC.Controllers
 
         //
         // POST: /StatusParcela/Edit/5
-
         [HttpPost]
         public ActionResult Alterar(int id, Lancamento lancamento)
         {
@@ -257,7 +297,6 @@ namespace SiteMVC.Controllers
 
         //
         // GET: /StatusParcela/Delete/5
-
         public ActionResult Excluir(int id)
         {
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
@@ -270,7 +309,6 @@ namespace SiteMVC.Controllers
 
         ////
         //// POST: /StatusParcela/Delete/5
-
         [HttpPost]
         public ActionResult Excluir(int id, Lancamento lancamento)
         {

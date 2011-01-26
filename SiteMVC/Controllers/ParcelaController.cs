@@ -42,15 +42,18 @@ namespace SiteMVC.Controllers
                     if (resultado.Count > 0)
                         if (resultado[0].statusparcela_id == 2)
                         {
-                            parcela.ID = parcela.ID - 1;
-                            List<Parcela> resultado2 = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
-
-                            if (resultado2.Count > 0)
+                            if (resultado[0].sequencial > 1 && resultado[0].sequencial != 0)
                             {
-                                if (resultado2[0].statusparcela_id == 2)
+                                parcela.ID = parcela.ID - 1;
+                                List<Parcela> resultado2 = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
+
+                                if (resultado2.Count > 0)
                                 {
-                                    ModelState.AddModelError("id", "Você deve dar baixa na parcela de número: [" + parcela.ID + "]");
-                                    return View();
+                                    if (resultado2[0].statusparcela_id == 2)
+                                    {
+                                        ModelState.AddModelError("id", "Você deve dar baixa na parcela de número: [" + parcela.ID + "]");
+                                        return View();
+                                    }
                                 }
                             }
 
@@ -133,11 +136,13 @@ namespace SiteMVC.Controllers
             parcela.ID = id;
             parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             parcela.data_pagamento = DateTime.Now;
+            parcela.valor_pago = parcela.valor;
             ViewData.Model = parcela;
             return View();
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult BaixarParcela(int id, Parcela parcela)
         {
             try
@@ -145,12 +150,13 @@ namespace SiteMVC.Controllers
                 if (ModelState.IsValid)
                 {
                     float valorPago = parcela.valor_pago.Value;
-
+                    DateTime dataAtual = parcela.data_pagamento.Value;
                     parcela.ID = id;
 
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
                     parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.Ou)[0];
                     parcela.valor_pago = valorPago;
+                    parcela.data_pagamento = dataAtual;
                     parcela.statusparcela_id = 1;
                     if (parcela.data_pagamento.Value.Date < DateTime.Now.Date)
                     {
@@ -255,7 +261,7 @@ namespace SiteMVC.Controllers
             }
             else
                 return RedirectToAction("Index", "Home");
-          
+
 
             try
             {

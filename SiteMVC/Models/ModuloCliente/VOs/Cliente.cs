@@ -12,7 +12,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     [MetadataType(typeof(ClienteMetadata))]
     public partial class Cliente
     {
-        
+        public float ValorDevedor { get; set; }
+        public bool jaContabilizado { get; set; }
         internal class ClienteMetadata
         {
 
