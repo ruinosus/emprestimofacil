@@ -43,7 +43,7 @@
                               }
                     %>
                     <li>
-                        <%: Html.ActionLink("Lancamento", "Listar", "Lancamento")%></li>
+                        <%: Html.ActionLink("Movimentaçao", "Listar", "Movimentacao")%></li>
                     <%
                              
                               
