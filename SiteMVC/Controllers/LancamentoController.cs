@@ -168,39 +168,9 @@ namespace SiteMVC.Controllers
             IClienteProcesso processo = ClienteProcesso.Instance;
             var resultado = processo.ConsultarClientesDevedores();
             Cliente cliente = new Cliente();
-            // lancamento.data = DateTime.Now;
+     
             return View(resultado);
         }
-
-        //[HttpPost]
-        //public ActionResult VisualizarClientesDevedores(Cliente cliente)
-        //{
-        //    List<Cliente> clientes = new List<Cliente>();
-        //    try
-        //    {
-        //        if (cliente.area_id == 0)
-        //        {
-        //            IClienteProcesso processo = ClienteProcesso.Instance;
-        //            var resultado = processo.Consultar(cliente, TipoPesquisa.E);
-        //            clientes = resultado;
-        //            ViewData["clientes"] = clientes;
-        //            return View(cliente);
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("Data do lançamento não informada ou inválida");
-        //        }
-
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        ViewData["clientes"] = clientes;
-        //        //ModelState.AddModelError("data", e.Message);
-        //        return View(cliente);
-
-        //    }
-
-        //}
 
         #endregion
 
