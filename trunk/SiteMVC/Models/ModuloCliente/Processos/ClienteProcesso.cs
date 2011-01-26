@@ -10,6 +10,7 @@ using SiteMVC.ModuloCliente.Fabricas;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloCliente.Excecoes;
 using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.ModuloParcela.Processos;
 
 namespace SiteMVC.ModuloCliente.Processos
 {
@@ -69,9 +70,39 @@ namespace SiteMVC.ModuloCliente.Processos
 
         public List<Cliente> Consultar(Cliente cliente, TipoPesquisa tipoPesquisa)
         {
-            List<Cliente> clienteList = this.clienteRepositorio.Consultar(cliente,tipoPesquisa);           
+            List<Cliente> clienteList = this.clienteRepositorio.Consultar(cliente, tipoPesquisa);
 
             return clienteList;
+        }
+
+
+        public List<Cliente> ConsultarClientesDevedores()
+        {
+            List<Cliente> clientesPadrao = this.Consultar();
+            IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+
+            List<Parcela> parcelas = parcelaProcesso.Consultar();
+
+            var resultado = from p in parcelas
+                      where p.statusparcela_id == 2
+                      join c in clientesPadrao on p.emprestimo.cliente_id equals c.ID
+                      group p by p.emprestimo.cliente into cc
+                      select new
+                      {
+                          Cliente = cc.Key,
+                          ValorTotal = cc.Sum(p=>p.valor)
+                      };
+            List<Cliente> clientes = new List<Cliente>();
+            Cliente clienteTeste;
+            foreach (var item in resultado)
+            {
+                clienteTeste = new Cliente();
+                clienteTeste = item.Cliente;
+                clienteTeste.ValorDevedor = item.ValorTotal;
+                clientes.Add(clienteTeste);
+            }
+            
+            return clientes;
         }
 
         public List<Cliente> Consultar()
@@ -81,7 +112,7 @@ namespace SiteMVC.ModuloCliente.Processos
             return clienteList;
         }
 
-     
+
         public void Confirmar()
         {
             this.clienteRepositorio.Confirmar();

@@ -56,6 +56,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (parcela.statusparcela_id != 0)
+                        {
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.statusparcela_id == parcela.statusparcela_id
+                                          select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (parcela.data_pagamento.HasValue)
                         {
 
@@ -78,6 +89,8 @@ namespace SiteMVC.ModuloParcela.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+
+
                         break;
                     }
                 #endregion
@@ -91,6 +104,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                                                 where
                                                 t.ID == parcela.ID
                                                 select t).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (parcela.statusparcela_id != 0)
+                        {
+
+                            resultado.AddRange((from t in resultado
+                                          where
+                                          t.statusparcela_id == parcela.statusparcela_id
+                                          select t).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }

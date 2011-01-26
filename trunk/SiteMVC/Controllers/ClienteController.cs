@@ -73,7 +73,6 @@ namespace SiteMVC.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-
         public ActionResult Incluir(Cliente cliente, FormCollection collection)
         {
 
