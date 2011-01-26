@@ -105,6 +105,8 @@ namespace SiteMVC.ModuloCliente.Processos
             return clientes;
         }
 
+     
+
         public List<Cliente> Consultar()
         {
             List<Cliente> clienteList = this.clienteRepositorio.Consultar();

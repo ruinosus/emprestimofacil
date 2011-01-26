@@ -190,7 +190,7 @@ namespace SiteMVC.Controllers
             List<Emprestimo> emprestimos = new List<Emprestimo>();
             try
             {
-                if(emprestimoPesquisa.DataFim < emprestimoPesquisa.DataInicio)
+                if (emprestimoPesquisa.DataFim < emprestimoPesquisa.DataInicio)
                     ModelState.AddModelError("DataFim", "A data final nao pode ser maior que a data inicial.");
 
                 if (ModelState.IsValid)
@@ -215,6 +215,105 @@ namespace SiteMVC.Controllers
 
         }
 
+        public ActionResult VisualizarListaClientesPorArea()
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            IClienteProcesso processo = ClienteProcesso.Instance;
+            var resultado = processo.ConsultarClientesDevedores();
+            ClientePesquisa clientePesquisa = new ClientePesquisa();
+            ViewData["clientes"] = clientes;
+            return View(clientePesquisa);
+        }
+
+         [HttpPost]
+        public ActionResult VisualizarListaClientesPorArea(ClientePesquisa clientePesquisa)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            try
+            {
+                //if (emprestimoPesquisa.DataFim < emprestimoPesquisa.DataInicio)
+                //    ModelState.AddModelError("DataFim", "A data final nao pode ser maior que a data inicial.");
+
+                if (ModelState.IsValid)
+                {
+                    IClienteProcesso processo = ClienteProcesso.Instance;
+                    Cliente c = new Cliente();
+                    c.area_id = clientePesquisa.area;
+                    clientes = processo.Consultar(c,TipoPesquisa.E);
+                    ViewData["clientes"] = clientes;
+                    ViewData.Model = clientePesquisa;
+                    return View(clientePesquisa);
+                }
+                else
+                {
+                    ViewData["clientes"] = clientes;
+                    return View(clientePesquisa);
+                }
+            }
+            catch (Exception e)
+            {
+                ViewData["clientes"] = clientes;
+                return View(clientePesquisa);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public ActionResult VisualizarParcelasPorPeriodo()
+        {
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+
+            ParcelaPesquisa parcelaPesquisa = new ParcelaPesquisa();
+            parcelaPesquisa.DataInicio = DateTime.Now.AddDays(1);
+            parcelaPesquisa.DataFim = DateTime.Now.AddDays(1);
+
+            List<Parcela> parcelas = processo.ConsultarParcelasPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
+            ViewData["parcelas"] = parcelas;
+            return View(parcelaPesquisa);
+        }
+
+        [HttpPost]
+        public ActionResult VisualizarParcelasPorPeriodo(ParcelaPesquisa parcelaPesquisa)
+        {
+            List<Parcela> parcelas = new List<Parcela>();
+            try
+            {
+                if (parcelaPesquisa.DataFim < parcelaPesquisa.DataInicio)
+                    ModelState.AddModelError("DataFim", "A data final nao pode ser maior que a data inicial.");
+
+                if (ModelState.IsValid)
+                {
+                    IParcelaProcesso processo = ParcelaProcesso.Instance;
+                    parcelas = processo.ConsultarParcelasPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
+                    ViewData["parcelas"] = parcelas;
+                    ViewData.Model = parcelaPesquisa;
+                    return View(parcelaPesquisa);
+                }
+                else
+                {
+                    ViewData["parcelas"] = parcelas;
+                    return View(parcelaPesquisa);
+                }
+            }
+            catch (Exception e)
+            {
+                ViewData["parcelas"] = parcelas;
+                return View(parcelaPesquisa);
+            }
+
+        }
         #endregion
 
         //

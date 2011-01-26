@@ -92,4 +92,12 @@
      <p>
         <%: Html.ActionLink("Visualizar Emprestimos por período", "VisualizarEmprestimosPorPeriodo")%>
     </p>
+
+       <p>
+        <%: Html.ActionLink("Visualizar Parcelas por período", "VisualizarParcelasPorPeriodo")%>
+    </p>
+
+     <p>
+        <%: Html.ActionLink("Visualizar Clientes por Area", "VisualizarListaClientesPorArea")%>
+    </p>
 </asp:Content>

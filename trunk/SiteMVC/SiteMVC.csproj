@@ -323,6 +323,8 @@
     <Content Include="Views\Emprestimo\Listar.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Lancamento\VisualizarListaClientesPorArea.aspx" />
+    <Content Include="Views\Lancamento\VisualizarParcelasPorPeriodo.aspx" />
     <Content Include="Views\Lancamento\VisualizarClientesDevedores.aspx" />
     <Content Include="Views\Lancamento\VisualizarDetalheParcelas.aspx" />
     <Content Include="Views\Lancamento\VisualizarEmprestimosPorPeriodo.aspx" />

@@ -24,6 +24,20 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         }
     }
 
+    public class ParcelaPesquisa
+    {
+
+        [Required(ErrorMessage = "A data inicial é necessária para a pesquisa.")]
+        [DisplayName("Data Início:")]
+        public DateTime DataInicio { get; set; }
+        [Required(ErrorMessage = "A data final é necessária para a pesquisa.")]
+        [DisplayName("Data Fim:")]
+        public DateTime DataFim { get; set; }
+    }
+
+
+
+
 
 
 
