@@ -88,4 +88,8 @@
     <p>
         <%: Html.ActionLink("Visualizar Clientes Devedores", "VisualizarClientesDevedores")%>
     </p>
+
+     <p>
+        <%: Html.ActionLink("Visualizar Emprestimos por período", "VisualizarEmprestimosPorPeriodo")%>
+    </p>
 </asp:Content>

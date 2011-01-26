@@ -162,6 +162,18 @@ namespace SiteMVC.ModuloEmprestimo.Processos
             this.emprestimoRepositorio.Confirmar();
         }
 
+        public List<Emprestimo> ConsultarEmprestimosPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            List<Emprestimo> emprestimos = this.Consultar();
+
+            emprestimos =( from e in emprestimos
+                            where e.data_emprestimo >= dataInicio && e.data_emprestimo <= dataFim
+                            select e).ToList(); 
+
+            return emprestimos;
+
+        }
+
         #endregion
     }
 }

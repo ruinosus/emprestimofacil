@@ -47,6 +47,14 @@ namespace SiteMVC.ModuloEmprestimo.Processos
         List<Emprestimo> Consultar();
 
         /// <summary>
+        /// Método responsável por consultar todos os emprestimos realizados no periodo informado.
+        /// </summary>
+        /// <param name="dataInicio">Data inicial para pesquisa dos emprestimos.</param>
+        /// <param name="dataFim">Data fim para pesquisa dos emprestimos.</param>
+        /// <returns>Lista contendo todos os emprestimos cadastrados.</returns>
+        List<Emprestimo> ConsultarEmprestimosPorPeriodo(DateTime dataInicio, DateTime dataFim);
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
         void Confirmar();
