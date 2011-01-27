@@ -71,6 +71,8 @@
   <ItemGroup>
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\DespesaController.cs" />
+    <Compile Include="Controllers\DespesaTipoController.cs" />
     <Compile Include="Controllers\ParcelaController.cs" />
     <Compile Include="Controllers\MovimentacaoController.cs" />
     <Compile Include="Controllers\EmprestimoController.cs" />
@@ -131,6 +133,7 @@
     <Compile Include="Models\ModuloDespesaTipo\Processos\Interfaces\IAreaProcesso.cs" />
     <Compile Include="Models\ModuloDespesaTipo\Repositorios\DespesaTipoRepositorio.cs" />
     <Compile Include="Models\ModuloDespesaTipo\Repositorios\Interfaces\IDespesaTipoRepositorio.cs" />
+    <Compile Include="Models\ModuloDespesaTipo\VOs\DespesaTipo.cs" />
     <Compile Include="Models\ModuloDespesa\Constantes\DespesaConstantes.cs" />
     <Compile Include="Models\ModuloDespesa\Excecoes\DespesaNaoAlteradaExcecao.cs" />
     <Compile Include="Models\ModuloDespesa\Excecoes\DespesaNaoExcluidaExcecao.cs" />
@@ -140,6 +143,7 @@
     <Compile Include="Models\ModuloDespesa\Processos\Interfaces\IDespesaProcesso.cs" />
     <Compile Include="Models\ModuloDespesa\Repositorios\DespesaRepositorio.cs" />
     <Compile Include="Models\ModuloDespesa\Repositorios\Interfaces\IDespesaRepositorio.cs" />
+    <Compile Include="Models\ModuloDespesa\VOs\Despesa.cs" />
     <Compile Include="Models\ModuloEmprestimo\Constantes\EmprestimoConstantes.cs" />
     <Compile Include="Models\ModuloEmprestimo\Excecoes\EmprestimoNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloEmprestimo\Excecoes\EmprestimoNaoExcluidoExcecao.cs" />
@@ -315,6 +319,16 @@
     <Content Include="Views\Cliente\Excluir.aspx" />
     <Content Include="Views\Cliente\Incluir.aspx" />
     <Content Include="Views\Cliente\Listar.aspx" />
+    <Content Include="Views\DespesaTipo\Alterar.aspx" />
+    <Content Include="Views\DespesaTipo\Detalhar.aspx" />
+    <Content Include="Views\DespesaTipo\Excluir.aspx" />
+    <Content Include="Views\DespesaTipo\Incluir.aspx" />
+    <Content Include="Views\DespesaTipo\Listar.aspx" />
+    <Content Include="Views\Despesa\Alterar.aspx" />
+    <Content Include="Views\Despesa\Detalhar.aspx" />
+    <Content Include="Views\Despesa\Excluir.aspx" />
+    <Content Include="Views\Despesa\Incluir.aspx" />
+    <Content Include="Views\Despesa\Listar.aspx" />
     <Content Include="Views\Emprestimo\IncluirEmprestimoCliente.aspx" />
     <Content Include="Views\Emprestimo\Detalhar.aspx" />
     <Content Include="Views\Emprestimo\EmprestimoCliente.aspx" />
@@ -346,6 +360,7 @@
     <Content Include="Views\Parcela\ParcelaEmprestimo.aspx" />
     <Content Include="Views\Parcela\VisualizarParcelas.aspx" />
     <Content Include="Views\Shared\EditorTemplates\ClienteDropDown.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\DespesaTipoDropDown.ascx" />
     <Content Include="Views\Shared\EditorTemplates\TimeSpan.ascx" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
     <Content Include="Views\Shared\EditorTemplates\LancamentoTipoDropDown.ascx" />

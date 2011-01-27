@@ -11,6 +11,7 @@ using SiteMVC.ModuloDespesa.Fabricas;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloDespesa.Excecoes;
 using SiteMVC.Models.ModuloBasico.VOs;
+using SiteMVC.ModuloLancamento.Processos;
 namespace SiteMVC.ModuloDespesa.Processos
 {
     /// <summary>
@@ -35,6 +36,19 @@ namespace SiteMVC.ModuloDespesa.Processos
 
         public void Incluir(Despesa Despesa)
         {
+
+            ILancamentoProcesso processoLancamento = LancamentoProcesso.Instance;
+            Lancamento lancamento = new Lancamento();
+            lancamento.valor = Despesa.valor;
+            lancamento.lancamentotipo_id = 2;
+            lancamento.data = Despesa.data;
+            lancamento.fonte = "Despesa";
+            lancamento.timeCreated = DateTime.Now;
+            lancamento.usuario_id = Despesa.usuario_id;
+            processoLancamento.Incluir(lancamento);
+            processoLancamento.Confirmar();
+
+
             this.DespesaRepositorio.Incluir(Despesa);
 
         }
