@@ -31,10 +31,10 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Senha:")]
             public string senha { get; set; }
 
-            [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Area.")]
-            [UIHint("AreaDropDown")]
-            [DisplayName("Area:")]
-            public long area_id { get; set; }
+            //[RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Area.")]
+            //[UIHint("AreaDropDown")]
+            //[DisplayName("Area:")]
+            //public long area_id { get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o orgão expedidor.")]
             [UIHint("OrgaoExpedidorNomeDropDown")]

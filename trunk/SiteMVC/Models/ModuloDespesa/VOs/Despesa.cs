@@ -13,7 +13,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     [MetadataType(typeof(DespesaMetadata))]
     public partial class Despesa
     {
-       
+        
+
        
         internal class DespesaMetadata
         {

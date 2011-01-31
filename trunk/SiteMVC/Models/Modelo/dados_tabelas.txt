@@ -1,11 +1,4 @@
 ﻿
-ALTER TABLE `emprestimo`.`cliente` ADD COLUMN `observacao` VARCHAR(1000) NULL  AFTER `limite` ;
-ALTER TABLE `emprestimo`.`parcela` ADD COLUMN `visualizada` char(1) NULL  AFTER `observacoes` ;
-ALTER TABLE `emprestimo`.`parcela` ADD COLUMN `contabilizada` char(1) NULL  AFTER `visualizada` ;
-
-
-ALTER TABLE `emprestimo`.`area` ADD COLUMN `usuarioModificacao_id` INT(10) NULL  AFTER `timeUpdated` ;
-
 
 
 
@@ -76,4 +69,4 @@ INSERT INTO `municipio` (`id`, `nome`, `uf`, `timeCreated`, `timeUpdated`) VALUE
 
 INSERT INTO `area` (`id`, `descricao`, `municipio_id`, `timeCreated`, `timeUpdated`) VALUES (NULL, 'Recife 01', '1', '2011-01-06 00:00:00', CURRENT_TIMESTAMP);
 
-INSERT INTO `usuario` (`id`, `nome`, `rg`, `orgaosexpedidoresnome_id`, `data_expedicao`, `cpf`, `ctps`, `titulo_eleitor`, `zona`, `secao`, `sexo`, `estadoscivistipo_id`, `nome_pai`, `nome_mae`, `endereco_resid`, `bairro_resid`, `cidade_resid`, `uf_resid`, `cep_resid`, `fone_resid`, `celular`, `login`, `senha`, `situacao`, `area_id`, `usuariotipo_id`, `escolaridade_id`, `timeCreated`, `timeUpdated`) VALUES (NULL, 'Administrador', '1', '2', '2011-01-06', '1', '1', '1', '1', '1', '1', '4', '1', '1', '1', '1', '1', 'PE', '1', '1', '1', 'adm', '123', 'A', '1', '1', '1', '2011-01-06 00:00:00', CURRENT_TIMESTAMP);
+INSERT INTO `usuario` (`id`, `nome`, `rg`, `orgaosexpedidoresnome_id`, `data_expedicao`, `cpf`, `ctps`, `titulo_eleitor`, `zona`, `secao`, `sexo`, `estadoscivistipo_id`, `nome_pai`, `nome_mae`, `endereco_resid`, `bairro_resid`, `cidade_resid`, `uf_resid`, `cep_resid`, `fone_resid`, `celular`, `login`, `senha`, `situacao`, `usuariotipo_id`, `escolaridade_id`, `timeCreated`, `timeUpdated`) VALUES (NULL, 'Administrador', '1', '2', '2011-01-06', '1', '1', '1', '1', '1', '1', '4', '1', '1', '1', '1', '1', 'PE', '1', '1', '1', 'adm', '123', 'A',  '1', '1', '2011-01-06 00:00:00', CURRENT_TIMESTAMP);

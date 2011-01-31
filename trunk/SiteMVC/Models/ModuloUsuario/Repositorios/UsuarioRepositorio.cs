@@ -150,7 +150,7 @@ namespace SiteMVC.ModuloUsuario.Repositorios
                     throw new UsuarioNaoAlteradoExcecao();
 
                 usuarioAux = resultado[0];
-                usuarioAux.area_id = usuario.area_id;
+                //usuarioAux.area_id = usuario.area_id;
                 usuarioAux.bairro_resid = usuario.bairro_resid;
                 usuarioAux.celular = usuario.celular;
                 usuarioAux.cep_resid = usuario.cep_resid;

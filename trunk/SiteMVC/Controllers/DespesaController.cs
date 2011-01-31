@@ -111,16 +111,16 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Edit/5
 
         [HttpPost]
-        public ActionResult Alterar(int id, Despesa Despesa)
+        public ActionResult Alterar(int id, Despesa despesa)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    Despesa.ID = id;
+                    despesa.ID = id;
                     IDespesaProcesso processo = DespesaProcesso.Instance;
-                    Despesa.timeUpdated = DateTime.Now;
-                    processo.Alterar(Despesa);
+                    despesa.timeUpdated = DateTime.Now;
+                    processo.Alterar(despesa);
                     processo.Confirmar();
                     // TODO: Add update logic here
 
@@ -128,7 +128,7 @@ namespace SiteMVC.Controllers
                 }
                 else
                 {
-                    return View(Despesa);
+                    return View(despesa);
                 }
             }
             catch

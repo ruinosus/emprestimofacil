@@ -27,8 +27,8 @@ namespace SiteMVC.Controllers
             IClienteProcesso processo = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
 
-            if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id != 1)
-                cliente.area_id = ClasseAuxiliar.UsuarioLogado.area_id;
+            //if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id != 1)
+            //    cliente.area_id = ClasseAuxiliar.UsuarioLogado.area_id;
 
 
 

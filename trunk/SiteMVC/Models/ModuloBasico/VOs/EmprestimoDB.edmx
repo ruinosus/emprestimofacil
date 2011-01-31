@@ -24,6 +24,7 @@
           <EntitySet Name="statusparcela" EntityType="emprestimoModel.Store.statusparcela" store:Type="Tables" Schema="emprestimo" />
           <EntitySet Name="tipoemprestimo" EntityType="emprestimoModel.Store.tipoemprestimo" store:Type="Tables" Schema="emprestimo" />
           <EntitySet Name="usuario" EntityType="emprestimoModel.Store.usuario" store:Type="Tables" Schema="emprestimo" />
+          <EntitySet Name="usuarioarea" EntityType="emprestimoModel.Store.usuarioarea" store:Type="Tables" Schema="emprestimo" />
           <EntitySet Name="usuariotipo" EntityType="emprestimoModel.Store.usuariotipo" store:Type="Tables" Schema="emprestimo" />
           <AssociationSet Name="area_ibfk_1" Association="emprestimoModel.Store.area_ibfk_1">
             <End Role="municipio" EntitySet="municipio" />
@@ -133,6 +134,14 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="prestacaoconta" EntitySet="prestacaoconta" />
           </AssociationSet>
+          <AssociationSet Name="usuarioarea_ibfk_1" Association="emprestimoModel.Store.usuarioarea_ibfk_1">
+            <End Role="area" EntitySet="area" />
+            <End Role="usuarioarea" EntitySet="usuarioarea" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioarea_ibfk_2" Association="emprestimoModel.Store.usuarioarea_ibfk_2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="usuarioarea" EntitySet="usuarioarea" />
+          </AssociationSet>
           <AssociationSet Name="usuario_ibfk_1" Association="emprestimoModel.Store.usuario_ibfk_1">
             <End Role="orgaoexpedidornome" EntitySet="orgaoexpedidornome" />
             <End Role="usuario" EntitySet="usuario" />
@@ -142,18 +151,14 @@
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
           <AssociationSet Name="usuario_ibfk_3" Association="emprestimoModel.Store.usuario_ibfk_3">
-            <End Role="area" EntitySet="area" />
-            <End Role="usuario" EntitySet="usuario" />
-          </AssociationSet>
-          <AssociationSet Name="usuario_ibfk_4" Association="emprestimoModel.Store.usuario_ibfk_4">
             <End Role="usuariotipo" EntitySet="usuariotipo" />
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
-          <AssociationSet Name="usuario_ibfk_5" Association="emprestimoModel.Store.usuario_ibfk_5">
+          <AssociationSet Name="usuario_ibfk_4" Association="emprestimoModel.Store.usuario_ibfk_4">
             <End Role="escolaridade" EntitySet="escolaridade" />
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
-          <AssociationSet Name="usuario_ibfk_6" Association="emprestimoModel.Store.usuario_ibfk_6">
+          <AssociationSet Name="usuario_ibfk_5" Association="emprestimoModel.Store.usuario_ibfk_5">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
@@ -401,7 +406,6 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="area_id" Type="uint" Nullable="false" />
           <Property Name="bairro_resid" Type="varchar" MaxLength="50" />
           <Property Name="celular" Type="char" MaxLength="10" />
           <Property Name="cep_resid" Type="char" MaxLength="8" />
@@ -431,6 +435,16 @@
           <Property Name="usuariomodificacao_id" Type="uint" />
           <Property Name="usuariotipo_id" Type="uint" Nullable="false" />
           <Property Name="zona" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="usuarioarea">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="area_id" Type="uint" Nullable="false" />
+          <Property Name="id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeCreated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="timeUpdated" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="usuario_id" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="usuariotipo">
           <Key>
@@ -765,6 +779,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="usuarioarea_ibfk_1">
+          <End Role="area" Type="emprestimoModel.Store.area" Multiplicity="1" />
+          <End Role="usuarioarea" Type="emprestimoModel.Store.usuarioarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuarioarea">
+              <PropertyRef Name="area_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioarea_ibfk_2">
+          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="1" />
+          <End Role="usuarioarea" Type="emprestimoModel.Store.usuarioarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuarioarea">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="usuario_ibfk_1">
           <End Role="orgaoexpedidornome" Type="emprestimoModel.Store.orgaoexpedidornome" Multiplicity="0..1" />
           <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
@@ -790,18 +828,6 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="usuario_ibfk_3">
-          <End Role="area" Type="emprestimoModel.Store.area" Multiplicity="1" />
-          <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="area">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="usuario">
-              <PropertyRef Name="area_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="usuario_ibfk_4">
           <End Role="usuariotipo" Type="emprestimoModel.Store.usuariotipo" Multiplicity="1" />
           <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -813,7 +839,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="usuario_ibfk_5">
+        <Association Name="usuario_ibfk_4">
           <End Role="escolaridade" Type="emprestimoModel.Store.escolaridade" Multiplicity="0..1" />
           <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -825,7 +851,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="usuario_ibfk_6">
+        <Association Name="usuario_ibfk_5">
           <End Role="usuario" Type="emprestimoModel.Store.usuario" Multiplicity="0..1" />
           <End Role="usuario1" Type="emprestimoModel.Store.usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -868,10 +894,6 @@
           <AssociationSet Name="municipio_ibfk_1" Association="EmprestimoModel.municipio_ibfk_1">
             <End Role="municipio" EntitySet="MunicipioSet" />
             <End Role="area" EntitySet="AreaSet" />
-          </AssociationSet>
-          <AssociationSet Name="usuario_ibfk_3" Association="EmprestimoModel.usuario_ibfk_3">
-            <End Role="area" EntitySet="AreaSet" />
-            <End Role="usuario" EntitySet="UsuarioSet" />
           </AssociationSet>
           <AssociationSet Name="bloqueado_ibfk_1" Association="EmprestimoModel.bloqueado_ibfk_1">
             <End Role="cliente" EntitySet="ClienteSet" />
@@ -993,6 +1015,15 @@
             <End Role="Usuario" EntitySet="UsuarioSet" />
             <End Role="Usuario1" EntitySet="UsuarioSet" />
           </AssociationSet>
+          <EntitySet Name="UsuarioAreaSet" EntityType="EmprestimoModel.UsuarioArea" />
+          <AssociationSet Name="usuarioarea_ibfk_1" Association="EmprestimoModel.usuarioarea_ibfk_1">
+            <End Role="Area" EntitySet="AreaSet" />
+            <End Role="usuarioarea" EntitySet="UsuarioAreaSet" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioarea_ibfk_2" Association="EmprestimoModel.usuarioarea_ibfk_2">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="usuarioarea" EntitySet="UsuarioAreaSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Area">
           <Key>
@@ -1005,9 +1036,9 @@
           <Property Name="timeUpdated" Type="DateTimeOffset" Nullable="false" />
           <NavigationProperty Name="cliente" Relationship="EmprestimoModel.cliente_ibfk_3" FromRole="area" ToRole="cliente" />
           <NavigationProperty Name="municipio" Relationship="EmprestimoModel.municipio_ibfk_1" FromRole="area" ToRole="municipio" />
-          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuario_ibfk_3" FromRole="area" ToRole="usuario" />
           <Property Type="Int64" Name="usuariomodificacao_id" />
           <NavigationProperty Name="usuario_1" Relationship="EmprestimoModel.area_ibfk_2" FromRole="Area" ToRole="Usuario" />
+          <NavigationProperty Name="usuarioarea" Relationship="EmprestimoModel.usuarioarea_ibfk_1" FromRole="Area" ToRole="usuarioarea" />
         </EntityType>
         <EntityType Name="Bloqueado">
           <Key>
@@ -1283,7 +1314,6 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="area_id" Type="Int64" Nullable="false" />
           <Property Name="bairro_resid" Type="String" />
           <Property Name="celular" Type="String" />
           <Property Name="cep_resid" Type="String" />
@@ -1312,7 +1342,6 @@
           <Property Name="uf_resid" Type="String" />
           <Property Name="usuariotipo_id" Type="Int64" Nullable="false" />
           <Property Name="zona" Type="String" />
-          <NavigationProperty Name="area" Relationship="EmprestimoModel.usuario_ibfk_3" FromRole="usuario" ToRole="area" />
           <NavigationProperty Name="bloqueado" Relationship="EmprestimoModel.bloqueado_ibfk_2" FromRole="usuario" ToRole="bloqueado" />
           <NavigationProperty Name="despesa" Relationship="EmprestimoModel.despesa_ibfk_1" FromRole="usuario" ToRole="despesa" />
           <NavigationProperty Name="emprestimo" Relationship="EmprestimoModel.emprestimo_ibfk_3" FromRole="usuario" ToRole="emprestimo" />
@@ -1332,6 +1361,7 @@
           <NavigationProperty Name="prestacaoconta1" Relationship="EmprestimoModel.prestacaoconta_ibfk_2" FromRole="Usuario" ToRole="PrestacaoConta" />
           <NavigationProperty Name="usuario1" Relationship="EmprestimoModel.usuario_ibfk_6" FromRole="Usuario" ToRole="Usuario1" />
           <NavigationProperty Name="usuario2" Relationship="EmprestimoModel.usuario_ibfk_6" FromRole="Usuario1" ToRole="Usuario" />
+          <NavigationProperty Name="usuarioarea" Relationship="EmprestimoModel.usuarioarea_ibfk_2" FromRole="Usuario" ToRole="usuarioarea" />
         </EntityType>
         <EntityType Name="UsuarioTipo">
           <Key>
@@ -1364,18 +1394,6 @@
             </Principal>
             <Dependent Role="area">
               <PropertyRef Name="municipio_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="usuario_ibfk_3">
-          <End Role="area" Type="EmprestimoModel.Area" Multiplicity="1" />
-          <End Role="usuario" Type="EmprestimoModel.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="area">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="usuario">
-              <PropertyRef Name="area_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1739,6 +1757,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UsuarioArea">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="area_id" Nullable="false" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTimeOffset" Name="timeCreated" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="timeUpdated" Nullable="false" />
+          <Property Type="Int64" Name="usuario_id" Nullable="false" />
+          <NavigationProperty Name="area" Relationship="EmprestimoModel.usuarioarea_ibfk_1" FromRole="usuarioarea" ToRole="Area" />
+          <NavigationProperty Name="usuario" Relationship="EmprestimoModel.usuarioarea_ibfk_2" FromRole="usuarioarea" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="usuarioarea_ibfk_1">
+          <End Type="EmprestimoModel.Area" Role="Area" Multiplicity="1" />
+          <End Type="EmprestimoModel.UsuarioArea" Role="usuarioarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="usuarioarea">
+              <PropertyRef Name="area_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioarea_ibfk_2">
+          <End Type="EmprestimoModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="EmprestimoModel.UsuarioArea" Role="usuarioarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="usuarioarea">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1935,7 +1989,6 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="UsuarioSet"><EntityTypeMapping TypeName="EmprestimoModel.Usuario"><MappingFragment StoreEntitySet="usuario">
             <ScalarProperty Name="usuariomodificacao_id" ColumnName="usuariomodificacao_id" />
-                <ScalarProperty Name="area_id" ColumnName="area_id" />
             <ScalarProperty Name="bairro_resid" ColumnName="bairro_resid" />
             <ScalarProperty Name="celular" ColumnName="celular" />
             <ScalarProperty Name="cep_resid" ColumnName="cep_resid" />
@@ -1971,6 +2024,17 @@
             <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
             <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UsuarioAreaSet">
+            <EntityTypeMapping TypeName="EmprestimoModel.UsuarioArea">
+              <MappingFragment StoreEntitySet="usuarioarea">
+                <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+                <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
+                <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="area_id" ColumnName="area_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1992,256 +2056,268 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="EmprestimoDB" ZoomLevel="64">
-        <EntityTypeShape EntityType="EmprestimoModel.Area" Width="1.5" PointX="3" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Bloqueado" Width="1.5" PointX="10.5" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Cliente" Width="1.5" PointX="5.25" PointY="8.5" Height="8.4948942057291639" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Despesa" Width="1.5" PointX="10.5" PointY="7.375" Height="2.5783902994791665" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.DespesaTipo" Width="1.5" PointX="8.25" PointY="5.75" Height="1.9210009765624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Emprestimo" Width="1.5" PointX="13.5" PointY="10.875" Height="3.5644742838541674" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Escolaridade" Width="1.5" PointX="3" PointY="8.125" Height="1.9210009765624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.EstadoCivilTipo" Width="1.5" PointX="3" PointY="14.75" Height="1.9210009765624978" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Lancamento" Width="1.5" PointX="13.5" PointY="7.25" Height="2.9070849609374996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.LancamentoTipo" Width="1.5" PointX="11.25" PointY="0.75" Height="1.9210009765624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Municipio" Width="1.5" PointX="0.75" PointY="11.625" Height="2.2496956380208317" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.OrgaoExpedidorNome" Width="1.5" PointX="3" PointY="17.375" Height="1.9210009765625031" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Parcela" Width="1.5" PointX="15.75" PointY="11" Height="3.400126953124996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.PrazoPagamento" Width="1.5" PointX="11.25" PointY="4.375" Height="2.0853483072916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.PrestacaoConta" Width="1.5" PointX="10.5" PointY="18.125" Height="3.0714322916666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.StatusParcela" Width="1.5" PointX="13.5" PointY="15.875" Height="1.7566536458333371" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.TipoEmprestimo" Width="1.5" PointX="11.25" PointY="15.25" Height="1.7566536458333371" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.Usuario" Width="1.5" PointX="8.25" PointY="9" Height="7.3444628906250049" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmprestimoModel.UsuarioTipo" Width="1.5" PointX="6" PointY="5.875" Height="1.7566536458333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Area" Width="1.5" PointX="5.875" PointY="11.375" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Bloqueado" Width="1.5" PointX="10.25" PointY="11.375" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Cliente" Width="1.5" PointX="5" PointY="8.25" Height="10.441549479166667" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Despesa" Width="1.5" PointX="10.25" PointY="7.125" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.DespesaTipo" Width="1.5" PointX="8" PointY="5.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Emprestimo" Width="1.5" PointX="13.25" PointY="10.625" Height="4.480205078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Escolaridade" Width="1.5" PointX="2.75" PointY="7.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.EstadoCivilTipo" Width="1.5" PointX="2.75" PointY="14.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Lancamento" Width="1.5" PointX="13.25" PointY="7" Height="3.7109993489583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.LancamentoTipo" Width="1.5" PointX="11" PointY="0.5" Height="2.172587890625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Municipio" Width="1.5" PointX="0.5" PointY="11.375" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.OrgaoExpedidorNome" Width="1.5" PointX="2.75" PointY="17.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Parcela" Width="1.5" PointX="15.5" PointY="10.75" Height="4.6725065104166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.PrazoPagamento" Width="1.5" PointX="11" PointY="4.125" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.PrestacaoConta" Width="1.5" PointX="10.25" PointY="17.875" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.StatusParcela" Width="1.5" PointX="13.25" PointY="15.625" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.TipoEmprestimo" Width="1.5" PointX="11" PointY="15" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.Usuario" Width="1.5" PointX="8" PointY="8.75" Height="10.249248046875003" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmprestimoModel.UsuarioTipo" Width="1.5" PointX="5.75" PointY="5.625" Height="1.9802864583333335" IsExpanded="true" />
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_3" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="13.415967271891274" />
-          <ConnectorPoint PointX="5.25" PointY="13.415967271891274" />
+          <ConnectorPoint PointX="7.375" PointY="12.394914763621795" />
+          <ConnectorPoint PointX="7.625" PointY="12.394914763621795" />
+          <ConnectorPoint PointX="7.625" PointY="13.470774739583334" />
+          <ConnectorPoint PointX="6.5" PointY="13.470774739583334" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.municipio_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="12.903595377604166" />
-          <ConnectorPoint PointX="3" PointY="12.903595377604166" />
-        </AssociationConnector>
-        <AssociationConnector Association="EmprestimoModel.usuario_ibfk_3" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="14.541408004407053" />
-          <ConnectorPoint PointX="4.875" PointY="14.916408004407053" />
-          <ConnectorPoint PointX="4.875" PointY="20.066549479166667" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="20.066549479166667" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="20.066549479166667" />
-          <ConnectorPoint PointX="7.625" PointY="20.066549479166667" />
-          <ConnectorPoint PointX="8.25" PointY="19.441549479166667" />
+          <ConnectorPoint PointX="1.25" PointY="11.375" />
+          <ConnectorPoint PointX="1.25" PointY="11.2214" />
+          <ConnectorPoint PointX="4.8976" PointY="11.2214" />
+          <ConnectorPoint PointX="4.8976" PointY="8.1476" />
+          <ConnectorPoint PointX="5.666666666666667" PointY="8.1476" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="8.1476" />
+          <ConnectorPoint PointX="6.0729186666666672" PointY="8.1476" />
+          <ConnectorPoint PointX="6.2395853333333333" PointY="8.1476" />
+          <ConnectorPoint PointX="7.5286" PointY="8.1476" />
+          <ConnectorPoint PointX="7.5286" PointY="11.2214" />
+          <ConnectorPoint PointX="6.9375005000000005" PointY="11.2214" />
+          <ConnectorPoint PointX="6.9375005000000005" PointY="11.375" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.bloqueado_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="6" PointY="8.5" />
-          <ConnectorPoint PointX="6" PointY="8.25" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="8.25" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="8.25" />
-          <ConnectorPoint PointX="10.125" PointY="8.25" />
-          <ConnectorPoint PointX="10.125" PointY="13.285736585693359" />
-          <ConnectorPoint PointX="10.166666666666666" PointY="13.285736585693359" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="13.285736585693359" />
-          <ConnectorPoint PointX="10.5" PointY="13.285736585693359" />
+          <ConnectorPoint PointX="5.75" PointY="8.25" />
+          <ConnectorPoint PointX="5.75" PointY="8" />
+          <ConnectorPoint PointX="9.875" PointY="8" />
+          <ConnectorPoint PointX="9.875" PointY="13.053158933105461" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="13.053158933105461" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="13.053158933105461" />
+          <ConnectorPoint PointX="10.25" PointY="13.053158933105461" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.bloqueado_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="12.392868292846679" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="12.392868292846677" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="12.392868292846679" />
-          <ConnectorPoint PointX="10.5" PointY="12.392868292846679" />
+          <ConnectorPoint PointX="9.5" PointY="12.151579466552731" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="12.151579466552729" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="12.151579466552731" />
+          <ConnectorPoint PointX="10.25" PointY="12.151579466552731" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="17.997223307291669" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="17.997223307291669" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="17.997223307291669" />
-          <ConnectorPoint PointX="5.25" PointY="17.997223307291669" />
+          <ConnectorPoint PointX="4.25" PointY="17.908274739583334" />
+          <ConnectorPoint PointX="4.541666666666667" PointY="17.908274739583334" />
+          <ConnectorPoint PointX="4.708333333333333" PointY="17.908274739583334" />
+          <ConnectorPoint PointX="5" PointY="17.908274739583334" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="16.210305625177476" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="16.210305625177476" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="16.210305625177476" />
-          <ConnectorPoint PointX="5.25" PointY="16.210305625177476" />
+          <ConnectorPoint PointX="4.25" PointY="15.5862939453125" />
+          <ConnectorPoint PointX="5" PointY="15.5862939453125" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_4" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="9.3987939453125" />
-          <ConnectorPoint PointX="5.25" PointY="9.3987939453125" />
+          <ConnectorPoint PointX="4.25" PointY="9.1487939453125" />
+          <ConnectorPoint PointX="4.8142666666666667" PointY="9.1487939453125" />
+          <ConnectorPoint PointX="4.9809333333333328" PointY="9.1487939453125" />
+          <ConnectorPoint PointX="5" PointY="9.1487939453125" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_5" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.29687375" PointY="14.182190755208334" />
-          <ConnectorPoint PointX="1.29687375" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="1.7213560416666669" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="1.8880227083333334" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="4.62332838631811" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="4.7899950529847759" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="17.066940917968751" />
-          <ConnectorPoint PointX="5.25" PointY="17.066940917968751" />
+          <ConnectorPoint PointX="1.25" PointY="13.932190755208334" />
+          <ConnectorPoint PointX="1.25" PointY="16.898793945312498" />
+          <ConnectorPoint PointX="4.3928727213541654" PointY="16.898793945312498" />
+          <ConnectorPoint PointX="4.5595393880208315" PointY="16.898793945312498" />
+          <ConnectorPoint PointX="5" PointY="16.898793945312498" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_6" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.8046893750000002" PointY="14.182190755208334" />
-          <ConnectorPoint PointX="1.8046893750000002" PointY="17.220972958984376" />
-          <ConnectorPoint PointX="4.7773604273337353" PointY="17.220972958984376" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="17.220972958984376" />
-          <ConnectorPoint PointX="5.25" PointY="17.220972958984376" />
+          <ConnectorPoint PointX="1.6562525" PointY="13.932190755208334" />
+          <ConnectorPoint PointX="1.6562525" PointY="16.785688417968757" />
+          <ConnectorPoint PointX="4.2797671940104243" PointY="16.785688417968757" />
+          <ConnectorPoint PointX="4.44643386067709" PointY="16.785688417968757" />
+          <ConnectorPoint PointX="5" PointY="16.785688417968757" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.406252" PointY="8.5" />
-          <ConnectorPoint PointX="6.406252" PointY="8.234375" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="8.234375" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="8.234375" />
-          <ConnectorPoint PointX="10.25" PointY="8.234375" />
-          <ConnectorPoint PointX="10.25" PointY="14.432190755208332" />
-          <ConnectorPoint PointX="12.322916666666666" PointY="14.432190755208332" />
-          <ConnectorPoint PointX="12.489583333333334" PointY="14.432190755208332" />
-          <ConnectorPoint PointX="13.125" PointY="14.432190755208332" />
-          <ConnectorPoint PointX="13.125" PointY="13.013236560271722" />
-          <ConnectorPoint PointX="13.5" PointY="13.013236560271722" />
+          <ConnectorPoint PointX="6.156252" PointY="8.25" />
+          <ConnectorPoint PointX="6.156252" PointY="7.984375" />
+          <ConnectorPoint PointX="10" PointY="7.984375" />
+          <ConnectorPoint PointX="10" PointY="14.182190755208332" />
+          <ConnectorPoint PointX="12.875" PointY="14.182190755208332" />
+          <ConnectorPoint PointX="12.875" PointY="13.152447073567711" />
+          <ConnectorPoint PointX="13.25" PointY="13.152447073567711" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.despesa_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="9.3937243031237578" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="9.3937243031237561" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="9.3937243031237578" />
-          <ConnectorPoint PointX="10.5" PointY="9.3937243031237578" />
+          <ConnectorPoint PointX="9.5" PointY="9.920849227905272" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="9.92084922790527" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="9.920849227905272" />
+          <ConnectorPoint PointX="10.25" PointY="9.920849227905272" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.despesa_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="7.6487939453125" />
-          <ConnectorPoint PointX="10.5" PointY="7.6487939453125" />
+          <ConnectorPoint PointX="9.5" PointY="7.3987939453125" />
+          <ConnectorPoint PointX="10.25" PointY="7.3987939453125" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.75" PointY="6.6764267844551286" />
-          <ConnectorPoint PointX="13.1875" PointY="7.1139267844551286" />
-          <ConnectorPoint PointX="13.1875" PointY="12.137904098220082" />
-          <ConnectorPoint PointX="13.5" PointY="12.137904098220082" />
+          <ConnectorPoint PointX="12.5" PointY="6.4264267844551286" />
+          <ConnectorPoint PointX="12.9375" PointY="6.8639267844551286" />
+          <ConnectorPoint PointX="12.9375" PointY="11.713799269531256" />
+          <ConnectorPoint PointX="13.25" PointY="11.713799269531256" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_3" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="14.872345377604166" />
-          <ConnectorPoint PointX="10.104166666666666" PointY="14.872345377604166" />
-          <ConnectorPoint PointX="10.270833333333334" PointY="14.872345377604166" />
-          <ConnectorPoint PointX="12.322916666666666" PointY="14.872345377604166" />
-          <ConnectorPoint PointX="12.489583333333334" PointY="14.872345377604166" />
-          <ConnectorPoint PointX="13.5" PointY="14.872345377604166" />
+          <ConnectorPoint PointX="9.5" PointY="10.867251848958325" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="10.867251848958324" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="10.867251848958325" />
+          <ConnectorPoint PointX="12.854166666666666" PointY="10.867251848958324" />
+          <ConnectorPoint PointX="13.17708083333334" PointY="10.867251848958325" />
+          <ConnectorPoint PointX="13.25" PointY="10.867251848958325" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_4" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.40625" PointY="15.25" />
-          <ConnectorPoint PointX="12.40625" PointY="11.21875" />
-          <ConnectorPoint PointX="13.104166666666666" PointY="11.21875" />
-          <ConnectorPoint PointX="13.325582682291666" PointY="11.21875" />
-          <ConnectorPoint PointX="13.5" PointY="11.21875" />
+          <ConnectorPoint PointX="12.15625" PointY="15" />
+          <ConnectorPoint PointX="12.15625" PointY="14.591094877604167" />
+          <ConnectorPoint PointX="12.916666666666666" PointY="14.591094877604167" />
+          <ConnectorPoint PointX="13.083333333333334" PointY="14.591094877604167" />
+          <ConnectorPoint PointX="13.25" PointY="14.591094877604167" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.parcela_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="13.1776025390625" />
-          <ConnectorPoint PointX="15.75" PointY="13.1776025390625" />
+          <ConnectorPoint PointX="14.75" PointY="12.9276025390625" />
+          <ConnectorPoint PointX="15.5" PointY="12.9276025390625" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.usuario_ibfk_5" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="8.34375" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="8.34375" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="8.34375" />
-          <ConnectorPoint PointX="6.3229186666666672" PointY="8.34375" />
-          <ConnectorPoint PointX="6.4895853333333333" PointY="8.34375" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="8.34375" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="8.34375" />
-          <ConnectorPoint PointX="9" PointY="8.34375" />
-          <ConnectorPoint PointX="9" PointY="9" />
+          <ConnectorPoint PointX="4.25" PointY="8.0738" />
+          <ConnectorPoint PointX="6.0729186666666672" PointY="8.0738" />
+          <ConnectorPoint PointX="6.2395853333333333" PointY="8.0738" />
+          <ConnectorPoint PointX="8.3771135416666649" PointY="8.0738" />
+          <ConnectorPoint PointX="8.5437802083333327" PointY="8.0738" />
+          <ConnectorPoint PointX="8.98339775" PointY="8.0738" />
+          <ConnectorPoint PointX="8.98339775" PointY="8.75" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.usuario_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="16.860279198317308" />
-          <ConnectorPoint PointX="4.8160744349011217" PointY="17.176353633218429" />
-          <ConnectorPoint PointX="4.9339255650988791" PointY="17.294204763416186" />
-          <ConnectorPoint PointX="4.9375" PointY="17.297779198317308" />
-          <ConnectorPoint PointX="4.9375" PointY="19.847799479166667" />
-          <ConnectorPoint PointX="7.8379807692307679" PointY="19.847799479166667" />
-          <ConnectorPoint PointX="8.25" PointY="19.435780248397435" />
+          <ConnectorPoint PointX="4.25" PointY="16.672587890625" />
+          <ConnectorPoint PointX="4.625" PointY="17.047587890625" />
+          <ConnectorPoint PointX="4.625" PointY="19.374248046875003" />
+          <ConnectorPoint PointX="7.625" PointY="19.374248046875003" />
+          <ConnectorPoint PointX="8" PointY="18.999248046875003" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.lancamento_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="10.862447916666667" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="10.862447916666666" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="10.862447916666667" />
-          <ConnectorPoint PointX="13.104166666666666" PointY="10.862447916666667" />
-          <ConnectorPoint PointX="13.270833333333334" PointY="10.862447916666667" />
-          <ConnectorPoint PointX="13.5" PointY="10.862447916666667" />
+          <ConnectorPoint PointX="9.5" PointY="10.581195416666674" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="10.581195416666672" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="10.581195416666674" />
+          <ConnectorPoint PointX="12.854166666666666" PointY="10.581195416666674" />
+          <ConnectorPoint PointX="13.020833333333334" PointY="10.581195416666674" />
+          <ConnectorPoint PointX="13.25" PointY="10.581195416666674" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.lancamento_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.75" PointY="1.8362939453124998" />
-          <ConnectorPoint PointX="14.25" PointY="1.8362939453124998" />
-          <ConnectorPoint PointX="14.25" PointY="7.25" />
+          <ConnectorPoint PointX="12.5" PointY="1.5862939453124998" />
+          <ConnectorPoint PointX="14" PointY="1.5862939453124998" />
+          <ConnectorPoint PointX="14" PointY="7" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.usuario_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="19.179431594551289" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="19.179431594551289" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="19.179431594551289" />
-          <ConnectorPoint PointX="8.25" PointY="19.179431594551289" />
+          <ConnectorPoint PointX="4.25" PointY="18.845396263020785" />
+          <ConnectorPoint PointX="4.541666666666667" PointY="18.845396263020785" />
+          <ConnectorPoint PointX="4.708333333333333" PointY="18.845396263020785" />
+          <ConnectorPoint PointX="7.666666666666667" PointY="18.845396263020785" />
+          <ConnectorPoint PointX="7.833333333333333" PointY="18.845396263020785" />
+          <ConnectorPoint PointX="8" PointY="18.845396263020785" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.parcela_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="16.865143229166669" />
-          <ConnectorPoint PointX="16.010414166666667" PointY="16.865143229166669" />
-          <ConnectorPoint PointX="16.177080833333331" PointY="16.865143229166669" />
-          <ConnectorPoint PointX="16.5" PointY="16.865143229166669" />
-          <ConnectorPoint PointX="16.5" PointY="15.672506510416666" />
+          <ConnectorPoint PointX="14.75" PointY="16.615143229166669" />
+          <ConnectorPoint PointX="15.760414166666665" PointY="16.615143229166669" />
+          <ConnectorPoint PointX="15.927080833333333" PointY="16.615143229166669" />
+          <ConnectorPoint PointX="16.25" PointY="16.615143229166669" />
+          <ConnectorPoint PointX="16.25" PointY="15.422506510416666" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.prestacaoconta_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="18.783274739583334" />
-          <ConnectorPoint PointX="10.104166666666666" PointY="18.783274739583334" />
-          <ConnectorPoint PointX="10.270833333333334" PointY="18.783274739583334" />
-          <ConnectorPoint PointX="10.5" PointY="18.783274739583334" />
+          <ConnectorPoint PointX="9.5" PointY="18.660359943256513" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="18.660359943256513" />
+          <ConnectorPoint PointX="10.020833333333334" PointY="18.660359943256513" />
+          <ConnectorPoint PointX="10.25" PointY="18.660359943256513" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.usuario_ibfk_4" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.15625" PointY="7.8552864583333335" />
-          <ConnectorPoint PointX="7.15625" PointY="19.060488036858985" />
-          <ConnectorPoint PointX="8.25" PointY="19.060488036858985" />
+          <ConnectorPoint PointX="7.25" PointY="7.5429777660256407" />
+          <ConnectorPoint PointX="7.6248086923076928" PointY="7.9177864583333335" />
+          <ConnectorPoint PointX="8.4604468749999988" PointY="7.9177864583333335" />
+          <ConnectorPoint PointX="8.4604468749999988" PointY="8.75" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.area_ibfk_2" >
-          <ConnectorPoint PointX="8.2869220769230765" PointY="19.441549479166667" />
-          <ConnectorPoint PointX="7.5369220769230765" PointY="20.191549479166667" />
-          <ConnectorPoint PointX="5" PointY="20.191549479166667" />
-          <ConnectorPoint PointX="5" PointY="15.091024389022437" />
-          <ConnectorPoint PointX="4.4757692307692283" PointY="14.566793619791666" />
+          <ConnectorPoint PointX="8" PointY="12.047948404947917" />
+          <ConnectorPoint PointX="7.375" PointY="12.047948404947917" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.cliente_ibfk_7" >
-          <ConnectorPoint PointX="8.25" PointY="13.970774739583334" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="13.970774739583334" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="13.970774739583334" />
-          <ConnectorPoint PointX="6.75" PointY="13.970774739583334" />
+          <ConnectorPoint PointX="8" PointY="16.535421549479167" />
+          <ConnectorPoint PointX="7.833333333333333" PointY="16.535421549479167" />
+          <ConnectorPoint PointX="7.666666666666667" PointY="16.535421549479167" />
+          <ConnectorPoint PointX="6.5" PointY="16.535421549479167" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.despesa_ibfk_3" >
-          <ConnectorPoint PointX="9.75" PointY="10.110060393749379" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="10.110060393749377" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="10.110060393749379" />
-          <ConnectorPoint PointX="10.5" PointY="10.110060393749379" />
+          <ConnectorPoint PointX="9.5" PointY="9.272924613952636" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="9.2729246139526342" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="9.272924613952636" />
+          <ConnectorPoint PointX="10.25" PointY="9.272924613952636" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.emprestimo_ibfk_5" >
-          <ConnectorPoint PointX="9.75" PointY="11.453125" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="11.453124999999998" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="11.453125" />
-          <ConnectorPoint PointX="12.322916666666666" PointY="11.453125" />
-          <ConnectorPoint PointX="12.489583333333334" PointY="11.453125" />
-          <ConnectorPoint PointX="13.104166666666666" PointY="11.453125" />
-          <ConnectorPoint PointX="13.270833333333334" PointY="11.453125" />
-          <ConnectorPoint PointX="13.5" PointY="11.453125" />
+          <ConnectorPoint PointX="9.5" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="10.020833333333334" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="12.072916666666666" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="12.239583333333334" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="12.916666666666666" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="13.083333333333334" PointY="14.826797438802084" />
+          <ConnectorPoint PointX="13.25" PointY="14.826797438802084" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.lancamento_ibfk_3" >
-          <ConnectorPoint PointX="9.75" PointY="19.379240786858976" />
-          <ConnectorPoint PointX="10.1875" PointY="19.816740786858976" />
-          <ConnectorPoint PointX="10.1875" PointY="11.335999348958334" />
-          <ConnectorPoint PointX="12.322916666666666" PointY="11.335999348958334" />
-          <ConnectorPoint PointX="12.489583333333334" PointY="11.335999348958334" />
-          <ConnectorPoint PointX="13.124999999999998" PointY="11.335999348958334" />
-          <ConnectorPoint PointX="13.12857443490112" PointY="11.332424914057208" />
-          <ConnectorPoint PointX="13.246425565098878" PointY="11.214573783859452" />
-          <ConnectorPoint PointX="13.5" PointY="10.960999348958334" />
+          <ConnectorPoint PointX="9.5" PointY="18.936939354567311" />
+          <ConnectorPoint PointX="9.9375" PointY="19.374439354567311" />
+          <ConnectorPoint PointX="9.9375" PointY="11.085999348958332" />
+          <ConnectorPoint PointX="12.875" PointY="11.085999348958332" />
+          <ConnectorPoint PointX="12.87857443490112" PointY="11.08242491405721" />
+          <ConnectorPoint PointX="12.996425565098878" PointY="10.964573783859454" />
+          <ConnectorPoint PointX="13.249999999999998" PointY="10.710999348958334" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.parcela_ibfk_3" >
-          <ConnectorPoint PointX="9.75" PointY="17.990143229166669" />
-          <ConnectorPoint PointX="10.104166666666666" PointY="17.990143229166669" />
-          <ConnectorPoint PointX="10.270833333333334" PointY="17.990143229166669" />
-          <ConnectorPoint PointX="16.0937475" PointY="17.990143229166669" />
-          <ConnectorPoint PointX="16.0937475" PointY="15.672506510416666" />
+          <ConnectorPoint PointX="9.5" PointY="17.740143229166669" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="17.740143229166669" />
+          <ConnectorPoint PointX="10.020833333333334" PointY="17.740143229166669" />
+          <ConnectorPoint PointX="12.916666666666666" PointY="17.740143229166669" />
+          <ConnectorPoint PointX="13.083333333333334" PointY="17.740143229166669" />
+          <ConnectorPoint PointX="15.8437475" PointY="17.740143229166669" />
+          <ConnectorPoint PointX="15.8437475" PointY="15.422506510416666" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.prestacaoconta_ibfk_2" >
-          <ConnectorPoint PointX="9.75" PointY="18.391637369791667" />
-          <ConnectorPoint PointX="10.104166666666666" PointY="18.391637369791667" />
-          <ConnectorPoint PointX="10.270833333333334" PointY="18.391637369791667" />
-          <ConnectorPoint PointX="10.5" PointY="18.391637369791667" />
+          <ConnectorPoint PointX="9.5" PointY="18.205179971628255" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="18.205179971628255" />
+          <ConnectorPoint PointX="10.020833333333334" PointY="18.205179971628255" />
+          <ConnectorPoint PointX="10.25" PointY="18.205179971628255" />
         </AssociationConnector>
         <AssociationConnector Association="EmprestimoModel.usuario_ibfk_6" >
-          <ConnectorPoint PointX="8.7819230769230767" PointY="19.441549479166667" />
-          <ConnectorPoint PointX="8.7819230769230767" PointY="19.691549479166667" />
-          <ConnectorPoint PointX="9.2284615384615378" PointY="19.691549479166667" />
-          <ConnectorPoint PointX="9.2284615384615378" PointY="19.441549479166667" />
+          <ConnectorPoint PointX="8.4176923076923078" PointY="18.999248046875003" />
+          <ConnectorPoint PointX="8.4176923076923078" PointY="19.247294921875003" />
+          <ConnectorPoint PointX="8.75" PointY="19.247294921875003" />
+          <ConnectorPoint PointX="8.75" PointY="18.999248046875003" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="EmprestimoModel.UsuarioArea" Width="1.5" PointX="13.25" PointY="18.75" Height="2.3648893229166674" />
+        <AssociationConnector Association="EmprestimoModel.usuarioarea_ibfk_1" >
+          <ConnectorPoint PointX="7.375" PointY="13.213623012369787" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="13.213623012369787" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="13.213623012369787" />
+          <ConnectorPoint PointX="7.75" PointY="13.213623012369787" />
+          <ConnectorPoint PointX="7.75" PointY="19.249248046875003" />
+          <ConnectorPoint PointX="8.6979186666666664" PointY="19.249248046875003" />
+          <ConnectorPoint PointX="8.8645853333333342" PointY="19.249248046875003" />
+          <ConnectorPoint PointX="9.875" PointY="19.249248046875003" />
+          <ConnectorPoint PointX="9.875" PointY="14.307190755208332" />
+          <ConnectorPoint PointX="13" PointY="14.307190755208332" />
+          <ConnectorPoint PointX="13" PointY="18.375" />
+          <ConnectorPoint PointX="14" PointY="18.375" />
+          <ConnectorPoint PointX="14" PointY="18.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="EmprestimoModel.usuarioarea_ibfk_2" >
+          <ConnectorPoint PointX="8.781252" PointY="18.999248046875003" />
+          <ConnectorPoint PointX="8.781252" PointY="22.028300781249996" />
+          <ConnectorPoint PointX="12.875" PointY="22.028300781249996" />
+          <ConnectorPoint PointX="12.875" PointY="19.932444661458334" />
+          <ConnectorPoint PointX="13.25" PointY="19.932444661458334" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
