@@ -258,6 +258,15 @@
     <Compile Include="Models\ModuloTipoEmprestimo\Processos\TipoEmprestimoProcesso.cs" />
     <Compile Include="Models\ModuloTipoEmprestimo\Repositorios\Interfaces\ITipoEmprestimoRepositorio.cs" />
     <Compile Include="Models\ModuloTipoEmprestimo\Repositorios\TipoEmprestimoRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Constantes\UsuarioAreaConstantes.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Excecoes\UsuarioAreaNaoAlteradoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Excecoes\UsuarioAreaNaoExcluidoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Excecoes\UsuarioAreaNaoIncluidoExcecao.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Fabricas\UsuarioAreaFabrica.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Processos\Interfaces\IUsuarioAreaProcesso.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Processos\UsuarioAreaProcesso.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Repositorios\Interfaces\IUsuarioAreaRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\Repositorios\UsuarioAreaRepositorio.cs" />
     <Compile Include="Models\ModuloUsuarioTipo\Constantes\UsuarioTipoConstantes.cs" />
     <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoExcluidoExcecao.cs" />
