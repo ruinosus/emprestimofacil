@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.Parcela>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.ParcelaPesquisa>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Visualizar Detalhe das Parcelas
@@ -30,14 +30,14 @@
     <% using (Html.BeginForm())
        { %>
     <div class="editor-label">
-        <%: Html.LabelFor(model => model.data_pagamento) %>
+        <%: Html.LabelFor(model => model.DataInicio) %>
     </div>
     <div class="editor-field">
         <div class="date-container">
-            <%: Html.EditorFor(model => model.data_pagamento)%>
+            <%: Html.EditorFor(model => model.DataInicio)%>
         </div>
         <div class="clear">
-            <%: Html.ValidationMessageFor(model => model.data_pagamento)%>
+            <%: Html.ValidationMessageFor(model => model.DataInicio)%>
         </div>
     </div>
     <p>

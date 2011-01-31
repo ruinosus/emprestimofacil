@@ -125,8 +125,8 @@ namespace SiteMVC.Controllers
         {
             List<Parcela> parcelas = new List<Parcela>();
             ViewData["parcelas"] = parcelas;
-            Parcela parcela = new Parcela();
-            parcela.data_pagamento = DateTime.Now;
+            ParcelaPesquisa parcela = new ParcelaPesquisa();
+            parcela.DataInicio = DateTime.Now;
 
             return View(parcela);
 
@@ -134,18 +134,20 @@ namespace SiteMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult VisualizarDetalheParcelas(Parcela parcela)
+        public ActionResult VisualizarDetalheParcelas(ParcelaPesquisa parcelaPesquisa)
         {
             List<Parcela> parcelas = new List<Parcela>();
             try
             {
-                if (default(DateTime) != parcela.data_pagamento)
+                if (default(DateTime) != parcelaPesquisa.DataInicio)
                 {
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
-                    var resultado = processo.Consultar(parcela, TipoPesquisa.E);
+                    Parcela p = new Parcela();
+                    p.data_pagamento = parcelaPesquisa.DataInicio;
+                    var resultado = processo.Consultar(p, TipoPesquisa.E);
                     parcelas = resultado;
                     ViewData["parcelas"] = parcelas;
-                    return View(parcela);
+                    return View(parcelaPesquisa);
                 }
                 else
                 {
@@ -157,7 +159,7 @@ namespace SiteMVC.Controllers
             {
                 ViewData["parcelas"] = parcelas;
                 ModelState.AddModelError("data_pagamento", e.Message);
-                return View(parcela);
+                return View(parcelaPesquisa);
 
             }
 

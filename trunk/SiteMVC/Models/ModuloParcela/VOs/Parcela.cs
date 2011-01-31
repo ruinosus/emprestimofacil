@@ -21,6 +21,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [Range(1, 9999999999999, ErrorMessage = "Valor tem que ser maior que zero.")]
             public long? valor_pago { get; set; }
 
+
+
         }
     }
 
