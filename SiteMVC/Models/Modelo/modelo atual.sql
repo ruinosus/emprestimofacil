@@ -282,7 +282,6 @@ CREATE TABLE `usuario` (
   `login` varchar(16) DEFAULT NULL,
   `senha` varchar(50) DEFAULT NULL,
   `situacao` char(1) DEFAULT NULL,
-  `area_id` int(10) unsigned NOT NULL,
   `usuariotipo_id` int(10) unsigned NOT NULL,
   `escolaridade_id` int(10) unsigned DEFAULT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
@@ -291,10 +290,20 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id`),
   KEY `orgaosexpedidoresnome_id` (`orgaosexpedidoresnome_id`),
   KEY `estadoscivistipo_id` (`estadoscivistipo_id`),
-  KEY `area_id` (`area_id`),
   KEY `usuariotipo_id` (`usuariotipo_id`),
   KEY `escolaridade_id` (`escolaridade_id`),
   KEY `usuariomodificacao_id` (`usuariomodificacao_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `usuarioarea`(
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `area_id` int(10) unsigned NOT NULL,
+  `usuario_id` int(10) unsigned NOT NULL,
+  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   KEY `area_id` (`area_id`), 
+   KEY `usuario_id` (`usuario_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `usuariotipo` (
@@ -352,7 +361,10 @@ ALTER TABLE `prestacaoconta`
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`orgaosexpedidoresnome_id`) REFERENCES `orgaoexpedidornome` (`id`),
   ADD CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`estadoscivistipo_id`) REFERENCES `estadociviltipo` (`id`),
-  ADD CONSTRAINT `usuario_ibfk_3` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
-  ADD CONSTRAINT `usuario_ibfk_4` FOREIGN KEY (`usuariotipo_id`) REFERENCES `usuariotipo` (`id`),
-  ADD CONSTRAINT `usuario_ibfk_5` FOREIGN KEY (`escolaridade_id`) REFERENCES `escolaridade` (`id`),
-  ADD CONSTRAINT `usuario_ibfk_6` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `usuario_ibfk_3` FOREIGN KEY (`usuariotipo_id`) REFERENCES `usuariotipo` (`id`),
+  ADD CONSTRAINT `usuario_ibfk_4` FOREIGN KEY (`escolaridade_id`) REFERENCES `escolaridade` (`id`),
+  ADD CONSTRAINT `usuario_ibfk_5` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
+
+ALTER TABLE `usuarioarea`
+  ADD CONSTRAINT `usuarioarea_ibfk_1` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
+  ADD CONSTRAINT `usuarioarea_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
