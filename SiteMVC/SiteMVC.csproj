@@ -105,6 +105,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Models\ModuloBasico\VOs\Validacoes.cs" />
+    <Compile Include="Models\ModuloBasico\VOs\ValidationAttribute.cs" />
     <Compile Include="Models\ModuloBloqueado\Constantes\BloqueadoConstantes.cs" />
     <Compile Include="Models\ModuloBloqueado\Excecoes\BloqueadoNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloBloqueado\Excecoes\BloqueadoNaoExcluidoExcecao.cs" />

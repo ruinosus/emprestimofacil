@@ -75,12 +75,15 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
             [Required(ErrorMessage = "O cpf é necessário para o cadastro.")]
             [DisplayName("Cpf:")]
+            [Cpf(ErrorMessage = "Cpf inválido.")]
             public string cpf { get; set; }
 
             [DisplayName("Ctps:")]
+            [Cnpj(ErrorMessage = "Cnpj inválido.")]
             public string ctps { get; set; }
 
             [DisplayName("Data Expedição:")]
+            [Required(ErrorMessage = "Informe a data de expediçao")]
             public DateTime? data_expedicao { get; set; }
 
             [DisplayName("Endereço Comercial:")]
