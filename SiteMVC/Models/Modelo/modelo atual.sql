@@ -367,4 +367,4 @@ ALTER TABLE `usuario`
 
 ALTER TABLE `usuarioarea`
   ADD CONSTRAINT `usuarioarea_ibfk_1` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
-  ADD CONSTRAINT `usuarioarea_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `usuarioarea_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
