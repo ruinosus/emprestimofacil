@@ -1759,10 +1759,10 @@
         </Association>
         <EntityType Name="UsuarioArea">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Type="Int64" Name="area_id" Nullable="false" />
-          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="DateTimeOffset" Name="timeCreated" Nullable="false" />
           <Property Type="DateTimeOffset" Name="timeUpdated" Nullable="false" />
           <Property Type="Int64" Name="usuario_id" Nullable="false" />
@@ -2030,7 +2030,7 @@
                 <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
                 <ScalarProperty Name="timeUpdated" ColumnName="timeUpdated" />
                 <ScalarProperty Name="timeCreated" ColumnName="timeCreated" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ID" ColumnName="id" />
                 <ScalarProperty Name="area_id" ColumnName="area_id" />
               </MappingFragment>
             </EntityTypeMapping>
