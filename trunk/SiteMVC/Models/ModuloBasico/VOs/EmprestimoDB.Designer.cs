@@ -55,6 +55,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "despesa_ibfk_4", "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.Area), "Despesa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Despesa), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "lancamento_ibfk_4", "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.Area), "Lancamento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Lancamento), true)]
 [assembly: EdmRelationshipAttribute("EmprestimoModel", "emprestimo_ibfk_51", "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.Area), "Emprestimo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.Emprestimo), true)]
+[assembly: EdmRelationshipAttribute("EmprestimoModel", "prestacaoconta_ibfk_3", "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SiteMVC.Models.ModuloBasico.VOs.Area), "PrestacaoConta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SiteMVC.Models.ModuloBasico.VOs.PrestacaoConta), true)]
 
 #endregion
 
@@ -962,6 +963,28 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Emprestimo>("EmprestimoModel.emprestimo_ibfk_51", "Emprestimo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "prestacaoconta_ibfk_3", "PrestacaoConta")]
+        public EntityCollection<PrestacaoConta> prestacaoconta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PrestacaoConta>("EmprestimoModel.prestacaoconta_ibfk_3", "PrestacaoConta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PrestacaoConta>("EmprestimoModel.prestacaoconta_ibfk_3", "PrestacaoConta", value);
                 }
             }
         }
@@ -6005,7 +6028,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         /// <param name="valoremprestado">Initial value of the valoremprestado property.</param>
         /// <param name="valorrecebido">Initial value of the valorrecebido property.</param>
         /// <param name="valorsaida">Initial value of the valorsaida property.</param>
-        public static PrestacaoConta CreatePrestacaoConta(global::System.DateTime dataprestacao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated, global::System.Single totaldespesas, global::System.Int64 usuario_id, global::System.Single valorcancelado, global::System.Single valordevolvido, global::System.Single valoremprestado, global::System.Single valorrecebido, global::System.Single valorsaida)
+        /// <param name="area_id">Initial value of the area_id property.</param>
+        public static PrestacaoConta CreatePrestacaoConta(global::System.DateTime dataprestacao, global::System.Int64 id, global::System.DateTimeOffset timeCreated, global::System.DateTimeOffset timeUpdated, global::System.Single totaldespesas, global::System.Int64 usuario_id, global::System.Single valorcancelado, global::System.Single valordevolvido, global::System.Single valoremprestado, global::System.Single valorrecebido, global::System.Single valorsaida, global::System.Int64 area_id)
         {
             PrestacaoConta prestacaoConta = new PrestacaoConta();
             prestacaoConta.dataprestacao = dataprestacao;
@@ -6019,6 +6043,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             prestacaoConta.valoremprestado = valoremprestado;
             prestacaoConta.valorrecebido = valorrecebido;
             prestacaoConta.valorsaida = valorsaida;
+            prestacaoConta.area_id = area_id;
             return prestacaoConta;
         }
 
@@ -6339,6 +6364,30 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         private Nullable<global::System.Int64> _usuariomodificacao_id;
         partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
         partial void Onusuariomodificacao_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 area_id
+        {
+            get
+            {
+                return _area_id;
+            }
+            set
+            {
+                Onarea_idChanging(value);
+                ReportPropertyChanging("area_id");
+                _area_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("area_id");
+                Onarea_idChanged();
+            }
+        }
+        private global::System.Int64 _area_id;
+        partial void Onarea_idChanging(global::System.Int64 value);
+        partial void Onarea_idChanged();
 
         #endregion
     
@@ -6416,6 +6465,44 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("EmprestimoModel.prestacaoconta_ibfk_2", "Usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EmprestimoModel", "prestacaoconta_ibfk_3", "Area")]
+        public Area area
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Area>("EmprestimoModel.prestacaoconta_ibfk_3", "Area").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Area>("EmprestimoModel.prestacaoconta_ibfk_3", "Area").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Area> areaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Area>("EmprestimoModel.prestacaoconta_ibfk_3", "Area");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Area>("EmprestimoModel.prestacaoconta_ibfk_3", "Area", value);
                 }
             }
         }
