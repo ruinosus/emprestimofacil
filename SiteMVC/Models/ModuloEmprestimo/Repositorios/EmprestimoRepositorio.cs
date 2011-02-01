@@ -44,19 +44,32 @@ namespace SiteMVC.ModuloEmprestimo.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
-
-                        if (emprestimo.cliente_id != 0)
+                        else
                         {
 
-                            resultado = ((from c in resultado
-                                          where
-                                          c.cliente_id == emprestimo.cliente_id
-                                          select c).ToList());
+                            if (emprestimo.cliente_id != 0)
+                            {
 
-                            resultado = resultado.Distinct().ToList();
+                                resultado = ((from c in resultado
+                                              where
+                                              c.cliente_id == emprestimo.cliente_id
+                                              select c).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+                            if (emprestimo.area_id != 0)
+                            {
+
+                                resultado = ((from c in resultado
+                                              where
+                                              c.area_id == emprestimo.area_id
+                                              select c).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
                         }
-
-
                         break;
                     }
                 #endregion

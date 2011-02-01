@@ -44,20 +44,22 @@ namespace SiteMVC.ModuloCliente.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
-
-                        if (cliente.area_id != 0)
+                        else
                         {
 
-                            resultado = ((from c in resultado
-                                          where
-                                          c.area_id == cliente.area_id
-                                          select c).ToList());
+                            if (cliente.area_id != 0)
+                            {
 
-                            resultado = resultado.Distinct().ToList();
+                                resultado = ((from c in resultado
+                                              where
+                                              c.area_id == cliente.area_id
+                                              select c).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+
                         }
-
-
-
 
                         break;
                     }
