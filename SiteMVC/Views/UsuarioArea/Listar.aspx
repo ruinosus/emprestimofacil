@@ -32,7 +32,7 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Selecionar", "SelecionarArea")%>
+                <%: Html.ActionLink("Selecionar", "SelecionarArea", new { id = item.ID })%>
             </td>
             <td>
                 <%: item.area_id %>
