@@ -79,6 +79,7 @@
     <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusParcelaController.cs" />
+    <Compile Include="Controllers\UsuarioAreaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,6 +268,7 @@
     <Compile Include="Models\ModuloUsuarioArea\Processos\UsuarioAreaProcesso.cs" />
     <Compile Include="Models\ModuloUsuarioArea\Repositorios\Interfaces\IUsuarioAreaRepositorio.cs" />
     <Compile Include="Models\ModuloUsuarioArea\Repositorios\UsuarioAreaRepositorio.cs" />
+    <Compile Include="Models\ModuloUsuarioArea\VOs\UsuarioArea.cs" />
     <Compile Include="Models\ModuloUsuarioTipo\Constantes\UsuarioTipoConstantes.cs" />
     <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloUsuarioTipo\Excecoes\UsuarioTipoNaoExcluidoExcecao.cs" />
@@ -392,6 +394,11 @@
     <Content Include="Views\StatusParcela\Detalhar.aspx" />
     <Content Include="Views\StatusParcela\Alterar.aspx" />
     <Content Include="Views\StatusParcela\Listar.aspx" />
+    <Content Include="Views\UsuarioArea\Alterar.aspx" />
+    <Content Include="Views\UsuarioArea\Detalhar.aspx" />
+    <Content Include="Views\UsuarioArea\Excluir.aspx" />
+    <Content Include="Views\UsuarioArea\Incluir.aspx" />
+    <Content Include="Views\UsuarioArea\Listar.aspx" />
     <Content Include="Views\Usuario\Alterar.aspx" />
     <Content Include="Views\Usuario\AlterarSenha.aspx" />
     <Content Include="Views\Usuario\Detalhar.aspx" />

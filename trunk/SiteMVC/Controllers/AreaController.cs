@@ -8,6 +8,8 @@ using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.ModuloMunicipio.Processos;
 using SiteMVC;
+using SiteMVC.Helpers;
+using SiteMVC.ModuloUsuarioArea.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -21,22 +23,14 @@ namespace SiteMVC.Controllers
             return RedirectToAction("Listar");
         }
 
+       
         public ActionResult Listar(int? page)
         {
-             
             IAreaProcesso processo = AreaProcesso.Instance;
-            var resultado =  processo.Consultar();
+            var resultado = processo.Consultar();
             List<Area> areas = resultado;
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
             return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
-		
-            //EmprestimoEntities db = new EmprestimoEntities();
-            //StatusParcela sss = new StatusParcela();
-            //var teste = db.StatusParcelaSetSet.ToList();
-            ////emprestimoEntities db = new emprestimoEntities();
-            //ViewData.Model = teste;
-
-            //return View();
         }
 
         //
@@ -91,7 +85,7 @@ namespace SiteMVC.Controllers
             }
             catch
             {
-                    return View(area);
+                return View(area);
             }
         }
 
@@ -149,7 +143,7 @@ namespace SiteMVC.Controllers
             area.ID = id;
             ViewData.Model = processo.Consultar(area, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
             return View();
-            
+
         }
 
         ////
@@ -161,7 +155,7 @@ namespace SiteMVC.Controllers
             try
             {
                 IAreaProcesso processo = AreaProcesso.Instance;
-             
+
                 area.ID = id;
                 processo.Excluir(area);
                 processo.Confirmar();
@@ -175,7 +169,7 @@ namespace SiteMVC.Controllers
             }
 
 
-            
+
         }
     }
 }
