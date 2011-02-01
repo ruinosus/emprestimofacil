@@ -91,11 +91,13 @@ CREATE TABLE `despesa` (
   `usuario_id` int(10) unsigned NOT NULL,
   `despesatipo_id` int(10) unsigned NOT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
+  `area_id` int(10) unsigned NOT NULL,
   `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `despesatipo_id` (`despesatipo_id`),
+  KEY `area_id` (`area_id`),
   KEY `usuariomodificacao_id` (`usuariomodificacao_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -112,6 +114,7 @@ CREATE TABLE `emprestimo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `valor` float NOT NULL,
   `juros` float NOT NULL,
+  `area_id` int(10) unsigned NOT NULL,
   `qtde_parcelas` int(10) unsigned NOT NULL,
   `data_emprestimo` date NOT NULL,
   `cliente_id` int(10) unsigned NOT NULL,
@@ -126,6 +129,7 @@ CREATE TABLE `emprestimo` (
   KEY `prazospagamento_id` (`prazospagamento_id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `tipoemprestimo_id` (`tipoemprestimo_id`),
+  KEY `area_id` (`area_id`),
   KEY `usuariomodificacao_id` (`usuariomodificacao_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -155,6 +159,7 @@ CREATE TABLE `lancamento` (
   `observacoes` text,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
   `fonte` varchar(15) DEFAULT NULL,
+  `area_id` int(10) unsigned NOT NULL,
   `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
@@ -336,14 +341,16 @@ ALTER TABLE `cliente`
 ALTER TABLE `despesa`
   ADD CONSTRAINT `despesa_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `despesa_ibfk_2` FOREIGN KEY (`despesatipo_id`) REFERENCES `despesatipo` (`id`),
-  ADD CONSTRAINT `despesa_ibfk_3` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `despesa_ibfk_3` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `despesa_ibfk_4` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`);
 
 ALTER TABLE `emprestimo`
   ADD CONSTRAINT `emprestimo_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`),
   ADD CONSTRAINT `emprestimo_ibfk_2` FOREIGN KEY (`prazospagamento_id`) REFERENCES `prazopagamento` (`id`),
   ADD CONSTRAINT `emprestimo_ibfk_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `emprestimo_ibfk_4` FOREIGN KEY (`tipoemprestimo_id`) REFERENCES `tipoemprestimo` (`id`),
-  ADD CONSTRAINT `emprestimo_ibfk_5` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `emprestimo_ibfk_5` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
+  ADD CONSTRAINT `emprestimo_ibfk_6` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
 
 ALTER TABLE `lancamento`
   ADD CONSTRAINT `lancamento_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
