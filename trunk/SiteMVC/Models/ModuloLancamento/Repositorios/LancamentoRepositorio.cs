@@ -44,19 +44,32 @@ namespace SiteMVC.ModuloLancamento.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
-
-                        if (default(DateTime) != lancamento.data )
+                        else
                         {
+                            if (default(DateTime) != lancamento.data)
+                            {
 
-                            resultado = ((from c in resultado
-                                          where
-                                          c.data.ToShortDateString() == lancamento.data.ToShortDateString()
-                                          select c).ToList());
+                                resultado = ((from c in resultado
+                                              where
+                                              c.data.ToShortDateString() == lancamento.data.ToShortDateString()
+                                              select c).ToList());
 
-                            resultado = resultado.Distinct().ToList();
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+
+                            if (lancamento.area_id != 0)
+                            {
+
+                                resultado = ((from c in resultado
+                                              where
+                                              c.area_id == lancamento.area_id
+                                              select c).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
                         }
-
-
                         break;
                     }
                 #endregion
