@@ -59,13 +59,15 @@
                    item = lista[k];
                    i++;
                    cont++;
-                   cont2++;
+                  
                    if (cont > 5)
                        break;
+
+                   cont2++;
                      %>
             <tr>
                 <td style="width: 50%">
-                    <table cellpadding="0" cellspacing="0" border="1" width="100%">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="jhgjhj">
                         <tr>
                             <td colspan="2">
                                 Emprest Fácil - Documento:
@@ -108,7 +110,7 @@
                                 Parcela:
                             </td>
                             <td colspan="2">
-                             <%: i %>/<%: Model.Count() %>
+                             <%: item.sequencial %>/<%: Model.Count() %>
                             </td>
                         </tr>
                         <tr>
@@ -185,7 +187,7 @@
                                 Parcela:
                             </td>
                             <td colspan="2">
-                             <%: i %>/<%: Model.Count() %>
+                             <%: item.sequencial%>/<%: Model.Count() %>
                             </td>
                         </tr>
                         <tr>
