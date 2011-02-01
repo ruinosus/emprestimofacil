@@ -238,12 +238,14 @@ CREATE TABLE `prestacaoconta` (
   `valordevolvido` float NOT NULL,
   `usuario_id` int(10) unsigned NOT NULL,
   `valorcancelado` float NOT NULL,
+  `area_id` int(10) unsigned NOT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
   `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `parcelareabertas` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
+    KEY `area_id` (`area_id`),
     KEY `usuariomodificacao_id` (`usuariomodificacao_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -365,7 +367,8 @@ ALTER TABLE `parcela`
 
 ALTER TABLE `prestacaoconta`
   ADD CONSTRAINT `prestacaoconta_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
-  ADD CONSTRAINT `prestacaoconta_ibfk_2` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `prestacaoconta_ibfk_2` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `prestacaoconta_ibfk_3` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`);
 
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`orgaosexpedidoresnome_id`) REFERENCES `orgaoexpedidornome` (`id`),
