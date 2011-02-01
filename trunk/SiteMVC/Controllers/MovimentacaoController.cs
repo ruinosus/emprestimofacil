@@ -43,7 +43,7 @@ namespace SiteMVC.Controllers
             ViewData["lancamentos"] = lancamentos;
             Lancamento lancamento = new Lancamento();
             lancamento.data = DateTime.Now;
-
+            
             return View(lancamento);
 
 

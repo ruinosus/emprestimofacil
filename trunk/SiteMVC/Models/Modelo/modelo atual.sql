@@ -160,7 +160,8 @@ CREATE TABLE `lancamento` (
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `lancamentotipo_id` (`lancamentotipo_id`),
-  KEY `usuariomodificacao_id` (`usuariomodificacao_id`)
+  KEY `usuariomodificacao_id` (`usuariomodificacao_id`),
+  KEY `area_id` (`area_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `lancamentotipo` (
@@ -347,7 +348,8 @@ ALTER TABLE `emprestimo`
 ALTER TABLE `lancamento`
   ADD CONSTRAINT `lancamento_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `lancamento_ibfk_2` FOREIGN KEY (`lancamentotipo_id`) REFERENCES `lancamentotipo` (`id`),
-  ADD CONSTRAINT `lancamento_ibfk_3` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `lancamento_ibfk_3` FOREIGN KEY (`usuariomodificacao_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `lancamento_ibfk_4` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`);
 
 ALTER TABLE `parcela`
   ADD CONSTRAINT `parcela_ibfk_1` FOREIGN KEY (`emprestimo_id`) REFERENCES `emprestimo` (`id`),

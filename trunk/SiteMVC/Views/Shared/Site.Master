@@ -77,7 +77,10 @@
                     <%}
                     %>
                       <li>
-                        <%: Html.ActionLink("Selecionar Area", "SelecionarArea", "UsuarioArea")%></li>
+                        <%: Html.ActionLink("Selecionar Area", "Listar", "UsuarioArea")%></li>
+
+                         <li>
+                        <%: Html.ActionLink("Vincular Usuário", "Incluir", "UsuarioArea")%></li>
                     
                     <%}
                           else {

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.ModuloUsuarioArea.Processos;
 using SiteMVC.ModuloBasico.Enums;
+using SiteMVC.ModuloArea.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -47,7 +48,11 @@ namespace SiteMVC.Controllers
         [HttpGet]
         public ActionResult SelecionarArea(int id)
         {
-            Session.Add("AreaSelecionada", id);
+            IAreaProcesso processo = AreaProcesso.Instance;
+            Area area = new Area();
+            area.ID = id;
+            var areas = processo.Consultar(area, TipoPesquisa.E);
+            Session.Add("AreaSelecionada", areas[0]);
             return RedirectToAction("Index", "Home");
         }
 
