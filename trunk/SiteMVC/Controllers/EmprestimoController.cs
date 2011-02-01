@@ -119,7 +119,7 @@ namespace SiteMVC.Controllers
                 {
                     emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
                     emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
-
+                    emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.ID;
                     emprestimo.timeCreated = DateTime.Now;
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();

@@ -35,6 +35,7 @@ namespace SiteMVC.ModuloLancamento.Processos
 
         public void Incluir(Lancamento lancamento)
         {
+            lancamento.area_id = ClasseAuxiliar.AreaSelecionada.ID;
             this.lancamentoRepositorio.Incluir(lancamento);
 
         }
