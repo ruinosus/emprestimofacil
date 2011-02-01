@@ -79,6 +79,7 @@ namespace SiteMVC.Controllers
                 {
                     IDespesaProcesso processo = DespesaProcesso.Instance;
                     Despesa.timeCreated = DateTime.Now;
+                    Despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
                     processo.Incluir(Despesa);
                     processo.Confirmar();
                     return RedirectToAction("Index");
