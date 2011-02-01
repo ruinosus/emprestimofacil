@@ -31,6 +31,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
         private static Usuario usuarioLogado;
 
+        private static Area areaSelecionada;
+
         private static Cliente clienteSelecionado;
 
         private static Emprestimo emprestimoSelecionado;
@@ -50,6 +52,23 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 return usuarioLogado;
             }
             private set { usuarioLogado = value; }
+        }
+
+        /// <summary>
+        /// Propriedade que representa as areas selecionadas.
+        /// </summary>
+        public static Area AreaSelecionada
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["AreaSelecionada"] != null)
+                    areaSelecionada = (Area)System.Web.HttpContext.Current.Session["AreaSelecionada"];
+                else
+                    areaSelecionada = null;
+
+                return areaSelecionada;
+            }
+            private set { areaSelecionada = value; }
         }
 
         /// <summary>

@@ -31,16 +31,17 @@
                 <ul id="menu">
                     <%if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
                       {
-
-                          if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
+                          if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada!= null)
                           {
-                              if (Session["visualizarParcelas"] != null)
+                              if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
                               {
+                                  if (Session["visualizarParcelas"] != null)
+                                  {
                     %>
                     <li>
                         <%: Html.ActionLink("!!!!", "VisualizarParcelas", "Parcela")%></li>
                     <%
-                              }
+                                  }
                     %>
                     <li>
                         <%: Html.ActionLink("Movimentaçao", "Listar", "Movimentacao")%></li>
@@ -53,7 +54,7 @@
                         <%: Html.ActionLink("Despesa", "Listar", "Despesa")%></li>
                     <%
                         
-                          }
+                              }
                           
                     %>
                     <li>
@@ -68,13 +69,33 @@
                         <%: Html.ActionLink("Cliente", "Listar", "Cliente")%></li>
                     <li>
                         <%: Html.ActionLink("Municipio", "Listar", "Municipio")%></li>
+
                     <%if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
                       {%>
                     <li>
                         <%: Html.ActionLink("Area", "Listar", "Area")%></li>
                     <%}
                     %>
+                      <li>
+                        <%: Html.ActionLink("Selecionar Area", "SelecionarArea", "UsuarioArea")%></li>
+                    
                     <%}
+                          else {
+                          %>
+                          
+                        
+                    <li>
+                        <%: Html.ActionLink("Selecionar Area", "Listar", "UsuarioArea")%></li>
+                    
+                          
+                          
+                          
+                          
+                          
+                          
+                          <%
+                          }
+                      }
                     %>
                 </ul>
             </div>

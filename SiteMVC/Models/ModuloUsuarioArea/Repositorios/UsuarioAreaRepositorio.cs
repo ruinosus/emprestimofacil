@@ -6,7 +6,7 @@ using SiteMVC.ModuloBasico.Constantes;
 using SiteMVC.ModuloUsuarioArea.Excecoes;
 using SiteMVC.ModuloBasico.Enums;
 using SiteMVC.Models.ModuloBasico.VOs;
-using SiteMVC.Models.ModuloBasico.VOs;
+
 
 namespace SiteMVC.ModuloUsuarioArea.Repositorios
 {
@@ -44,8 +44,18 @@ namespace SiteMVC.ModuloUsuarioArea.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
+                        else if (usuarioArea.usuario_id != 0)
+                        {
 
-                      
+                            resultado = ((from c in resultado
+                                          where
+                                          c.usuario_id == usuarioArea.usuario_id
+                                          select c).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
                         break;
                     }
                 #endregion
@@ -61,7 +71,7 @@ namespace SiteMVC.ModuloUsuarioArea.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                      
+
                         break;
                     }
                 #endregion
@@ -128,7 +138,7 @@ namespace SiteMVC.ModuloUsuarioArea.Repositorios
                 usuarioAreaAux.area_id = usuarioArea.area_id;
                 usuarioAreaAux.usuario_id = usuarioArea.usuario_id;
 
-         
+
 
                 Confirmar();
             }
