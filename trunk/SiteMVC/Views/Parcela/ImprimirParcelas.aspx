@@ -65,14 +65,14 @@
 
                    cont2++;
                      %>
-            <tr>
+            <tr align="left">
                 <td style="width: 50%">
-                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="jhgjhj">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" >
                         <tr>
-                            <td colspan="2">
+                            <td >
                                 Emprest Fácil - Documento:
                             </td>
-                            <td>
+                            <td colspan="2">
                                   <%: item.ID %>
                             </td>
                         </tr>
@@ -144,7 +144,7 @@
                     
                 </td>
                 <td style="width: 50%">
-                <table class="clear" cellpadding="0" cellspacing="0" border="1" width="100%">
+                <table class="clear" cellpadding="0" cellspacing="0" border="0" width="100%">
                         <tr>
                             <td colspan="2">
                                 Emprest Fácil - Documento:
