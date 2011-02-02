@@ -21,9 +21,9 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10; 
         #endregion       
 
-        #region Relatorios
-      
+        #region Relatorios      
 
+        #region Visualizar Resumo Lancamento
         public ActionResult VisualizarResumoLancamento()
         {
             List<Lancamento> lancamentos = new List<Lancamento>();
@@ -66,6 +66,9 @@ namespace SiteMVC.Controllers
 
         }
 
+        #endregion
+
+        #region Visualizar Detalhe Lancamento
         public ActionResult VisualizarDetalheLancamento()
         {
             List<Lancamento> lancamentos = new List<Lancamento>();
@@ -106,8 +109,10 @@ namespace SiteMVC.Controllers
 
             }
 
-        }
+        } 
+        #endregion
 
+        #region Visualizar Detalhe Parcelas
         public ActionResult VisualizarDetalheParcelas()
         {
             List<Parcela> parcelas = new List<Parcela>();
@@ -150,8 +155,10 @@ namespace SiteMVC.Controllers
 
             }
 
-        }
+        } 
+        #endregion
 
+        #region Visualizar Clientes Devedores
         public ActionResult VisualizarClientesDevedores()
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -162,6 +169,9 @@ namespace SiteMVC.Controllers
             return View(resultado);
         }
 
+        #endregion
+
+        #region Visualizar Emprestimos Por Periodo
         public ActionResult VisualizarEmprestimosPorPeriodo()
         {
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
@@ -202,8 +212,10 @@ namespace SiteMVC.Controllers
                 return View(emprestimoPesquisa);
             }
 
-        }
+        } 
+        #endregion
 
+        #region Visualizar Lista Clientes Por Area
         public ActionResult VisualizarListaClientesPorArea()
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -244,22 +256,10 @@ namespace SiteMVC.Controllers
                 ViewData["clientes"] = clientes;
                 return View(clientePesquisa);
             }
-        }
+        } 
+        #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region Visualizar Parcelas Por Periodo
         public ActionResult VisualizarParcelasPorPeriodo()
         {
             IParcelaProcesso processo = ParcelaProcesso.Instance;
@@ -302,7 +302,9 @@ namespace SiteMVC.Controllers
                 return View(parcelaPesquisa);
             }
 
-        }
+        } 
+        #endregion
+
         #endregion
 
         #region Método Index
