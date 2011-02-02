@@ -164,7 +164,9 @@ namespace SiteMVC.ModuloEmprestimo.Processos
 
         public List<Emprestimo> ConsultarEmprestimosPorPeriodo(DateTime dataInicio, DateTime dataFim)
         {
-            List<Emprestimo> emprestimos = this.Consultar();
+            Emprestimo emp = new Emprestimo();
+            emp.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            List<Emprestimo> emprestimos = this.Consultar(emp,TipoPesquisa.E);
 
             emprestimos =( from e in emprestimos
                             where e.data_emprestimo >= dataInicio && e.data_emprestimo <= dataFim
