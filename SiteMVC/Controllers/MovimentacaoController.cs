@@ -16,26 +16,13 @@ namespace SiteMVC.Controllers
 {
     public class MovimentacaoController : Controller
     {
-        //
-        // GET: /Lancamento/
-        private const int defaultPageSize = 10;
-        public ActionResult Index()
-        {
-            return RedirectToAction("Listar");
-        }
+
+        #region Atributos
+        private const int defaultPageSize = 10; 
+        #endregion       
 
         #region Relatorios
-        public ActionResult Listar(int? page)
-        {
-
-            ILancamentoProcesso processo = LancamentoProcesso.Instance;
-            var resultado = processo.Consultar();
-            List<Lancamento> lancamentos = resultado;
-            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
-            return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
-
-
-        }
+      
 
         public ActionResult VisualizarResumoLancamento()
         {
@@ -318,6 +305,28 @@ namespace SiteMVC.Controllers
         }
         #endregion
 
+        #region Método Index
+        public ActionResult Index()
+        {
+            return RedirectToAction("Listar");
+        }
+        #endregion
+
+        #region Método Listar
+        public ActionResult Listar(int? page)
+        {
+
+            ILancamentoProcesso processo = LancamentoProcesso.Instance;
+            var resultado = processo.Consultar();
+            List<Lancamento> lancamentos = resultado;
+            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+            return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
+
+        }
+
+        #endregion
+
+        #region Método Detalhar
         //
         // GET: /StatusParcela/Details/5
         public ActionResult Detalhar(int id)
@@ -327,8 +336,10 @@ namespace SiteMVC.Controllers
             lancamento.ID = id;
             ViewData.Model = processo.Consultar(lancamento, TipoPesquisa.E)[0];
             return View();
-        }
+        } 
+        #endregion
 
+        #region Método Incluir
         //
         // GET: /StatusParcela/Create
         public ActionResult Incluir()
@@ -367,7 +378,10 @@ namespace SiteMVC.Controllers
             {
                 return View(lancamento);
             }
-        }
+        } 
+        #endregion
+
+        #region Método Alterar
 
         //
         // GET: /StatusParcela/Edit/5
@@ -407,8 +421,10 @@ namespace SiteMVC.Controllers
             {
                 return View();
             }
-        }
+        } 
+        #endregion
 
+        #region Método Excluir
         //
         // GET: /StatusParcela/Delete/5
         public ActionResult Excluir(int id)
@@ -446,8 +462,7 @@ namespace SiteMVC.Controllers
 
 
 
-        }
-
-        public List<Parcela> parcelas { get; set; }
+        } 
+        #endregion        
     }
 }
