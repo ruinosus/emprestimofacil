@@ -16,9 +16,7 @@
     <h3>Você tem certeza que deseja excluir esse registro?</h3>
     <fieldset>
         <legend>Fields</legend>
-        
-        <div class="display-label">area_id</div>
-        <div class="display-field"><%: Model.area.descricao %></div>
+
         
         <div class="display-label">bairro_resid</div>
         <div class="display-field"><%: Model.bairro_resid %></div>

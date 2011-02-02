@@ -174,15 +174,10 @@
                     </div>
                 </td>
                 <td>
-                    <div class="editor-label">
-                        <%: Html.LabelFor(model => model.area_id) %>
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="editor-field">
-                        <%: Html.EditorFor(model => model.area_id) %>
-                        <%: Html.ValidationMessageFor(model => model.area_id) %>
-                    </div>
+                   
                 </td>
                 <td>
                    
