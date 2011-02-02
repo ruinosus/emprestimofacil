@@ -78,7 +78,9 @@ namespace SiteMVC.ModuloCliente.Processos
 
         public List<Cliente> ConsultarClientesDevedores()
         {
-            List<Cliente> clientesPadrao = this.Consultar();
+            Cliente ccc = new Cliente();
+            ccc.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            List<Cliente> clientesPadrao = this.Consultar(ccc,TipoPesquisa.E);
             IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
 
             List<Parcela> parcelas = parcelaProcesso.Consultar();

@@ -58,6 +58,17 @@ namespace SiteMVC.ModuloParcela.Repositorios
                                 resultado = resultado.Distinct().ToList();
                             }
 
+                            if (ClasseAuxiliar.AreaSelecionada!= null)
+                            {
+
+                                resultado = ((from t in resultado
+                                              where
+                                              t.emprestimo.area_id == ClasseAuxiliar.AreaSelecionada.ID
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
                             if (parcela.statusparcela_id != 0)
                             {
 

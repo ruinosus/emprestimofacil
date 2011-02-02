@@ -43,7 +43,7 @@ namespace SiteMVC.Controllers
             ViewData["lancamentos"] = lancamentos;
             Lancamento lancamento = new Lancamento();
             lancamento.data = DateTime.Now;
-            
+
             return View(lancamento);
 
 
@@ -227,7 +227,7 @@ namespace SiteMVC.Controllers
             return View(clientePesquisa);
         }
 
-         [HttpPost]
+        [HttpPost]
         public ActionResult VisualizarListaClientesPorArea(ClientePesquisa clientePesquisa)
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -241,7 +241,7 @@ namespace SiteMVC.Controllers
                     IClienteProcesso processo = ClienteProcesso.Instance;
                     Cliente c = new Cliente();
                     c.area_id = clientePesquisa.area;
-                    clientes = processo.Consultar(c,TipoPesquisa.E);
+                    clientes = processo.Consultar(c, TipoPesquisa.E);
                     ViewData["clientes"] = clientes;
                     ViewData.Model = clientePesquisa;
                     return View(clientePesquisa);

@@ -240,6 +240,7 @@ namespace SiteMVC.ModuloParcela.Processos
 
             parcelas = (from p in parcelas
                         where p.data_vencimento.Date >= dataInicio.Date && p.data_vencimento.Date <= dataFim.Date && p.statusparcela_id == 2
+                                && p.emprestimo.area_id == ClasseAuxiliar.AreaSelecionada.ID
                            select p).ToList();
 
             return parcelas;
