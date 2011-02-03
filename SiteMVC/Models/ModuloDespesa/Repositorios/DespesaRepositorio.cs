@@ -44,7 +44,31 @@ namespace SiteMVC.ModuloDespesa.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
+                        else
+                        {
+                            if (despesa.area_id != 0)
+                            {
 
+                                resultado = ((from t in resultado
+                                              where
+                                              t.area_id == despesa.area_id
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+                            if (despesa.data != default(DateTime))
+                            {
+
+                                resultado = ((from t in resultado
+                                              where
+                                              t.data.Date.Equals(despesa.data.Date)
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
+                        }
                         
 
                         break;

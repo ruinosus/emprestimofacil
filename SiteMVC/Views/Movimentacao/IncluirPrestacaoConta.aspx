@@ -26,7 +26,8 @@
         }
     </script>
     <h2>
-        Prestacao de Contas do dia : <%:SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.DataPrestacaoContaSelecionada.ToString("dd/MM/yyyy") %></h2>
+        Prestacao de Contas do dia :
+        <%:SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.DataPrestacaoContaSelecionada.ToString("dd/MM/yyyy") %></h2>
     <% using (Html.BeginForm())
        { %>
     <div id="divPrint">
@@ -152,6 +153,42 @@
             </table>
             <p>
                 <%: Html.ActionLink("Criar Emprestimo", "Incluir","Emprestimo") %>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Despesas</legend>
+            <table>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Descriçao
+                    </th>
+                    <th>
+                        valor
+                    </th>
+                </tr>
+                <%
+           List<SiteMVC.Models.ModuloBasico.VOs.Despesa> despesas = (List<SiteMVC.Models.ModuloBasico.VOs.Despesa>)ViewData["despesas"];
+                %>
+                <% foreach (var item in despesas)
+                   { %>
+                <tr>
+                    <td>
+                        <%: item.ID %>
+                    </td>
+                    <td>
+                        <%: item.despesatipo.descricao%>
+                    </td>
+                    <td>
+                        <%: item.valor %>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+            <p>
+                <%: Html.ActionLink("Incluir Despesas", "Incluir","Despesa")%>
             </p>
         </fieldset>
     </div>
