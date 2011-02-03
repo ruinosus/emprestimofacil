@@ -190,6 +190,13 @@ namespace SiteMVC.Controllers
             emprestimo.prazospagamento_id = 0;
             emprestimo.tipoemprestimo_id = 0;
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+            List<int> diasUteis = new List<int>();
+            diasUteis.Add(1);
+            diasUteis.Add(2);
+            diasUteis.Add(3);
+            diasUteis.Add(4);
+            diasUteis.Add(5);
+            ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
             ViewData.Model = emprestimo;
             return View();
         }
@@ -200,25 +207,53 @@ namespace SiteMVC.Controllers
         [HttpPost]
         [ValidateInput(false)]
 
-        public ActionResult Incluir(Emprestimo emprestimo, FormCollection collection)
+        public ActionResult Incluir(Emprestimo emprestimo, string[] dias)
         {
 
             try
             {
+                List<int> diasUteis = new List<int>();
+                List<DayOfWeek> dayOfWeeks = new List<DayOfWeek>();
+                if (dias != null)
+                    for (int i = 0; i < dias.Length; i++)
+                    {
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Friday)
+                            dayOfWeeks.Add(DayOfWeek.Friday);
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Monday)
+                            dayOfWeeks.Add(DayOfWeek.Monday);
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Saturday)
+                            dayOfWeeks.Add(DayOfWeek.Saturday);
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Sunday)
+                            dayOfWeeks.Add(DayOfWeek.Sunday);
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Thursday)
+                            dayOfWeeks.Add(DayOfWeek.Thursday);
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Tuesday)
+                            dayOfWeeks.Add(DayOfWeek.Tuesday);
+                        if (Convert.ToInt16(dias[i]) == (int)DayOfWeek.Wednesday)
+                            dayOfWeeks.Add(DayOfWeek.Wednesday);
+
+
+                        diasUteis.Add(Convert.ToInt16(dias[i]));
+                    }
+
+                ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
                 if (ModelState.IsValid)
                 {
                     IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+                    emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+                    emprestimo.usuario_id= ClasseAuxiliar.UsuarioLogado.ID;
+                    emprestimo.data_emprestimo = ClasseAuxiliar.DataPrestacaoContaSelecionada;
                     emprestimo.timeCreated = DateTime.Now;
-                    processo.Incluir(emprestimo,null);
+                    processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("IncluirPrestacaoConta","Movimentacao");
                 }
                 else
                 {
                     return View(emprestimo);
                 }
             }
-            catch
+            catch(Exception e)
             {
                 return View(emprestimo);
             }

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.Emprestimo>" %>
-
+<%@ Import Namespace="SiteMVC.ModuloBasico.Enums" %>
+<%@ Import Namespace="SiteMVC.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Incluir
 </asp:Content>
@@ -31,13 +32,13 @@
             </div>
             
             
-            <div class="editor-label">
+           <%-- <div class="editor-label">
                 <%: Html.LabelFor(model => model.data_emprestimo) %>
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.data_emprestimo.Date) %>
                 <%: Html.ValidationMessageFor(model => model.data_emprestimo) %>
-            </div>
+            </div>--%>
             
                     
             <div class="editor-label">
@@ -74,6 +75,8 @@
                 <%: Html.TextBoxFor(model => model.valor) %>
                 <%: Html.ValidationMessageFor(model => model.valor) %>
             </div>
+               <div class="editor-field">
+            <%= Html.CheckBoxList("dias", (List<CheckBoxListInfo>)ViewData["DiasUteis"])%></div>
             
                     <%: Html.HiddenFor(model => model.usuario_id) %>
             <p>

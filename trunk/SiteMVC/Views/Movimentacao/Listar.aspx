@@ -73,7 +73,9 @@
     <div class="pager">
         <%= Html.Pager(ViewData.Model.PageSize, ViewData.Model.PageNumber, ViewData.Model.TotalItemCount) %>
     </div>
-
+     <p>
+        <%: Html.ActionLink("Prestacao de Contas", "InformarDataPrestacaoConta")%>
+    </p>
     <p>
         <%: Html.ActionLink("Visualizar Lancamentos Detalhados", "VisualizarDetalheLancamento")%>
     </p>

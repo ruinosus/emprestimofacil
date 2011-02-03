@@ -61,12 +61,12 @@ namespace SiteMVC.Models.ModuloBasico.VOs
     public class PrestacaoContaPesquisa
     {
 
-        [Required(ErrorMessage = "A data inicial é necessária para a pesquisa.")]
-        [DisplayName("Data Início:")]
-        public DateTime DataInicio { get; set; }
-        [Required(ErrorMessage = "A data final é necessária para a pesquisa.")]
-        [DisplayName("Data Fim:")]
-        public DateTime DataFim { get; set; }
+        [Required(ErrorMessage = "A data é necessária para a pesquisa.")]
+        [DisplayName("Data:")]
+        public DateTime DataPrestacaoConta { get; set; }
+        //[Required(ErrorMessage = "A data final é necessária para a pesquisa.")]
+        //[DisplayName("Data Fim:")]
+        //public DateTime DataFim { get; set; }
     }
 
 
