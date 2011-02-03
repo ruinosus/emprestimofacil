@@ -21,7 +21,7 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10; 
         #endregion       
 
-        #region Relatorios      
+        #region Relatorios
 
         #region Visualizar Resumo Lancamento
         public ActionResult VisualizarResumoLancamento()
@@ -465,6 +465,45 @@ namespace SiteMVC.Controllers
 
 
         } 
+        #endregion        
+
+        #region Método Excluir
+        
+        public ActionResult IncluirPrestacaoConta()
+        {
+            ILancamentoProcesso processo = LancamentoProcesso.Instance;
+            Lancamento lancamento = new Lancamento();
+            lancamento.ID = id;
+            ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            return View();
+
+        }
+
+        
+        [HttpPost]
+        public ActionResult IncluirPrestacaoConta( PrestacaoConta prestacaoConta)
+        {
+            ILancamentoProcesso processo = LancamentoProcesso.Instance;
+            try
+            {
+
+
+                lancamento.ID = id;
+                processo.Excluir(lancamento);
+                processo.Confirmar();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                lancamento.ID = id;
+                ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
+                ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
+                return View();
+            }
+
+
+
+        }
         #endregion        
     }
 }
