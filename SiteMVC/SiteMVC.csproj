@@ -241,6 +241,7 @@
     <Compile Include="Models\ModuloPrestacaoConta\Processos\PrestacaoContaProcesso.cs" />
     <Compile Include="Models\ModuloPrestacaoConta\Repositorios\Interfaces\IPrestacaoContaRepositorio.cs" />
     <Compile Include="Models\ModuloPrestacaoConta\Repositorios\PrestacaoContaRepositorio.cs" />
+    <Compile Include="Models\ModuloPrestacaoConta\VOs\PrestacaoConta.cs" />
     <Compile Include="Models\ModuloStatusParcela\Constantes\StatusParcelaConstantes.cs" />
     <Compile Include="Models\ModuloStatusParcela\Excecoes\StatusParcelaNaoAlteradoExcecao.cs" />
     <Compile Include="Models\ModuloStatusParcela\Excecoes\StatusParcelaNaoExcluidoExcecao.cs" />
