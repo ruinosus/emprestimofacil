@@ -75,6 +75,7 @@ namespace SiteMVC.Controllers
 
             try
             {
+                Despesa.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
                 if (ModelState.IsValid)
                 {
                     IDespesaProcesso processo = DespesaProcesso.Instance;
@@ -82,7 +83,7 @@ namespace SiteMVC.Controllers
                     Despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
                     processo.Incluir(Despesa);
                     processo.Confirmar();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("IncluirPrestacaoConta", "Movimentacao");
                 }
                 else
                 {

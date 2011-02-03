@@ -69,6 +69,17 @@ namespace SiteMVC.ModuloEmprestimo.Repositorios
                                 resultado = resultado.Distinct().ToList();
                             }
 
+                            if (emprestimo.data_emprestimo !=default(DateTime))
+                            {
+
+                                resultado = ((from c in resultado
+                                              where
+                                              c.data_emprestimo.Date.Equals(emprestimo.data_emprestimo.Date)
+                                              select c).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
                         }
                         break;
                     }

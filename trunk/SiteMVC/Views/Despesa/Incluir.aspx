@@ -40,13 +40,13 @@
             <%: Html.EditorFor(model => model.despesatipo_id)%>
             <%: Html.ValidationMessageFor(model => model.despesatipo_id)%>
         </div>
-        <div class="editor-label">
+       <%-- <div class="editor-label">
             <%: Html.LabelFor(model => model.data) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.data.Date) %>
             <%: Html.ValidationMessageFor(model => model.data) %>
-        </div>
+        </div>--%>
         <p>
             <input type="submit" value="Incluir" />
         </p>

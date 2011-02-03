@@ -12,6 +12,7 @@ using SiteMVC.ModuloParcela.Processos;
 using SiteMVC.ModuloCliente.Processos;
 using SiteMVC.ModuloEmprestimo.Processos;
 using SiteMVC.ModuloPrestacaoConta.Processos;
+using SiteMVC.ModuloDespesa.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -474,8 +475,25 @@ namespace SiteMVC.Controllers
         {
 
             PrestacaoConta prestacaoConta = new PrestacaoConta();
-            ViewData["despesas"] = new List<Despesa>();
-            ViewData["emprestimos"] = new List<Emprestimo>();
+
+
+
+            IDespesaProcesso despesaProcesso = DespesaProcesso.Instance;
+            Despesa despesa = new Despesa();
+            despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            despesa.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+
+            ViewData["despesas"] = despesaProcesso.Consultar(despesa, TipoPesquisa.E);
+
+            IEmprestimoProcesso emprestimoProcesso = EmprestimoProcesso.Instance;
+            Emprestimo emp = new Emprestimo();
+            emp.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            emp.data_emprestimo = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+
+            ViewData["emprestimos"] = emprestimoProcesso.Consultar(emp, TipoPesquisa.E);
+
+
+
             ViewData["lancamentos"] = new List<Lancamento>();
             ViewData.Model = prestacaoConta;
             return View();
@@ -522,10 +540,7 @@ namespace SiteMVC.Controllers
                 if (ModelState.IsValid)
                 {
                     Session["DataPrestacaoContaSelecionada"] = prestacaoContaPesquisa.DataPrestacaoConta;
-                    //IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
-                    //lancamento.timeCreated = DateTime.Now;
-                    //processo.Incluir(lancamento);
-                    //processo.Confirmar();
+
                     return RedirectToAction("IncluirPrestacaoConta");
                 }
                 else
