@@ -19,8 +19,8 @@ namespace SiteMVC.Controllers
     {
 
         #region Atributos
-        private const int defaultPageSize = 10; 
-        #endregion       
+        private const int defaultPageSize = 10;
+        #endregion
 
         #region Relatorios
 
@@ -110,7 +110,7 @@ namespace SiteMVC.Controllers
 
             }
 
-        } 
+        }
         #endregion
 
         #region Visualizar Detalhe Parcelas
@@ -156,7 +156,7 @@ namespace SiteMVC.Controllers
 
             }
 
-        } 
+        }
         #endregion
 
         #region Visualizar Clientes Devedores
@@ -213,7 +213,7 @@ namespace SiteMVC.Controllers
                 return View(emprestimoPesquisa);
             }
 
-        } 
+        }
         #endregion
 
         #region Visualizar Lista Clientes Por Area
@@ -257,7 +257,7 @@ namespace SiteMVC.Controllers
                 ViewData["clientes"] = clientes;
                 return View(clientePesquisa);
             }
-        } 
+        }
         #endregion
 
         #region Visualizar Parcelas Por Periodo
@@ -303,7 +303,7 @@ namespace SiteMVC.Controllers
                 return View(parcelaPesquisa);
             }
 
-        } 
+        }
         #endregion
 
         #endregion
@@ -339,7 +339,7 @@ namespace SiteMVC.Controllers
             lancamento.ID = id;
             ViewData.Model = processo.Consultar(lancamento, TipoPesquisa.E)[0];
             return View();
-        } 
+        }
         #endregion
 
         #region Método Incluir
@@ -381,7 +381,7 @@ namespace SiteMVC.Controllers
             {
                 return View(lancamento);
             }
-        } 
+        }
         #endregion
 
         #region Método Alterar
@@ -424,7 +424,7 @@ namespace SiteMVC.Controllers
             {
                 return View();
             }
-        } 
+        }
         #endregion
 
         #region Método Excluir
@@ -465,14 +465,14 @@ namespace SiteMVC.Controllers
 
 
 
-        } 
-        #endregion        
+        }
+        #endregion
 
-        #region Método Excluir
-        
+        #region Método Incluir Prestacao Conta
+
         public ActionResult IncluirPrestacaoConta()
         {
-           
+
             PrestacaoConta prestacaoConta = new PrestacaoConta();
             ViewData["despesas"] = new List<Despesa>();
             ViewData["emprestimos"] = new List<Emprestimo>();
@@ -482,31 +482,62 @@ namespace SiteMVC.Controllers
 
         }
 
-        
+
         [HttpPost]
-        public ActionResult IncluirPrestacaoConta( PrestacaoConta prestacaoConta)
+        public ActionResult IncluirPrestacaoConta(PrestacaoConta prestacaoConta)
         {
             IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
             try
             {
-
-
-                lancamento.ID = id;
-                processo.Excluir(lancamento);
+                processo.Incluir(prestacaoConta);
                 processo.Confirmar();
                 return RedirectToAction("Index");
             }
             catch
             {
-                lancamento.ID = id;
-                ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
-                ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
+                // ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
+                ViewData.Model = processo.Consultar(prestacaoConta, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
                 return View();
             }
 
 
 
         }
-        #endregion        
+        #endregion
+
+        #region Metodo Informar data Prestacao conta
+        public ActionResult InformarDataPrestacaoConta()
+        {
+            PrestacaoContaPesquisa prestacaoContaPesquisa = new PrestacaoContaPesquisa();
+            prestacaoContaPesquisa.DataPrestacaoConta = DateTime.Now;
+            ViewData.Model = prestacaoContaPesquisa;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult InformarDataPrestacaoConta(PrestacaoContaPesquisa prestacaoContaPesquisa)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Session["DataPrestacaoContaSelecionada"] = prestacaoContaPesquisa.DataPrestacaoConta;
+                    //IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
+                    //lancamento.timeCreated = DateTime.Now;
+                    //processo.Incluir(lancamento);
+                    //processo.Confirmar();
+                    return RedirectToAction("IncluirPrestacaoConta");
+                }
+                else
+                {
+                    return View(prestacaoContaPesquisa);
+                }
+            }
+            catch
+            {
+                return View(prestacaoContaPesquisa);
+            }
+        }
+        #endregion
     }
 }
