@@ -11,6 +11,7 @@ using SiteMVC;
 using SiteMVC.ModuloParcela.Processos;
 using SiteMVC.ModuloCliente.Processos;
 using SiteMVC.ModuloEmprestimo.Processos;
+using SiteMVC.ModuloPrestacaoConta.Processos;
 
 namespace SiteMVC.Controllers
 {
@@ -471,10 +472,12 @@ namespace SiteMVC.Controllers
         
         public ActionResult IncluirPrestacaoConta()
         {
-            ILancamentoProcesso processo = LancamentoProcesso.Instance;
-            Lancamento lancamento = new Lancamento();
-            lancamento.ID = id;
-            ViewData.Model = processo.Consultar(lancamento, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
+           
+            PrestacaoConta prestacaoConta = new PrestacaoConta();
+            ViewData["despesas"] = new List<Despesa>();
+            ViewData["emprestimos"] = new List<Emprestimo>();
+            ViewData["lancamentos"] = new List<Lancamento>();
+            ViewData.Model = prestacaoConta;
             return View();
 
         }
@@ -483,7 +486,7 @@ namespace SiteMVC.Controllers
         [HttpPost]
         public ActionResult IncluirPrestacaoConta( PrestacaoConta prestacaoConta)
         {
-            ILancamentoProcesso processo = LancamentoProcesso.Instance;
+            IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
             try
             {
 
