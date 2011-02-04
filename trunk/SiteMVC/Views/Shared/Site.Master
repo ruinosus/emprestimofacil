@@ -50,8 +50,7 @@
                     %>
                     <li>
                         <%: Html.ActionLink("Tipo de Despesa", "Listar", "DespesaTipo")%></li>
-                    <li>
-                        <%: Html.ActionLink("Despesa", "Listar", "Despesa")%></li>
+                  
                     <%
                         
                               }
