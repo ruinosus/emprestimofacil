@@ -365,6 +365,7 @@ namespace SiteMVC.Controllers
 
             try
             {
+                lancamento.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
                 if (ModelState.IsValid)
                 {
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
@@ -372,7 +373,7 @@ namespace SiteMVC.Controllers
                     lancamento.lancamentotipo_id = 5;
                     processo.Incluir(lancamento);
                     processo.Confirmar();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("IncluirPrestacaoConta");
                 }
                 else
                 {
@@ -477,41 +478,50 @@ namespace SiteMVC.Controllers
 
             PrestacaoConta prestacaoConta = new PrestacaoConta();
 
-
-
+            #region Despesas
             IDespesaProcesso despesaProcesso = DespesaProcesso.Instance;
             Despesa despesa = new Despesa();
             despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
             despesa.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
 
-            ViewData["despesas"] = despesaProcesso.Consultar(despesa, TipoPesquisa.E);
+            List<Despesa> despesas = despesaProcesso.Consultar(despesa, TipoPesquisa.E);
+            ViewData["despesas"] = despesas;
+            #endregion
 
+            #region Emprestimo
             IEmprestimoProcesso emprestimoProcesso = EmprestimoProcesso.Instance;
             Emprestimo emp = new Emprestimo();
             emp.area_id = ClasseAuxiliar.AreaSelecionada.ID;
             emp.data_emprestimo = ClasseAuxiliar.DataPrestacaoContaSelecionada;
 
             ViewData["emprestimos"] = emprestimoProcesso.Consultar(emp, TipoPesquisa.E);
+            #endregion
 
-            IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
-            List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, default(DateTime));
-
+            #region Peguei com a empresa
             ILancamentoProcesso lancamentoProcesso = LancamentoProcesso.Instance;
             Lancamento lanc = new Lancamento();
             lanc.area_id = ClasseAuxiliar.AreaSelecionada.ID;
             lanc.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
             lanc.lancamentotipo_id = 5;
+            List<Lancamento> lancamentos = lancamentoProcesso.Consultar(lanc, TipoPesquisa.E);
+            ViewData["lancamentos"] = lancamentos;
+            #endregion
 
-            ViewData["lancamentos"] = lancamentoProcesso.Consultar(lanc, TipoPesquisa.E);
+            IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+            List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, default(DateTime));
 
             float totalParcelas = 0;
-
+            float totalLancamentos = 0;
             float totalEmprestimos = 0;
+            float totalDespesas = 0;
+            foreach (var item in lancamentos)
+            {
+                totalLancamentos += item.valor;
+            }
             foreach (var item in parcelas)
             {
                 totalParcelas += item.valor_pago.Value;
             }
-
 
             List<Emprestimo> emprestimos = emprestimoProcesso.ConsultarEmprestimosPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, ClasseAuxiliar.DataPrestacaoContaSelecionada);
 
@@ -520,11 +530,15 @@ namespace SiteMVC.Controllers
                 totalEmprestimos += item.valor;
             }
 
+            foreach (var item in despesas)
+            {
+                totalDespesas += item.valor;
+            }
+
             ViewData["totalParcelas"] = totalParcelas;
-
             ViewData["totalEmprestimos"] = totalEmprestimos;
-
-            ViewData["lancamentos"] = new List<Lancamento>();
+            ViewData["totalLancamentos"] = totalLancamentos;
+            ViewData["totalDespesas"] = totalDespesas;
             ViewData.Model = prestacaoConta;
             return View();
 
