@@ -62,8 +62,8 @@
             <%
                 
            float valorEntradas = 0,valorSaida = 0;
-           valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString());
-           valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
+           valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
+           valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) ;
                  %>
             <table>
             <tr>
