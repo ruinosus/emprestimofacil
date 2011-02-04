@@ -9,17 +9,17 @@
     <% using (Html.BeginForm())
        {%>
     <%: Html.ValidationSummary(true) %>
-    <div class="editor-label">
+    <%--<div class="editor-label">
         <%: Html.LabelFor(model => model.data) %>
-    </div>
-    <div class="editor-field">
+    </div>--%>
+  <%--  <div class="editor-field">
         <div class="date-container">
             <%: Html.EditorFor(model => model.data.Date)%>
         </div>
         <div class="clear">
             <%: Html.ValidationMessageFor(model => model.data)%>
         </div>
-    </div>
+    </div>--%>
     <div class="editor-label">
         <%: Html.LabelFor(model => model.fonte) %>
     </div>

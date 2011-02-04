@@ -52,13 +52,43 @@
                 </tr>
                 <tr>
                     <td>
-                        Valores Devolvidos:
+                        Peguei com a empresa:
                     </td>
                     <td>
-                        {valorDevolvido}
+                       <%: Convert.ToInt32(ViewData["totalLancamentos"].ToString())%>
                     </td>
                 </tr>
             </table>
+            <%
+                
+           float valorEntradas = 0,valorSaida = 0;
+           valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString());
+           valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
+                 %>
+            <table>
+            <tr>
+                <th>
+                    Total Valor Entrada
+                </th>
+                <th>
+                    Total Valor Saída
+                </th>
+                <th>
+                    Total do dia
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <%: valorEntradas%>
+                </td>
+                <td>
+                     <%: valorSaida%>
+                </td>
+                <td>
+                    <%:valorEntradas - valorSaida %>
+                </td>
+            </tr>
+        </table>
         </fieldset>
         <fieldset>
             <legend>Lancamentos</legend>
