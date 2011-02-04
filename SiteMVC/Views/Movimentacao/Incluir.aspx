@@ -16,7 +16,6 @@
         <div class="date-container">
             <%: Html.EditorFor(model => model.data.Date)%>
         </div>
-        
         <div class="clear">
             <%: Html.ValidationMessageFor(model => model.data)%>
         </div>
@@ -28,13 +27,14 @@
         <%: Html.TextBoxFor(model => model.fonte) %>
         <%: Html.ValidationMessageFor(model => model.fonte) %>
     </div>
-    <div class="editor-label">
+    <%:Html.HiddenFor(model=> model.lancamentotipo_id) %>
+    <%-- <div class="editor-label">
         <%: Html.LabelFor(model => model.lancamentotipo_id) %>
     </div>
     <div class="editor-field">
         <%: Html.EditorFor(model => model.lancamentotipo_id) %>
         <%: Html.ValidationMessageFor(model => model.lancamentotipo_id) %>
-    </div>
+    </div>--%>
     <div class="editor-label">
         <%: Html.LabelFor(model => model.observacoes) %>
     </div>

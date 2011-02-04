@@ -69,6 +69,17 @@ namespace SiteMVC.ModuloLancamento.Repositorios
                                 resultado = resultado.Distinct().ToList();
                             }
 
+                            if (lancamento.lancamentotipo_id != 0)
+                            {
+
+                                resultado = ((from c in resultado
+                                              where
+                                              c.lancamentotipo_id == lancamento.lancamentotipo_id
+                                              select c).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+
                         }
                         break;
                     }

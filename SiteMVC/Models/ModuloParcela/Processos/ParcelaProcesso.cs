@@ -234,7 +234,7 @@ namespace SiteMVC.ModuloParcela.Processos
             this.parcelaRepositorio.Confirmar();
         }
 
-        public List<Parcela> ConsultarParcelasPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        public List<Parcela> ConsultarParcelasEmAbertoPorPeriodo(DateTime dataInicio, DateTime dataFim)
         {
             List<Parcela> parcelas = this.Consultar();
 
@@ -246,6 +246,29 @@ namespace SiteMVC.ModuloParcela.Processos
             return parcelas;
 
         }
+
+        public List<Parcela> ConsultarParcelasPagasPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            List<Parcela> parcelas = this.Consultar();
+
+            if (dataInicio != default(DateTime) && dataFim != default(DateTime))
+            {
+
+                parcelas = (from p in parcelas
+                            where p.data_pagamento.HasValue && p.data_pagamento.Value.Date >= dataInicio.Date && p.data_vencimento.Date <= dataFim.Date && p.statusparcela_id == 1
+                                    && p.emprestimo.area_id == ClasseAuxiliar.AreaSelecionada.ID
+                            select p).ToList();
+            }
+            else if (dataInicio != default(DateTime))
+            {
+                parcelas = (from p in parcelas
+                            where p.data_pagamento.HasValue && p.data_pagamento.Value.Date.Equals(dataInicio.Date) && p.statusparcela_id == 1
+                                    && p.emprestimo.area_id == ClasseAuxiliar.AreaSelecionada.ID
+                            select p).ToList();
+            }
+
+            return parcelas;
+        }   
 
         #endregion
     }

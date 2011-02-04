@@ -39,7 +39,7 @@
                         Valores Recebidos dos Clientes:
                     </td>
                     <td>
-                        {valorRecebidoCliente}
+                        <%: Convert.ToInt32( ViewData["totalParcelas"].ToString()) %>
                     </td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
                         Valores Emprestados:
                     </td>
                     <td>
-                        {valorEmprestados}
+                        <%: Convert.ToInt32(ViewData["totalEmprestimos"].ToString())%>
                     </td>
                 </tr>
                 <tr>
@@ -67,34 +67,10 @@
                     <th>
                     </th>
                     <th>
-                        cliente_id
-                    </th>
-                    <th>
-                        data_emprestimo
+                        cliente
                     </th>
                     <th>
                         ID
-                    </th>
-                    <th>
-                        juros
-                    </th>
-                    <th>
-                        prazospagamento_id
-                    </th>
-                    <th>
-                        qtde_parcelas
-                    </th>
-                    <th>
-                        timeCreated
-                    </th>
-                    <th>
-                        timeUpdated
-                    </th>
-                    <th>
-                        tipoemprestimo_id
-                    </th>
-                    <th>
-                        usuario_id
                     </th>
                     <th>
                         valor
@@ -108,42 +84,14 @@
                    { %>
                 <tr>
                     <td>
-                        <%: Html.ActionLink("Visualizar Parcelas", "ParcelaEmprestimo", "Parcela", new { id = item.ID },null)%>
-                        |
+                        
                         <%: Html.ActionLink("Imprimir Parcelas", "ImprimirParcelas", "Parcela", new { id = item.ID },null)%>
-                        <%-- <%: Html.ActionLink("Edit", "Edit", new { id=item.ID }) %> |
-                <%: Html.ActionLink("Details", "Details", new { id=item.ID })%> |
-                <%: Html.ActionLink("Delete", "Delete", new { id=item.ID })%>--%>
                     </td>
                     <td>
-                        <%: item.cliente_id %>
-                    </td>
-                    <td>
-                        <%: String.Format("{0:g}", item.data_emprestimo) %>
+                        <%: item.cliente.nome %>
                     </td>
                     <td>
                         <%: item.ID %>
-                    </td>
-                    <td>
-                        <%: item.juros %>
-                    </td>
-                    <td>
-                        <%: item.prazospagamento_id %>
-                    </td>
-                    <td>
-                        <%: item.qtde_parcelas %>
-                    </td>
-                    <td>
-                        <%: item.timeCreated %>
-                    </td>
-                    <td>
-                        <%: item.timeUpdated %>
-                    </td>
-                    <td>
-                        <%: item.tipoemprestimo_id %>
-                    </td>
-                    <td>
-                        <%: item.usuario_id %>
                     </td>
                     <td>
                         <%: item.valor %>
@@ -191,8 +139,59 @@
                 <%: Html.ActionLink("Incluir Despesas", "Incluir","Despesa")%>
             </p>
         </fieldset>
+        <fieldset>
+            <legend>Peguei com a Empresa</legend>
+            <table>
+                <tr>
+                    <th>
+                        data
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        lancamentotipo
+                    </th>
+                    <th>
+                        usuario
+                    </th>
+                    <th>
+                        valor
+                    </th>
+                </tr>
+                <%
+           List<SiteMVC.Models.ModuloBasico.VOs.Lancamento> lancamentos = (List<SiteMVC.Models.ModuloBasico.VOs.Lancamento>)ViewData["lancamentos"];
+                %>
+                <% foreach (var item in lancamentos)
+                   { %>
+                <tr>
+                    <td>
+                        <%: String.Format("{0:g}", item.data) %>
+                    </td>
+                    <td>
+                        <%: item.ID %>
+                    </td>
+                    <td>
+                        <%: item.lancamentotipo.descricao %>
+                    </td>
+                    <td>
+                        <%: item.usuario.nome %>
+                    </td>
+                    <td>
+                        <%: item.valor %>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+            <p>
+                <%: Html.ActionLink("Peguei com a empresa", "Incluir","Movimentacao")%>
+            </p>
+        </fieldset>
     </div>
-    <input type="image" src="../../Content/ui-lightness/images/impressora.jpg" onclick="CallPrint('divPrint');"
-        style="width: 40px; height: 40px" />
+    <%--<p>
+        <input type="submit" value="Confirmar" />
+    </p>--%>
+    <input alt="Clique aqui para imprimir" type="image" src="../../Content/ui-lightness/images/impressora.jpg"
+        onclick="CallPrint('divPrint');" style="width: 40px; height: 40px" />
     <%} %>
 </asp:Content>
