@@ -270,7 +270,7 @@ namespace SiteMVC.Controllers
             parcelaPesquisa.DataInicio = DateTime.Now.AddDays(1);
             parcelaPesquisa.DataFim = DateTime.Now.AddDays(1);
 
-            List<Parcela> parcelas = processo.ConsultarParcelasPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
+            List<Parcela> parcelas = processo.ConsultarParcelasEmAbertoPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
             ViewData["parcelas"] = parcelas;
             return View(parcelaPesquisa);
         }
@@ -287,7 +287,7 @@ namespace SiteMVC.Controllers
                 if (ModelState.IsValid)
                 {
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
-                    parcelas = processo.ConsultarParcelasPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
+                    parcelas = processo.ConsultarParcelasEmAbertoPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
                     ViewData["parcelas"] = parcelas;
                     ViewData.Model = parcelaPesquisa;
                     return View(parcelaPesquisa);
@@ -349,7 +349,7 @@ namespace SiteMVC.Controllers
         public ActionResult Incluir()
         {
             Lancamento lancamento = new Lancamento();
-            lancamento.lancamentotipo_id = 0;
+            lancamento.lancamentotipo_id = 1;
             lancamento.usuario_id = 0;
             lancamento.data = DateTime.Now;
             ViewData.Model = lancamento;
@@ -360,7 +360,7 @@ namespace SiteMVC.Controllers
         // POST: /StatusParcela/Create
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Incluir(Lancamento lancamento, FormCollection collection)
+        public ActionResult Incluir(Lancamento lancamento)
         {
 
             try
@@ -369,6 +369,7 @@ namespace SiteMVC.Controllers
                 {
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
                     lancamento.timeCreated = DateTime.Now;
+                    lancamento.lancamentotipo_id = 5;
                     processo.Incluir(lancamento);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -492,7 +493,36 @@ namespace SiteMVC.Controllers
 
             ViewData["emprestimos"] = emprestimoProcesso.Consultar(emp, TipoPesquisa.E);
 
+            IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+            List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, default(DateTime));
 
+            ILancamentoProcesso lancamentoProcesso = LancamentoProcesso.Instance;
+            Lancamento lanc = new Lancamento();
+            lanc.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            lanc.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+            lanc.lancamentotipo_id = 5;
+
+            ViewData["lancamentos"] = lancamentoProcesso.Consultar(lanc, TipoPesquisa.E);
+
+            float totalParcelas = 0;
+
+            float totalEmprestimos = 0;
+            foreach (var item in parcelas)
+            {
+                totalParcelas += item.valor_pago.Value;
+            }
+
+
+            List<Emprestimo> emprestimos = emprestimoProcesso.ConsultarEmprestimosPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, ClasseAuxiliar.DataPrestacaoContaSelecionada);
+
+            foreach (var item in emprestimos)
+            {
+                totalEmprestimos += item.valor;
+            }
+
+            ViewData["totalParcelas"] = totalParcelas;
+
+            ViewData["totalEmprestimos"] = totalEmprestimos;
 
             ViewData["lancamentos"] = new List<Lancamento>();
             ViewData.Model = prestacaoConta;

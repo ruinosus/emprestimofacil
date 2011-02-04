@@ -33,6 +33,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
         private static Area areaSelecionada;
 
+        private static long lancamentoTipoIDSelecionado;
+
         private static Cliente clienteSelecionado;
 
         private static Emprestimo emprestimoSelecionado;
@@ -54,6 +56,23 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 return usuarioLogado;
             }
             private set { usuarioLogado = value; }
+        }
+
+        /// <summary>
+        /// Propriedade que representa o tipo do lancamento id selecionado.
+        /// </summary>
+        public static long LancamentoTipoIDSelecionado
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["LancamentoTipoIDSelecionado"] != null)
+                    lancamentoTipoIDSelecionado = (long)System.Web.HttpContext.Current.Session["LancamentoTipoIDSelecionado"];
+                else
+                    lancamentoTipoIDSelecionado = 0;
+
+                return lancamentoTipoIDSelecionado;
+            }
+            private set { lancamentoTipoIDSelecionado = value; }
         }
 
         /// <summary>

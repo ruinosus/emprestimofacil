@@ -56,6 +56,15 @@ namespace SiteMVC.ModuloParcela.Processos
         /// <param name="dataInicio">Data inicial para pesquisa das parcelas.</param>
         /// <param name="dataFim">Data fim para pesquisa das parcelas.</param>
         /// <returns>Lista contendo todas as parcelas cadastradas.</returns>
-        List<Parcela> ConsultarParcelasPorPeriodo(DateTime dataInicio, DateTime dataFim);
+        List<Parcela> ConsultarParcelasEmAbertoPorPeriodo(DateTime dataInicio, DateTime dataFim);
+
+
+        /// <summary>
+        /// Método responsável por consultar todas as parcelas pagas do periodo informado.
+        /// </summary>
+        /// <param name="dataInicio">Data inicial para pesquisa das parcelas.</param>
+        /// <param name="dataFim">Data fim para pesquisa das parcelas.</param>
+        /// <returns>Lista contendo todas as parcelas cadastradas.</returns>
+        List<Parcela> ConsultarParcelasPagasPorPeriodo(DateTime dataInicio, DateTime dataFim);
     }
 }
