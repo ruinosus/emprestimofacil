@@ -75,7 +75,7 @@ namespace SiteMVC.Controllers
 
             try
             {
-                Despesa.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+                Despesa.data = ClasseAuxiliar.DataSelecionada;
                 if (ModelState.IsValid)
                 {
                     IDespesaProcesso processo = DespesaProcesso.Instance;

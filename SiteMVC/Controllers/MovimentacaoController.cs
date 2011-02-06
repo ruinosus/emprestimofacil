@@ -365,7 +365,7 @@ namespace SiteMVC.Controllers
 
             try
             {
-                lancamento.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+                lancamento.data = ClasseAuxiliar.DataSelecionada;
                 if (ModelState.IsValid)
                 {
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
@@ -482,7 +482,7 @@ namespace SiteMVC.Controllers
             IDespesaProcesso despesaProcesso = DespesaProcesso.Instance;
             Despesa despesa = new Despesa();
             despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
-            despesa.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+            despesa.data = ClasseAuxiliar.DataSelecionada;
 
             List<Despesa> despesas = despesaProcesso.Consultar(despesa, TipoPesquisa.E);
             ViewData["despesas"] = despesas;
@@ -492,7 +492,7 @@ namespace SiteMVC.Controllers
             IEmprestimoProcesso emprestimoProcesso = EmprestimoProcesso.Instance;
             Emprestimo emp = new Emprestimo();
             emp.area_id = ClasseAuxiliar.AreaSelecionada.ID;
-            emp.data_emprestimo = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+            emp.data_emprestimo = ClasseAuxiliar.DataSelecionada;
 
             ViewData["emprestimos"] = emprestimoProcesso.Consultar(emp, TipoPesquisa.E);
             #endregion
@@ -501,14 +501,14 @@ namespace SiteMVC.Controllers
             ILancamentoProcesso lancamentoProcesso = LancamentoProcesso.Instance;
             Lancamento lanc = new Lancamento();
             lanc.area_id = ClasseAuxiliar.AreaSelecionada.ID;
-            lanc.data = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+            lanc.data = ClasseAuxiliar.DataSelecionada;
             lanc.lancamentotipo_id = 5;
             List<Lancamento> lancamentos = lancamentoProcesso.Consultar(lanc, TipoPesquisa.E);
             ViewData["lancamentos"] = lancamentos;
             #endregion
 
             IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
-            List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, default(DateTime));
+            List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(ClasseAuxiliar.DataSelecionada, default(DateTime));
 
             float totalParcelas = 0;
             float totalLancamentos = 0;
@@ -523,7 +523,7 @@ namespace SiteMVC.Controllers
                 totalParcelas += item.valor_pago.Value;
             }
 
-            List<Emprestimo> emprestimos = emprestimoProcesso.ConsultarEmprestimosPorPeriodo(ClasseAuxiliar.DataPrestacaoContaSelecionada, ClasseAuxiliar.DataPrestacaoContaSelecionada);
+            List<Emprestimo> emprestimos = emprestimoProcesso.ConsultarEmprestimosPorPeriodo(ClasseAuxiliar.DataSelecionada, ClasseAuxiliar.DataSelecionada);
 
             foreach (var item in emprestimos)
             {
@@ -583,9 +583,9 @@ namespace SiteMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Session["DataPrestacaoContaSelecionada"] = prestacaoContaPesquisa.DataPrestacaoConta;
+                    Session["DataSelecionada"] = prestacaoContaPesquisa.DataPrestacaoConta;
 
-                    return RedirectToAction("IncluirPrestacaoConta");
+                    return RedirectToAction("Index","Home");
                 }
                 else
                 {

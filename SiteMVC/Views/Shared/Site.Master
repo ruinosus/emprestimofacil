@@ -22,7 +22,9 @@
         <div id="header">
             <div id="title">
                 <h1>
-                    Emprest Fácil - Seu empréstimo com facilidade.</h1>
+                    Emprest Fácil - Seu empréstimo com facilidade.
+                    
+                    </h1>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
@@ -31,7 +33,7 @@
                 <ul id="menu">
                     <%if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
                       {
-                          if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada!= null)
+                          if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada!= null && SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada!= default(DateTime))
                           {
                               if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
                               {
@@ -88,6 +90,8 @@
                         
                     <li>
                         <%: Html.ActionLink("Selecionar Area", "Listar", "UsuarioArea")%></li>
+                          <li>
+                        <%: Html.ActionLink("Selecionar Data", "InformarDataPrestacaoConta", "Movimentacao")%></li>
                     
                           
                           

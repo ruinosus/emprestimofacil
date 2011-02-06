@@ -27,7 +27,7 @@
     </script>
     <h2>
         Prestacao de Contas do dia :
-        <%:SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.DataPrestacaoContaSelecionada.ToString("dd/MM/yyyy") %></h2>
+        <%:SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada.ToString("dd/MM/yyyy") %></h2>
     <% using (Html.BeginForm())
        { %>
     <div id="divPrint">

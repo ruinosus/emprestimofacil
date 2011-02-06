@@ -10,7 +10,7 @@
     
    
      <p>
-        <%: Html.ActionLink("Prestacao de Contas", "InformarDataPrestacaoConta")%>
+        <%: Html.ActionLink("Prestacao de Contas", "IncluirPrestacaoConta")%>
     </p>
     <p>
         <%: Html.ActionLink("Visualizar Lancamentos Detalhados", "VisualizarDetalheLancamento")%>

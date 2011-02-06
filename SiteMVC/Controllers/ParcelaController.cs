@@ -135,8 +135,9 @@ namespace SiteMVC.Controllers
             Parcela parcela = new Parcela();
             parcela.ID = id;
             parcela = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            parcela.data_pagamento = DateTime.Now;
+            //parcela.data_pagamento = DateTime.Now;
             parcela.valor_pago = parcela.valor;
+            parcela.data_pagamento = ClasseAuxiliar.DataSelecionada;
             ViewData.Model = parcela;
             return View();
         }
@@ -147,6 +148,7 @@ namespace SiteMVC.Controllers
         {
             try
             {
+                
                 if (ModelState.IsValid)
                 {
                     float valorPago = parcela.valor_pago.Value;

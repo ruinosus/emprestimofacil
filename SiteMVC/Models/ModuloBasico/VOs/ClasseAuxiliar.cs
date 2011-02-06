@@ -39,7 +39,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
         private static Emprestimo emprestimoSelecionado;
 
-        private static DateTime dataPrestacaoContaSelecionada;
+        private static DateTime dataSelecionada;
 
         /// <summary>
         /// Propriedade que representa um Usuario no sistema.
@@ -95,18 +95,18 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         /// <summary>
         /// Propriedade que representa a data selecionada.
         /// </summary>
-        public static DateTime DataPrestacaoContaSelecionada
+        public static DateTime DataSelecionada
         {
             get
             {
-                if (System.Web.HttpContext.Current.Session["DataPrestacaoContaSelecionada"] != null)
-                    dataPrestacaoContaSelecionada = (DateTime)System.Web.HttpContext.Current.Session["DataPrestacaoContaSelecionada"];
+                if (System.Web.HttpContext.Current.Session["DataSelecionada"] != null)
+                    dataSelecionada = (DateTime)System.Web.HttpContext.Current.Session["DataSelecionada"];
                 else
                     areaSelecionada = null;
 
-                return dataPrestacaoContaSelecionada;
+                return dataSelecionada;
             }
-            private set { dataPrestacaoContaSelecionada = value; }
+            private set { dataSelecionada = value; }
         }
 
         /// <summary>
