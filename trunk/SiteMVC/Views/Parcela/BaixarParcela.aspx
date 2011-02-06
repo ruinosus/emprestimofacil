@@ -30,14 +30,14 @@
             <%: Html.TextBoxFor(model => model.valor_pago) %>
             <%: Html.ValidationMessageFor(model => model.valor_pago) %>
         </div>
-          <div class="editor-label">
+         <%-- <div class="editor-label">
                 <%: Html.LabelFor(model => model.data_pagamento) %>
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.data_pagamento)%>
                 <%: Html.ValidationMessageFor(model => model.data_pagamento)%>
-            </div>
-            
+            </div>--%>
+            <%: Html.HiddenFor(model => model.data_pagamento)%>
         <p>
             <input type="submit" value="Baixar Parcela" />
         </p>

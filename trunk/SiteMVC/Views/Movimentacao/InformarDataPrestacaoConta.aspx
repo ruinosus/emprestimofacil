@@ -20,7 +20,7 @@
             </div>
 
                <p>
-                <input type="submit" value="Procurar" />
+                <input type="submit" value="Selecionar" />
             </p>
         </fieldset>
 

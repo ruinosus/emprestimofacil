@@ -20,13 +20,13 @@
             <%: Html.TextBoxFor(model => model.qtde_parcelas)%>
             <%: Html.ValidationMessageFor(model => model.qtde_parcelas)%>
         </div>
-        <div class="editor-label">
+       <%-- <div class="editor-label">
             <%: Html.LabelFor(model => model.data_emprestimo) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.data_emprestimo.Date)%>
             <%: Html.ValidationMessageFor(model => model.data_emprestimo) %>
-        </div>
+        </div>--%>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.juros) %>
         </div>
@@ -62,6 +62,7 @@
             <%= Html.CheckBoxList("dias", (List<CheckBoxListInfo>)ViewData["DiasUteis"])%></div>
         <%: Html.HiddenFor(model => model.cliente_id) %>
         <%: Html.HiddenFor(model => model.usuario_id) %>
+        <%: Html.HiddenFor(model => model.data_emprestimo) %>
         <p>
             <input type="submit" value="Incluir" />
         </p>

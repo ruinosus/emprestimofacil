@@ -68,7 +68,7 @@ namespace SiteMVC.Controllers
             diasUteis.Add(4);
             diasUteis.Add(5);
             ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
-
+            emprestimo.data_emprestimo =  ClasseAuxiliar.DataSelecionada;
 
             emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
             ViewData.Model = emprestimo;
@@ -110,6 +110,7 @@ namespace SiteMVC.Controllers
 
                         diasUteis.Add(Convert.ToInt16(dias[i]));
                 }
+
 
                 ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
 
@@ -242,7 +243,7 @@ namespace SiteMVC.Controllers
                     IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
                     emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.ID;
                     emprestimo.usuario_id= ClasseAuxiliar.UsuarioLogado.ID;
-                    emprestimo.data_emprestimo = ClasseAuxiliar.DataPrestacaoContaSelecionada;
+                    emprestimo.data_emprestimo = ClasseAuxiliar.DataSelecionada;
                     emprestimo.timeCreated = DateTime.Now;
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
