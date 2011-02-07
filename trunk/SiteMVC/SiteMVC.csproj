@@ -364,6 +364,7 @@
     <Content Include="Views\Movimentacao\Incluir.aspx" />
     <Content Include="Views\Movimentacao\Listar.aspx" />
     <Content Include="Views\Movimentacao\VisualizarDetalheLancamento.aspx" />
+    <Content Include="Views\Movimentacao\VisualizarTotalMovimentacao.aspx" />
     <Content Include="Views\Municipio\Alterar.aspx" />
     <Content Include="Views\Municipio\Detalhar.aspx" />
     <Content Include="Views\Municipio\Excluir.aspx" />

@@ -148,15 +148,6 @@ namespace SiteMVC.Controllers
             }
         }
 
-
-
-
-
-
-
-
-
-
         public ActionResult EmprestimoCliente(int? page, int ID)
         {
             IClienteProcesso processoCliente = ClienteProcesso.Instance;

@@ -11,6 +11,11 @@
    
      <p>
         <%: Html.ActionLink("Prestacao de Contas", "IncluirPrestacaoConta")%>
+
+    </p>
+
+    <p>
+        <%: Html.ActionLink("Total Movimentacao", "VisualizarTotalMovimentacao")%>
     </p>
     <p>
         <%: Html.ActionLink("Visualizar Lancamentos Detalhados", "VisualizarDetalheLancamento")%>
