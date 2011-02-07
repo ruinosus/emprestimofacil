@@ -86,6 +86,17 @@ namespace SiteMVC.Controllers
 
             try
             {
+                IClienteProcesso processoCliente = ClienteProcesso.Instance;
+                List<Cliente> resultCliente = processoCliente.ConsultarClientesDevedores();
+                
+                var resultCiente2 = from cc in resultCliente
+                                    where cc.ID ==  ClasseAuxiliar.ClienteSelecionado.ID
+                                    select cc;
+
+
+                if(resultCliente.Count > 0)
+                    ModelState.AddModelError("valor", "O Cliente está com dividas em aberto.");
+
 
                 List<int> diasUteis = new List<int>();
                 List<DayOfWeek> dayOfWeeks = new List<DayOfWeek>();
