@@ -307,6 +307,48 @@ namespace SiteMVC.Controllers
         }
         #endregion
 
+        #region Visualizar Total Movimentacao
+        public ActionResult VisualizarTotalMovimentacao()
+        {
+            IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
+            List<Emprestimo> emprestimos = processoEmprestimo.Consultar();
+
+            IParcelaProcesso processoParcela = ParcelaProcesso.Instance;
+            List<Parcela> parcelas = processoParcela.Consultar();
+
+            float totalEmprestimo = 0;
+            float totalEmprestimoJuros = 0;
+            float totalParcelasPagas = 0;
+            float totalParcelasEmAberto = 0;
+            foreach (var item in emprestimos)
+            {
+                totalEmprestimo += item.valor;
+                totalEmprestimoJuros += item.valor + (item.valor * item.juros / 100);
+            }
+
+            foreach (var item in parcelas)
+            {
+                if (item.statusparcela_id == 2)
+                {
+                    totalParcelasEmAberto += item.valor;
+                }
+                else
+                {
+                    totalParcelasPagas += item.valor_pago.Value;
+                }
+            }
+
+            ViewData["totalEmprestimo"] = totalEmprestimo;
+            ViewData["totalEmprestimoJuros"] = totalEmprestimoJuros;
+            ViewData["totalParcelasPagas"] = totalParcelasPagas;
+            ViewData["totalParcelasEmAberto"] = totalParcelasEmAberto;
+
+
+            return View();
+        }
+
+        #endregion
+
         #endregion
 
         #region Método Index
