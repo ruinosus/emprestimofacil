@@ -72,6 +72,9 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 PrestacaoConta prestacao = new PrestacaoConta();
 
                 prestacao.dataprestacao = DataSelecionada.Date;
+                if (areaSelecionada == null)
+                    return false;
+                prestacao.area_id = areaSelecionada.ID;
 
                 List<PrestacaoConta> lista = processo.Consultar(prestacao, TipoPesquisa.E);
 

@@ -56,6 +56,17 @@ namespace SiteMVC.ModuloPrestacaoConta.Repositorios
 
                                 resultado = resultado.Distinct().ToList();
                             }
+
+                            if (prestacaoConta.area_id != 0)
+                            {
+
+                                resultado = ((from t in resultado
+                                              where
+                                              t.area_id == prestacaoConta.area_id
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
                         }
                         break;
                     }
