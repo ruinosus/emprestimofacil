@@ -539,30 +539,102 @@ namespace SiteMVC.Controllers
             ViewData["totalEmprestimos"] = totalEmprestimos;
             ViewData["totalLancamentos"] = totalLancamentos;
             ViewData["totalDespesas"] = totalDespesas;
-            ViewData.Model = prestacaoConta;
+           // ViewData.Model = prestacaoConta;
             return View();
 
         }
 
 
         [HttpPost]
-        public ActionResult IncluirPrestacaoConta(PrestacaoConta prestacaoConta)
+        public ActionResult IncluirPrestacaoConta(FormCollection form)
         {
             IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
+            PrestacaoConta prestacaoConta = new PrestacaoConta();
+
+            #region Despesas
+            IDespesaProcesso despesaProcesso = DespesaProcesso.Instance;
+            Despesa despesa = new Despesa();
+            despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            despesa.data = ClasseAuxiliar.DataSelecionada;
+
+            List<Despesa> despesas = despesaProcesso.Consultar(despesa, TipoPesquisa.E);
+            ViewData["despesas"] = despesas;
+            #endregion
+
+            #region Emprestimo
+            IEmprestimoProcesso emprestimoProcesso = EmprestimoProcesso.Instance;
+            Emprestimo emp = new Emprestimo();
+            emp.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            emp.data_emprestimo = ClasseAuxiliar.DataSelecionada;
+
+            ViewData["emprestimos"] = emprestimoProcesso.Consultar(emp, TipoPesquisa.E);
+            #endregion
+
+            #region Peguei com a empresa
+            ILancamentoProcesso lancamentoProcesso = LancamentoProcesso.Instance;
+            Lancamento lanc = new Lancamento();
+            lanc.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+            lanc.data = ClasseAuxiliar.DataSelecionada;
+            lanc.lancamentotipo_id = 5;
+            List<Lancamento> lancamentos = lancamentoProcesso.Consultar(lanc, TipoPesquisa.E);
+            ViewData["lancamentos"] = lancamentos;
+            #endregion
+
+            IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+            List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(ClasseAuxiliar.DataSelecionada, default(DateTime));
+
+            float totalParcelas = 0;
+            float totalLancamentos = 0;
+            float totalEmprestimos = 0;
+            float totalDespesas = 0;
+            foreach (var item in lancamentos)
+            {
+                totalLancamentos += item.valor;
+            }
+            foreach (var item in parcelas)
+            {
+                totalParcelas += item.valor_pago.Value;
+            }
+
+            List<Emprestimo> emprestimos = emprestimoProcesso.ConsultarEmprestimosPorPeriodo(ClasseAuxiliar.DataSelecionada, ClasseAuxiliar.DataSelecionada);
+
+            foreach (var item in emprestimos)
+            {
+                totalEmprestimos += item.valor;
+            }
+
+            foreach (var item in despesas)
+            {
+                totalDespesas += item.valor;
+            }
+
+            ViewData["totalParcelas"] = totalParcelas;
+            ViewData["totalEmprestimos"] = totalEmprestimos;
+            ViewData["totalLancamentos"] = totalLancamentos;
+            ViewData["totalDespesas"] = totalDespesas;
+            // ViewData.Model = prestacaoConta;
+            
             try
             {
+                prestacaoConta.dataprestacao = ClasseAuxiliar.DataSelecionada;
+                prestacaoConta.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+                prestacaoConta.timeCreated = DateTime.Now;
+                prestacaoConta.totaldespesas = totalDespesas;
+                prestacaoConta.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+                prestacaoConta.valorsaida = totalEmprestimos;
+                prestacaoConta.valorrecebido = totalLancamentos + totalParcelas;
                 processo.Incluir(prestacaoConta);
                 processo.Confirmar();
-                return RedirectToAction("Index");
+              //  return RedirectToAction("Index");
             }
             catch
             {
                 // ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
-                ViewData.Model = processo.Consultar(prestacaoConta, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
-                return View();
+               // ViewData.Model = processo.Consultar(prestacaoConta, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E)[0]; ;
+               // return View();
             }
 
-
+            return View();
 
         }
         #endregion

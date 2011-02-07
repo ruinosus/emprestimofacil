@@ -44,7 +44,19 @@ namespace SiteMVC.ModuloPrestacaoConta.Repositorios
 
                             resultado = resultado.Distinct().ToList();
                         }
+                        else
+                        {
+                            if (prestacaoConta.dataprestacao != default(DateTime))
+                            {
 
+                                resultado = ((from t in resultado
+                                              where
+                                              t.dataprestacao.Date.Equals(prestacaoConta.dataprestacao.Date)
+                                              select t).ToList());
+
+                                resultado = resultado.Distinct().ToList();
+                            }
+                        }
                         break;
                     }
                 #endregion
