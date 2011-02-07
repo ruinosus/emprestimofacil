@@ -20,6 +20,8 @@ using SiteMVC.ModuloBasico;
 using SiteMVC.ModuloBasico.Constantes;
 using SiteMVC.Models.ModuloBasico.VOs;
 using SiteMVC.Helpers;
+using SiteMVC.ModuloPrestacaoConta.Processos;
+using SiteMVC.ModuloBasico.Enums;
 
 namespace SiteMVC.Models.ModuloBasico.VOs
 {
@@ -41,6 +43,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
         private static DateTime dataSelecionada;
 
+        private static bool isPrestacaoConta;
+
         /// <summary>
         /// Propriedade que representa um Usuario no sistema.
         /// </summary>
@@ -56,6 +60,24 @@ namespace SiteMVC.Models.ModuloBasico.VOs
                 return usuarioLogado;
             }
             private set { usuarioLogado = value; }
+        }
+
+        public static bool IsPrestacaoConta
+        {
+            get
+            {
+
+                IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
+
+                PrestacaoConta prestacao = new PrestacaoConta();
+
+                prestacao.dataprestacao = DataSelecionada.Date;
+
+                List<PrestacaoConta> lista = processo.Consultar(prestacao, TipoPesquisa.E);
+
+                return lista.Count > 0;
+            }
+            private set { isPrestacaoConta = value; }
         }
 
         /// <summary>
@@ -177,8 +199,8 @@ namespace SiteMVC.Models.ModuloBasico.VOs
         /// </summary>
         /// <typeparam name="T">Enum a ser exibido no combo.</typeparam>
         /// <param name="cbo">combo para montatem</param>
-        public static List<CheckBoxListInfo> CarregarCheckBoxEnum<T> (List<int> enumeradores)
-        {   
+        public static List<CheckBoxListInfo> CarregarCheckBoxEnum<T>(List<int> enumeradores)
+        {
             var rolesList = new List<CheckBoxListInfo>();
             Type objType = typeof(T);
             FieldInfo[] propriedades = objType.GetFields();
@@ -190,7 +212,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
 
                 if (attributes.Length > 0)
                 {
-                    
+
                     if (enumeradores != null)
                         for (int i = 0; i < enumeradores.Count; i++)
                         {

@@ -79,9 +79,12 @@
             <%= Html.CheckBoxList("dias", (List<CheckBoxListInfo>)ViewData["DiasUteis"])%></div>
             
                     <%: Html.HiddenFor(model => model.usuario_id) %>
+                     <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+              { %>
             <p>
                 <input type="submit" value="Incluir" />
             </p>
+            <% %>
         </fieldset>
 
     <% } %>

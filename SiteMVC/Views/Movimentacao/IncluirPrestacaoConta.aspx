@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SiteMVC.Models.ModuloBasico.VOs.PrestacaoConta>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     IncluirPrestacaoConta
@@ -55,40 +55,40 @@
                         Peguei com a empresa:
                     </td>
                     <td>
-                       <%: Convert.ToInt32(ViewData["totalLancamentos"].ToString())%>
+                        <%: Convert.ToInt32(ViewData["totalLancamentos"].ToString())%>
                     </td>
                 </tr>
             </table>
             <%
                 
-           float valorEntradas = 0,valorSaida = 0;
-           valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
-           valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) ;
-                 %>
+float valorEntradas = 0, valorSaida = 0;
+valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
+valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) + Convert.ToInt32(ViewData["totalDespesas"].ToString());
+            %>
             <table>
-            <tr>
-                <th>
-                    Total Valor Entrada
-                </th>
-                <th>
-                    Total Valor Saída
-                </th>
-                <th>
-                    Total do dia
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <%: valorEntradas%>
-                </td>
-                <td>
-                     <%: valorSaida%>
-                </td>
-                <td>
-                    <%:valorEntradas - valorSaida %>
-                </td>
-            </tr>
-        </table>
+                <tr>
+                    <th>
+                        Total Valor Entrada
+                    </th>
+                    <th>
+                        Total Valor Saída
+                    </th>
+                    <th>
+                        Total do dia
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <%: valorEntradas%>
+                    </td>
+                    <td>
+                        <%: valorSaida%>
+                    </td>
+                    <td>
+                        <%:valorEntradas - valorSaida %>
+                    </td>
+                </tr>
+            </table>
         </fieldset>
         <fieldset>
             <legend>Lancamentos</legend>
@@ -114,7 +114,6 @@
                    { %>
                 <tr>
                     <td>
-                        
                         <%: Html.ActionLink("Imprimir Parcelas", "ImprimirParcelas", "Parcela", new { id = item.ID },null)%>
                     </td>
                     <td>
@@ -129,9 +128,12 @@
                 </tr>
                 <% } %>
             </table>
+            <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+              { %>
             <p>
-                <%: Html.ActionLink("Criar Emprestimo", "Incluir","Emprestimo") %>
+                <%: Html.ActionLink("Criar Emprestimo", "Incluir", "Emprestimo")%>
             </p>
+            <%} %>
         </fieldset>
         <fieldset>
             <legend>Despesas</legend>
@@ -165,9 +167,12 @@
                 </tr>
                 <% } %>
             </table>
+            <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+              { %>
             <p>
-                <%: Html.ActionLink("Incluir Despesas", "Incluir","Despesa")%>
+                <%: Html.ActionLink("Incluir Despesas", "Incluir", "Despesa")%>
             </p>
+            <%} %>
         </fieldset>
         <fieldset>
             <legend>Peguei com a Empresa</legend>
@@ -213,14 +218,20 @@
                 </tr>
                 <% } %>
             </table>
+            <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+              { %>
             <p>
-                <%: Html.ActionLink("Peguei com a empresa", "Incluir","Movimentacao")%>
+                <%: Html.ActionLink("Peguei com a empresa", "Incluir", "Movimentacao")%>
             </p>
+            <%} %>
         </fieldset>
     </div>
-    <%--<p>
+    <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+      { %>
+    <p>
         <input type="submit" value="Confirmar" />
-    </p>--%>
+    </p>
+    <%} %>
     <input alt="Clique aqui para imprimir" type="image" src="../../Content/ui-lightness/images/impressora.jpg"
         onclick="CallPrint('divPrint');" style="width: 40px; height: 40px" />
     <%} %>

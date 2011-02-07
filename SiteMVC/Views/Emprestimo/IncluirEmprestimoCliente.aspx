@@ -63,9 +63,12 @@
         <%: Html.HiddenFor(model => model.cliente_id) %>
         <%: Html.HiddenFor(model => model.usuario_id) %>
         <%: Html.HiddenFor(model => model.data_emprestimo) %>
+         <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+           { %>
         <p>
             <input type="submit" value="Incluir" />
         </p>
+        <%} %>
     </fieldset>
     <% } %>
     <div>

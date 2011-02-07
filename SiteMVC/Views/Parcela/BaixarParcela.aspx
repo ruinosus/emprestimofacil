@@ -11,7 +11,6 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>Fields</legend>
-
         <div class="editor-label">
             Nome:
             <%: Html.Label(Model.emprestimo.cliente.nome) %>
@@ -30,17 +29,20 @@
             <%: Html.TextBoxFor(model => model.valor_pago) %>
             <%: Html.ValidationMessageFor(model => model.valor_pago) %>
         </div>
-         <%-- <div class="editor-label">
+        <%-- <div class="editor-label">
                 <%: Html.LabelFor(model => model.data_pagamento) %>
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.data_pagamento)%>
                 <%: Html.ValidationMessageFor(model => model.data_pagamento)%>
             </div>--%>
-            <%: Html.HiddenFor(model => model.data_pagamento)%>
+        <%: Html.HiddenFor(model => model.data_pagamento)%>
+        <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+          { %>
         <p>
             <input type="submit" value="Baixar Parcela" />
         </p>
+        <%} %>
     </fieldset>
     <% } %>
     <div>

@@ -47,9 +47,12 @@
             <%: Html.EditorFor(model => model.data.Date) %>
             <%: Html.ValidationMessageFor(model => model.data) %>
         </div>--%>
+         <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+              { %>
         <p>
             <input type="submit" value="Incluir" />
         </p>
+        <% %>
     </fieldset>
     <% } %>
     <div>
