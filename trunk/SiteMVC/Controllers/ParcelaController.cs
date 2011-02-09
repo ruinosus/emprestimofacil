@@ -40,6 +40,14 @@ namespace SiteMVC.Controllers
                     parcela.ID = id.Value;
                     List<Parcela> resultado = processo.Consultar(parcela, SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
                     if (resultado.Count > 0)
+                    {
+
+                        if (resultado[0].emprestimo.area_id != ClasseAuxiliar.AreaSelecionada.ID)
+                        {
+                            ModelState.AddModelError("id", "A parcela informada pertence a area ["+resultado[0].emprestimo.area.descricao+"]");
+                            return View();
+                        }
+
                         if (resultado[0].statusparcela_id == 2)
                         {
                             if (resultado[0].sequencial > 1 && resultado[0].sequencial != 0)
@@ -64,6 +72,7 @@ namespace SiteMVC.Controllers
                             ModelState.AddModelError("id", "A parcela informada já foi paga.");
                             return View();
                         }
+                    }
                     else
                     {
                         ModelState.AddModelError("id", "Parcela Não encontrada.");
@@ -148,7 +157,7 @@ namespace SiteMVC.Controllers
         {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
                     float valorPago = parcela.valor_pago.Value;

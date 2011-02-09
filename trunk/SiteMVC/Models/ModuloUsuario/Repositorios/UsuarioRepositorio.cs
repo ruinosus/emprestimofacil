@@ -45,8 +45,8 @@ namespace SiteMVC.ModuloUsuario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(usuario.login) &&
-                           !string.IsNullOrEmpty(usuario.senha))
+                        //if (!string.IsNullOrEmpty(usuario.login) &&
+                        //   !string.IsNullOrEmpty(usuario.senha))
                         {
 
                             resultado = ((from c in resultado

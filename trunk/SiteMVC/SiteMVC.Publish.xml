@@ -9,6 +9,7 @@
     <file relUrl="Scripts/MicrosoftAjax.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Content/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Models/Modelo/emprestcard.sql" publishTime="01/13/2011 19:33:38" />
+    <file relUrl="Views/Despesa/Alterar.aspx" publishTime="01/26/2011 23:57:00" />
     <file relUrl="Views/Cliente/Alterar.aspx" publishTime="01/25/2011 14:46:04" />
     <file relUrl="bin/MvcPaging.pdb" publishTime="02/01/2011 13:29:27" />
     <file relUrl="Views/Shared/EditorTemplates/ClienteDropDown.ascx" publishTime="01/13/2011 19:33:44" />
@@ -17,55 +18,52 @@
     <file relUrl="Views/DespesaTipo/Alterar.aspx" publishTime="01/26/2011 21:30:27" />
     <file relUrl="Scripts/txtdropdown/txtdropdown-btn.png" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Content/ui-lightness/images/impressora.jpg" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Views/StatusParcela/Detalhar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Emprestimo/Incluir.aspx" publishTime="02/07/2011 08:54:42" />
     <file relUrl="Views/Cliente/Excluir.aspx" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Scripts/txtdropdown/txtdropdown.css" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Content/ui-lightness/jquery-ui-1.8.5.custom.css" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Municipio/Excluir.aspx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Views/Usuario/Excluir.aspx" publishTime="02/02/2011 12:37:19" />
     <file relUrl="Views/Shared/EditorTemplates/TipoEmprestimoDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Area/Listar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Shared/EditorTemplates/DateTime.ascx" publishTime="01/27/2011 14:44:43" />
-    <file relUrl="Web.config" publishTime="02/01/2011 13:29:53" />
-    <file relUrl="Views/Shared/EditorTemplates/UsuarioDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Global.asax" publishTime="01/13/2011 19:33:47" />
     <file relUrl="Views/UsuarioArea/Excluir.aspx" publishTime="01/31/2011 23:28:58" />
-    <file relUrl="Views/Municipio/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Views/Usuario/Listar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/jquery-1.4.2.min.js" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Parcela/VisualizarParcelas.aspx" publishTime="01/20/2011 00:37:20" />
     <file relUrl="Models/Modelo/modelo atual.sql" publishTime="02/01/2011 00:53:19" />
     <file relUrl="Views/Movimentacao/VisualizarClientesDevedores.aspx" publishTime="01/26/2011 17:39:26" />
     <file relUrl="Views/DespesaTipo/Listar.aspx" publishTime="01/26/2011 21:32:39" />
     <file relUrl="Views/Area/Incluir.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Cliente/Incluir.aspx" publishTime="01/25/2011 14:45:52" />
     <file relUrl="Content/ui-lightness/images/ui-icons_ef8c08_256x240.png" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Views/Usuario/Alterar.aspx" publishTime="02/02/2011 12:36:58" />
+    <file relUrl="Views/Shared/EditorTemplates/TimeSpan.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/jquery-ui-1.8.5.custom.min.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Area/Detalhar.aspx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Scripts/txtdropdown/txtdropdown.css" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Municipio/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/StatusParcela/Excluir.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Movimentacao/VisualizarParcelasPorPeriodo.aspx" publishTime="01/26/2011 17:39:26" />
+    <file relUrl="Views/Usuario/Incluir.aspx" publishTime="02/02/2011 12:37:27" />
     <file relUrl="Views/Municipio/Listar.aspx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Views/Movimentacao/VisualizarDetalheParcelas.aspx" publishTime="01/27/2011 14:54:35" />
-    <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Movimentacao/VisualizarEmprestimosPorPeriodo.aspx" publishTime="01/26/2011 17:39:26" />
     <file relUrl="Scripts/jquery-1.4.1.js" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Parcela/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/UsuarioArea/Incluir.aspx" publishTime="01/31/2011 23:33:51" />
     <file relUrl="Content/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Movimentacao/IncluirPrestacaoConta.aspx" publishTime="02/07/2011 08:46:16" />
     <file relUrl="Views/StatusParcela/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Emprestimo/IncluirEmprestimoCliente.aspx" publishTime="02/07/2011 08:55:02" />
-    <file relUrl="Views/Shared/Site.Master" publishTime="02/07/2011 08:36:06" />
     <file relUrl="Views/Emprestimo/Listar.aspx" publishTime="01/13/2011 19:33:43" />
-    <file relUrl="Scripts/jquery.validate.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Parcela/BaixarParcela.aspx" publishTime="02/07/2011 08:55:32" />
     <file relUrl="Views/Shared/EditorTemplates/AreaDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Movimentacao/Excluir.aspx" publishTime="01/26/2011 17:39:26" />
     <file relUrl="Views/Movimentacao/VisualizarListaClientesPorArea.aspx" publishTime="01/26/2011 17:39:26" />
     <file relUrl="Views/Movimentacao/VisualizarResumoLancamento.aspx" publishTime="01/26/2011 17:39:26" />
-    <file relUrl="bin/SiteMVC.pdb" publishTime="02/07/2011 10:04:13" />
+    <file relUrl="bin/SiteMVC.pdb" publishTime="02/07/2011 19:16:49" />
     <file relUrl="Content/ui-lightness/images/ui-icons_228ef1_256x240.png" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Content/ui-lightness/images/ui-icons_222222_256x240.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Home/About.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Content/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Shared/EditorTemplates/EscolaridadeDropDown.ascx" publishTime="01/13/2011 19:33:44" />
@@ -77,7 +75,6 @@
     <file relUrl="Views/Municipio/Detalhar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Shared/EditorTemplates/EstadoCivilTipoDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Home/Index.aspx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Scripts/jquery.datePicker.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Usuario/Logar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Movimentacao/InformarDataPrestacaoConta.aspx" publishTime="02/06/2011 18:23:15" />
     <file relUrl="Views/Shared/EditorTemplates/PrazoPagamentoDropDown.ascx" publishTime="01/13/2011 19:33:44" />
@@ -86,57 +83,60 @@
     <file relUrl="Content/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/UsuarioArea/Alterar.aspx" publishTime="01/31/2011 23:27:00" />
     <file relUrl="Views/DespesaTipo/Incluir.aspx" publishTime="01/26/2011 21:31:53" />
-    <file relUrl="Views/Shared/EditorTemplates/UsuarioTipoDropDown.ascx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Scripts/jquery.validate.min.js" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Shared/Site.Master" publishTime="02/07/2011 08:36:06" />
+    <file relUrl="Scripts/jquery.datePicker.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/StatusParcela/Listar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Emprestimo/EmprestimoCliente.aspx" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Content/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/Site.js" publishTime="01/27/2011 14:44:54" />
     <file relUrl="Views/Shared/EditorTemplates/MunicipioDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Area/Excluir.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/UsuarioArea/Listar.aspx" publishTime="02/01/2011 00:10:09" />
-    <file relUrl="Views/Despesa/Alterar.aspx" publishTime="01/26/2011 23:57:00" />
-    <file relUrl="Content/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Views/Usuario/Alterar.aspx" publishTime="02/02/2011 12:36:58" />
+    <file relUrl="Views/Despesa/Listar.aspx" publishTime="01/26/2011 23:11:34" />
     <file relUrl="Content/ui-lightness/images/ui-icons_ffffff_256x240.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Cliente/Detalhar.aspx" publishTime="01/25/2011 14:48:49" />
     <file relUrl="Views/Emprestimo/Excluir.aspx" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Web.config" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Views/Usuario/Incluir.aspx" publishTime="02/02/2011 12:37:27" />
+    <file relUrl="Views/Movimentacao/VisualizarDetalheParcelas.aspx" publishTime="01/27/2011 14:54:35" />
     <file relUrl="Content/Site.css" publishTime="02/01/2011 01:19:42" />
-    <file relUrl="Content/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Views/Cliente/Listar.aspx" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Shared/EditorTemplates/UsuarioTipoDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Content/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/StatusParcela/Incluir.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Parcela/Informar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Movimentacao/Detalhar.aspx" publishTime="01/26/2011 17:39:26" />
     <file relUrl="Views/Parcela/ParcelaEmprestimo.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Shared/Error.aspx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Area/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Usuario/Detalhar.aspx" publishTime="02/02/2011 12:37:13" />
     <file relUrl="Content/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Movimentacao/Incluir.aspx" publishTime="02/04/2011 10:57:49" />
     <file relUrl="Views/Movimentacao/Listar.aspx" publishTime="02/07/2011 10:02:21" />
     <file relUrl="Content/ui-lightness/images/ui-icons_ffd27a_256x240.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Views/Despesa/Excluir.aspx" publishTime="01/26/2011 23:22:24" />
+    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/DespesaTipo/Excluir.aspx" publishTime="01/26/2011 21:32:06" />
     <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Despesa/Detalhar.aspx" publishTime="01/26/2011 23:20:39" />
     <file relUrl="Views/Shared/EditorTemplates/OrgaoExpedidorNomeDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/txtdropdown/jquery.scrollTo-min.js" publishTime="01/13/2011 19:33:43" />
-    <file relUrl="Views/StatusParcela/Detalhar.aspx" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Models/Modelo/dados_tabelas.txt" publishTime="01/31/2011 20:31:32" />
     <file relUrl="Views/Shared/EditorTemplates/LancamentoTipoDropDown.ascx" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Emprestimo/Detalhar.aspx" publishTime="01/13/2011 19:33:43" />
-    <file relUrl="Views/Area/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Scripts/jquery.validate.js" publishTime="01/13/2011 19:33:43" />
     <file relUrl="Views/Movimentacao/VisualizarTotalMovimentacao.aspx" publishTime="02/07/2011 10:20:00" />
     <file relUrl="Views/Shared/EditorTemplates/DespesaTipoDropDown.ascx" publishTime="01/26/2011 23:05:43" />
-    <file relUrl="Views/Shared/EditorTemplates/TimeSpan.ascx" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Content/ui-lightness/images/ui-icons_222222_256x240.png" publishTime="01/13/2011 19:33:44" />
     <file relUrl="Scripts/timedropdown/timedropdown.js" publishTime="01/13/2011 19:33:43" />
-    <file relUrl="Views/Despesa/Listar.aspx" publishTime="01/26/2011 23:11:34" />
-    <file relUrl="Views/Usuario/Listar.aspx" publishTime="01/13/2011 19:33:44" />
-    <file relUrl="bin/SiteMVC.dll" publishTime="02/07/2011 10:04:13" />
-    <file relUrl="Views/Cliente/Listar.aspx" publishTime="01/13/2011 19:33:43" />
-    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="01/13/2011 19:33:43" />
-    <file relUrl="Views/Parcela/VisualizarParcelas.aspx" publishTime="01/20/2011 00:37:20" />
-    <file relUrl="Views/Parcela/Alterar.aspx" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Views/Shared/EditorTemplates/UsuarioDropDown.ascx" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Views/Usuario/Excluir.aspx" publishTime="02/02/2011 12:37:19" />
+    <file relUrl="Content/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" publishTime="01/13/2011 19:33:44" />
+    <file relUrl="bin/SiteMVC.dll" publishTime="02/07/2011 19:16:49" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="01/13/2011 19:33:43" />
+    <file relUrl="Web.config" publishTime="02/01/2011 13:29:53" />
   </publishProfile>
 </publishData>
