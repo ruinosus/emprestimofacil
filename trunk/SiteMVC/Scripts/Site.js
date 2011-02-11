@@ -5,7 +5,7 @@
         showOn: 'button',
         buttonImageOnly: true,
         buttonImage: '../../Scripts/txtdropdown/txtdropdown-btn.png',
-        buttonText: 'Selecione a dataa'
+        buttonText: 'Selecione a data'
     });
 
     $(".timedropdown").timedropdown();

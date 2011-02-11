@@ -20,7 +20,7 @@
             <%: Html.TextBoxFor(model => model.qtde_parcelas)%>
             <%: Html.ValidationMessageFor(model => model.qtde_parcelas)%>
         </div>
-       <%-- <div class="editor-label">
+        <%-- <div class="editor-label">
             <%: Html.LabelFor(model => model.data_emprestimo) %>
         </div>
         <div class="editor-field">
@@ -55,7 +55,7 @@
             <%: Html.TextBoxFor(model => model.valor) %>
             <%: Html.ValidationMessageFor(model => model.valor) %>
         </div>
-         <div class="editor-label">
+        <div class="editor-label">
             Dias Úteis
         </div>
         <div class="editor-field">
@@ -63,8 +63,8 @@
         <%: Html.HiddenFor(model => model.cliente_id) %>
         <%: Html.HiddenFor(model => model.usuario_id) %>
         <%: Html.HiddenFor(model => model.data_emprestimo) %>
-         <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
-           { %>
+        <%if (!SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+          { %>
         <p>
             <input type="submit" value="Incluir" />
         </p>

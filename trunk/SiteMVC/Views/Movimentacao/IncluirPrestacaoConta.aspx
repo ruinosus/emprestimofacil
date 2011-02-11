@@ -33,18 +33,27 @@
     <div id="divPrint">
         <fieldset>
             <legend>Prestacao de Contas</legend>
-            <table>
+            <%
+                
+           float valorEntradas = 0, valorSaida = 0;
+           valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
+           valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) + Convert.ToInt32(ViewData["totalDespesas"].ToString());
+            %>
+            <table width="100%">
+                <tr>
+                    <th colspan="4">
+                        Entradas
+                    </th>
+                </tr>
                 <tr>
                     <td>
-                        Valores Recebidos dos Clientes:
+                        Clientes:
                     </td>
                     <td>
                         <%: Convert.ToInt32( ViewData["totalParcelas"].ToString()) %>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        Valores Emprestados:
+                        Lançamentos:
                     </td>
                     <td>
                         <%: Convert.ToInt32(ViewData["totalEmprestimos"].ToString())%>
@@ -52,40 +61,35 @@
                 </tr>
                 <tr>
                     <td>
-                        Peguei com a empresa:
+                        Empresa:
                     </td>
                     <td>
                         <%: Convert.ToInt32(ViewData["totalLancamentos"].ToString())%>
                     </td>
-                </tr>
-            </table>
-            <%
-                
-float valorEntradas = 0, valorSaida = 0;
-valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
-valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) + Convert.ToInt32(ViewData["totalDespesas"].ToString());
-            %>
-            <table>
-                <tr>
-                    <th>
-                        Total Valor Entrada
-                    </th>
-                    <th>
-                        Total Valor Saída
-                    </th>
-                    <th>
-                        Total do dia
-                    </th>
+                    <td>
+                        Despesas
+                    </td>
+                    <td>
+                        <%: Convert.ToInt32(ViewData["totalDespesas"].ToString())%>
+                    </td>
                 </tr>
                 <tr>
+                    <td>
+                        Total Entrada:
+                    </td>
                     <td>
                         <%: valorEntradas%>
                     </td>
                     <td>
-                        <%: valorSaida%>
+                        Total Saidas:
                     </td>
                     <td>
-                        <%:valorEntradas - valorSaida %>
+                        <%: valorSaida%>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">
+                        Total do dia: <%:valorEntradas - valorSaida %>
                     </td>
                 </tr>
             </table>
