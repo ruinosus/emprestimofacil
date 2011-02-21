@@ -12,7 +12,7 @@
         <tr>
             <th></th>
             <th>
-                area_id
+                area
             </th>
             <th>
                 ID
@@ -35,7 +35,7 @@
                 <%: Html.ActionLink("Selecionar", "SelecionarArea", new { id = item.ID })%>
             </td>
             <td>
-                <%: item.area_id %>
+                <%: item.area.descricao %>
             </td>
             <td>
                 <%: item.ID %>

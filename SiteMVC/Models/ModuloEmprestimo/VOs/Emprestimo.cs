@@ -7,14 +7,36 @@ using System.Data.Objects.DataClasses;
 using System.ComponentModel;
 using System.Web.Mvc;
 using SiteMVC.Helpers;
+using SiteMVC.ModuloEmprestimo.Processos;
 namespace SiteMVC.Models.ModuloBasico.VOs
 {
 
     [MetadataType(typeof(EmprestimoMetadata))]
     public partial class Emprestimo
     {
-       
+
         public List<CheckBoxListInfo> DiasUteis { get; set; }
+
+        public bool EmprestimoQuitado
+        {
+            get
+            {
+                IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+                Emprestimo emp = new Emprestimo();
+                emp.ID = this.ID;
+
+             //   List<Emprestimo> emprestimos = processo.Consultar(emp,SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
+
+                var resultado = from p in this.parcela
+                                where p.statusparcela_id == 1
+                                select p;
+
+                return resultado.Count() == this.parcela.Count;
+
+              
+            }
+            
+        }
 
         internal class EmprestimoMetadata
         {
@@ -23,7 +45,7 @@ namespace SiteMVC.Models.ModuloBasico.VOs
             [DisplayName("Dias Uteis:")]
             public List<CheckBoxListInfo> DiasUteis { get; set; }
 
-          //  [Required(ErrorMessage = "A data do Emprestimo é necessária para o cadastro.")]
+            //  [Required(ErrorMessage = "A data do Emprestimo é necessária para o cadastro.")]
             [DisplayName("Data Emprestimo:")]
             public DateTime data_emprestimo { get; set; }
 

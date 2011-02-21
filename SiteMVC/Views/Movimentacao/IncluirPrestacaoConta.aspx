@@ -118,7 +118,14 @@
                    { %>
                 <tr>
                     <td>
-                        <%: Html.ActionLink("Imprimir Parcelas", "ImprimirParcelas", "Parcela", new { id = item.ID },null)%>
+
+                     <%if (!item.EmprestimoQuitado)
+                  {%>
+                |
+                <%: Html.ActionLink("Imprimir Parcelas", "ImprimirParcelas", "Parcela", new { id = item.ID }, null)%>
+                <%} %>
+
+                        
                     </td>
                     <td>
                         <%: item.cliente.nome %>

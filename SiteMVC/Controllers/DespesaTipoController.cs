@@ -18,12 +18,15 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar(int? page)
         {
-
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
             var resultado = processo.Consultar();
             List<DespesaTipo> DespesaTipos = resultado;
@@ -44,6 +47,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
             DespesaTipo DespesaTipo = new DespesaTipo();
             DespesaTipo.ID = id;
@@ -57,6 +62,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             DespesaTipo DespesaTipo = new DespesaTipo();
             //DespesaTipo.uf = "0";
             ViewData.Model = DespesaTipo;
@@ -97,6 +104,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
 
             DespesaTipo DespesaTipo = new DespesaTipo();
@@ -141,6 +150,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
             DespesaTipo DespesaTipo = new DespesaTipo();
             DespesaTipo.ID = id;

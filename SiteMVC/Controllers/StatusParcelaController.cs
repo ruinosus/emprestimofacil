@@ -18,11 +18,15 @@ namespace SiteMVC.Controllers
 
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             ViewData.Model = processo.Consultar();
             //EmprestimoEntities db = new EmprestimoEntities();
@@ -39,6 +43,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.ID = id;
@@ -51,6 +57,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             ViewData["dropTeste"] = processo.Consultar();
             ViewData.Model = new StatusParcela();
@@ -91,6 +99,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.ID = id;
@@ -135,6 +145,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IStatusParcelaProcesso processo = StatusParcelaProcesso.Instance;
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.ID = id;

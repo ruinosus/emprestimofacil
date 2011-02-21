@@ -20,12 +20,17 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null ||(ClasseAuxiliar.DataSelecionada== default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
        
         public ActionResult Listar(int? page)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+
             IAreaProcesso processo = AreaProcesso.Instance;
             var resultado = processo.Consultar();
             List<Area> areas = resultado;
@@ -38,6 +43,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IAreaProcesso processo = AreaProcesso.Instance;
             Area area = new Area();
             area.ID = id;
@@ -50,6 +57,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             //IMunicipioProcesso processo = MunicipioProcesso.Instance;
             //List<Municipio> resultado = processo.Consultar();
             //AreaFormViewModel areaFormViewModel = new AreaFormViewModel(new Area(), resultado);
@@ -94,6 +103,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IAreaProcesso processo = AreaProcesso.Instance;
             IMunicipioProcesso processoMunicipio = MunicipioProcesso.Instance;
             ViewData["municipios"] = processoMunicipio.Consultar();
@@ -138,6 +149,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IAreaProcesso processo = AreaProcesso.Instance;
             Area area = new Area();
             area.ID = id;

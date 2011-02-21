@@ -20,11 +20,15 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Informar()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return View();
         }
 
@@ -96,6 +100,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult ImprimirParcelas(int ID)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.ID = ID;
@@ -118,6 +124,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult ParcelaEmprestimo(int? page, int ID)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.ID = ID;
@@ -140,6 +148,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult BaixarParcela(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IParcelaProcesso processo = ParcelaProcesso.Instance;
             Parcela parcela = new Parcela();
             parcela.ID = id;
@@ -200,6 +210,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IParcelaProcesso processo = ParcelaProcesso.Instance;
             Parcela parcela = new Parcela();
             parcela.ID = id;
@@ -249,6 +261,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult VisualizarParcelas()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             if (Session["VisualizarParcelas"] != null)
             {
                 ViewData.Model = (List<Parcela>)Session["VisualizarParcelas"];

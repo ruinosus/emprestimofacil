@@ -4,7 +4,9 @@
     IEnumerable<SelectListItem> ClienteSelectList;
    
     SiteMVC.ModuloCliente.Processos.IClienteProcesso processoCliente = SiteMVC.ModuloCliente.Processos.ClienteProcesso.Instance;
-    List<SiteMVC.Models.ModuloBasico.VOs.Cliente> municipios = processoCliente.Consultar();
+    SiteMVC.Models.ModuloBasico.VOs.Cliente c = new SiteMVC.Models.ModuloBasico.VOs.Cliente();
+    c.area_id = SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada.ID;
+    List<SiteMVC.Models.ModuloBasico.VOs.Cliente> municipios = processoCliente.Consultar(c,SiteMVC.ModuloBasico.Enums.TipoPesquisa.E);
 
     //ViewData["municipios"] = 
     SiteMVC.Models.ModuloBasico.VOs.Cliente municipioInicial = new SiteMVC.Models.ModuloBasico.VOs.Cliente();

@@ -20,12 +20,15 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar(int? page)
         {
-
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
             var resultado = processo.Consultar();
             List<Emprestimo> emprestimos = resultado;
@@ -41,6 +44,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult IncluirEmprestimoCliente()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.ID;
             emprestimo.prazospagamento_id = 0;
@@ -187,6 +192,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.cliente_id = 0;
             emprestimo.data_emprestimo = DateTime.Now;
@@ -215,6 +222,18 @@ namespace SiteMVC.Controllers
 
             try
             {
+
+                IClienteProcesso processoCliente = ClienteProcesso.Instance;
+                List<Cliente> resultCliente = processoCliente.ConsultarClientesDevedores();
+
+                var resultCiente2 = from cc in resultCliente
+                                    where cc.ID == ClasseAuxiliar.ClienteSelecionado.ID
+                                    select cc;
+
+
+                if (resultCliente.Count > 0)
+                    ModelState.AddModelError("valor", "O Cliente está com dividas em aberto.");
+
                 List<int> diasUteis = new List<int>();
                 List<DayOfWeek> dayOfWeeks = new List<DayOfWeek>();
                 if (dias != null)
@@ -267,6 +286,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.ID = id;
@@ -309,6 +330,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.ID = id;
