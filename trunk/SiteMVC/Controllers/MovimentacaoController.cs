@@ -28,6 +28,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Resumo Lancamento
         public ActionResult VisualizarResumoLancamento()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             List<Lancamento> lancamentos = new List<Lancamento>();
             ViewData["lancamentos"] = lancamentos;
             Lancamento lancamento = new Lancamento();
@@ -73,6 +75,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Detalhe Lancamento
         public ActionResult VisualizarDetalheLancamento()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             List<Lancamento> lancamentos = new List<Lancamento>();
             ViewData["lancamentos"] = lancamentos;
             Lancamento lancamento = new Lancamento();
@@ -117,6 +121,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Detalhe Parcelas
         public ActionResult VisualizarDetalheParcelas()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             List<Parcela> parcelas = new List<Parcela>();
             ViewData["parcelas"] = parcelas;
             ParcelaPesquisa parcela = new ParcelaPesquisa();
@@ -163,6 +169,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Clientes Devedores
         public ActionResult VisualizarClientesDevedores()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             List<Cliente> clientes = new List<Cliente>();
             IClienteProcesso processo = ClienteProcesso.Instance;
             var resultado = processo.ConsultarClientesDevedores();
@@ -176,6 +184,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Emprestimos Por Periodo
         public ActionResult VisualizarEmprestimosPorPeriodo()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
             List<Emprestimo> emprestimos = processo.Consultar();
             EmprestimoPesquisa emprestimoPesquisa = new EmprestimoPesquisa();
@@ -220,6 +230,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Lista Clientes Por Area
         public ActionResult VisualizarListaClientesPorArea()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             List<Cliente> clientes = new List<Cliente>();
             IClienteProcesso processo = ClienteProcesso.Instance;
             var resultado = processo.ConsultarClientesDevedores();
@@ -264,6 +276,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Parcelas Por Periodo
         public ActionResult VisualizarParcelasPorPeriodo()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IParcelaProcesso processo = ParcelaProcesso.Instance;
 
             ParcelaPesquisa parcelaPesquisa = new ParcelaPesquisa();
@@ -310,6 +324,8 @@ namespace SiteMVC.Controllers
         #region Visualizar Total Movimentacao
         public ActionResult VisualizarTotalMovimentacao()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IEmprestimoProcesso processoEmprestimo = EmprestimoProcesso.Instance;
             List<Emprestimo> emprestimos = processoEmprestimo.Consultar();
 
@@ -354,6 +370,8 @@ namespace SiteMVC.Controllers
         #region Método Index
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
         #endregion
@@ -361,6 +379,8 @@ namespace SiteMVC.Controllers
         #region Método Listar
         public ActionResult Listar(int? page)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
 
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
             var resultado = processo.Consultar();
@@ -377,6 +397,8 @@ namespace SiteMVC.Controllers
         // GET: /StatusParcela/Details/5
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
             Lancamento lancamento = new Lancamento();
             lancamento.ID = id;
@@ -390,6 +412,8 @@ namespace SiteMVC.Controllers
         // GET: /StatusParcela/Create
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             Lancamento lancamento = new Lancamento();
             lancamento.lancamentotipo_id = 1;
             lancamento.usuario_id = 0;
@@ -435,6 +459,8 @@ namespace SiteMVC.Controllers
         // GET: /StatusParcela/Edit/5
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
             Lancamento lancamento = new Lancamento();
             lancamento.ID = id;
@@ -477,6 +503,8 @@ namespace SiteMVC.Controllers
         // GET: /StatusParcela/Delete/5
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             ILancamentoProcesso processo = LancamentoProcesso.Instance;
             Lancamento lancamento = new Lancamento();
             lancamento.ID = id;
@@ -517,7 +545,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult IncluirPrestacaoConta()
         {
-
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             PrestacaoConta prestacaoConta = new PrestacaoConta();
 
             #region Despesas
@@ -684,6 +713,8 @@ namespace SiteMVC.Controllers
         #region Metodo Informar data Prestacao conta
         public ActionResult InformarDataPrestacaoConta()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null )
+                return RedirectToAction("Index", "Home");
             PrestacaoContaPesquisa prestacaoContaPesquisa = new PrestacaoContaPesquisa();
             prestacaoContaPesquisa.DataPrestacaoConta = DateTime.Now;
             ViewData.Model = prestacaoContaPesquisa;

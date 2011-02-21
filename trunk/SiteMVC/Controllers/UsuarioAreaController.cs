@@ -18,12 +18,15 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null )
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar(int? page)
         {
-
+            if (ClasseAuxiliar.UsuarioLogado == null )
+                return RedirectToAction("Index", "Home");
             IUsuarioAreaProcesso processo = UsuarioAreaProcesso.Instance;
             UsuarioArea usuarioArea = new UsuarioArea();
             usuarioArea.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
@@ -38,6 +41,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IUsuarioAreaProcesso processo = UsuarioAreaProcesso.Instance;
             UsuarioArea usuarioArea = new UsuarioArea();
             usuarioArea.ID = id;
@@ -62,6 +67,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             UsuarioArea usuarioArea = new UsuarioArea();
             usuarioArea.area_id = 0;
             usuarioArea.usuario_id = 0;
@@ -105,6 +112,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IUsuarioAreaProcesso processo = UsuarioAreaProcesso.Instance;
 
             UsuarioArea usuarioArea = new UsuarioArea();
@@ -150,6 +159,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IUsuarioAreaProcesso processo = UsuarioAreaProcesso.Instance;
             UsuarioArea usuarioArea = new UsuarioArea();
             usuarioArea.ID = id;

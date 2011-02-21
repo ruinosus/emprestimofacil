@@ -18,12 +18,15 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar(int? page)
         {
-             
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IMunicipioProcesso processo = MunicipioProcesso.Instance;
             var resultado =  processo.Consultar();
             List<Municipio> municipios = resultado;
@@ -44,6 +47,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IMunicipioProcesso processo = MunicipioProcesso.Instance;
             Municipio municipio = new Municipio();
             municipio.ID = id;
@@ -57,7 +62,10 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
-           Municipio municipio = new Municipio();
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home"); 
+            
+            Municipio municipio = new Municipio();
             municipio.uf = "0";
             ViewData.Model = municipio;
             return View();
@@ -98,6 +106,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IMunicipioProcesso processo = MunicipioProcesso.Instance;
 
             Municipio municipio = new Municipio();
@@ -141,6 +151,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IMunicipioProcesso processo = MunicipioProcesso.Instance;
             Municipio municipio = new Municipio();
             municipio.ID = id;

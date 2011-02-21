@@ -17,11 +17,15 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar(int? page)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
 
             IUsuarioProcesso processo = UsuarioProcesso.Instance;
             var resultado = processo.Consultar();
@@ -35,6 +39,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IUsuarioProcesso processo = UsuarioProcesso.Instance;
             Usuario usuario = new Usuario();
             usuario.ID = id;
@@ -47,6 +53,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             Usuario usuario = new Usuario();
             usuario.escolaridade_id = 0;
             usuario.estadoscivistipo_id = 0;
@@ -92,6 +100,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IUsuarioProcesso processo = UsuarioProcesso.Instance;
           
             Usuario usuario = new Usuario();
@@ -135,6 +145,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult AlterarSenha(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null )
+                return RedirectToAction("Index", "Home");
             IUsuarioProcesso processo = UsuarioProcesso.Instance;
 
             Usuario usuario = new Usuario();
@@ -182,6 +194,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IUsuarioProcesso processo = UsuarioProcesso.Instance;
             Usuario usuario = new Usuario();
             usuario.ID = id;

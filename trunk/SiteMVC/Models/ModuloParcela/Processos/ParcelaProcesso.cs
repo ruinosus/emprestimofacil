@@ -141,13 +141,39 @@ namespace SiteMVC.ModuloParcela.Processos
                 {
                     //p.valor_pago = valorRestante;
                     this.Alterar(p);
-                   // this.AdicionarParcelaExtra(p);
+                    // this.AdicionarParcelaExtra(p);
                 }
                 else
                 {
                     //p.valor_pago = valorRestante;
                     this.Alterar(p);
                 }
+            }
+            else
+            {
+                ILancamentoProcesso processoLancamento = LancamentoProcesso.Instance;
+                Lancamento lancamento = new Lancamento();
+             
+                lancamento.valor = parcela.valor_pago.Value;
+                lancamento.lancamentotipo_id = 1;
+                lancamento.data = parcela.data_pagamento.Value;
+                lancamento.fonte = "parcela";
+                lancamento.timeCreated = DateTime.Now;
+                lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+                processoLancamento.Incluir(lancamento);
+                processoLancamento.Confirmar();
+                parcela.statusparcela_id = 1;
+                Parcela p2 = new Parcela();
+                p2.statusparcela_id = parcela.statusparcela_id;
+                p2.sequencial = parcela.sequencial +1;
+                p2.emprestimo_id = parcela.emprestimo_id;
+                p2.valor = valorRestante;
+                p2.valor_pago = valorRestante;
+                p2.data_pagamento = DateTime.Now;
+                p2.data_vencimento = DateTime.Now;
+                this.Incluir(p2);
+                this.Confirmar();
+            
             }
 
 

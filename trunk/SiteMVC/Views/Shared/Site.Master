@@ -50,7 +50,8 @@
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
-            </div><br />
+            </div>
+            <br />
             <div id="menucontainer">
                 <%if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
                   {
@@ -130,7 +131,7 @@
                             <li>DO DIA
                                 <ul>
                                     <li>
-                                       <%: Html.ActionLink("Baixar Parcela", "Informar", "Parcela")%>
+                                        <%: Html.ActionLink("Baixar Parcela", "Informar", "Parcela")%>
                                     </li>
                                 </ul>
                             </li>
@@ -140,10 +141,22 @@
                     <li>ACAO
                         <ul class="links">
                             <li>Area
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Selecionar Area", "Listar", "UsuarioArea")%></li>
-                                </ul>
+                                <%if (Session["AreasUsuarioLogado"] != null)
+                                  {
+                                      List<SiteMVC.Models.ModuloBasico.VOs.UsuarioArea> areas = (List<SiteMVC.Models.ModuloBasico.VOs.UsuarioArea>)Session["AreasUsuarioLogado"];
+                                      if (areas.Count > 0)
+                                      { %>
+                                        <ul>
+                                        <%foreach (var item in areas)
+                                          { %>
+                                            <li>
+                                                <%: Html.ActionLink("Selecionar ["+item.area.descricao+"]", "SelecionarArea","UsuarioArea", new { id = item.ID },null)%>
+                                            </li>
+                                            <%} %>
+                                        </ul>
+                                <%}
+                                  
+                                  }%>
                             </li>
                             <li>Data
                                 <ul>

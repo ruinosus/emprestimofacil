@@ -18,19 +18,22 @@ namespace SiteMVC.Controllers
         private const int defaultPageSize = 10;
         public ActionResult Index()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             return RedirectToAction("Listar");
         }
 
         public ActionResult Listar(int? page)
         {
-             
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IClienteProcesso processo = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
 
             //if (SiteMVC.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id != 1)
             //    cliente.area_id = ClasseAuxiliar.UsuarioLogado.area_id;
 
-
+            cliente.area_id = ClasseAuxiliar.AreaSelecionada.ID;
 
             var resultado =  processo.Consultar(cliente,TipoPesquisa.E);
             List<Cliente> clientes = resultado;
@@ -45,6 +48,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Detalhar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IClienteProcesso processo = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
             cliente.ID = id;
@@ -57,6 +62,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Incluir()
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             Cliente cliente = new Cliente();
             cliente.escolaridade_id = 0;
             cliente.estadoscivistipo_id= 0;
@@ -103,6 +110,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IClienteProcesso processo = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
             cliente.ID = id;
@@ -145,6 +154,8 @@ namespace SiteMVC.Controllers
 
         public ActionResult Excluir(int id)
         {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
             IClienteProcesso processo = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
             cliente.ID = id;
