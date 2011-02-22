@@ -106,6 +106,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Models\ModuloBasico\VOs\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModuloBasico\VOs\Validacoes.cs" />
     <Compile Include="Models\ModuloBasico\VOs\ValidationAttribute.cs" />
     <Compile Include="Models\ModuloBloqueado\Constantes\BloqueadoConstantes.cs" />
@@ -456,6 +461,10 @@
       <LastGenOutput>EmprestimoDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Scripts\jquery.datePicker.js" />
+    <EntityDeploy Include="Models\ModuloBasico\VOs\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcPaging\MvcPaging.csproj">
@@ -478,7 +487,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1541</DevelopmentServerPort>
+          <DevelopmentServerPort>13617</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -1,0 +1,5 @@
+D:\Projetos\EmprestimoFacil\MvcPaging\bin\Release\MvcPaging.dll
+D:\Projetos\EmprestimoFacil\MvcPaging\bin\Release\MvcPaging.pdb
+D:\Projetos\EmprestimoFacil\MvcPaging\obj\Release\ResolveAssemblyReference.cache
+D:\Projetos\EmprestimoFacil\MvcPaging\obj\Release\MvcPaging.dll
+D:\Projetos\EmprestimoFacil\MvcPaging\obj\Release\MvcPaging.pdb

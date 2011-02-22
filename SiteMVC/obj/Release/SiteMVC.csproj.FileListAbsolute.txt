@@ -1,0 +1,7 @@
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.dll
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\SiteMVC.pdb
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.dll
+D:\Projetos\EmprestimoFacil\SiteMVC\bin\MvcPaging.pdb
+D:\Projetos\EmprestimoFacil\SiteMVC\obj\Release\ResolveAssemblyReference.cache
+D:\Projetos\EmprestimoFacil\SiteMVC\obj\Release\SiteMVC.dll
+D:\Projetos\EmprestimoFacil\SiteMVC\obj\Release\SiteMVC.pdb
