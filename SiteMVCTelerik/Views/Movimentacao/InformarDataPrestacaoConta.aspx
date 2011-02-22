@@ -15,7 +15,7 @@
                 <%: Html.LabelFor(model => model.DataPrestacaoConta) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.DataPrestacaoConta.Date)%>
+                <%: Html.EditorFor(model => model.DataPrestacaoConta)%>
                 <%: Html.ValidationMessageFor(model => model.DataPrestacaoConta)%>
             </div>
 

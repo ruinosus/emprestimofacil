@@ -5,7 +5,7 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body
 {
-    background-color: #5c87b2;
+    background-color: black;
     font-size: .75em;
     font-family: Verdana, Helvetica, Sans-Serif;
     margin: 0;
@@ -13,26 +13,8 @@ body
     color: #696969;
 }
 
-a:link
-{
-    color: #034af3;
-    text-decoration: underline;
-}
-a:visited
-{
-    color: #505abc;
-}
-a:hover
-{
-    color: #1d60ff;
-    text-decoration: none;
-}
-a:active
-{
-    color: #12eb87;
-}
 
-p, ul
+p
 {
     margin-bottom: 20px;
     line-height: 1.6em;
@@ -104,7 +86,7 @@ page width. Or, you can specify an exact pixel width. */
     margin: 0;
     color: #fff;
     border: none;
-    line-height: 0.75em;
+    line-height: 2em;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 32px !important;
 }
@@ -129,57 +111,7 @@ page width. Or, you can specify an exact pixel width. */
 
 /* TAB MENU   
 ----------------------------------------------------------*/
-ul#menu
-{
-    border-bottom: 1px #5C87B2 solid;
-    padding: 0 0 2px;
-    position: relative;
-    margin: 0;
-    text-align: right;
-}
 
-ul#menu li
-{
-    display: inline;
-    list-style: none;
-}
-
-ul#menu li#greeting
-{
-    padding: 10px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    color: #fff;
-}
-
-ul#menu li a
-{
-    padding: 10px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    background-color: #e8eef4;
-    color: #034af3;
-}
-
-ul#menu li a:hover
-{
-    background-color: #fff;
-    text-decoration: none;
-}
-
-ul#menu li a:active
-{
-    background-color: #a6e2a6;
-    text-decoration: none;
-}
-
-ul#menu li.selected a
-{
-    background-color: #fff;
-    color: #000;
-}
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
@@ -203,17 +135,13 @@ legend
     padding: 2px 4px 8px 4px;
 }
 
-input[type="text"] 
+/*input[type="text"] 
 {
     width: 200px;
     border: 1px solid #CCC;
-}
+}*/
 
-input[type="password"] 
-{
-    width: 200px;
-    border: 1px solid #CCC;
-}
+
 
 /* TABLE
 ----------------------------------------------------------*/
@@ -227,7 +155,7 @@ table
 table td 
 {
   padding: 5px;   
-  border: solid 1px #e8eef4;
+ text-align: left;
 }
 
 table th
@@ -253,6 +181,7 @@ table th
 #menucontainer
 {
     margin-top:40px;
+    text-align:left;
 }
 
 div#title
@@ -341,4 +270,71 @@ div#title
 .tri-state
 {
     width: 6em;
+}
+
+.date-container
+{
+    float: left;
+    padding-right: 10px;
+}
+
+.date-container input
+{
+    width: 5em;
+}
+
+.time-container
+{
+    float: left;
+}
+
+.time-container input
+{
+    width:7em;
+}
+
+.ui-datepicker-trigger
+{
+    vertical-align:top;
+}
+
+
+/* Pager */
+.pager 
+{
+	margin:8px 3px;
+	padding:3px;
+}
+
+.pager .disabled 
+{
+	border:1px solid #ddd;
+	color:#999;
+	margin-top:4px;
+	padding:3px;
+	text-align:center;
+}
+
+.pager .current 
+{
+	background-color:#06c;
+	border:1px solid #009;
+	color:#fff;
+	font-weight:bold;
+	margin-top:4px;
+	padding:3px 5px;
+	text-align:center;
+}
+
+.pager span, .pager a
+{
+	margin: 4px 3px;
+}
+
+.pager a 
+{
+	border:1px solid #c0c0c0;
+	padding:3px 5px;
+	text-align:center;
+	text-decoration:none;
 }
