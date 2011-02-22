@@ -63,6 +63,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
 
         [Required(ErrorMessage = "A data é necessária para a pesquisa.")]
         [DisplayName("Data:")]
+        [DataType(DataType.Date)]
         public DateTime DataPrestacaoConta { get; set; }
         //[Required(ErrorMessage = "A data final é necessária para a pesquisa.")]
         //[DisplayName("Data Fim:")]
