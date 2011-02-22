@@ -49,6 +49,7 @@ namespace SiteMVC.Controllers
                 if (default(DateTime) != lancamento.data)
                 {
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
+                    lancamento.area_id = ClasseAuxiliar.AreaSelecionada.ID;
                     var resultado = processo.Consultar(lancamento, TipoPesquisa.E);
                     lancamentos = resultado;
                     ViewData["lancamentos"] = lancamentos;
@@ -95,6 +96,7 @@ namespace SiteMVC.Controllers
             {
                 if (default(DateTime) != lancamento.data)
                 {
+                    lancamento.area_id = ClasseAuxiliar.AreaSelecionada.ID;
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
                     var resultado = processo.Consultar(lancamento, TipoPesquisa.E);
                     lancamentos = resultado;
@@ -141,6 +143,7 @@ namespace SiteMVC.Controllers
             {
                 if (default(DateTime) != parcelaPesquisa.DataInicio)
                 {
+                    
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
                     Parcela p = new Parcela();
                     p.data_pagamento = parcelaPesquisa.DataInicio;
