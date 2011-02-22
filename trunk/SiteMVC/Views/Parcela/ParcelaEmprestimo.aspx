@@ -39,6 +39,7 @@
             <th>
                 valor_pago
             </th>
+         
         </tr>
         <%
             bool entrou = false;
@@ -71,7 +72,7 @@
                 <%: item.observacoes %>
             </td>
             <td>
-                <%: item.sequencial %>
+                <%: item.sequencial +"/" + Model.Count %>
             </td>
             <td>
                 <%: item.statusparcela_id %>
