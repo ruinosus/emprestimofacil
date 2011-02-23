@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<List<SiteMVCTelerik.Models.ModuloBasico.VOs.Cliente>>" %>
-<%@ Import Namespace="SiteMVC" %>
+<%@ Import Namespace="SiteMVCTelerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	VisualizarClientesDevedores
 </asp:Content>

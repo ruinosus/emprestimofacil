@@ -1,9 +1,9 @@
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\SiteMVCTelerik.dll
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\SiteMVCTelerik.pdb
+D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\MvcPaging.dll
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\Telerik.Web.Mvc.dll
+D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\MvcPaging.pdb
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\Telerik.Web.Mvc.xml
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\obj\Debug\ResolveAssemblyReference.cache
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\obj\Debug\SiteMVCTelerik.dll
 D:\Projetos\EmprestimoFacil\SiteMVCTelerik\obj\Debug\SiteMVCTelerik.pdb
-D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\MvcPaging.dll
-D:\Projetos\EmprestimoFacil\SiteMVCTelerik\bin\MvcPaging.pdb

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IPagedList<SiteMVCTelerik.Models.ModuloBasico.VOs.Parcela>>" %>
-<%@ Import Namespace="SiteMVC"%>
+<%@ Import Namespace="SiteMVCTelerik"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	ParcelaEmprestimo
 </asp:Content>

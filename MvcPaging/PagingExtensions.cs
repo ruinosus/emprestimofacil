@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
-using SiteMVC;
+using SiteMVCTelerik;
 
-namespace SiteMVC
+namespace SiteMVCTelerik
 {
 	public static class PagingExtensions
 	{
