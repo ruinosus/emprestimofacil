@@ -4,10 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
-<%: Html.Telerik().StyleSheetRegistrar().DefaultGroup(group => group.Add("telerik.common.css").Add("telerik.black.css").Combined(true).Compress(true)) %>
-<%= Html.Telerik().StyleSheetRegistrar()
+    <%: Html.Telerik().StyleSheetRegistrar().DefaultGroup(group => group.Add("telerik.common.css").Add("telerik.black.css").Combined(true).Compress(true)) %>
+    <%= Html.Telerik().StyleSheetRegistrar()
                       .DefaultGroup(group => group
                           .Add("telerik.examples.css")
                           .Add("telerik.common.css")
@@ -15,40 +17,7 @@
                           .Add("telerik.rtl.css")
                           .Combined(true)
                           .Compress(true))
-                     %>
-    <%--    <link href="../../Content/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet"
-        type="text/css" />
-    <link href="../../Scripts/txtdropdown/txtdropdown.css" rel="stylesheet" type="text/css" />
-    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
-    <script src="../../Scripts/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/jquery-ui-1.8.5.custom.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/txtdropdown/jquery.scrollTo-min.js" type="text/javascript"></script>
-    <script src="../../Scripts/txtdropdown/txtdropdown.js" type="text/javascript"></script>
-    <script src="../../Scripts/timedropdown/timedropdown.js" type="text/javascript"></script>
-    <script src="../../Scripts/Site.js" type="text/javascript"></script>
-    <link href="../../Content/menudropdown/css/multimenu.css" rel="stylesheet" type="text/css" />
-    <script src="../../Content/menudropdown/js/jquery.corners.js" type="text/javascript"></script>
-    <script src="../../Content/menudropdown/js/multimenu.js" type="text/javascript"></script>
-    <script src="../../Content/menudropdown/js/dropshadow.jquery.plugin.js" type="text/javascript"></script>--%>
-    <%-- <script type="text/javascript">
-
-        $(document).ready(function () {
-            $(".links").hide();
-            $("ul.multimenu li").hover(function () {
-                if ($(".links").is(":hidden")) {
-                    $(".links").slideDown("1000");
-                } else {
-                    $(".links").hide();
-                }
-            });
-            $(".links li").hover(function () {
-                $(".links").show();
-            });
-            //            $(".links").corner();
-
-        });
-
-    </script>--%>
+    %>
 </head>
 <body>
     <div class="page">
@@ -63,141 +32,77 @@
             </div>
             <br />
             <div id="menucontainer">
-            <% Html.Telerik().Menu()
-            .Name("Menu")
-            .Items(menu =>
-            {
-                menu.Add()
-                    .Text("ASP.NET MVC")
-                
-                    .Items(item =>
-                    {
-                        item.Add().Text("Grid");
-                        item.Add().Text("Menu");
-                       
-                            item.Add().Text("PanelBar");
-                       
-                            item.Add().Text("TabStrip");
-                    });
-            })
-            .Render();
-    %>
                 <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
                   {
                 %>
-                <ul class="multimenu">
-                    <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada != null && SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada != default(DateTime))
-                      {%>
-                    <li>CADASTRO
-                        <ul class="links">
-                            <li>Clientes
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Novo", "Listar", "Cliente")%></li>
-                                </ul>
-                            </li>
-                            <li>Tipo Despesa
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Novo", "Listar", "TipoDespesa")%></li>
-                                </ul>
-                            </li>
-                            <li>Usuario
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Novo", "Listar", "Usuario")%></li>
-                                    <li>
-                                        <%: Html.ActionLink("Vincular Usuário", "Incluir", "UsuarioArea")%></li>
-                                </ul>
-                            </li>
-                            <li>Municipio
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Novo", "Listar", "Municipio")%></li>
-                                </ul>
-                            </li>
-                            <li>Area
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Novo", "Listar", "Area")%></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>MOVIMENTACAO
-                        <ul class="links">
-                            <li>RELATORIOS
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Prestacao de Contas", "IncluirPrestacaoConta", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Total Movimentacao", "VisualizarTotalMovimentacao", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Lancamentos Detalhados", "VisualizarDetalheLancamento", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Resumo dos Lancamentos", "VisualizarResumoLancamento", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Parcelas Pagas", "VisualizarDetalheParcelas", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Clientes Devedores", "VisualizarClientesDevedores", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Emprestimos por período", "VisualizarEmprestimosPorPeriodo", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Parcelas por período", "VisualizarParcelasPorPeriodo", "Movimentacao")%>
-                                    </li>
-                                    <li>
-                                        <%: Html.ActionLink("Visualizar Clientes por Area", "VisualizarListaClientesPorArea", "Movimentacao")%>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>DO DIA
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Baixar Parcela", "Informar", "Parcela")%>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <%} %>
-                    <li>ACAO
-                        <ul class="links">
-                            <li>Area
-                                <%if (Session["AreasUsuarioLogado"] != null)
-                                  {
-                                      List<SiteMVCTelerik.Models.ModuloBasico.VOs.UsuarioArea> areas = (List<SiteMVCTelerik.Models.ModuloBasico.VOs.UsuarioArea>)Session["AreasUsuarioLogado"];
-                                      if (areas.Count > 0)
-                                      { %>
-                                <ul>
-                                    <%foreach (var item in areas)
-                                      { %>
-                                    <li>
-                                        <%: Html.ActionLink("Selecionar ["+item.area.descricao+"]", "SelecionarArea","UsuarioArea", new { id = item.ID },null)%>
-                                    </li>
-                                    <%} %>
-                                </ul>
-                                <%}
+                <% Html.Telerik().Menu()
+            .Name("Menu")
+            .Items(menu =>
+            {
+                if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada != null && SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada != default(DateTime))
+                {
+                    menu.Add().Text("CADASTRO").Items(itemChild =>
+                    {
+                        itemChild.Add().Text("Clientes").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Cliente"); });
+                        itemChild.Add().Text("Tipo Despesa").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "TipoDespesa"); });
+                        itemChild.Add().Text("Usuario").Items(itemChildNode =>
+                        {
+                            itemChildNode.Add().Text("Novo").Action("Listar", "Usuario");
+                            itemChildNode.Add().Text("Vincular Usuário").Action("Incluir", "UsuarioArea");
+                        });
+                        itemChild.Add().Text("Município").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Municipio"); });
+                        itemChild.Add().Text("Area").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Area"); });
 
-                                  }%>
-                            </li>
-                            <li>Data
-                                <ul>
-                                    <li>
-                                        <%: Html.ActionLink("Selecionar Data", "InformarDataPrestacaoConta", "Movimentacao")%>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <%
-                  } %>
+                    });
+
+                    menu.Add().Text("MOVIMENTACAO").Items(itemChild =>
+                    {
+                        itemChild.Add().Text("RELATÓRIOS").Items(itemChildNode =>
+                        {
+                            itemChildNode.Add().Text("Prestacao de Contas").Action("IncluirPrestacaoConta", "Movimentacao");
+                            itemChildNode.Add().Text("Total Movimentacao").Action("VisualizarTotalMovimentacao", "Movimentacao");
+                            //itemChildNode.Add().Text("Visualizar Lancamentos Detalhados").Action("VisualizarDetalheLancamento", "Movimentacao");
+                            //itemChildNode.Add().Text("Visualizar Resumo dos Lancamentos").Action("VisualizarResumoLancamento", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas Pagas").Action("VisualizarDetalheParcelas", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Clientes Devedores").Action("VisualizarClientesDevedores", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Emprestimos por período").Action("VisualizarEmprestimosPorPeriodo", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas por período").Action("VisualizarParcelasPorPeriodo", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Clientes por Area").Action("VisualizarListaClientesPorArea", "Movimentacao");
+                        });
+
+                    });
+                    menu.Add().Text("DO DIA").Items(itemChild => { itemChild.Add().Text("Baixar Parcela").Action("Informar", "Parcela"); });
+                }
+
+                
+
+                menu.Add()
+                   .Text("ACAO")
+
+                   .Items(item =>
+                   {
+                       item.Add().Text("Area").Items(itemChild =>
+                       {
+
+                           if (Session["AreasUsuarioLogado"] != null)
+                           {
+                               List<SiteMVCTelerik.Models.ModuloBasico.VOs.UsuarioArea> areas = (List<SiteMVCTelerik.Models.ModuloBasico.VOs.UsuarioArea>)Session["AreasUsuarioLogado"];
+                               if (areas.Count > 0)
+                               {
+                                   foreach (var area in areas)
+                                       itemChild.Add().Text("Selecionar [" + area.area.descricao + "]").Action("SelecionarArea", "UsuarioArea", new { id = area.ID });
+                               }
+                           }
+                       });
+                       item.Add().Text("Data").Items(itemChild => { itemChild.Add().Text("Selecionar Data").Action("InformarDataPrestacaoConta", "Movimentacao"); });
+
+
+                   });
+            })
+            .Render();
+
+                  }
+                %>
             </div>
         </div>
         <div id="main">
@@ -208,5 +113,4 @@
     </div>
     <%: Html.Telerik().ScriptRegistrar().DefaultGroup(group => group.Combined(true).Compress(true)) %>
 </body>
-
 </html>
