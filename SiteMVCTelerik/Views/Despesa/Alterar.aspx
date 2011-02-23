@@ -38,8 +38,8 @@
             <%: Html.LabelFor(model => model.data) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.data.Date) %>
-            <%: Html.ValidationMessageFor(model => model.data) %>
+            <%: Html.EditorFor(model => model.data) %>
+            <%: Html.ValidationMessageFor(model => model) %>
         </div>
         
          <div class="editor-label">

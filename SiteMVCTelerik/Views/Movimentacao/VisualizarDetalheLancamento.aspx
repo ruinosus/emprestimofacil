@@ -34,10 +34,10 @@
     </div>
     <div class="editor-field">
         <div class="date-container">
-            <%: Html.EditorFor(model => model.data.Date)%>
+            <%: Html.EditorFor(model => model.data)%>
         </div>
         <div class="clear">
-            <%: Html.ValidationMessageFor(model => model.data)%>
+            <%: Html.ValidationMessageFor(model => model)%>
         </div>
     </div>
     <p>

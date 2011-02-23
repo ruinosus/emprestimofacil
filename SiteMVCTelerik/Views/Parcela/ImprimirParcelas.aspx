@@ -110,7 +110,7 @@
                                 Parcela:
                             </td>
                             <td colspan="2">
-                             <%: item.sequencial %>/<%: Model.Count() %>
+                             <%: item.sequencial %>/<%: Convert.ToInt16(ViewData["total"].ToString()) %>
                             </td>
                         </tr>
                         <tr>
@@ -187,7 +187,7 @@
                                 Parcela:
                             </td>
                             <td colspan="2">
-                             <%: item.sequencial%>/<%: Model.Count() %>
+                             <%: item.sequencial%>/<%: Convert.ToInt16(ViewData["total"].ToString()) %>
                             </td>
                         </tr>
                         <tr>

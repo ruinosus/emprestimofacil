@@ -479,6 +479,7 @@
     <Content Include="Content\2010.3.1318\Windows7\editor.png" />
     <Content Include="Content\2010.3.1318\Windows7\loading.gif" />
     <Content Include="Content\2010.3.1318\Windows7\sprite.png" />
+    <Content Include="Content\ui-lightness\images\impressora.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Models\Modelo\dados_tabelas.txt" />
     <Content Include="Models\Modelo\emprestcard.sql" />
