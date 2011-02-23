@@ -7,7 +7,7 @@ using SiteMVCTelerik.ModuloDespesa.Processos;
 using SiteMVCTelerik.Models.ModuloBasico.VOs;
 using SiteMVCTelerik.ModuloBasico.Enums;
 using SiteMVCTelerik.ModuloDespesa.Processos;
-using SiteMVC;
+using SiteMVCTelerik;
 
 namespace SiteMVCTelerik.Controllers
 {

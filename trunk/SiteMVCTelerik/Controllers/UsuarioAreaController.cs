@@ -7,7 +7,7 @@ using SiteMVCTelerik.Models.ModuloBasico.VOs;
 using SiteMVCTelerik.ModuloUsuarioArea.Processos;
 using SiteMVCTelerik.ModuloBasico.Enums;
 using SiteMVCTelerik.ModuloArea.Processos;
-using SiteMVC;
+using SiteMVCTelerik;
 namespace SiteMVCTelerik.Controllers
 {
     public class UsuarioAreaController : Controller

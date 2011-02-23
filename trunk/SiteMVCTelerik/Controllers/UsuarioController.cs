@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using SiteMVCTelerik.Models.ModuloBasico.VOs;
 using SiteMVCTelerik.ModuloUsuario.Processos;
 using SiteMVCTelerik.ModuloBasico.Enums;
-using SiteMVC;
+using SiteMVCTelerik;
 
 namespace SiteMVCTelerik.Controllers
 {

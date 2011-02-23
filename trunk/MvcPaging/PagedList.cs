@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SiteMVC;
+using SiteMVCTelerik;
 
-namespace SiteMVC
+namespace SiteMVCTelerik
 {
 	public class PagedList<T> : List<T>, IPagedList<T>
 	{

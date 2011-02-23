@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SiteMVC
+namespace SiteMVCTelerik
 {
 	public interface IPagedList<T> : IList<T>
 	{

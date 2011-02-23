@@ -7,7 +7,7 @@ using SiteMVCTelerik.ModuloParcela.Processos;
 using SiteMVCTelerik.Models.ModuloBasico.VOs;
 using SiteMVCTelerik.ModuloBasico.Enums;
 using SiteMVCTelerik.ModuloMunicipio.Processos;
-using SiteMVC;
+using SiteMVCTelerik;
 using SiteMVCTelerik.ModuloCliente.Processos;
 using SiteMVCTelerik.ModuloEmprestimo.Processos;
 

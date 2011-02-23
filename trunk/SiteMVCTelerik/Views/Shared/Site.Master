@@ -44,7 +44,7 @@
                     menu.Add().Text("CADASTRO").Items(itemChild =>
                     {
                         itemChild.Add().Text("Clientes").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Cliente"); });
-                        itemChild.Add().Text("Tipo Despesa").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "TipoDespesa"); });
+                        itemChild.Add().Text("Tipo Despesa").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "DespesaTipo"); });
                         itemChild.Add().Text("Usuario").Items(itemChildNode =>
                         {
                             itemChildNode.Add().Text("Novo").Action("Listar", "Usuario");
