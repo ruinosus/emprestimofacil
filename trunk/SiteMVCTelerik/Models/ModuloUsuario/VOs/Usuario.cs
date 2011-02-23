@@ -76,6 +76,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             public string ctps { get; set; }
 
             [DisplayName("Data Expedição:")]
+            [DataType(DataType.Date)]
             public DateTime? data_expedicao { get; set; }
 
             [DisplayName("Endereço Residencial:")]

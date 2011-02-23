@@ -84,6 +84,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
 
             [DisplayName("Data Expedição:")]
             [Required(ErrorMessage = "Informe a data de expediçao")]
+            [DataType(DataType.Date)]
             public DateTime? data_expedicao { get; set; }
 
             [DisplayName("Endereço Comercial:")]

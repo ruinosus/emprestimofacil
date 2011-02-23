@@ -24,6 +24,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             public float valor { get; set; }
 
             [DisplayName("Data:")]
+            [DataType(DataType.Date)]
             public DateTime data{ get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha o Usuário")]

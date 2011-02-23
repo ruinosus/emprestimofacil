@@ -34,6 +34,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
 
             [Required(ErrorMessage = "Informe a data do Lançamento.")]
             [DisplayName("Data do Lancamento:")]
+            [DataType(DataType.Date)]
             public DateTime data { get; set; }
 
             [Required(ErrorMessage = "O valor é necessário para o cadastro.")]

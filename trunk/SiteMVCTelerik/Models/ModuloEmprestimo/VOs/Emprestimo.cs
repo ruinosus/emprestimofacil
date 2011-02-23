@@ -47,6 +47,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
 
             //  [Required(ErrorMessage = "A data do Emprestimo é necessária para o cadastro.")]
             [DisplayName("Data Emprestimo:")]
+            [DataType(DataType.Date)]
             public DateTime data_emprestimo { get; set; }
 
             [Required(ErrorMessage = "O juros é necessário para o cadastro.")]
@@ -86,9 +87,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
     {
         [Required(ErrorMessage = "A data inicial é necessária para a pesquisa.")]
         [DisplayName("Data Início:")]
+        [DataType(DataType.Date)]
         public DateTime DataInicio { get; set; }
         [Required(ErrorMessage = "A data final é necessária para a pesquisa.")]
         [DisplayName("Data Fim:")]
+        [DataType(DataType.Date)]
         public DateTime DataFim { get; set; }
 
     }

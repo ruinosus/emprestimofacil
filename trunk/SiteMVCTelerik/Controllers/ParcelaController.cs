@@ -115,9 +115,17 @@ namespace SiteMVCTelerik.Controllers
 
             ViewData["quantidadePaginas"] = Math.Ceiling((decimal)resultado.Count / 5);
 
-            List<Parcela> parcelas = resultado;
+            List<Parcela> p2 = new List<Parcela>();
 
-            return View(resultado);
+            for (int i = 0; i < resultado.Count; i++)
+            {
+                if (!resultado[i].data_pagamento.HasValue)
+                    p2.Add(resultado[i]);
+            }
+            ViewData["total"] = resultado.Count;
+            List<Parcela> parcelas = p2;
+
+            return View(p2);
 
 
         }
@@ -238,7 +246,7 @@ namespace SiteMVCTelerik.Controllers
                     parcela = processo.Consultar(parcela, SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E)[0];
                     parcela.valor_pago = valorPago;
                     parcela.statusparcela_id = 1;
-                    parcela.data_pagamento = DateTime.Now;
+                    parcela.data_pagamento = ClasseAuxiliar.DataSelecionada;
                     parcela.timeUpdated = DateTime.Now;
                     processo.Alterar(parcela);
                     processo.Confirmar();

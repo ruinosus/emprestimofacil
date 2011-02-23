@@ -47,6 +47,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
 
             [DisplayName("Data Expedição:")]
             [Required(ErrorMessage = "Informe a data da prestacao de contas")]
+            [DataType(DataType.Date)]
             public DateTime dataprestacao { get; set; }
 
             [RegularExpression(@"^[^0]+", ErrorMessage = "Escolha a Area.")]
