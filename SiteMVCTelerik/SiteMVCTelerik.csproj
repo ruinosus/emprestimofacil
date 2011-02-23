@@ -619,7 +619,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Home\Index.aspx" />
-    <Content Include="Views\Shared\Site2.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>

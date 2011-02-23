@@ -36,7 +36,7 @@
                         Total dos Emprestimos:
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalEmprestimo"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalEmprestimo"].ToString())%>
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@
                         Total dos Emprestimos(Juros):
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalEmprestimoJuros"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalEmprestimoJuros"].ToString())%>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@
                         Total de Parcelas Pagas:
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalParcelasPagas"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalParcelasPagas"].ToString())%>
                     </td>
                 </tr>
                  <tr>
@@ -60,16 +60,16 @@
                         Total de Parcelas em Aberto:
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalParcelasEmAberto"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalParcelasEmAberto"].ToString())%>
                     </td>
                 </tr>
             </table>
             <%
                 
-                float totalEmprestimo = Convert.ToInt32(ViewData["totalEmprestimo"].ToString());
-                float totalEmprestimoJuros = Convert.ToInt32(ViewData["totalEmprestimoJuros"].ToString());
-                float totalParcelasPagas = Convert.ToInt32(ViewData["totalParcelasPagas"].ToString());
-                float totalParcelasEmAberto = Convert.ToInt32(ViewData["totalParcelasEmAberto"].ToString());
+                decimal totalEmprestimo = Convert.ToDecimal(ViewData["totalEmprestimo"].ToString());
+                decimal totalEmprestimoJuros = Convert.ToDecimal(ViewData["totalEmprestimoJuros"].ToString());
+                decimal totalParcelasPagas = Convert.ToDecimal(ViewData["totalParcelasPagas"].ToString());
+                decimal totalParcelasEmAberto = Convert.ToDecimal(ViewData["totalParcelasEmAberto"].ToString());
                  %>
            
 

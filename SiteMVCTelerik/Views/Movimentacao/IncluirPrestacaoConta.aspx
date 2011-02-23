@@ -35,9 +35,11 @@
             <legend>Prestacao de Contas</legend>
             <%
                 
-           float valorEntradas = 0, valorSaida = 0;
-           valorEntradas = Convert.ToInt32(ViewData["totalParcelas"].ToString()) + Convert.ToInt32(ViewData["totalLancamentos"].ToString());
-           valorSaida = Convert.ToInt32(ViewData["totalEmprestimos"].ToString()) + Convert.ToInt32(ViewData["totalDespesas"].ToString());
+           decimal valorEntradas = 0, valorSaida = 0;
+
+
+           valorEntradas = Convert.ToDecimal(ViewData["totalParcelas"].ToString()) + Convert.ToDecimal(ViewData["totalLancamentos"].ToString());
+           valorSaida = Convert.ToDecimal(ViewData["totalEmprestimos"].ToString()) + Convert.ToDecimal(ViewData["totalDespesas"].ToString());
             %>
             <table width="100%">
                 <tr>
@@ -50,13 +52,13 @@
                         Clientes:
                     </td>
                     <td>
-                        <%: Convert.ToInt32( ViewData["totalParcelas"].ToString()) %>
+                        <%: Convert.ToDecimal(ViewData["totalParcelas"].ToString())%>
                     </td>
                     <td>
                         Lançamentos:
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalEmprestimos"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalEmprestimos"].ToString())%>
                     </td>
                 </tr>
                 <tr>
@@ -64,13 +66,13 @@
                         Empresa:
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalLancamentos"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalLancamentos"].ToString())%>
                     </td>
                     <td>
                         Despesas
                     </td>
                     <td>
-                        <%: Convert.ToInt32(ViewData["totalDespesas"].ToString())%>
+                        <%: Convert.ToDecimal(ViewData["totalDespesas"].ToString().Replace(",", "."))%>
                     </td>
                 </tr>
                 <tr>

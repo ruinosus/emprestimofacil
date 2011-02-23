@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Threading;
+using System.Globalization;
 
 namespace SiteMVCTelerik
 {
@@ -12,6 +14,8 @@ namespace SiteMVCTelerik
 
     public class MvcApplication : System.Web.HttpApplication
     {
+
+
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -26,9 +30,16 @@ namespace SiteMVCTelerik
 
         protected void Application_Start()
         {
+            AjaxHelper.GlobalizationScriptPath = "http://ajax.microsoft.com/ajax/4.0/1/globalization/";
             AreaRegistration.RegisterAllAreas();
 
+            //RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        protected void Application_BeginRequest()
+        {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
         }
     }
 }
