@@ -18,6 +18,7 @@
                           .Combined(true)
                           .Compress(true))
     %>
+    <%Html.Telerik().ScriptRegistrar().Globalization(true); %>
 </head>
 <body>
     <div class="page">
@@ -30,6 +31,7 @@
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
             </div>
+            <br />
             <br />
             <div id="menucontainer">
                 <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
@@ -71,10 +73,15 @@
                         });
 
                     });
-                    menu.Add().Text("DO DIA").Items(itemChild => { itemChild.Add().Text("Baixar Parcela").Action("Informar", "Parcela"); });
+                    menu.Add().Text("DO DIA").Items(itemChild =>
+                    {
+                        itemChild.Add().Text("Baixar Parcela").Action("Informar", "Parcela");
+                        if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+                            itemChild.Add().Text("Cancelar Parcela").Action("CancelarParcelaLista", "Parcela");
+                    });
                 }
 
-                
+
 
                 menu.Add()
                    .Text("ACAO")

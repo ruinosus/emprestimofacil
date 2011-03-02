@@ -117,6 +117,26 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
             }
         }
 
+        public void CancelarParcela(Parcela parcela)
+        {
+            
+            LancamentoProcesso processoLancamento = LancamentoProcesso.Instance;
+            Lancamento lancamento = new Lancamento();
+            lancamento.valor = parcela.valor_pago.Value;
+            lancamento.lancamentotipo_id = 9;
+            lancamento.data = ClasseAuxiliar.DataSelecionada;
+            lancamento.fonte = "parcela";
+            lancamento.timeCreated = DateTime.Now;
+            lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.ID;
+
+            parcela.data_pagamento = null;
+            parcela.valor_pago = null;
+            parcela.statusparcela_id = 2;
+
+            processoLancamento.Incluir(lancamento);
+            processoLancamento.Confirmar();
+        }
+
         private void PagarProximaParcela(Parcela parcela, float valorRestante)
         {
             Parcela p = new Parcela();

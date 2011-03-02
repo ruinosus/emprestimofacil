@@ -23,26 +23,41 @@ namespace SiteMVCTelerik.Controllers
             return RedirectToAction("Listar");
         }
 
-        public ActionResult Listar(int? page)
+        //public ActionResult Listar(int? page)
+        //{
+        //    if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+        //        return RedirectToAction("Index", "Home");
+        //    IClienteProcesso processo = ClienteProcesso.Instance;
+        //    Cliente cliente = new Cliente();
+
+        //    //if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id != 1)
+        //    //    cliente.area_id = ClasseAuxiliar.UsuarioLogado.area_id;
+
+        //    cliente.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+
+        //    var resultado =  processo.Consultar(cliente,TipoPesquisa.E);
+        //    List<Cliente> clientes = resultado;
+        //    int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+        //    return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
+		
+
+        //}
+        
+        public ActionResult Listar()
         {
             if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
                 return RedirectToAction("Index", "Home");
             IClienteProcesso processo = ClienteProcesso.Instance;
             Cliente cliente = new Cliente();
-
-            //if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id != 1)
-            //    cliente.area_id = ClasseAuxiliar.UsuarioLogado.area_id;
-
+            
             cliente.area_id = ClasseAuxiliar.AreaSelecionada.ID;
 
-            var resultado =  processo.Consultar(cliente,TipoPesquisa.E);
+            var resultado = processo.Consultar(cliente, TipoPesquisa.E);
             List<Cliente> clientes = resultado;
-            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
-            return View(resultado.ToPagedList(currentPageIndex, defaultPageSize));
-		
-
+            
+            return View(resultado);
         }
-
+        
         //
         // GET: /StatusParcela/Details/5
 

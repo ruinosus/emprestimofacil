@@ -556,6 +556,7 @@
     <Content Include="Views\Municipio\Listar.aspx" />
     <Content Include="Views\Parcela\Alterar.aspx" />
     <Content Include="Views\Parcela\BaixarParcela.aspx" />
+    <Content Include="Views\Parcela\CancelarParcelaLista.aspx" />
     <Content Include="Views\Parcela\ImprimirParcelas.aspx" />
     <Content Include="Views\Parcela\Informar.aspx" />
     <Content Include="Views\Parcela\ParcelaEmprestimo.aspx" />
@@ -598,7 +599,9 @@
     <Content Include="Views\Usuario\Incluir.aspx" />
     <Content Include="Views\Usuario\Listar.aspx" />
     <Content Include="Views\Usuario\Logar.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
