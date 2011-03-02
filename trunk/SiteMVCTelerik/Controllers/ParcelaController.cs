@@ -48,7 +48,7 @@ namespace SiteMVCTelerik.Controllers
 
                         if (resultado[0].emprestimo.area_id != ClasseAuxiliar.AreaSelecionada.ID)
                         {
-                            ModelState.AddModelError("id", "A parcela informada pertence a area ["+resultado[0].emprestimo.area.descricao+"]");
+                            ModelState.AddModelError("id", "A parcela informada pertence a area [" + resultado[0].emprestimo.area.descricao + "]");
                             return View();
                         }
 
@@ -207,6 +207,53 @@ namespace SiteMVCTelerik.Controllers
             {
                 return View(parcela);
             }
+        }
+
+        public ActionResult CancelarParcelaLista()
+        {
+            if (ClasseAuxiliar.UsuarioLogado == null || ClasseAuxiliar.IsPrestacaoConta || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+            Parcela parcela = new Parcela();
+            
+            parcela.data_pagamento = ClasseAuxiliar.DataSelecionada;
+            List<Parcela> parcelas = processo.Consultar(parcela, SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E);
+
+            ViewData.Model = parcelas;
+            return View();
+        }
+
+        public ActionResult CancelarParcela(int id)
+        {
+            if (ClasseAuxiliar.UsuarioLogado == null || ClasseAuxiliar.IsPrestacaoConta || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+
+
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+            Parcela parcela = new Parcela();
+            parcela.ID = id;          
+            parcela = processo.Consultar(parcela, SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            //parcela.data_pagamento = DateTime.Now;
+            processo.CancelarParcela(parcela);
+            processo.Confirmar();
+            return RedirectToAction("CancelarParcelaLista", "Parcela");
+        }
+
+        public ActionResult Excluir(int id)
+        {
+            if (ClasseAuxiliar.UsuarioLogado == null || ClasseAuxiliar.IsPrestacaoConta || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+
+
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+            Parcela parcela = new Parcela();
+            parcela.ID = id;
+            parcela = processo.Consultar(parcela, SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            //parcela.data_pagamento = DateTime.Now;
+            processo.Excluir(parcela);
+            processo.Confirmar();
+            return RedirectToAction("CancelarParcelaLista", "Parcela");
         }
 
         //

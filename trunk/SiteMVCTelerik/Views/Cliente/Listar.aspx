@@ -1,56 +1,43 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IPagedList<SiteMVCTelerik.Models.ModuloBasico.VOs.Cliente>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<SiteMVCTelerik.Models.ModuloBasico.VOs.Cliente>>" %>
 
 <%@ Import Namespace="SiteMVCTelerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Listar
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
     <h2>
         Listar</h2>
-    <table>
-        <tr>
-            <th>
-            </th>
-            <th>
-                Nome
-            </th>
-            <th>
-                Endereço
-            </th>
-            <th>
-                Cpf
-            </th>
-        </tr>
-        <% foreach (var item in Model)
-           { %>
-        <tr>
-            <td>
-                <%: Html.ActionLink("Visualizar Emprestimos", "EmprestimoCliente", "Emprestimo", new { id = item.ID },null)%>
-                |
-                <%: Html.ActionLink("Alterar", "Alterar", new { id = item.ID })%>
-                |
-                <%: Html.ActionLink("Detalhar", "Detalhar", new { id = item.ID })%>
-                <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
-                  {%>
-                |
-                <%: Html.ActionLink("Excluir", "Excluir", new { id = item.ID })%>
-                <%} %>
-            </td>
-            <td>
-                <%: item.nome %>
-            </td>
-            <td>
-                <%: item.endereco_resid %>
-            </td>
-            <td>
-                <%: item.cpf %>
-            </td>
-        </tr>
-        <% } %>
-    </table>
-    <div class="pager">
-        <%= Html.Pager(ViewData.Model.PageSize, ViewData.Model.PageNumber, ViewData.Model.TotalItemCount) %>
-    </div>
+    <% Html.Telerik().Grid(Model)
+        .Name("Grid")
+        .Columns(columns =>
+        {
+
+            columns.Bound(c => c.nome).Width(100);
+            columns.Bound(c => c.endereco_resid).Width(200);
+            columns.Bound(c => c.cpf);
+            columns.Template(c =>
+           { 
+                
+    %>
+    <%: Html.ActionLink("Visualizar Emprestimos", "EmprestimoCliente", "Emprestimo", new { id = c.ID }, null)%>
+    |
+    <%: Html.ActionLink("Alterar", "Alterar", new { id = c.ID })%>
+    |
+    <%: Html.ActionLink("Detalhar", "Detalhar", new { id = c.ID })%>
+    <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado.usuariotipo_id == 1)
+      {%>
+    |
+    <%: Html.ActionLink("Excluir", "Excluir", new { id = c.ID })%>
+    <%} %>
+    <%
+            }).Title("Ações");
+        })
+        .Groupable()
+        .Sortable()
+        .Pageable()
+        .Filterable().Render();
+    %>
     <p>
         <%: Html.ActionLink("Incluir", "Incluir")%>
     </p>

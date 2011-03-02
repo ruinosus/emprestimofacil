@@ -32,6 +32,12 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
         void Alterar(Parcela parcela);
 
         /// <summary>
+        /// Método reponsável por alterar uma parcela do sistema.
+        /// </summary>
+        /// <param name="parcela">Objeto do tipo parcela a ser cancelado.</param>
+        void CancelarParcela(Parcela parcela);
+
+        /// <summary>
         /// Método responsável por consultar parcelas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="parcela">Objeto do tipo parcela que irá ser utilizado como parametro de pesquisa.</param>
