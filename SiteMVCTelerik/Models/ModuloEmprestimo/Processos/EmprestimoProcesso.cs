@@ -117,11 +117,23 @@ namespace SiteMVCTelerik.ModuloEmprestimo.Processos
 
         public void Excluir(Emprestimo emprestimo)
         {
-
             try
             {
                 if (emprestimo.ID == 0)
                     throw new EmprestimoNaoExcluidoExcecao();
+
+
+                IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+                ILancamentoProcesso lancamentoprocesso = LancamentoProcesso.Instance;
+                Parcela parcela = new Parcela();
+                parcela.emprestimo_id = emprestimo.ID;
+                List<Parcela> parcelas = parcelaProcesso.Consultar(parcela, TipoPesquisa.E);
+
+                for (int i = 0; i < parcelas.Count; i++)
+                {
+                    parcelaProcesso.Excluir(parcelas[i]);
+                    parcelaProcesso.Confirmar();
+                }
 
                 List<Emprestimo> resultado = emprestimoRepositorio.Consultar(emprestimo, TipoPesquisa.E);
 

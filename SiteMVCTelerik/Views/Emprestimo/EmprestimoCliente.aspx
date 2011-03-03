@@ -45,6 +45,8 @@
             <th>
                 valor
             </th>
+            <th>
+            </th>
         </tr>
         <% foreach (var item in Model)
            { %>
@@ -56,6 +58,13 @@
                 |
                 <%: Html.ActionLink("Imprimir Parcelas", "ImprimirParcelas", "Parcela", new { id = item.ID }, null)%>
                 <%} %>
+
+                 <%if (item.NenhumaParcelaPaga && item.data_emprestimo.Date.Equals(SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada.Date))
+                  {%>
+                |
+                <%: Html.ActionLink("Excluir Emprestimo", "Excluir", "Emprestimo", new { id = item.ID }, null)%>
+                <%} %>
+
                 <%-- <%: Html.ActionLink("Edit", "Edit", new { id=item.ID }) %> |
                 <%: Html.ActionLink("Details", "Details", new { id=item.ID })%> |
                 <%: Html.ActionLink("Delete", "Delete", new { id=item.ID })%>--%>
@@ -90,8 +99,14 @@
             <td>
                 <%: item.usuario_id %>
             </td>
-            <td>
+            <td>    
                 <%: item.valor %>
+            </td>
+            <td>
+                <%if (item.EmprestimoQuitado)
+                  {%>
+                emprestimo já quitado.
+                <%} %>
             </td>
         </tr>
         <% } %>

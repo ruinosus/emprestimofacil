@@ -276,8 +276,8 @@ namespace SiteMVCTelerik.Controllers
         }
         #endregion
 
-        #region Visualizar Parcelas Por Periodo
-        public ActionResult VisualizarParcelasPorPeriodo()
+        #region Visualizar Parcelas Por Periodo a Pagar
+        public ActionResult VisualizarParcelasPorPeriodoAPagar()
         {
             if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
                 return RedirectToAction("Index", "Home");
@@ -293,7 +293,7 @@ namespace SiteMVCTelerik.Controllers
         }
 
         [HttpPost]
-        public ActionResult VisualizarParcelasPorPeriodo(ParcelaPesquisa parcelaPesquisa)
+        public ActionResult VisualizarParcelasPorPeriodoAPagar(ParcelaPesquisa parcelaPesquisa)
         {
             List<Parcela> parcelas = new List<Parcela>();
             try
@@ -305,6 +305,54 @@ namespace SiteMVCTelerik.Controllers
                 {
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
                     parcelas = processo.ConsultarParcelasEmAbertoPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
+                    ViewData["parcelas"] = parcelas;
+                    ViewData.Model = parcelaPesquisa;
+                    return View(parcelaPesquisa);
+                }
+                else
+                {
+                    ViewData["parcelas"] = parcelas;
+                    return View(parcelaPesquisa);
+                }
+            }
+            catch (Exception e)
+            {
+                ViewData["parcelas"] = parcelas;
+                return View(parcelaPesquisa);
+            }
+
+        }
+        #endregion
+
+        #region Visualizar Parcelas Por Periodo Pagas
+        public ActionResult VisualizarParcelasPorPeriodoPagas()
+        {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+            IParcelaProcesso processo = ParcelaProcesso.Instance;
+
+            ParcelaPesquisa parcelaPesquisa = new ParcelaPesquisa();
+            parcelaPesquisa.DataInicio = DateTime.Now.AddDays(1);
+            parcelaPesquisa.DataFim = DateTime.Now.AddDays(1);
+
+            List<Parcela> parcelas = processo.ConsultarParcelasPagasPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
+            ViewData["parcelas"] = parcelas;
+            return View(parcelaPesquisa);
+        }
+
+        [HttpPost]
+        public ActionResult VisualizarParcelasPorPeriodoPagas(ParcelaPesquisa parcelaPesquisa)
+        {
+            List<Parcela> parcelas = new List<Parcela>();
+            try
+            {
+                if (parcelaPesquisa.DataFim < parcelaPesquisa.DataInicio)
+                    ModelState.AddModelError("DataFim", "A data final nao pode ser maior que a data inicial.");
+
+                if (ModelState.IsValid)
+                {
+                    IParcelaProcesso processo = ParcelaProcesso.Instance;
+                    parcelas = processo.ConsultarParcelasPagasPorPeriodo(parcelaPesquisa.DataInicio, parcelaPesquisa.DataFim);
                     ViewData["parcelas"] = parcelas;
                     ViewData.Model = parcelaPesquisa;
                     return View(parcelaPesquisa);
@@ -618,6 +666,102 @@ namespace SiteMVCTelerik.Controllers
 
         }
 
+        public ActionResult PrestacaoContaLista()
+        {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+
+            IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
+            
+            List<PrestacaoConta> prestacaoContaList = processo.Consultar();
+
+            ViewData.Model = prestacaoContaList;
+            return View();
+        }
+
+        public ActionResult VisualizarPrestacaoConta(int id)
+        {
+            if (ClasseAuxiliar.UsuarioLogado == null || (ClasseAuxiliar.DataSelecionada == default(DateTime) || ClasseAuxiliar.AreaSelecionada == null))
+                return RedirectToAction("Index", "Home");
+
+            IPrestacaoContaProcesso processo = PrestacaoContaProcesso.Instance;
+            PrestacaoConta prestacao = new PrestacaoConta();
+            prestacao.ID = id;
+            List<PrestacaoConta> prestacaoContaList = processo.Consultar(prestacao, TipoPesquisa.E);
+            ViewData["lancamentos"] = 0;
+            ViewData["despesas"] = 0;
+            ViewData["emprestimos"] = 0;
+            ViewData["dataSelecionada"] = DateTime.Now;
+            if (prestacaoContaList.Count > 0)
+            {
+                ViewData["dataSelecionada"] = prestacaoContaList[0].dataprestacao;
+                #region Despesas
+                IDespesaProcesso despesaProcesso = DespesaProcesso.Instance;
+                Despesa despesa = new Despesa();
+                //despesa.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+                despesa.data = prestacaoContaList[0].dataprestacao;
+
+                List<Despesa> despesas = despesaProcesso.Consultar(despesa, TipoPesquisa.E);
+                ViewData["despesas"] = despesas;
+                #endregion
+
+                #region Emprestimo
+                IEmprestimoProcesso emprestimoProcesso = EmprestimoProcesso.Instance;
+                Emprestimo emp = new Emprestimo();
+                //emp.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+                emp.data_emprestimo = prestacaoContaList[0].dataprestacao;
+
+                ViewData["emprestimos"] = emprestimoProcesso.Consultar(emp, TipoPesquisa.E);
+                #endregion
+
+                #region Peguei com a empresa
+                ILancamentoProcesso lancamentoProcesso = LancamentoProcesso.Instance;
+                Lancamento lanc = new Lancamento();
+                //lanc.area_id = ClasseAuxiliar.AreaSelecionada.ID;
+                lanc.data = ClasseAuxiliar.DataSelecionada;
+                lanc.lancamentotipo_id = 5;
+                List<Lancamento> lancamentos = lancamentoProcesso.Consultar(lanc, TipoPesquisa.E);
+                ViewData["lancamentos"] = lancamentos;
+                #endregion
+
+                IParcelaProcesso parcelaProcesso = ParcelaProcesso.Instance;
+                List<Parcela> parcelas = parcelaProcesso.ConsultarParcelasPagasPorPeriodo(prestacaoContaList[0].dataprestacao, default(DateTime));
+
+                float totalParcelas = 0;
+                float totalLancamentos = 0;
+                float totalEmprestimos = 0;
+                float totalDespesas = 0;
+                foreach (var item in lancamentos)
+                {
+                    totalLancamentos += item.valor;
+                }
+                foreach (var item in parcelas)
+                {
+                    totalParcelas += item.valor_pago.Value;
+                }
+
+                List<Emprestimo> emprestimos = emprestimoProcesso.ConsultarEmprestimosPorPeriodo(prestacaoContaList[0].dataprestacao, prestacaoContaList[0].dataprestacao);
+
+                foreach (var item in emprestimos)
+                {
+                    totalEmprestimos += item.valor;
+                }
+
+                foreach (var item in despesas)
+                {
+                    totalDespesas += item.valor;
+                }
+
+                ViewData["totalParcelas"] = totalParcelas;
+                ViewData["totalEmprestimos"] = totalEmprestimos;
+                ViewData["totalLancamentos"] = totalLancamentos;
+                ViewData["totalDespesas"] = totalDespesas;
+
+            }
+
+            return View();
+
+        }
 
         [HttpPost]
         public ActionResult IncluirPrestacaoConta(FormCollection form)

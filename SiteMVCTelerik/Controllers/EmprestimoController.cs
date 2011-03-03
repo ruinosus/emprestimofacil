@@ -336,34 +336,35 @@ namespace SiteMVCTelerik.Controllers
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.ID = id;
             ViewData.Model = processo.Consultar(emprestimo, SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            return View();
-
+            processo.Excluir(emprestimo);
+            processo.Confirmar();
+            return RedirectToAction("EmprestimoCliente", "Emprestimo", new { id= ClasseAuxiliar.ClienteSelecionado.ID });
         }
 
         ////
         //// POST: /StatusParcela/Delete/5
 
-        [HttpPost]
-        public ActionResult Excluir(int id, Emprestimo emprestimo)
-        {
-            try
-            {
-                IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
+        //[HttpPost]
+        //public ActionResult Excluir(int id, Emprestimo emprestimo)
+        //{
+        //    try
+        //    {
+        //        IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
 
-                emprestimo.ID = id;
-                processo.Excluir(emprestimo);
-                processo.Confirmar();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
-                ViewData.Model = emprestimo;
-                return View();
-            }
+        //        emprestimo.ID = id;
+        //        processo.Excluir(emprestimo);
+        //        processo.Confirmar();
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        ViewData["Mensagem"] = "O registro não pode ser excluído pois já está sendo utilizado.";
+        //        ViewData.Model = emprestimo;
+        //        return View();
+        //    }
 
 
 
-        }
+        //}
     }
 }

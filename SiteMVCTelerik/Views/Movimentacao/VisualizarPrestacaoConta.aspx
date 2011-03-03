@@ -27,7 +27,7 @@
     </script>
     <h2>
         Prestacao de Contas do dia :
-        <%:SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada.ToString("dd/MM/yyyy") %></h2>
+        <%:((DateTime)ViewData["dataSelecionada"]).ToString("dd/MM/yyyy")%></h2>
     <% using (Html.BeginForm())
        { %>
     <div id="divPrint">
@@ -91,7 +91,8 @@
                 </tr>
                 <tr>
                     <td colspan="4" align="center">
-                        Total do dia: <%:valorEntradas - valorSaida %>
+                        Total do dia:
+                        <%:valorEntradas - valorSaida %>
                     </td>
                 </tr>
             </table>
@@ -105,7 +106,6 @@
                     <th>
                         cliente
                     </th>
-                    
                     <th>
                         valor
                     </th>
@@ -118,37 +118,21 @@
                    { %>
                 <tr>
                     <td>
-
-                     <%if (!item.EmprestimoQuitado)
-                  {%>
-                |
-                <%: Html.ActionLink("Imprimir Parcelas", "ImprimirParcelas", "Parcela", new { id = item.ID }, null)%>
-                <%} %>
-
-                        
                     </td>
                     <td>
                         <%: item.cliente.nome %>
                     </td>
-                    
                     <td>
                         <%: item.valor %>
                     </td>
                 </tr>
                 <% } %>
             </table>
-            <%if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
-              { %>
-            <p>
-                <%: Html.ActionLink("Criar Emprestimo", "Incluir", "Emprestimo")%>
-            </p>
-            <%} %>
         </fieldset>
         <fieldset>
             <legend>Despesas</legend>
             <table>
                 <tr>
-                   
                     <th>
                         Descriçao
                     </th>
@@ -162,7 +146,6 @@
                 <% foreach (var item in despesas)
                    { %>
                 <tr>
-                    
                     <td>
                         <%: item.despesatipo.descricao%>
                     </td>
@@ -172,18 +155,11 @@
                 </tr>
                 <% } %>
             </table>
-            <%if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
-              { %>
-            <p>
-                <%: Html.ActionLink("Incluir Despesas", "Incluir", "Despesa")%>
-            </p>
-            <%} %>
         </fieldset>
         <fieldset>
             <legend>Peguei com a Empresa</legend>
             <table>
                 <tr>
-                   
                     <th>
                         lancamentotipo
                     </th>
@@ -200,7 +176,6 @@
                 <% foreach (var item in lancamentos)
                    { %>
                 <tr>
-                    
                     <td>
                         <%: item.lancamentotipo.descricao %>
                     </td>
@@ -213,20 +188,9 @@
                 </tr>
                 <% } %>
             </table>
-            <%if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
-              { %>
-            <p>
-                <%: Html.ActionLink("Peguei com a empresa", "Incluir", "Movimentacao")%>
-            </p>
-            <%} %>
         </fieldset>
     </div>
-    <%if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
-      { %>
-    <p>
-        <input type="submit" value="Confirmar" />
-    </p>
-    <%} %>
+    <%: Html.ActionLink("Voltar", "PrestacaoContaLista", "Movimentacao",null,null)%>
     <input alt="Clique aqui para imprimir" type="image" src="../../Content/ui-lightness/images/impressora.jpg"
         onclick="CallPrint('divPrint');" style="width: 40px; height: 40px" />
     <%} %>
