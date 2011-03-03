@@ -38,6 +38,24 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             
         }
 
+        public bool NenhumaParcelaPaga
+        {
+            get
+            {
+                
+                //   List<Emprestimo> emprestimos = processo.Consultar(emp,SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E);
+
+                var resultado = from p in this.parcela
+                                where p.valor_pago.HasValue 
+                                select p;
+
+                return resultado.Count() == 0 ;
+
+
+            }
+
+        }
+
         internal class EmprestimoMetadata
         {
 

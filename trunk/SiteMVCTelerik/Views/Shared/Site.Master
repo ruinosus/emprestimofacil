@@ -68,17 +68,22 @@
                             itemChildNode.Add().Text("Visualizar Parcelas Pagas").Action("VisualizarDetalheParcelas", "Movimentacao");
                             itemChildNode.Add().Text("Visualizar Clientes Devedores").Action("VisualizarClientesDevedores", "Movimentacao");
                             itemChildNode.Add().Text("Visualizar Emprestimos por período").Action("VisualizarEmprestimosPorPeriodo", "Movimentacao");
-                            itemChildNode.Add().Text("Visualizar Parcelas por período").Action("VisualizarParcelasPorPeriodo", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas a pagar por período").Action("VisualizarParcelasPorPeriodoAPagar", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas pagas por período").Action("VisualizarParcelasPorPeriodoPagas", "Movimentacao");
                             itemChildNode.Add().Text("Visualizar Clientes por Area").Action("VisualizarListaClientesPorArea", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Prestações de Contas").Action("PrestacaoContaLista", "Movimentacao");
                         });
 
                     });
-                    menu.Add().Text("DO DIA").Items(itemChild =>
+                    if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
                     {
-                        itemChild.Add().Text("Baixar Parcela").Action("Informar", "Parcela");
-                        if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+                        menu.Add().Text("DO DIA").Items(itemChild =>
+                        {
+                            itemChild.Add().Text("Baixar Parcela").Action("Informar", "Parcela");
+
                             itemChild.Add().Text("Cancelar Parcela").Action("CancelarParcelaLista", "Parcela");
-                    });
+                        });
+                    }
                 }
 
 
