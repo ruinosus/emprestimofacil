@@ -9,7 +9,7 @@
     <h2>Details</h2>
 
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
         <div class="display-label">descricao</div>
         <div class="display-field"><%: Model.descricao %></div>

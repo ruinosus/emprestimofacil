@@ -10,7 +10,7 @@
      <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
            <fieldset>
-            <legend>Fields</legend>
+            <legend>Campos</legend>
             <div class="editor-label">
                 <%: Html.Label("Número da Parcela:") %>
             </div>

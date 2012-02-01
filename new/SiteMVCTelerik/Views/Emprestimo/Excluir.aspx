@@ -10,7 +10,7 @@
 
     <h3>Are you sure you want to delete this?</h3>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
         <div class="display-label">cliente_id</div>
         <div class="display-field"><%: Model.cliente.nome %></div>

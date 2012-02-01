@@ -12,8 +12,9 @@
     <%= Html.Telerik().StyleSheetRegistrar()
                       .DefaultGroup(group => group
                           .Add("telerik.common.css")
-                          .Add("telerik.black.css")
+                          .Add("telerik.sunset.css")
                           .Add("telerik.rtl.css")
+                                          
                           .Combined(true)
                           .Compress(true))
     %>
@@ -32,7 +33,7 @@
             </div>
             <br />
             <br />
-            <div id="menucontainer">
+            <div id="menucontainer" style="width:100%">
                 <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
                   {
                 %>

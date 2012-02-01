@@ -15,7 +15,7 @@
    <h3 style="color:Red"><%:mensagem %></h3> 
     <h3>Você tem certeza que deseja excluir esse registro?</h3>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
 
         
         <div class="display-label">bairro_resid</div>
