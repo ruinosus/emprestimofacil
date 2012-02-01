@@ -606,8 +606,12 @@
     <Content Include="Content\2011.3.1115\Windows7\slider-v.gif" />
     <Content Include="Content\2011.3.1115\Windows7\sprite-vertical.png" />
     <Content Include="Content\2011.3.1115\Windows7\sprite.png" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\ui-lightness\images\impressora.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="images\img02.gif" />
+    <Content Include="images\img03.gif" />
+    <Content Include="images\img04.gif" />
     <Content Include="Models\Modelo\dados_tabelas.txt" />
     <Content Include="Models\Modelo\emprestcard.sql" />
     <Content Include="Models\Modelo\modelo atual.sql" />

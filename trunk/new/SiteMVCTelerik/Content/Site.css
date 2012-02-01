@@ -5,12 +5,13 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body
 {
-    background-color: black;
+ background: #8A7B65 url(images/img02.gif) repeat-x top left;
     font-size: .75em;
     font-family: Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
     color: #696969;
+    	
 }
 
 
@@ -28,6 +29,16 @@ h1, h2, h3, h4, h5, h6
     color: #000;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#logo {
+	line-height: 149px;
+	top: 0;
+	left: 35px;
+	height: 149px;
+	position: absolute;
+	text-shadow: 0px 2px 1px #3F372B;
+}
+
 
 h1
 {

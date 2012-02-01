@@ -10,7 +10,7 @@
 
     <h3>Vote tem certeza que deseja excluir esse regristo?</h3>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
         <div class="display-label">descricao</div>
         <div class="display-field"><%: Model.descricao %></div>

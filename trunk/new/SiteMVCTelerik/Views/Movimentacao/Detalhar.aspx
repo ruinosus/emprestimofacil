@@ -9,7 +9,7 @@
     <h2>Detalhar</h2>
 
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
         <div class="display-label">data</div>
         <div class="display-field"><%: String.Format("{0:g}", Model.data) %></div>

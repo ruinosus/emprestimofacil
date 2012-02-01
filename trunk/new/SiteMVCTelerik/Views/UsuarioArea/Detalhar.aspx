@@ -9,7 +9,7 @@
     <h2>Detalhar</h2>
 
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
         <div class="display-label">area_id</div>
         <div class="display-field"><%: Model.area_id %></div>

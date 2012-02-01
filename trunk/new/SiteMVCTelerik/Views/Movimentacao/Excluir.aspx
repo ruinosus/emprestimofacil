@@ -14,7 +14,7 @@
    <h3 style="color:Red"><%:mensagem %></h3> 
        <h3>Você tem certeza que deseja excluir esse registro?</h3>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
         <div class="display-label">data</div>
         <div class="display-field"><%: String.Format("{0:g}", Model.data) %></div>

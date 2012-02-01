@@ -9,7 +9,7 @@
     <h2>Detalhar</h2>
 
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         
 
         

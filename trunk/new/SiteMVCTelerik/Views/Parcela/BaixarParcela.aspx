@@ -10,7 +10,7 @@
        {%>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Campos</legend>
         <div class="editor-label">
             Nome:
             <%: Html.Label(Model.emprestimo.cliente.nome) %>
