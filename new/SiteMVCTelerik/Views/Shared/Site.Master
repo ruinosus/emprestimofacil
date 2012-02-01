@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="SiteMVCTelerik.Extensions" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <%: Html.Telerik().StyleSheetRegistrar().DefaultGroup(group => group.Add("telerik.common.css").Add("telerik.black.css").Combined(true).Compress(true)) %>
+    <%= Html.Telerik().StyleSheetRegistrar()
+                      .DefaultGroup(group => group
+                          .Add("telerik.examples.css")
+                          .Add("telerik.common.css")
+                          .Add("telerik." + Html.GetCurrentTheme() + ".css")
+                          .Add("telerik.rtl.css")
+                          .Combined(true)
+                          .Compress(true))
+    %>
+    <%Html.Telerik().ScriptRegistrar().Globalization(true); %>
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    Emprest Fácil - Seu empréstimo com facilidade.
+                </h1>
+            </div>
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogarUserControl"); %>
+            </div>
+            <br />
+            <br />
+            <div id="menucontainer">
+                <%if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.UsuarioLogado != null)
+                  {
+                %>
+                <% Html.Telerik().Menu()
+            .Name("Menu")
+            .Items(menu =>
+            {
+                if (SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.AreaSelecionada != null && SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.DataSelecionada != default(DateTime))
+                {
+                    menu.Add().Text("CADASTRO").Items(itemChild =>
+                    {
+                        itemChild.Add().Text("Clientes").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Cliente"); });
+                        itemChild.Add().Text("Tipo Despesa").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "DespesaTipo"); });
+                        itemChild.Add().Text("Usuario").Items(itemChildNode =>
+                        {
+                            itemChildNode.Add().Text("Novo").Action("Listar", "Usuario");
+                            itemChildNode.Add().Text("Vincular Usuário").Action("Incluir", "UsuarioArea");
+                        });
+                        itemChild.Add().Text("Município").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Municipio"); });
+                        itemChild.Add().Text("Area").Items(itemChildNode => { itemChildNode.Add().Text("Novo").Action("Listar", "Area"); });
+
+                    });
+
+                    menu.Add().Text("MOVIMENTACAO").Items(itemChild =>
+                    {
+                        itemChild.Add().Text("RELATÓRIOS").Items(itemChildNode =>
+                        {
+                            itemChildNode.Add().Text("Prestacao de Contas").Action("IncluirPrestacaoConta", "Movimentacao");
+                            itemChildNode.Add().Text("Total Movimentacao").Action("VisualizarTotalMovimentacao", "Movimentacao");
+                            //itemChildNode.Add().Text("Visualizar Lancamentos Detalhados").Action("VisualizarDetalheLancamento", "Movimentacao");
+                            //itemChildNode.Add().Text("Visualizar Resumo dos Lancamentos").Action("VisualizarResumoLancamento", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas Pagas").Action("VisualizarDetalheParcelas", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Clientes Devedores").Action("VisualizarClientesDevedores", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Emprestimos por período").Action("VisualizarEmprestimosPorPeriodo", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas a pagar por período").Action("VisualizarParcelasPorPeriodoAPagar", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Parcelas pagas por período").Action("VisualizarParcelasPorPeriodoPagas", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Clientes por Area").Action("VisualizarListaClientesPorArea", "Movimentacao");
+                            itemChildNode.Add().Text("Visualizar Prestações de Contas").Action("PrestacaoContaLista", "Movimentacao");
+                        });
+
+                    });
+                    if (!SiteMVCTelerik.Models.ModuloBasico.VOs.ClasseAuxiliar.IsPrestacaoConta)
+                    {
+                        menu.Add().Text("DO DIA").Items(itemChild =>
+                        {
+                            itemChild.Add().Text("Baixar Parcela").Action("Informar", "Parcela");
+
+                            itemChild.Add().Text("Cancelar Parcela").Action("CancelarParcelaLista", "Parcela");
+                        });
+                    }
+                }
+
+
+
+                menu.Add()
+                   .Text("ACAO")
+
+                   .Items(item =>
+                   {
+                       item.Add().Text("Area").Items(itemChild =>
+                       {
+
+                           if (Session["AreasUsuarioLogado"] != null)
+                           {
+                               List<SiteMVCTelerik.Models.ModuloBasico.VOs.UsuarioArea> areas = (List<SiteMVCTelerik.Models.ModuloBasico.VOs.UsuarioArea>)Session["AreasUsuarioLogado"];
+                               if (areas.Count > 0)
+                               {
+                                   foreach (var area in areas)
+                                       itemChild.Add().Text("Selecionar [" + area.area.descricao + "]").Action("SelecionarArea", "UsuarioArea", new { id = area.id });
+                               }
+                           }
+                       });
+                       item.Add().Text("Data").Items(itemChild => { itemChild.Add().Text("Selecionar Data").Action("InformarDataPrestacaoConta", "Movimentacao"); });
+
+
+                   });
+            })
+            .Render();
+
+                  }
+                %>
+            </div>
+        </div>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+    <%: Html.Telerik().ScriptRegistrar().DefaultGroup(group => group.Combined(true).Compress(true)) %>
+</body>
+</html>
