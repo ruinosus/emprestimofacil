@@ -24,9 +24,9 @@
     <div class="page">
         <div id="header">
             <div id="title">
-                <h1>
-                    Emprest Fácil - Seu empréstimo com facilidade.
-                </h1>
+                
+                    RMS - Recife Mult Service.
+                <h2>Serviço: Coleta e entrega de pequenas encomendas e documentos, serviços de cartório, serviços bancários, entrega de convites e etc.</h2>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogarUserControl"); %>
@@ -120,6 +120,8 @@
         <div id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             <div id="footer">
+            Fone: 8803-2178 / 9915-1845 / 8849-6090<br />
+            Email: recifemultservice@hotmail.com
             </div>
         </div>
     </div>
