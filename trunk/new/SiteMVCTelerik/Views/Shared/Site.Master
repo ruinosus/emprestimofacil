@@ -11,9 +11,8 @@
     <%: Html.Telerik().StyleSheetRegistrar().DefaultGroup(group => group.Add("telerik.common.css").Add("telerik.black.css").Combined(true).Compress(true)) %>
     <%= Html.Telerik().StyleSheetRegistrar()
                       .DefaultGroup(group => group
-                          .Add("telerik.examples.css")
                           .Add("telerik.common.css")
-                          .Add("telerik." + Html.GetCurrentTheme() + ".css")
+                          .Add("telerik.black.css")
                           .Add("telerik.rtl.css")
                           .Combined(true)
                           .Compress(true))
@@ -102,7 +101,7 @@
                                if (areas.Count > 0)
                                {
                                    foreach (var area in areas)
-                                       itemChild.Add().Text("Selecionar [" + area.area.descricao + "]").Action("SelecionarArea", "UsuarioArea", new { id = area.id });
+                                       itemChild.Add().Text("Selecionar [" + area.area.descricao + "]").Action("SelecionarArea", "UsuarioArea", new { id = area.id }).Enabled(true).Visible(true);
                                }
                            }
                        });
