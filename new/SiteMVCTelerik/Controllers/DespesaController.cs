@@ -66,6 +66,7 @@ namespace SiteMVCTelerik.Controllers
                 return RedirectToAction("Index", "Home");
             Despesa Despesa = new Despesa();
             Despesa.data = DateTime.Now;
+
             //Despesa.uf = "0";
             ViewData.Model = Despesa;
             return View();
@@ -87,6 +88,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     IDespesaProcesso processo = DespesaProcesso.Instance;
                     Despesa.timeCreated = DateTime.Now;
+                    Despesa.timeUpdated = DateTime.Now;
                     Despesa.area_id = ClasseAuxiliar.AreaSelecionada.id;
                     processo.Incluir(Despesa);
                     processo.Confirmar();

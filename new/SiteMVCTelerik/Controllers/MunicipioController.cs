@@ -86,6 +86,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     IMunicipioProcesso processo = MunicipioProcesso.Instance;
                     municipio.timeCreated = DateTime.Now;
+                    municipio.timeUpdated = DateTime.Now;
                     processo.Incluir(municipio);
                     processo.Confirmar();
                     return RedirectToAction("Index");

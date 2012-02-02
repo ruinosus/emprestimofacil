@@ -81,6 +81,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     IUsuarioProcesso processo = UsuarioProcesso.Instance;
                     usuario.timeCreated = DateTime.Now;
+                    usuario.timeUpdated = DateTime.Now;
                     processo.Incluir(usuario);
                     processo.Confirmar();
                     return RedirectToAction("Index");

@@ -86,6 +86,7 @@ namespace SiteMVCTelerik.Controllers
             cliente.cidade_comerc= 0;
             cliente.cidade_resid= 0;
             cliente.data_expedicao = DateTime.Now;
+
             ViewData.Model = cliente;
             return View();
         }
@@ -104,6 +105,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     IClienteProcesso processo = ClienteProcesso.Instance;
                     cliente.timeCreated = DateTime.Now;
+                    cliente.timeUpdated = DateTime.Now;
                     processo.Incluir(cliente);
                     processo.Confirmar();
                     return RedirectToAction("Index");
