@@ -487,6 +487,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
                     lancamento.timeCreated = DateTime.Now;
+                    lancamento.timeUpdated = DateTime.Now;
                     lancamento.lancamentotipo_id = 5;
                     processo.Incluir(lancamento);
                     processo.Confirmar();

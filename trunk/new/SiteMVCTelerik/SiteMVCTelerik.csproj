@@ -612,9 +612,6 @@
     <Content Include="images\img02.gif" />
     <Content Include="images\img03.gif" />
     <Content Include="images\img04.gif" />
-    <Content Include="Models\Modelo\dados_tabelas.txt" />
-    <Content Include="Models\Modelo\emprestcard.sql" />
-    <Content Include="Models\Modelo\modelo atual.sql" />
     <Content Include="Scripts\2011.3.1115\jquery-1.6.4.min.js" />
     <Content Include="Scripts\2011.3.1115\jquery.validate.min.js" />
     <Content Include="Scripts\2011.3.1115\telerik.autocomplete.min.js" />
@@ -765,6 +762,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Modelo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\EditorLocalization.bg-BG.resx">
@@ -875,8 +873,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Modelo\modelo.mwb" />
-    <None Include="Models\Modelo\modelo.mwb.bak" />
     <Content Include="Views\Shared\Site.Master" />
     <EntityDeploy Include="Models\ModuloBasico\VOs\EmprestimoDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

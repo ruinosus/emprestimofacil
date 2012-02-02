@@ -138,6 +138,7 @@ namespace SiteMVCTelerik.Controllers
                     emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                     emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.id;
                     emprestimo.timeCreated = DateTime.Now;
+                    emprestimo.timeUpdated = DateTime.Now;
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
                     return RedirectToAction("EmprestimoCliente", new { id = ClasseAuxiliar.ClienteSelecionado.id });
@@ -266,6 +267,7 @@ namespace SiteMVCTelerik.Controllers
                     emprestimo.usuario_id= ClasseAuxiliar.UsuarioLogado.id;
                     emprestimo.data_emprestimo = ClasseAuxiliar.DataSelecionada;
                     emprestimo.timeCreated = DateTime.Now;
+                    emprestimo.timeUpdated = DateTime.Now;
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
                     return RedirectToAction("IncluirPrestacaoConta","Movimentacao");

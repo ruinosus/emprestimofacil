@@ -83,7 +83,9 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
+                    
                     DespesaTipo.timeCreated = DateTime.Now;
+                    DespesaTipo.timeUpdated = DateTime.Now;
                     processo.Incluir(DespesaTipo);
                     processo.Confirmar();
                     return RedirectToAction("Index");
