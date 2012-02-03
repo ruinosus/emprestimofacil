@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 
 <%@ Import Namespace="SiteMVCTelerik.Extensions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,8 +12,8 @@
     <%= Html.Telerik().StyleSheetRegistrar()
                       .DefaultGroup(group => group
                           .Add("telerik.common.css")
-                          .Add("telerik.sunset.css")
-                          .Add("telerik.rtl.css")
+                          .Add("telerik.outlook.css")
+                          
                                           
                           .Combined(true)
                           .Compress(true))
@@ -102,7 +102,7 @@
                                if (areas.Count > 0)
                                {
                                    foreach (var area in areas)
-                                       itemChild.Add().Text("Selecionar [" + area.area.descricao + "]").Action("SelecionarArea", "UsuarioArea", new { id = area.id }).Enabled(true).Visible(true);
+                                       itemChild.Add().Text("Selecionar [" + area.area.descricao + "]").Action("SelecionarArea", "UsuarioArea", new { id = area.area_id }).Enabled(true).Visible(true);
                                }
                            }
                        });
