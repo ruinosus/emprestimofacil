@@ -87,8 +87,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IDespesaProcesso processo = DespesaProcesso.Instance;
-                    Despesa.timeCreated = DateTime.Now;
-                    Despesa.timeUpdated = DateTime.Now;
+                    //Despesa.timeCreated = DateTime.Now;
+                    //Despesa.timeUpdated = DateTime.Now;
                     Despesa.area_id = ClasseAuxiliar.AreaSelecionada.id;
                     processo.Incluir(Despesa);
                     processo.Confirmar();
@@ -132,7 +132,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     despesa.id = id;
                     IDespesaProcesso processo = DespesaProcesso.Instance;
-                    despesa.timeUpdated = DateTime.Now;
+                    //despesa.timeUpdated = DateTime.Now;
                     processo.Alterar(despesa);
                     processo.Confirmar();
                     // TODO: Add update logic here

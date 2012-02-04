@@ -152,8 +152,8 @@ namespace SiteMVCTelerik.ModuloDespesa.Repositorios
                 despesaAux.despesatipo_id = despesa.despesatipo_id;
                 despesaAux.id = despesa.id;
                 despesaAux.justificativa = despesa.justificativa;
-                despesaAux.timeCreated = despesa.timeCreated;
-                despesaAux.timeUpdated = despesa.timeUpdated;
+                //despesaAux.timeCreated = despesa.timeCreated;
+                //despesaAux.timeUpdated = despesa.timeUpdated;
                 Confirmar();
             }
             catch (Exception)

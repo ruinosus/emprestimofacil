@@ -81,7 +81,7 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
                 lancamento.lancamentotipo_id = 1;
                 lancamento.data = parcela.data_pagamento.Value;
                 lancamento.fonte = "parcela";
-                lancamento.timeCreated = DateTime.Now;
+                //lancamento.timeCreated = DateTime.Now;
                 lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                 processoLancamento.Incluir(lancamento);
                 processoLancamento.Confirmar();
@@ -95,7 +95,7 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
                 lancamento.lancamentotipo_id = 1;
                 lancamento.data = parcela.data_pagamento.Value;
                 lancamento.fonte = "parcela";
-                lancamento.timeCreated = DateTime.Now;
+                //lancamento.timeCreated = DateTime.Now;
                 lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                 processoLancamento.Incluir(lancamento);
                 processoLancamento.Confirmar();
@@ -110,7 +110,7 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
                 lancamento.lancamentotipo_id = 1;
                 lancamento.data = parcela.data_pagamento.Value;
                 lancamento.fonte = "parcela";
-                lancamento.timeCreated = DateTime.Now;
+                //lancamento.timeCreated = DateTime.Now;
                 lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                 processoLancamento.Incluir(lancamento);
                 processoLancamento.Confirmar();
@@ -126,7 +126,7 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
             lancamento.lancamentotipo_id = 9;
             lancamento.data = ClasseAuxiliar.DataSelecionada;
             lancamento.fonte = "parcela";
-            lancamento.timeCreated = DateTime.Now;
+            //lancamento.timeCreated = DateTime.Now;
             lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
 
             parcela.data_pagamento = null;
@@ -178,7 +178,7 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
                 lancamento.lancamentotipo_id = 1;
                 lancamento.data = parcela.data_pagamento.Value;
                 lancamento.fonte = "parcela";
-                lancamento.timeCreated = DateTime.Now;
+                //lancamento.timeCreated = DateTime.Now;
                 lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                 processoLancamento.Incluir(lancamento);
                 processoLancamento.Confirmar();
@@ -237,7 +237,7 @@ namespace SiteMVCTelerik.ModuloParcela.Processos
 
 
 
-                par.timeCreated = DateTime.Now;
+                //par.timeCreated = DateTime.Now;
                 this.parcelaRepositorio.Incluir(par);
             }
 

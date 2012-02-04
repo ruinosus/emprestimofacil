@@ -191,7 +191,7 @@ namespace SiteMVCTelerik.Controllers
                     {
                         parcela.visualizada = "F";
                     }
-                    parcela.timeUpdated = DateTime.Now;
+                    //parcela.timeUpdated = DateTime.Now;
                     processo.Alterar(parcela);
                     processo.Confirmar();
                     // TODO: Add update logic here
@@ -294,7 +294,7 @@ namespace SiteMVCTelerik.Controllers
                     parcela.valor_pago = valorPago;
                     parcela.statusparcela_id = 1;
                     parcela.data_pagamento = ClasseAuxiliar.DataSelecionada;
-                    parcela.timeUpdated = DateTime.Now;
+                    //parcela.timeUpdated = DateTime.Now;
                     processo.Alterar(parcela);
                     processo.Confirmar();
                     // TODO: Add update logic here
@@ -348,7 +348,7 @@ namespace SiteMVCTelerik.Controllers
                 foreach (Parcela parcela in parcelas)
                 {
                     IParcelaProcesso processo = ParcelaProcesso.Instance;
-                    parcela.timeUpdated = DateTime.Now;
+                    //parcela.timeUpdated = DateTime.Now;
                     parcela.visualizada = "V";
                     processo.Alterar(parcela);
                     processo.Confirmar();

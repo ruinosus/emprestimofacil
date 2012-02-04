@@ -82,8 +82,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IAreaProcesso processo = AreaProcesso.Instance;
-                    area.timeCreated = DateTime.Now;
-                    area.timeUpdated= DateTime.Now;
+                    //area.timeCreated = DateTime.Now;
+                    //area.timeUpdated= DateTime.Now;
                     processo.Incluir(area);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -127,7 +127,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     area.id = id;
                     IAreaProcesso processo = AreaProcesso.Instance;
-                    area.timeUpdated = DateTime.Now;
+                    //area.timeUpdated = DateTime.Now;
                     processo.Alterar(area);
                     processo.Confirmar();
                     // TODO: Add update logic here

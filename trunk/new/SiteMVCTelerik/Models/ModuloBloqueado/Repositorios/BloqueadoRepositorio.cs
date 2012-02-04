@@ -126,8 +126,8 @@ namespace SiteMVCTelerik.ModuloBloqueado.Repositorios
 
                 bloqueadoAux.cliente_id = bloqueado.cliente_id;
                 bloqueadoAux.motivo = bloqueado.motivo;
-                bloqueadoAux.timeCreated = bloqueado.timeCreated;
-                bloqueadoAux.timeUpdated = bloqueado.timeUpdated;
+                //bloqueadoAux.timeCreated = bloqueado.timeCreated;
+                //bloqueadoAux.timeUpdated = bloqueado.timeUpdated;
                 bloqueadoAux.usuario_id = bloqueado.usuario_id;
                 bloqueadoAux.id = bloqueado.id;
              

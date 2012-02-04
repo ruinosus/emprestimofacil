@@ -614,16 +614,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
         /// <param name="municipio_id">Initial value of the municipio_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Area CreateArea(global::System.Int64 id, global::System.String descricao, global::System.Int64 municipio_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Area CreateArea(global::System.Int64 id, global::System.String descricao, global::System.Int64 municipio_id)
         {
             Area area = new Area();
             area.id = id;
             area.descricao = descricao;
             area.municipio_id = municipio_id;
-            area.timeCreated = timeCreated;
-            area.timeUpdated = timeUpdated;
             return area;
         }
 
@@ -728,54 +724,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private Nullable<global::System.Int64> _usuariomodificacao_id;
         partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
         partial void Onusuariomodificacao_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -1009,17 +957,13 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="motivo">Initial value of the motivo property.</param>
         /// <param name="cliente_id">Initial value of the cliente_id property.</param>
         /// <param name="usuario_id">Initial value of the usuario_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Bloqueado CreateBloqueado(global::System.Int64 id, global::System.String motivo, global::System.Int64 cliente_id, global::System.Int64 usuario_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Bloqueado CreateBloqueado(global::System.Int64 id, global::System.String motivo, global::System.Int64 cliente_id, global::System.Int64 usuario_id)
         {
             Bloqueado bloqueado = new Bloqueado();
             bloqueado.id = id;
             bloqueado.motivo = motivo;
             bloqueado.cliente_id = cliente_id;
             bloqueado.usuario_id = usuario_id;
-            bloqueado.timeCreated = timeCreated;
-            bloqueado.timeUpdated = timeUpdated;
             return bloqueado;
         }
 
@@ -1124,54 +1068,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.Int64 _usuario_id;
         partial void Onusuario_idChanging(global::System.Int64 value);
         partial void Onusuario_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -1272,16 +1168,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="nome">Initial value of the nome property.</param>
         /// <param name="area_id">Initial value of the area_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Cliente CreateCliente(global::System.Int64 id, global::System.String nome, global::System.Int64 area_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Cliente CreateCliente(global::System.Int64 id, global::System.String nome, global::System.Int64 area_id)
         {
             Cliente cliente = new Cliente();
             cliente.id = id;
             cliente.nome = nome;
             cliente.area_id = area_id;
-            cliente.timeCreated = timeCreated;
-            cliente.timeUpdated = timeUpdated;
             return cliente;
         }
 
@@ -2182,54 +2074,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public Nullable<global::System.Single> limite
@@ -2587,9 +2431,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="usuario_id">Initial value of the usuario_id property.</param>
         /// <param name="despesatipo_id">Initial value of the despesatipo_id property.</param>
         /// <param name="area_id">Initial value of the area_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Despesa CreateDespesa(global::System.Int64 id, global::System.DateTime data, global::System.Single valor, global::System.Int64 usuario_id, global::System.Int64 despesatipo_id, global::System.Int64 area_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Despesa CreateDespesa(global::System.Int64 id, global::System.DateTime data, global::System.Single valor, global::System.Int64 usuario_id, global::System.Int64 despesatipo_id, global::System.Int64 area_id)
         {
             Despesa despesa = new Despesa();
             despesa.id = id;
@@ -2598,8 +2440,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             despesa.usuario_id = usuario_id;
             despesa.despesatipo_id = despesatipo_id;
             despesa.area_id = area_id;
-            despesa.timeCreated = timeCreated;
-            despesa.timeUpdated = timeUpdated;
             return despesa;
         }
 
@@ -2800,54 +2640,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.Int64 _area_id;
         partial void Onarea_idChanging(global::System.Int64 value);
         partial void Onarea_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -3024,16 +2816,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
         /// <param name="posdescricao">Initial value of the posdescricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static DespesaTipo CreateDespesaTipo(global::System.Int64 id, global::System.String descricao, global::System.String posdescricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static DespesaTipo CreateDespesaTipo(global::System.Int64 id, global::System.String descricao, global::System.String posdescricao)
         {
             DespesaTipo despesaTipo = new DespesaTipo();
             despesaTipo.id = id;
             despesaTipo.descricao = descricao;
             despesaTipo.posdescricao = posdescricao;
-            despesaTipo.timeCreated = timeCreated;
-            despesaTipo.timeUpdated = timeUpdated;
             return despesaTipo;
         }
 
@@ -3114,54 +2902,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _posdescricao;
         partial void OnposdescricaoChanging(global::System.String value);
         partial void OnposdescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -3214,9 +2954,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="cliente_id">Initial value of the cliente_id property.</param>
         /// <param name="prazospagamento_id">Initial value of the prazospagamento_id property.</param>
         /// <param name="usuario_id">Initial value of the usuario_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Emprestimo CreateEmprestimo(global::System.Int64 id, global::System.Single valor, global::System.Single juros, global::System.Int64 area_id, global::System.Int64 qtde_parcelas, global::System.DateTime data_emprestimo, global::System.Int64 cliente_id, global::System.Int64 prazospagamento_id, global::System.Int64 usuario_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Emprestimo CreateEmprestimo(global::System.Int64 id, global::System.Single valor, global::System.Single juros, global::System.Int64 area_id, global::System.Int64 qtde_parcelas, global::System.DateTime data_emprestimo, global::System.Int64 cliente_id, global::System.Int64 prazospagamento_id, global::System.Int64 usuario_id)
         {
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.id = id;
@@ -3228,8 +2966,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             emprestimo.cliente_id = cliente_id;
             emprestimo.prazospagamento_id = prazospagamento_id;
             emprestimo.usuario_id = usuario_id;
-            emprestimo.timeCreated = timeCreated;
-            emprestimo.timeUpdated = timeUpdated;
             return emprestimo;
         }
 
@@ -3502,54 +3238,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private Nullable<global::System.Int64> _tipoemprestimo_id;
         partial void Ontipoemprestimo_idChanging(Nullable<global::System.Int64> value);
         partial void Ontipoemprestimo_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -3823,15 +3511,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Escolaridade CreateEscolaridade(global::System.Int64 id, global::System.String descricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Escolaridade CreateEscolaridade(global::System.Int64 id, global::System.String descricao)
         {
             Escolaridade escolaridade = new Escolaridade();
             escolaridade.id = id;
             escolaridade.descricao = descricao;
-            escolaridade.timeCreated = timeCreated;
-            escolaridade.timeUpdated = timeUpdated;
             return escolaridade;
         }
 
@@ -3888,54 +3572,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _descricao;
         partial void OndescricaoChanging(global::System.String value);
         partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -4003,15 +3639,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static EstadoCivilTipo CreateEstadoCivilTipo(global::System.Int64 id, global::System.String descricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static EstadoCivilTipo CreateEstadoCivilTipo(global::System.Int64 id, global::System.String descricao)
         {
             EstadoCivilTipo estadoCivilTipo = new EstadoCivilTipo();
             estadoCivilTipo.id = id;
             estadoCivilTipo.descricao = descricao;
-            estadoCivilTipo.timeCreated = timeCreated;
-            estadoCivilTipo.timeUpdated = timeUpdated;
             return estadoCivilTipo;
         }
 
@@ -4068,54 +3700,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _descricao;
         partial void OndescricaoChanging(global::System.String value);
         partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -4187,9 +3771,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="usuario_id">Initial value of the usuario_id property.</param>
         /// <param name="lancamentotipo_id">Initial value of the lancamentotipo_id property.</param>
         /// <param name="area_id">Initial value of the area_id property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        public static Lancamento CreateLancamento(global::System.Int64 id, global::System.DateTime data, global::System.Single valor, global::System.Int64 usuario_id, global::System.Int64 lancamentotipo_id, global::System.Int64 area_id, global::System.DateTime timeUpdated, global::System.DateTime timeCreated)
+        public static Lancamento CreateLancamento(global::System.Int64 id, global::System.DateTime data, global::System.Single valor, global::System.Int64 usuario_id, global::System.Int64 lancamentotipo_id, global::System.Int64 area_id)
         {
             Lancamento lancamento = new Lancamento();
             lancamento.id = id;
@@ -4198,8 +3780,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             lancamento.usuario_id = usuario_id;
             lancamento.lancamentotipo_id = lancamentotipo_id;
             lancamento.area_id = area_id;
-            lancamento.timeUpdated = timeUpdated;
-            lancamento.timeCreated = timeCreated;
             return lancamento;
         }
 
@@ -4448,54 +4028,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.Int64 _area_id;
         partial void Onarea_idChanging(global::System.Int64 value);
         partial void Onarea_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
 
         #endregion
     
@@ -4672,16 +4204,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
         /// <param name="sinal">Initial value of the sinal property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static LancamentoTipo CreateLancamentoTipo(global::System.Int64 id, global::System.String descricao, global::System.String sinal, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static LancamentoTipo CreateLancamentoTipo(global::System.Int64 id, global::System.String descricao, global::System.String sinal)
         {
             LancamentoTipo lancamentoTipo = new LancamentoTipo();
             lancamentoTipo.id = id;
             lancamentoTipo.descricao = descricao;
             lancamentoTipo.sinal = sinal;
-            lancamentoTipo.timeCreated = timeCreated;
-            lancamentoTipo.timeUpdated = timeUpdated;
             return lancamentoTipo;
         }
 
@@ -4762,54 +4290,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _sinal;
         partial void OnsinalChanging(global::System.String value);
         partial void OnsinalChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -4856,16 +4336,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="nome">Initial value of the nome property.</param>
         /// <param name="uf">Initial value of the uf property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Municipio CreateMunicipio(global::System.Int64 id, global::System.String nome, global::System.String uf, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Municipio CreateMunicipio(global::System.Int64 id, global::System.String nome, global::System.String uf)
         {
             Municipio municipio = new Municipio();
             municipio.id = id;
             municipio.nome = nome;
             municipio.uf = uf;
-            municipio.timeCreated = timeCreated;
-            municipio.timeUpdated = timeUpdated;
             return municipio;
         }
 
@@ -4946,54 +4422,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _uf;
         partial void OnufChanging(global::System.String value);
         partial void OnufChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -5083,15 +4511,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static OrgaoExpedidorNome CreateOrgaoExpedidorNome(global::System.Int64 id, global::System.String descricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static OrgaoExpedidorNome CreateOrgaoExpedidorNome(global::System.Int64 id, global::System.String descricao)
         {
             OrgaoExpedidorNome orgaoExpedidorNome = new OrgaoExpedidorNome();
             orgaoExpedidorNome.id = id;
             orgaoExpedidorNome.descricao = descricao;
-            orgaoExpedidorNome.timeCreated = timeCreated;
-            orgaoExpedidorNome.timeUpdated = timeUpdated;
             return orgaoExpedidorNome;
         }
 
@@ -5148,54 +4572,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _descricao;
         partial void OndescricaoChanging(global::System.String value);
         partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -5267,9 +4643,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="data_vencimento">Initial value of the data_vencimento property.</param>
         /// <param name="emprestimo_id">Initial value of the emprestimo_id property.</param>
         /// <param name="statusparcela_id">Initial value of the statusparcela_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Parcela CreateParcela(global::System.Int64 id, global::System.Int64 sequencial, global::System.Single valor, global::System.DateTime data_vencimento, global::System.Int64 emprestimo_id, global::System.Int64 statusparcela_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Parcela CreateParcela(global::System.Int64 id, global::System.Int64 sequencial, global::System.Single valor, global::System.DateTime data_vencimento, global::System.Int64 emprestimo_id, global::System.Int64 statusparcela_id)
         {
             Parcela parcela = new Parcela();
             parcela.id = id;
@@ -5278,8 +4652,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             parcela.data_vencimento = data_vencimento;
             parcela.emprestimo_id = emprestimo_id;
             parcela.statusparcela_id = statusparcela_id;
-            parcela.timeCreated = timeCreated;
-            parcela.timeUpdated = timeUpdated;
             return parcela;
         }
 
@@ -5604,54 +4976,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String observacoes
@@ -5811,17 +5135,13 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="descricao">Initial value of the descricao property.</param>
         /// <param name="qtde_dias">Initial value of the qtde_dias property.</param>
         /// <param name="posdescricao">Initial value of the posdescricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static PrazoPagamento CreatePrazoPagamento(global::System.Int64 id, global::System.String descricao, global::System.Int64 qtde_dias, global::System.String posdescricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static PrazoPagamento CreatePrazoPagamento(global::System.Int64 id, global::System.String descricao, global::System.Int64 qtde_dias, global::System.String posdescricao)
         {
             PrazoPagamento prazoPagamento = new PrazoPagamento();
             prazoPagamento.id = id;
             prazoPagamento.descricao = descricao;
             prazoPagamento.qtde_dias = qtde_dias;
             prazoPagamento.posdescricao = posdescricao;
-            prazoPagamento.timeCreated = timeCreated;
-            prazoPagamento.timeUpdated = timeUpdated;
             return prazoPagamento;
         }
 
@@ -5926,54 +5246,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _posdescricao;
         partial void OnposdescricaoChanging(global::System.String value);
         partial void OnposdescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -6027,9 +5299,7 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="usuario_id">Initial value of the usuario_id property.</param>
         /// <param name="valorcancelado">Initial value of the valorcancelado property.</param>
         /// <param name="area_id">Initial value of the area_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static PrestacaoConta CreatePrestacaoConta(global::System.Int64 id, global::System.DateTime dataprestacao, global::System.Single totaldespesas, global::System.Single valorsaida, global::System.Single valoremprestado, global::System.Single valorrecebido, global::System.Single valordevolvido, global::System.Int64 usuario_id, global::System.Single valorcancelado, global::System.Int64 area_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static PrestacaoConta CreatePrestacaoConta(global::System.Int64 id, global::System.DateTime dataprestacao, global::System.Single totaldespesas, global::System.Single valorsaida, global::System.Single valoremprestado, global::System.Single valorrecebido, global::System.Single valordevolvido, global::System.Int64 usuario_id, global::System.Single valorcancelado, global::System.Int64 area_id)
         {
             PrestacaoConta prestacaoConta = new PrestacaoConta();
             prestacaoConta.id = id;
@@ -6042,8 +5312,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
             prestacaoConta.usuario_id = usuario_id;
             prestacaoConta.valorcancelado = valorcancelado;
             prestacaoConta.area_id = area_id;
-            prestacaoConta.timeCreated = timeCreated;
-            prestacaoConta.timeUpdated = timeUpdated;
             return prestacaoConta;
         }
 
@@ -6320,54 +5588,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public Nullable<global::System.Single> parcelareabertas
@@ -6525,15 +5745,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static StatusParcela CreateStatusParcela(global::System.Int64 id, global::System.String descricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static StatusParcela CreateStatusParcela(global::System.Int64 id, global::System.String descricao)
         {
             StatusParcela statusParcela = new StatusParcela();
             statusParcela.id = id;
             statusParcela.descricao = descricao;
-            statusParcela.timeCreated = timeCreated;
-            statusParcela.timeUpdated = timeUpdated;
             return statusParcela;
         }
 
@@ -6590,54 +5806,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _descricao;
         partial void OndescricaoChanging(global::System.String value);
         partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -6683,15 +5851,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static TipoEmprestimo CreateTipoEmprestimo(global::System.Int64 id, global::System.String descricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static TipoEmprestimo CreateTipoEmprestimo(global::System.Int64 id, global::System.String descricao)
         {
             TipoEmprestimo tipoEmprestimo = new TipoEmprestimo();
             tipoEmprestimo.id = id;
             tipoEmprestimo.descricao = descricao;
-            tipoEmprestimo.timeCreated = timeCreated;
-            tipoEmprestimo.timeUpdated = timeUpdated;
             return tipoEmprestimo;
         }
 
@@ -6748,54 +5912,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _descricao;
         partial void OndescricaoChanging(global::System.String value);
         partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -6842,16 +5958,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="nome">Initial value of the nome property.</param>
         /// <param name="usuariotipo_id">Initial value of the usuariotipo_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static Usuario CreateUsuario(global::System.Int64 id, global::System.String nome, global::System.Int64 usuariotipo_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static Usuario CreateUsuario(global::System.Int64 id, global::System.String nome, global::System.Int64 usuariotipo_id)
         {
             Usuario usuario = new Usuario();
             usuario.id = id;
             usuario.nome = nome;
             usuario.usuariotipo_id = usuariotipo_id;
-            usuario.timeCreated = timeCreated;
-            usuario.timeUpdated = timeUpdated;
             return usuario;
         }
 
@@ -7508,54 +6620,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private Nullable<global::System.Int64> _usuariomodificacao_id;
         partial void Onusuariomodificacao_idChanging(Nullable<global::System.Int64> value);
         partial void Onusuariomodificacao_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -8078,16 +7142,12 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="area_id">Initial value of the area_id property.</param>
         /// <param name="usuario_id">Initial value of the usuario_id property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static UsuarioArea CreateUsuarioArea(global::System.Int64 id, global::System.Int64 area_id, global::System.Int64 usuario_id, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static UsuarioArea CreateUsuarioArea(global::System.Int64 id, global::System.Int64 area_id, global::System.Int64 usuario_id)
         {
             UsuarioArea usuarioArea = new UsuarioArea();
             usuarioArea.id = id;
             usuarioArea.area_id = area_id;
             usuarioArea.usuario_id = usuario_id;
-            usuarioArea.timeCreated = timeCreated;
-            usuarioArea.timeUpdated = timeUpdated;
             return usuarioArea;
         }
 
@@ -8168,54 +7228,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.Int64 _usuario_id;
         partial void Onusuario_idChanging(global::System.Int64 value);
         partial void Onusuario_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     
@@ -8315,15 +7327,11 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="timeCreated">Initial value of the timeCreated property.</param>
-        /// <param name="timeUpdated">Initial value of the timeUpdated property.</param>
-        public static UsuarioTipo CreateUsuarioTipo(global::System.Int64 id, global::System.String descricao, global::System.DateTime timeCreated, global::System.DateTime timeUpdated)
+        public static UsuarioTipo CreateUsuarioTipo(global::System.Int64 id, global::System.String descricao)
         {
             UsuarioTipo usuarioTipo = new UsuarioTipo();
             usuarioTipo.id = id;
             usuarioTipo.descricao = descricao;
-            usuarioTipo.timeCreated = timeCreated;
-            usuarioTipo.timeUpdated = timeUpdated;
             return usuarioTipo;
         }
 
@@ -8380,54 +7388,6 @@ namespace SiteMVCTelerik.Models.ModuloBasico.VOs
         private global::System.String _descricao;
         partial void OndescricaoChanging(global::System.String value);
         partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeCreated
-        {
-            get
-            {
-                return _timeCreated;
-            }
-            set
-            {
-                OntimeCreatedChanging(value);
-                ReportPropertyChanging("timeCreated");
-                _timeCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeCreated");
-                OntimeCreatedChanged();
-            }
-        }
-        private global::System.DateTime _timeCreated;
-        partial void OntimeCreatedChanging(global::System.DateTime value);
-        partial void OntimeCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime timeUpdated
-        {
-            get
-            {
-                return _timeUpdated;
-            }
-            set
-            {
-                OntimeUpdatedChanging(value);
-                ReportPropertyChanging("timeUpdated");
-                _timeUpdated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("timeUpdated");
-                OntimeUpdatedChanged();
-            }
-        }
-        private global::System.DateTime _timeUpdated;
-        partial void OntimeUpdatedChanging(global::System.DateTime value);
-        partial void OntimeUpdatedChanged();
 
         #endregion
     

@@ -172,7 +172,7 @@ namespace SiteMVCTelerik.ModuloUsuario.Repositorios
                 usuarioAux.senha = usuario.senha;
                 usuarioAux.sexo = usuario.sexo;
                 usuarioAux.situacao = usuario.situacao;
-                usuarioAux.timeCreated = usuario.timeCreated;
+                //usuarioAux.timeCreated = usuario.timeCreated;
                 usuarioAux.titulo_eleitor = usuario.titulo_eleitor;
                 usuarioAux.uf_resid = usuario.uf_resid;
                 usuarioAux.usuariotipo_id = usuario.usuariotipo_id;

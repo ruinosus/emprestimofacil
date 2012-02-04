@@ -12,7 +12,7 @@
     <%= Html.Telerik().StyleSheetRegistrar()
                       .DefaultGroup(group => group
                           .Add("telerik.common.css")
-                          .Add("telerik.outlook.css")
+                          .Add("telerik.sunset.css")
                           
                                           
                           .Combined(true)
