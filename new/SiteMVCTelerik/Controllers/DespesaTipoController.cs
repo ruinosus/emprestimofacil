@@ -84,8 +84,8 @@ namespace SiteMVCTelerik.Controllers
                 {
                     IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
                     
-                    DespesaTipo.timeCreated = DateTime.Now;
-                    DespesaTipo.timeUpdated = DateTime.Now;
+                    //DespesaTipo.timeCreated = DateTime.Now;
+                    //DespesaTipo.timeUpdated = DateTime.Now;
                     processo.Incluir(DespesaTipo);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -129,7 +129,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     DespesaTipo.id = id;
                     IDespesaTipoProcesso processo = DespesaTipoProcesso.Instance;
-                    DespesaTipo.timeUpdated = DateTime.Now;
+                    //DespesaTipo.timeUpdated = DateTime.Now;
                     processo.Alterar(DespesaTipo);
                     processo.Confirmar();
                     // TODO: Add update logic here

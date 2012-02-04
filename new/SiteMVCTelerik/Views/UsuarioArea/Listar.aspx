@@ -17,12 +17,7 @@
             <th>
                 ID
             </th>
-            <th>
-                timeCreated
-            </th>
-            <th>
-                timeUpdated
-            </th>
+           
             <th>
                 usuario_id
             </th>
@@ -40,12 +35,7 @@
             <td>
                 <%: item.id %>
             </td>
-            <td>
-                <%: item.timeCreated %>
-            </td>
-            <td>
-                <%: item.timeUpdated %>
-            </td>
+           
             <td>
                 <%: item.usuario_id %>
             </td>

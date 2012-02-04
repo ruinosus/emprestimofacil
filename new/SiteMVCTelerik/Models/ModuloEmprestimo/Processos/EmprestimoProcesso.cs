@@ -55,10 +55,10 @@ namespace SiteMVCTelerik.ModuloEmprestimo.Processos
             lancamento.lancamentotipo_id = 3;
             lancamento.data = emprestimo.data_emprestimo;
             lancamento.fonte = "Emprestimo";
-            lancamento.timeCreated = DateTime.Now;
+            //lancamento.timeCreated = DateTime.Now;
             lancamento.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
-            lancamento.timeCreated = DateTime.Now;
-            lancamento.timeUpdated= DateTime.Now;
+            //lancamento.timeCreated = DateTime.Now;
+            //lancamento.timeUpdated= DateTime.Now;
             processoLancamento.Incluir(lancamento);
             processoLancamento.Confirmar();
 
@@ -80,8 +80,8 @@ namespace SiteMVCTelerik.ModuloEmprestimo.Processos
                 parcela.emprestimo_id = emprestimo.id;
                 parcela.data_pagamento = null;
                 parcela.sequencial = i;
-                parcela.timeCreated = DateTime.Now;
-                parcela.timeUpdated = DateTime.Now;
+                //parcela.timeCreated = DateTime.Now;
+                //parcela.timeUpdated = DateTime.Now;
                 dataVencimento = dataVencimento.AddDays(prazo.qtde_dias);
 
                 //if (dataVencimento.DayOfWeek == System.DayOfWeek.Monday)

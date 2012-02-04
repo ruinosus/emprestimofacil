@@ -85,8 +85,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                    municipio.timeCreated = DateTime.Now;
-                    municipio.timeUpdated = DateTime.Now;
+                    //municipio.timeCreated = DateTime.Now;
+                    //municipio.timeUpdated = DateTime.Now;
                     processo.Incluir(municipio);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -129,7 +129,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     municipio.id = id;
                     IMunicipioProcesso processo = MunicipioProcesso.Instance;
-                    municipio.timeUpdated = DateTime.Now;
+                    //municipio.timeUpdated = DateTime.Now;
                     processo.Alterar(municipio);
                     processo.Confirmar();
                     // TODO: Add update logic here

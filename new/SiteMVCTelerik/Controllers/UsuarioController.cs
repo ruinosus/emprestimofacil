@@ -80,8 +80,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IUsuarioProcesso processo = UsuarioProcesso.Instance;
-                    usuario.timeCreated = DateTime.Now;
-                    usuario.timeUpdated = DateTime.Now;
+                    //usuario.timeCreated = DateTime.Now;
+                    //usuario.timeUpdated = DateTime.Now;
                     processo.Incluir(usuario);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -124,7 +124,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     usuario.id = id;
                     IUsuarioProcesso processo = UsuarioProcesso.Instance;
-                    usuario.timeUpdated = DateTime.Now;
+                    //usuario.timeUpdated = DateTime.Now;
                     processo.Alterar(usuario);
                     processo.Confirmar();
                     // TODO: Add update logic here
@@ -172,7 +172,7 @@ namespace SiteMVCTelerik.Controllers
                     usuario = processo.Consultar(usuario, SiteMVCTelerik.ModuloBasico.Enums.TipoPesquisa.E)[0];
                     usuario.id = id;
                     usuario.senha = senhaModificada;
-                    usuario.timeUpdated = DateTime.Now;
+                    //usuario.timeUpdated = DateTime.Now;
                     processo.Alterar(usuario);
                     processo.Confirmar();
                     // TODO: Add update logic here

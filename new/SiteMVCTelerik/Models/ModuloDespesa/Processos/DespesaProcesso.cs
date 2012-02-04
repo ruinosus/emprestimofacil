@@ -43,7 +43,7 @@ namespace SiteMVCTelerik.ModuloDespesa.Processos
             lancamento.lancamentotipo_id = 2;
             lancamento.data = Despesa.data;
             lancamento.fonte = "Despesa";
-            lancamento.timeCreated = DateTime.Now;
+            //lancamento.timeCreated = DateTime.Now;
             lancamento.usuario_id = Despesa.usuario_id;
             processoLancamento.Incluir(lancamento);
             processoLancamento.Confirmar();

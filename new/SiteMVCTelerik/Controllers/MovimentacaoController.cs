@@ -486,8 +486,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
-                    lancamento.timeCreated = DateTime.Now;
-                    lancamento.timeUpdated = DateTime.Now;
+                    //lancamento.timeCreated = DateTime.Now;
+                    //lancamento.timeUpdated = DateTime.Now;
                     lancamento.lancamentotipo_id = 5;
                     processo.Incluir(lancamento);
                     processo.Confirmar();
@@ -531,7 +531,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     lancamento.id = id;
                     ILancamentoProcesso processo = LancamentoProcesso.Instance;
-                    lancamento.timeUpdated = DateTime.Now;
+                    //lancamento.timeUpdated = DateTime.Now;
                     processo.Alterar(lancamento);
                     processo.Confirmar();
                     // TODO: Add update logic here
@@ -837,7 +837,8 @@ namespace SiteMVCTelerik.Controllers
             {
                 prestacaoConta.dataprestacao = ClasseAuxiliar.DataSelecionada;
                 prestacaoConta.area_id = ClasseAuxiliar.AreaSelecionada.id;
-                prestacaoConta.timeCreated = DateTime.Now;
+                //prestacaoConta.timeCreated = DateTime.Now;
+                //prestacaoConta.timeUpdated= DateTime.Now;
                 prestacaoConta.totaldespesas = totalDespesas;
                 prestacaoConta.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                 prestacaoConta.valorsaida = totalEmprestimos;

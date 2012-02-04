@@ -19,12 +19,7 @@
             <th>
                 id
             </th>
-            <th>
-                timeCreated
-            </th>
-            <th>
-                timeUpdated
-            </th>
+            
         </tr>
 
     <% foreach (var item in Model) { %>
@@ -41,12 +36,7 @@
             <td>
                 <%: item.id %>
             </td>
-            <td>
-                <%: item.timeCreated %>
-            </td>
-            <td>
-                <%: item.timeUpdated %>
-            </td>
+            
         </tr>
     
     <% } %>

@@ -91,8 +91,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IUsuarioAreaProcesso processo = UsuarioAreaProcesso.Instance;
-                    usuarioArea.timeCreated = DateTime.Now;
-                    usuarioArea.timeUpdated = DateTime.Now;
+                    //usuarioArea.timeCreated = DateTime.Now;
+                    //usuarioArea.timeUpdated = DateTime.Now;
                     processo.Incluir(usuarioArea);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -135,7 +135,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     usuarioArea.id = id;
                     IUsuarioAreaProcesso processo = UsuarioAreaProcesso.Instance;
-                    usuarioArea.timeUpdated = DateTime.Now;
+                    //usuarioArea.timeUpdated = DateTime.Now;
                     processo.Alterar(usuarioArea);
                     processo.Confirmar();
                     // TODO: Add update logic here

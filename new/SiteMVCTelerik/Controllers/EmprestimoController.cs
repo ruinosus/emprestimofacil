@@ -137,8 +137,8 @@ namespace SiteMVCTelerik.Controllers
                     emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.id;
                     emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
                     emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.id;
-                    emprestimo.timeCreated = DateTime.Now;
-                    emprestimo.timeUpdated = DateTime.Now;
+                    //emprestimo.timeCreated = DateTime.Now;
+                    //emprestimo.timeUpdated = DateTime.Now;
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
                     return RedirectToAction("EmprestimoCliente", new { id = ClasseAuxiliar.ClienteSelecionado.id });
@@ -266,8 +266,8 @@ namespace SiteMVCTelerik.Controllers
                     emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.id;
                     emprestimo.usuario_id= ClasseAuxiliar.UsuarioLogado.id;
                     emprestimo.data_emprestimo = ClasseAuxiliar.DataSelecionada;
-                    emprestimo.timeCreated = DateTime.Now;
-                    emprestimo.timeUpdated = DateTime.Now;
+                    //emprestimo.timeCreated = DateTime.Now;
+                    //emprestimo.timeUpdated = DateTime.Now;
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
                     return RedirectToAction("IncluirPrestacaoConta","Movimentacao");
@@ -309,7 +309,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     emprestimo.id = id;
                     IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
-                    emprestimo.timeUpdated = DateTime.Now;
+                    //emprestimo.timeUpdated = DateTime.Now;
                     processo.Alterar(emprestimo);
                     processo.Confirmar();
                     // TODO: Add update logic here

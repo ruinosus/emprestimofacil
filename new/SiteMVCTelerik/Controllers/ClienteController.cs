@@ -104,8 +104,8 @@ namespace SiteMVCTelerik.Controllers
                 if (ModelState.IsValid)
                 {
                     IClienteProcesso processo = ClienteProcesso.Instance;
-                    cliente.timeCreated = DateTime.Now;
-                    cliente.timeUpdated = DateTime.Now;
+                    //cliente.timeCreated = DateTime.Now;
+                    //cliente.timeUpdated = DateTime.Now;
                     processo.Incluir(cliente);
                     processo.Confirmar();
                     return RedirectToAction("Index");
@@ -148,7 +148,7 @@ namespace SiteMVCTelerik.Controllers
                 {
                     cliente.id = id;
                     IClienteProcesso processo = ClienteProcesso.Instance;
-                    cliente.timeUpdated = DateTime.Now;
+                    //cliente.timeUpdated = DateTime.Now;
                     processo.Alterar(cliente);
                     processo.Confirmar();
                     // TODO: Add update logic here

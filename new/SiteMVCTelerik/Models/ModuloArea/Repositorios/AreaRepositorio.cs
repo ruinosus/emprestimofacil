@@ -167,8 +167,8 @@ namespace SiteMVCTelerik.ModuloArea.Repositorios
 
                 areaAux = resultado[0];
                 areaAux.municipio_id = area.municipio_id;
-                areaAux.timeCreated= area.timeCreated;
-                areaAux.timeUpdated = area.timeUpdated;
+                //areaAux.timeCreated= area.timeCreated;
+                //areaAux.timeUpdated = area.timeUpdated;
                 areaAux.descricao = area.descricao;
 
 
