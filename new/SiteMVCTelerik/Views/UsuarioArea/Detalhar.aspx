@@ -17,12 +17,7 @@
         <div class="display-label">ID</div>
         <div class="display-field"><%: Model.id %></div>
         
-        <div class="display-label">timeCreated</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">timeUpdated</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
-        
+       
         <div class="display-label">usuario_id</div>
         <div class="display-field"><%: Model.usuario_id %></div>
         

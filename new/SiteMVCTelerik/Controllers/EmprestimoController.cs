@@ -99,7 +99,7 @@ namespace SiteMVCTelerik.Controllers
                                     select cc;
 
 
-                if(resultCliente.Count > 0)
+                if(resultCiente2!= null )
                     ModelState.AddModelError("valor", "O Cliente está com dividas em aberto.");
 
 

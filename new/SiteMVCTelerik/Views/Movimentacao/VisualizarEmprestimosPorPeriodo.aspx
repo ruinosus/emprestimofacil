@@ -74,12 +74,7 @@ if (lista.Count > 0)
             <th>
                 qtde_parcelas
             </th>
-            <th>
-                timeCreated
-            </th>
-            <th>
-                timeUpdated
-            </th>
+          
             <th>
                 tipoemprestimo_id
             </th>
@@ -116,12 +111,7 @@ if (lista.Count > 0)
             <td>
                 <%: item.qtde_parcelas%>
             </td>
-            <td>
-                <%: item.timeCreated%>
-            </td>
-            <td>
-                <%: item.timeUpdated%>
-            </td>
+           
             <td>
                 <%: item.tipoemprestimo_id%>
             </td>

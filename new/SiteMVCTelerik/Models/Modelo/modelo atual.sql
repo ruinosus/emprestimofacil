@@ -13,8 +13,6 @@ CREATE TABLE `area` (
   `descricao` varchar(50) NOT NULL,
   `municipio_id` int(10) unsigned NOT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `municipio_id` (`municipio_id`),
   KEY `usuariomodificacao_id` (`usuariomodificacao_id`)
@@ -25,9 +23,7 @@ CREATE TABLE `bloqueado` (
   `motivo` text NOT NULL,
   `cliente_id` int(10) unsigned NOT NULL,
   `usuario_id` int(10) unsigned NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
+   PRIMARY KEY (`id`),
   UNIQUE KEY `cliente_id` (`cliente_id`),
   KEY `usuario_id` (`usuario_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -70,9 +66,7 @@ CREATE TABLE `cliente` (
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
   `observacao` VARCHAR(1000) NULL,
   `numcartao` char(16) DEFAULT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `limite` float DEFAULT NULL,
+   `limite` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `orgaosexpedidoresnome_id` (`orgaosexpedidoresnome_id`),
   KEY `estadoscivistipo_id` (`estadoscivistipo_id`),
@@ -92,9 +86,7 @@ CREATE TABLE `despesa` (
   `despesatipo_id` int(10) unsigned NOT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
   `area_id` int(10) unsigned NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
+   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `despesatipo_id` (`despesatipo_id`),
   KEY `area_id` (`area_id`),
@@ -105,8 +97,6 @@ CREATE TABLE `despesatipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) NOT NULL,
   `posdescricao` varchar(50) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -122,9 +112,7 @@ CREATE TABLE `emprestimo` (
   `usuario_id` int(10) unsigned NOT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
   `tipoemprestimo_id` int(10) unsigned DEFAULT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
+   PRIMARY KEY (`id`),
   KEY `cliente_id` (`cliente_id`),
   KEY `prazospagamento_id` (`prazospagamento_id`),
   KEY `usuario_id` (`usuario_id`),
@@ -136,16 +124,12 @@ CREATE TABLE `emprestimo` (
 CREATE TABLE `escolaridade` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(30) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `estadociviltipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(20) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -160,9 +144,7 @@ CREATE TABLE `lancamento` (
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
   `fonte` varchar(15) DEFAULT NULL,
   `area_id` int(10) unsigned NOT NULL,
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
+   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `lancamentotipo_id` (`lancamentotipo_id`),
   KEY `usuariomodificacao_id` (`usuariomodificacao_id`),
@@ -173,25 +155,19 @@ CREATE TABLE `lancamentotipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(40) NOT NULL,
   `sinal` char(1) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `municipio` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `uf` char(2) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `orgaoexpedidornome` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(20) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -209,8 +185,6 @@ CREATE TABLE `parcela` (
   `visualizada` char(1) NULL,
   `contabilizada` char(1) NULL,
   `valor_pago` float DEFAULT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `observacoes` text,
   PRIMARY KEY (`id`),
   KEY `emprestimo_id` (`emprestimo_id`),
@@ -223,9 +197,7 @@ CREATE TABLE `prazopagamento` (
   `descricao` varchar(50) NOT NULL,
   `qtde_dias` int(10) unsigned NOT NULL,
   `posdescricao` varchar(10) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 CREATE TABLE `prestacaoconta` (
@@ -240,9 +212,7 @@ CREATE TABLE `prestacaoconta` (
   `valorcancelado` float NOT NULL,
   `area_id` int(10) unsigned NOT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `parcelareabertas` float DEFAULT NULL,
+   `parcelareabertas` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
     KEY `area_id` (`area_id`),
@@ -252,16 +222,12 @@ CREATE TABLE `prestacaoconta` (
 CREATE TABLE `statusparcela` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `tipoemprestimo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -293,8 +259,6 @@ CREATE TABLE `usuario` (
   `usuariotipo_id` int(10) unsigned NOT NULL,
   `escolaridade_id` int(10) unsigned DEFAULT NULL,
   `usuariomodificacao_id` INT(10) unsigned DEFAULT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `orgaosexpedidoresnome_id` (`orgaosexpedidoresnome_id`),
   KEY `estadoscivistipo_id` (`estadoscivistipo_id`),
@@ -307,8 +271,6 @@ CREATE TABLE `usuarioarea`(
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `area_id` int(10) unsigned NOT NULL,
   `usuario_id` int(10) unsigned NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    PRIMARY KEY (`id`),
    KEY `area_id` (`area_id`), 
    KEY `usuario_id` (`usuario_id`)
@@ -317,8 +279,6 @@ CREATE TABLE `usuarioarea`(
 CREATE TABLE `usuariotipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) NOT NULL,
-  `timeCreated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `timeUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

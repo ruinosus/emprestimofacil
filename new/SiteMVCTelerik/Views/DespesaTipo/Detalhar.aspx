@@ -17,12 +17,7 @@
         <div class="display-label">nome</div>
         <div class="display-field"><%: Model.descricao %></div>
         
-        <div class="display-label">timeCreated</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">timeUpdated</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
-        
+          
         <div class="display-label">uf</div>
         <div class="display-field"><%: Model.posdescricao %></div>
         

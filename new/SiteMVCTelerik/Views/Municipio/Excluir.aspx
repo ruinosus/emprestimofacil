@@ -23,11 +23,7 @@
         <div class="display-label">nome</div>
         <div class="display-field"><%: Model.nome %></div>
         
-        <div class="display-label">timeCreated</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">timeUpdated</div>
-        <div class="display-field"><%: Model.timeCreated%></div>
+      
         
         <div class="display-label">uf</div>
         <div class="display-field"><%: Model.uf %></div>
@@ -37,8 +33,6 @@
         <p>
          <%: Html.HiddenFor(model => model.nome) %>
          <%: Html.HiddenFor(model => model.id) %>
-         <%: Html.HiddenFor(model => model.timeCreated)%>
-         <%: Html.HiddenFor(model => model.timeCreated)%>
          <%: Html.HiddenFor(model => model.uf) %>
 		    <input type="submit" value="Confirmar" /> |
 		    <%: Html.ActionLink("Voltar", "Index") %>
