@@ -94,9 +94,9 @@ namespace SiteMVCTelerik.Controllers
                 IClienteProcesso processoCliente = ClienteProcesso.Instance;
                 List<Cliente> resultCliente = processoCliente.ConsultarClientesDevedores();
                 
-                var resultCiente2 = from cc in resultCliente
+                var resultCiente2 = (from cc in resultCliente
                                     where cc.id ==  ClasseAuxiliar.ClienteSelecionado.id
-                                    select cc;
+                                    select cc).SingleOrDefault();
 
 
                 if(resultCiente2!= null )
