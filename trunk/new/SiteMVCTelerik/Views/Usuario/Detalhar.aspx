@@ -79,11 +79,7 @@
         <div class="display-label">situacao</div>
         <div class="display-field"><%: Model.situacao %></div>
         
-        <div class="display-label">timeCreated</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">timeUpdated</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
+      
         
         <div class="display-label">titulo_eleitor</div>
         <div class="display-field"><%: Model.titulo_eleitor %></div>

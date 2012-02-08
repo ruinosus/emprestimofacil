@@ -30,12 +30,7 @@
             <th>
                 qtde_parcelas
             </th>
-            <th>
-                timeCreated
-            </th>
-            <th>
-                timeUpdated
-            </th>
+           
             <th>
                 tipoemprestimo_id
             </th>
@@ -87,12 +82,7 @@
             <td>
                 <%: item.qtde_parcelas %>
             </td>
-            <td>
-                <%: item.timeCreated %>
-            </td>
-            <td>
-                <%: item.timeUpdated %>
-            </td>
+           
             <td>
                 <%: item.tipoemprestimo_id %>
             </td>

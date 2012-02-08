@@ -26,11 +26,7 @@
         <div class="display-label">Município</div>
         <div class="display-field"><%: Model.municipio.nome %></div>
         
-        <div class="display-label">Data Criação</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">Data Atualização</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
+       
         
         
     </fieldset>
@@ -38,8 +34,7 @@
         <p>
                  <%: Html.HiddenFor(model => model.descricao) %>
          <%: Html.HiddenFor(model => model.id) %>
-         <%: Html.HiddenFor(model => model.timeCreated)%>
-         <%: Html.HiddenFor(model => model.timeCreated)%>
+         
          <%: Html.HiddenFor(model => model.municipio_id) %>
 		    <input type="submit" value="Confirmar" /> |
 		    <%: Html.ActionLink("Voltar", "Index") %>

@@ -20,11 +20,7 @@
         <div class="display-label">Município</div>
         <div class="display-field"><%: Model.municipio.nome %></div>
         
-        <div class="display-label">Data Criação</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">Data Atualização</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
+       
         
     </fieldset>
     <p>

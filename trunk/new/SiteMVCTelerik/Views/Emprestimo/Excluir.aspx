@@ -30,12 +30,7 @@
         <div class="display-label">qtde_parcelas</div>
         <div class="display-field"><%: Model.qtde_parcelas %></div>
         
-        <div class="display-label">timeCreated</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">timeUpdated</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
-        
+      
         <div class="display-label">tipoemprestimo_id</div>
         <div class="display-field"><%: Model.tipoemprestimo.descricao %></div>
         

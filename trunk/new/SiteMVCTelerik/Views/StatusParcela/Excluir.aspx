@@ -21,12 +21,7 @@
         <div class="display-label">municipio_id</div>
         <div class="display-field"><%: Model.municipio_id %></div>
         
-        <div class="display-label">timeCreated</div>
-        <div class="display-field"><%: Model.timeCreated %></div>
-        
-        <div class="display-label">timeUpdated</div>
-        <div class="display-field"><%: Model.timeUpdated %></div>
-        
+       
     </fieldset>
     <% using (Html.BeginForm()) { %>
         <p>
