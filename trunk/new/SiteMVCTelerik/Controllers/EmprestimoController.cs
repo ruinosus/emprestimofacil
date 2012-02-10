@@ -99,7 +99,7 @@ namespace SiteMVCTelerik.Controllers
                                     select cc).SingleOrDefault();
 
 
-                if(resultCiente2!= null )
+                if(resultCiente2!= null && resultCiente2.id == ClasseAuxiliar.ClienteSelecionado.id )
                     ModelState.AddModelError("valor", "O Cliente está com dividas em aberto.");
 
 
@@ -132,7 +132,7 @@ namespace SiteMVCTelerik.Controllers
 
                 var teste = Request;
                 IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
-                if (ModelState.IsValid)
+                //if (ModelState.IsValid)
                 {
                     emprestimo.cliente_id = ClasseAuxiliar.ClienteSelecionado.id;
                     emprestimo.usuario_id = ClasseAuxiliar.UsuarioLogado.id;
@@ -143,10 +143,10 @@ namespace SiteMVCTelerik.Controllers
                     processo.Confirmar();
                     return RedirectToAction("EmprestimoCliente", new { id = ClasseAuxiliar.ClienteSelecionado.id });
                 }
-                else
-                {
-                    return View(emprestimo);
-                }
+                //else
+                //{
+                //    return View(emprestimo);
+                //}
             }
             catch (Exception e)
             {
@@ -227,12 +227,12 @@ namespace SiteMVCTelerik.Controllers
                 IClienteProcesso processoCliente = ClienteProcesso.Instance;
                 List<Cliente> resultCliente = processoCliente.ConsultarClientesDevedores();
 
-                var resultCiente2 = from cc in resultCliente
-                                    where cc.id == ClasseAuxiliar.ClienteSelecionado.id
-                                    select cc;
+                var resultCiente2 = (from cc in resultCliente
+                                     where cc.id == ClasseAuxiliar.ClienteSelecionado.id
+                                     select cc).SingleOrDefault();
 
 
-                if (resultCliente.Count > 0)
+                if (resultCiente2 != null && resultCiente2.id == ClasseAuxiliar.ClienteSelecionado.id)
                     ModelState.AddModelError("valor", "O Cliente está com dividas em aberto.");
 
                 List<int> diasUteis = new List<int>();
@@ -260,8 +260,8 @@ namespace SiteMVCTelerik.Controllers
                     }
 
                 ViewData["DiasUteis"] = ClasseAuxiliar.CarregarCheckBoxEnum<DiasUteis>(diasUteis);
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
                     IEmprestimoProcesso processo = EmprestimoProcesso.Instance;
                     emprestimo.area_id = ClasseAuxiliar.AreaSelecionada.id;
                     emprestimo.usuario_id= ClasseAuxiliar.UsuarioLogado.id;
@@ -271,11 +271,11 @@ namespace SiteMVCTelerik.Controllers
                     processo.Incluir(emprestimo, dayOfWeeks);
                     processo.Confirmar();
                     return RedirectToAction("IncluirPrestacaoConta","Movimentacao");
-                }
-                else
-                {
-                    return View(emprestimo);
-                }
+                //}
+                //else
+                //{
+                //    return View(emprestimo);
+                //}
             }
             catch(Exception e)
             {
