@@ -235,6 +235,8 @@ namespace SiteMVCTelerik.Controllers
 
         public ActionResult Deslogar()
         {
+            Session.Clear();
+            Session.Abandon();
             Session.Remove("UsuarioLogado");
             Session.Remove("UsuarioPontoLogadoLista");
 
